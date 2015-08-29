@@ -27,7 +27,7 @@ $app = new \Slim\Slim();
 
 $app->get(
 
-    '/',function(){getAllSuits();}
+    '/',function(){echo "gonzo";}
 );
 $app->get(
 

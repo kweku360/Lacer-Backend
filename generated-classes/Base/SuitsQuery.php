@@ -21,30 +21,22 @@ use Propel\Runtime\Exception\PropelException;
  *
  * @method     ChildSuitsQuery orderById($order = Criteria::ASC) Order by the id column
  * @method     ChildSuitsQuery orderBySuitnumber($order = Criteria::ASC) Order by the suitnumber column
+ * @method     ChildSuitsQuery orderByTitle($order = Criteria::ASC) Order by the title column
  * @method     ChildSuitsQuery orderByType($order = Criteria::ASC) Order by the type column
- * @method     ChildSuitsQuery orderByPlaintifflawyerid($order = Criteria::ASC) Order by the plaintifflawyerid column
- * @method     ChildSuitsQuery orderByPlaintifflawyername($order = Criteria::ASC) Order by the plaintifflawyername column
- * @method     ChildSuitsQuery orderByDefendantlawyerid($order = Criteria::ASC) Order by the defendantlawyerid column
- * @method     ChildSuitsQuery orderByDefendantlawyername($order = Criteria::ASC) Order by the defendantlawyername column
  * @method     ChildSuitsQuery orderByDatefiled($order = Criteria::ASC) Order by the datefiled column
- * @method     ChildSuitsQuery orderByJudgeid($order = Criteria::ASC) Order by the judgeid column
- * @method     ChildSuitsQuery orderByJudgename($order = Criteria::ASC) Order by the judgename column
  * @method     ChildSuitsQuery orderBySuitstatus($order = Criteria::ASC) Order by the suitstatus column
+ * @method     ChildSuitsQuery orderBySuitaccess($order = Criteria::ASC) Order by the suitaccess column
  * @method     ChildSuitsQuery orderByDateofadjournment($order = Criteria::ASC) Order by the dateofadjournment column
  * @method     ChildSuitsQuery orderByCreated($order = Criteria::ASC) Order by the created column
  * @method     ChildSuitsQuery orderByModified($order = Criteria::ASC) Order by the modified column
  *
  * @method     ChildSuitsQuery groupById() Group by the id column
  * @method     ChildSuitsQuery groupBySuitnumber() Group by the suitnumber column
+ * @method     ChildSuitsQuery groupByTitle() Group by the title column
  * @method     ChildSuitsQuery groupByType() Group by the type column
- * @method     ChildSuitsQuery groupByPlaintifflawyerid() Group by the plaintifflawyerid column
- * @method     ChildSuitsQuery groupByPlaintifflawyername() Group by the plaintifflawyername column
- * @method     ChildSuitsQuery groupByDefendantlawyerid() Group by the defendantlawyerid column
- * @method     ChildSuitsQuery groupByDefendantlawyername() Group by the defendantlawyername column
  * @method     ChildSuitsQuery groupByDatefiled() Group by the datefiled column
- * @method     ChildSuitsQuery groupByJudgeid() Group by the judgeid column
- * @method     ChildSuitsQuery groupByJudgename() Group by the judgename column
  * @method     ChildSuitsQuery groupBySuitstatus() Group by the suitstatus column
+ * @method     ChildSuitsQuery groupBySuitaccess() Group by the suitaccess column
  * @method     ChildSuitsQuery groupByDateofadjournment() Group by the dateofadjournment column
  * @method     ChildSuitsQuery groupByCreated() Group by the created column
  * @method     ChildSuitsQuery groupByModified() Group by the modified column
@@ -62,15 +54,11 @@ use Propel\Runtime\Exception\PropelException;
  *
  * @method     ChildSuits findOneById(int $id) Return the first ChildSuits filtered by the id column
  * @method     ChildSuits findOneBySuitnumber(string $suitnumber) Return the first ChildSuits filtered by the suitnumber column
+ * @method     ChildSuits findOneByTitle(string $title) Return the first ChildSuits filtered by the title column
  * @method     ChildSuits findOneByType(string $type) Return the first ChildSuits filtered by the type column
- * @method     ChildSuits findOneByPlaintifflawyerid(int $plaintifflawyerid) Return the first ChildSuits filtered by the plaintifflawyerid column
- * @method     ChildSuits findOneByPlaintifflawyername(string $plaintifflawyername) Return the first ChildSuits filtered by the plaintifflawyername column
- * @method     ChildSuits findOneByDefendantlawyerid(int $defendantlawyerid) Return the first ChildSuits filtered by the defendantlawyerid column
- * @method     ChildSuits findOneByDefendantlawyername(string $defendantlawyername) Return the first ChildSuits filtered by the defendantlawyername column
  * @method     ChildSuits findOneByDatefiled(int $datefiled) Return the first ChildSuits filtered by the datefiled column
- * @method     ChildSuits findOneByJudgeid(int $judgeid) Return the first ChildSuits filtered by the judgeid column
- * @method     ChildSuits findOneByJudgename(string $judgename) Return the first ChildSuits filtered by the judgename column
  * @method     ChildSuits findOneBySuitstatus(string $suitstatus) Return the first ChildSuits filtered by the suitstatus column
+ * @method     ChildSuits findOneBySuitaccess(string $suitaccess) Return the first ChildSuits filtered by the suitaccess column
  * @method     ChildSuits findOneByDateofadjournment(int $dateofadjournment) Return the first ChildSuits filtered by the dateofadjournment column
  * @method     ChildSuits findOneByCreated(int $created) Return the first ChildSuits filtered by the created column
  * @method     ChildSuits findOneByModified(int $modified) Return the first ChildSuits filtered by the modified column *
@@ -80,15 +68,11 @@ use Propel\Runtime\Exception\PropelException;
  *
  * @method     ChildSuits requireOneById(int $id) Return the first ChildSuits filtered by the id column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildSuits requireOneBySuitnumber(string $suitnumber) Return the first ChildSuits filtered by the suitnumber column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildSuits requireOneByTitle(string $title) Return the first ChildSuits filtered by the title column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildSuits requireOneByType(string $type) Return the first ChildSuits filtered by the type column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildSuits requireOneByPlaintifflawyerid(int $plaintifflawyerid) Return the first ChildSuits filtered by the plaintifflawyerid column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildSuits requireOneByPlaintifflawyername(string $plaintifflawyername) Return the first ChildSuits filtered by the plaintifflawyername column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildSuits requireOneByDefendantlawyerid(int $defendantlawyerid) Return the first ChildSuits filtered by the defendantlawyerid column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildSuits requireOneByDefendantlawyername(string $defendantlawyername) Return the first ChildSuits filtered by the defendantlawyername column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildSuits requireOneByDatefiled(int $datefiled) Return the first ChildSuits filtered by the datefiled column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildSuits requireOneByJudgeid(int $judgeid) Return the first ChildSuits filtered by the judgeid column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildSuits requireOneByJudgename(string $judgename) Return the first ChildSuits filtered by the judgename column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildSuits requireOneBySuitstatus(string $suitstatus) Return the first ChildSuits filtered by the suitstatus column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildSuits requireOneBySuitaccess(string $suitaccess) Return the first ChildSuits filtered by the suitaccess column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildSuits requireOneByDateofadjournment(int $dateofadjournment) Return the first ChildSuits filtered by the dateofadjournment column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildSuits requireOneByCreated(int $created) Return the first ChildSuits filtered by the created column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildSuits requireOneByModified(int $modified) Return the first ChildSuits filtered by the modified column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
@@ -96,15 +80,11 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildSuits[]|ObjectCollection find(ConnectionInterface $con = null) Return ChildSuits objects based on current ModelCriteria
  * @method     ChildSuits[]|ObjectCollection findById(int $id) Return ChildSuits objects filtered by the id column
  * @method     ChildSuits[]|ObjectCollection findBySuitnumber(string $suitnumber) Return ChildSuits objects filtered by the suitnumber column
+ * @method     ChildSuits[]|ObjectCollection findByTitle(string $title) Return ChildSuits objects filtered by the title column
  * @method     ChildSuits[]|ObjectCollection findByType(string $type) Return ChildSuits objects filtered by the type column
- * @method     ChildSuits[]|ObjectCollection findByPlaintifflawyerid(int $plaintifflawyerid) Return ChildSuits objects filtered by the plaintifflawyerid column
- * @method     ChildSuits[]|ObjectCollection findByPlaintifflawyername(string $plaintifflawyername) Return ChildSuits objects filtered by the plaintifflawyername column
- * @method     ChildSuits[]|ObjectCollection findByDefendantlawyerid(int $defendantlawyerid) Return ChildSuits objects filtered by the defendantlawyerid column
- * @method     ChildSuits[]|ObjectCollection findByDefendantlawyername(string $defendantlawyername) Return ChildSuits objects filtered by the defendantlawyername column
  * @method     ChildSuits[]|ObjectCollection findByDatefiled(int $datefiled) Return ChildSuits objects filtered by the datefiled column
- * @method     ChildSuits[]|ObjectCollection findByJudgeid(int $judgeid) Return ChildSuits objects filtered by the judgeid column
- * @method     ChildSuits[]|ObjectCollection findByJudgename(string $judgename) Return ChildSuits objects filtered by the judgename column
  * @method     ChildSuits[]|ObjectCollection findBySuitstatus(string $suitstatus) Return ChildSuits objects filtered by the suitstatus column
+ * @method     ChildSuits[]|ObjectCollection findBySuitaccess(string $suitaccess) Return ChildSuits objects filtered by the suitaccess column
  * @method     ChildSuits[]|ObjectCollection findByDateofadjournment(int $dateofadjournment) Return ChildSuits objects filtered by the dateofadjournment column
  * @method     ChildSuits[]|ObjectCollection findByCreated(int $created) Return ChildSuits objects filtered by the created column
  * @method     ChildSuits[]|ObjectCollection findByModified(int $modified) Return ChildSuits objects filtered by the modified column
@@ -200,7 +180,7 @@ abstract class SuitsQuery extends ModelCriteria
      */
     protected function findPkSimple($key, ConnectionInterface $con)
     {
-        $sql = 'SELECT id, suitnumber, type, plaintifflawyerid, plaintifflawyername, defendantlawyerid, defendantlawyername, datefiled, judgeid, judgename, suitstatus, dateofadjournment, created, modified FROM suits WHERE id = :p0';
+        $sql = 'SELECT id, suitnumber, title, type, datefiled, suitstatus, suitaccess, dateofadjournment, created, modified FROM suits WHERE id = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -361,6 +341,35 @@ abstract class SuitsQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query on the title column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByTitle('fooValue');   // WHERE title = 'fooValue'
+     * $query->filterByTitle('%fooValue%'); // WHERE title LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $title The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildSuitsQuery The current query, for fluid interface
+     */
+    public function filterByTitle($title = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($title)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $title)) {
+                $title = str_replace('*', '%', $title);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(SuitsTableMap::COL_TITLE, $title, $comparison);
+    }
+
+    /**
      * Filter the query on the type column
      *
      * Example usage:
@@ -387,146 +396,6 @@ abstract class SuitsQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(SuitsTableMap::COL_TYPE, $type, $comparison);
-    }
-
-    /**
-     * Filter the query on the plaintifflawyerid column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByPlaintifflawyerid(1234); // WHERE plaintifflawyerid = 1234
-     * $query->filterByPlaintifflawyerid(array(12, 34)); // WHERE plaintifflawyerid IN (12, 34)
-     * $query->filterByPlaintifflawyerid(array('min' => 12)); // WHERE plaintifflawyerid > 12
-     * </code>
-     *
-     * @param     mixed $plaintifflawyerid The value to use as filter.
-     *              Use scalar values for equality.
-     *              Use array values for in_array() equivalent.
-     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return $this|ChildSuitsQuery The current query, for fluid interface
-     */
-    public function filterByPlaintifflawyerid($plaintifflawyerid = null, $comparison = null)
-    {
-        if (is_array($plaintifflawyerid)) {
-            $useMinMax = false;
-            if (isset($plaintifflawyerid['min'])) {
-                $this->addUsingAlias(SuitsTableMap::COL_PLAINTIFFLAWYERID, $plaintifflawyerid['min'], Criteria::GREATER_EQUAL);
-                $useMinMax = true;
-            }
-            if (isset($plaintifflawyerid['max'])) {
-                $this->addUsingAlias(SuitsTableMap::COL_PLAINTIFFLAWYERID, $plaintifflawyerid['max'], Criteria::LESS_EQUAL);
-                $useMinMax = true;
-            }
-            if ($useMinMax) {
-                return $this;
-            }
-            if (null === $comparison) {
-                $comparison = Criteria::IN;
-            }
-        }
-
-        return $this->addUsingAlias(SuitsTableMap::COL_PLAINTIFFLAWYERID, $plaintifflawyerid, $comparison);
-    }
-
-    /**
-     * Filter the query on the plaintifflawyername column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByPlaintifflawyername('fooValue');   // WHERE plaintifflawyername = 'fooValue'
-     * $query->filterByPlaintifflawyername('%fooValue%'); // WHERE plaintifflawyername LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $plaintifflawyername The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return $this|ChildSuitsQuery The current query, for fluid interface
-     */
-    public function filterByPlaintifflawyername($plaintifflawyername = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($plaintifflawyername)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $plaintifflawyername)) {
-                $plaintifflawyername = str_replace('*', '%', $plaintifflawyername);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(SuitsTableMap::COL_PLAINTIFFLAWYERNAME, $plaintifflawyername, $comparison);
-    }
-
-    /**
-     * Filter the query on the defendantlawyerid column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByDefendantlawyerid(1234); // WHERE defendantlawyerid = 1234
-     * $query->filterByDefendantlawyerid(array(12, 34)); // WHERE defendantlawyerid IN (12, 34)
-     * $query->filterByDefendantlawyerid(array('min' => 12)); // WHERE defendantlawyerid > 12
-     * </code>
-     *
-     * @param     mixed $defendantlawyerid The value to use as filter.
-     *              Use scalar values for equality.
-     *              Use array values for in_array() equivalent.
-     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return $this|ChildSuitsQuery The current query, for fluid interface
-     */
-    public function filterByDefendantlawyerid($defendantlawyerid = null, $comparison = null)
-    {
-        if (is_array($defendantlawyerid)) {
-            $useMinMax = false;
-            if (isset($defendantlawyerid['min'])) {
-                $this->addUsingAlias(SuitsTableMap::COL_DEFENDANTLAWYERID, $defendantlawyerid['min'], Criteria::GREATER_EQUAL);
-                $useMinMax = true;
-            }
-            if (isset($defendantlawyerid['max'])) {
-                $this->addUsingAlias(SuitsTableMap::COL_DEFENDANTLAWYERID, $defendantlawyerid['max'], Criteria::LESS_EQUAL);
-                $useMinMax = true;
-            }
-            if ($useMinMax) {
-                return $this;
-            }
-            if (null === $comparison) {
-                $comparison = Criteria::IN;
-            }
-        }
-
-        return $this->addUsingAlias(SuitsTableMap::COL_DEFENDANTLAWYERID, $defendantlawyerid, $comparison);
-    }
-
-    /**
-     * Filter the query on the defendantlawyername column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByDefendantlawyername('fooValue');   // WHERE defendantlawyername = 'fooValue'
-     * $query->filterByDefendantlawyername('%fooValue%'); // WHERE defendantlawyername LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $defendantlawyername The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return $this|ChildSuitsQuery The current query, for fluid interface
-     */
-    public function filterByDefendantlawyername($defendantlawyername = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($defendantlawyername)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $defendantlawyername)) {
-                $defendantlawyername = str_replace('*', '%', $defendantlawyername);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(SuitsTableMap::COL_DEFENDANTLAWYERNAME, $defendantlawyername, $comparison);
     }
 
     /**
@@ -571,76 +440,6 @@ abstract class SuitsQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the judgeid column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByJudgeid(1234); // WHERE judgeid = 1234
-     * $query->filterByJudgeid(array(12, 34)); // WHERE judgeid IN (12, 34)
-     * $query->filterByJudgeid(array('min' => 12)); // WHERE judgeid > 12
-     * </code>
-     *
-     * @param     mixed $judgeid The value to use as filter.
-     *              Use scalar values for equality.
-     *              Use array values for in_array() equivalent.
-     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return $this|ChildSuitsQuery The current query, for fluid interface
-     */
-    public function filterByJudgeid($judgeid = null, $comparison = null)
-    {
-        if (is_array($judgeid)) {
-            $useMinMax = false;
-            if (isset($judgeid['min'])) {
-                $this->addUsingAlias(SuitsTableMap::COL_JUDGEID, $judgeid['min'], Criteria::GREATER_EQUAL);
-                $useMinMax = true;
-            }
-            if (isset($judgeid['max'])) {
-                $this->addUsingAlias(SuitsTableMap::COL_JUDGEID, $judgeid['max'], Criteria::LESS_EQUAL);
-                $useMinMax = true;
-            }
-            if ($useMinMax) {
-                return $this;
-            }
-            if (null === $comparison) {
-                $comparison = Criteria::IN;
-            }
-        }
-
-        return $this->addUsingAlias(SuitsTableMap::COL_JUDGEID, $judgeid, $comparison);
-    }
-
-    /**
-     * Filter the query on the judgename column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByJudgename('fooValue');   // WHERE judgename = 'fooValue'
-     * $query->filterByJudgename('%fooValue%'); // WHERE judgename LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $judgename The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return $this|ChildSuitsQuery The current query, for fluid interface
-     */
-    public function filterByJudgename($judgename = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($judgename)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $judgename)) {
-                $judgename = str_replace('*', '%', $judgename);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(SuitsTableMap::COL_JUDGENAME, $judgename, $comparison);
-    }
-
-    /**
      * Filter the query on the suitstatus column
      *
      * Example usage:
@@ -667,6 +466,35 @@ abstract class SuitsQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(SuitsTableMap::COL_SUITSTATUS, $suitstatus, $comparison);
+    }
+
+    /**
+     * Filter the query on the suitaccess column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterBySuitaccess('fooValue');   // WHERE suitaccess = 'fooValue'
+     * $query->filterBySuitaccess('%fooValue%'); // WHERE suitaccess LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $suitaccess The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildSuitsQuery The current query, for fluid interface
+     */
+    public function filterBySuitaccess($suitaccess = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($suitaccess)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $suitaccess)) {
+                $suitaccess = str_replace('*', '%', $suitaccess);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(SuitsTableMap::COL_SUITACCESS, $suitaccess, $comparison);
     }
 
     /**

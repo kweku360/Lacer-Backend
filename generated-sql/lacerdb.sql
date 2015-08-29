@@ -4,6 +4,24 @@
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ---------------------------------------------------------------------
+-- courts
+-- ---------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `courts`;
+
+CREATE TABLE `courts`
+(
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `name` VARCHAR(255) NOT NULL,
+    `type` VARCHAR(255) NOT NULL,
+    `description` TEXT NOT NULL,
+    `status` VARCHAR(255) NOT NULL,
+    `created` INTEGER NOT NULL,
+    `modified` INTEGER NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
+-- ---------------------------------------------------------------------
 -- defendants
 -- ---------------------------------------------------------------------
 
@@ -136,6 +154,62 @@ CREATE TABLE `plaintiffs`
 ) ENGINE=InnoDB;
 
 -- ---------------------------------------------------------------------
+-- suitcourts
+-- ---------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `suitcourts`;
+
+CREATE TABLE `suitcourts`
+(
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `suitid` INTEGER NOT NULL,
+    `suitnumber` VARCHAR(255) NOT NULL,
+    `courtid` INTEGER NOT NULL,
+    `courtname` VARCHAR(255) NOT NULL,
+    `created` INTEGER NOT NULL,
+    `modified` INTEGER NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
+-- ---------------------------------------------------------------------
+-- suitjudges
+-- ---------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `suitjudges`;
+
+CREATE TABLE `suitjudges`
+(
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `suitid` INTEGER NOT NULL,
+    `suitnumber` VARCHAR(255) NOT NULL,
+    `judgeid` INTEGER NOT NULL,
+    `judgenumber` VARCHAR(255) NOT NULL,
+    `judgename` VARCHAR(255) NOT NULL,
+    `created` INTEGER NOT NULL,
+    `modified` INTEGER NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
+-- ---------------------------------------------------------------------
+-- suitlawyers
+-- ---------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `suitlawyers`;
+
+CREATE TABLE `suitlawyers`
+(
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `suitid` INTEGER NOT NULL,
+    `suitnumber` VARCHAR(255) NOT NULL,
+    `lawyerid` INTEGER NOT NULL,
+    `lawyertype` VARCHAR(255) NOT NULL,
+    `lawyernumber` VARCHAR(255) NOT NULL,
+    `lawyername` VARCHAR(255) NOT NULL,
+    `created` INTEGER NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
+-- ---------------------------------------------------------------------
 -- suits
 -- ---------------------------------------------------------------------
 
@@ -145,15 +219,11 @@ CREATE TABLE `suits`
 (
     `id` INTEGER(12) NOT NULL AUTO_INCREMENT,
     `suitnumber` VARCHAR(255) NOT NULL,
+    `title` TEXT NOT NULL,
     `type` VARCHAR(255) NOT NULL,
-    `plaintifflawyerid` INTEGER(12) NOT NULL,
-    `plaintifflawyername` VARCHAR(255) NOT NULL,
-    `defendantlawyerid` INTEGER(12),
-    `defendantlawyername` VARCHAR(255),
     `datefiled` INTEGER NOT NULL,
-    `judgeid` INTEGER(12),
-    `judgename` VARCHAR(255),
     `suitstatus` VARCHAR(255) NOT NULL,
+    `suitaccess` VARCHAR(255) NOT NULL,
     `dateofadjournment` INTEGER,
     `created` INTEGER NOT NULL,
     `modified` INTEGER NOT NULL,

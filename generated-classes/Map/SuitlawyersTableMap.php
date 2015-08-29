@@ -2,8 +2,8 @@
 
 namespace Map;
 
-use \Suits;
-use \SuitsQuery;
+use \Suitlawyers;
+use \SuitlawyersQuery;
 use Propel\Runtime\Propel;
 use Propel\Runtime\ActiveQuery\Criteria;
 use Propel\Runtime\ActiveQuery\InstancePoolTrait;
@@ -16,7 +16,7 @@ use Propel\Runtime\Map\TableMapTrait;
 
 
 /**
- * This class defines the structure of the 'suits' table.
+ * This class defines the structure of the 'suitlawyers' table.
  *
  *
  *
@@ -26,7 +26,7 @@ use Propel\Runtime\Map\TableMapTrait;
  * (i.e. if it's a text column type).
  *
  */
-class SuitsTableMap extends TableMap
+class SuitlawyersTableMap extends TableMap
 {
     use InstancePoolTrait;
     use TableMapTrait;
@@ -34,7 +34,7 @@ class SuitsTableMap extends TableMap
     /**
      * The (dot-path) name of this class
      */
-    const CLASS_NAME = '.Map.SuitsTableMap';
+    const CLASS_NAME = '.Map.SuitlawyersTableMap';
 
     /**
      * The default database name for this class
@@ -44,22 +44,22 @@ class SuitsTableMap extends TableMap
     /**
      * The table name for this class
      */
-    const TABLE_NAME = 'suits';
+    const TABLE_NAME = 'suitlawyers';
 
     /**
      * The related Propel class for this table
      */
-    const OM_CLASS = '\\Suits';
+    const OM_CLASS = '\\Suitlawyers';
 
     /**
      * A class that can be returned by this tableMap
      */
-    const CLASS_DEFAULT = 'Suits';
+    const CLASS_DEFAULT = 'Suitlawyers';
 
     /**
      * The total number of columns
      */
-    const NUM_COLUMNS = 10;
+    const NUM_COLUMNS = 8;
 
     /**
      * The number of lazy-loaded columns
@@ -69,57 +69,47 @@ class SuitsTableMap extends TableMap
     /**
      * The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS)
      */
-    const NUM_HYDRATE_COLUMNS = 10;
+    const NUM_HYDRATE_COLUMNS = 8;
 
     /**
      * the column name for the id field
      */
-    const COL_ID = 'suits.id';
+    const COL_ID = 'suitlawyers.id';
+
+    /**
+     * the column name for the suitid field
+     */
+    const COL_SUITID = 'suitlawyers.suitid';
 
     /**
      * the column name for the suitnumber field
      */
-    const COL_SUITNUMBER = 'suits.suitnumber';
+    const COL_SUITNUMBER = 'suitlawyers.suitnumber';
 
     /**
-     * the column name for the title field
+     * the column name for the lawyerid field
      */
-    const COL_TITLE = 'suits.title';
+    const COL_LAWYERID = 'suitlawyers.lawyerid';
 
     /**
-     * the column name for the type field
+     * the column name for the lawyertype field
      */
-    const COL_TYPE = 'suits.type';
+    const COL_LAWYERTYPE = 'suitlawyers.lawyertype';
 
     /**
-     * the column name for the datefiled field
+     * the column name for the lawyernumber field
      */
-    const COL_DATEFILED = 'suits.datefiled';
+    const COL_LAWYERNUMBER = 'suitlawyers.lawyernumber';
 
     /**
-     * the column name for the suitstatus field
+     * the column name for the lawyername field
      */
-    const COL_SUITSTATUS = 'suits.suitstatus';
-
-    /**
-     * the column name for the suitaccess field
-     */
-    const COL_SUITACCESS = 'suits.suitaccess';
-
-    /**
-     * the column name for the dateofadjournment field
-     */
-    const COL_DATEOFADJOURNMENT = 'suits.dateofadjournment';
+    const COL_LAWYERNAME = 'suitlawyers.lawyername';
 
     /**
      * the column name for the created field
      */
-    const COL_CREATED = 'suits.created';
-
-    /**
-     * the column name for the modified field
-     */
-    const COL_MODIFIED = 'suits.modified';
+    const COL_CREATED = 'suitlawyers.created';
 
     /**
      * The default string format for model objects of the related table
@@ -133,11 +123,11 @@ class SuitsTableMap extends TableMap
      * e.g. self::$fieldNames[self::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        self::TYPE_PHPNAME       => array('Id', 'Suitnumber', 'Title', 'Type', 'Datefiled', 'Suitstatus', 'Suitaccess', 'Dateofadjournment', 'Created', 'Modified', ),
-        self::TYPE_CAMELNAME     => array('id', 'suitnumber', 'title', 'type', 'datefiled', 'suitstatus', 'suitaccess', 'dateofadjournment', 'created', 'modified', ),
-        self::TYPE_COLNAME       => array(SuitsTableMap::COL_ID, SuitsTableMap::COL_SUITNUMBER, SuitsTableMap::COL_TITLE, SuitsTableMap::COL_TYPE, SuitsTableMap::COL_DATEFILED, SuitsTableMap::COL_SUITSTATUS, SuitsTableMap::COL_SUITACCESS, SuitsTableMap::COL_DATEOFADJOURNMENT, SuitsTableMap::COL_CREATED, SuitsTableMap::COL_MODIFIED, ),
-        self::TYPE_FIELDNAME     => array('id', 'suitnumber', 'title', 'type', 'datefiled', 'suitstatus', 'suitaccess', 'dateofadjournment', 'created', 'modified', ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, )
+        self::TYPE_PHPNAME       => array('Id', 'Suitid', 'Suitnumber', 'Lawyerid', 'Lawyertype', 'Lawyernumber', 'Lawyername', 'Created', ),
+        self::TYPE_CAMELNAME     => array('id', 'suitid', 'suitnumber', 'lawyerid', 'lawyertype', 'lawyernumber', 'lawyername', 'created', ),
+        self::TYPE_COLNAME       => array(SuitlawyersTableMap::COL_ID, SuitlawyersTableMap::COL_SUITID, SuitlawyersTableMap::COL_SUITNUMBER, SuitlawyersTableMap::COL_LAWYERID, SuitlawyersTableMap::COL_LAWYERTYPE, SuitlawyersTableMap::COL_LAWYERNUMBER, SuitlawyersTableMap::COL_LAWYERNAME, SuitlawyersTableMap::COL_CREATED, ),
+        self::TYPE_FIELDNAME     => array('id', 'suitid', 'suitnumber', 'lawyerid', 'lawyertype', 'lawyernumber', 'lawyername', 'created', ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, )
     );
 
     /**
@@ -147,11 +137,11 @@ class SuitsTableMap extends TableMap
      * e.g. self::$fieldKeys[self::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        self::TYPE_PHPNAME       => array('Id' => 0, 'Suitnumber' => 1, 'Title' => 2, 'Type' => 3, 'Datefiled' => 4, 'Suitstatus' => 5, 'Suitaccess' => 6, 'Dateofadjournment' => 7, 'Created' => 8, 'Modified' => 9, ),
-        self::TYPE_CAMELNAME     => array('id' => 0, 'suitnumber' => 1, 'title' => 2, 'type' => 3, 'datefiled' => 4, 'suitstatus' => 5, 'suitaccess' => 6, 'dateofadjournment' => 7, 'created' => 8, 'modified' => 9, ),
-        self::TYPE_COLNAME       => array(SuitsTableMap::COL_ID => 0, SuitsTableMap::COL_SUITNUMBER => 1, SuitsTableMap::COL_TITLE => 2, SuitsTableMap::COL_TYPE => 3, SuitsTableMap::COL_DATEFILED => 4, SuitsTableMap::COL_SUITSTATUS => 5, SuitsTableMap::COL_SUITACCESS => 6, SuitsTableMap::COL_DATEOFADJOURNMENT => 7, SuitsTableMap::COL_CREATED => 8, SuitsTableMap::COL_MODIFIED => 9, ),
-        self::TYPE_FIELDNAME     => array('id' => 0, 'suitnumber' => 1, 'title' => 2, 'type' => 3, 'datefiled' => 4, 'suitstatus' => 5, 'suitaccess' => 6, 'dateofadjournment' => 7, 'created' => 8, 'modified' => 9, ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, )
+        self::TYPE_PHPNAME       => array('Id' => 0, 'Suitid' => 1, 'Suitnumber' => 2, 'Lawyerid' => 3, 'Lawyertype' => 4, 'Lawyernumber' => 5, 'Lawyername' => 6, 'Created' => 7, ),
+        self::TYPE_CAMELNAME     => array('id' => 0, 'suitid' => 1, 'suitnumber' => 2, 'lawyerid' => 3, 'lawyertype' => 4, 'lawyernumber' => 5, 'lawyername' => 6, 'created' => 7, ),
+        self::TYPE_COLNAME       => array(SuitlawyersTableMap::COL_ID => 0, SuitlawyersTableMap::COL_SUITID => 1, SuitlawyersTableMap::COL_SUITNUMBER => 2, SuitlawyersTableMap::COL_LAWYERID => 3, SuitlawyersTableMap::COL_LAWYERTYPE => 4, SuitlawyersTableMap::COL_LAWYERNUMBER => 5, SuitlawyersTableMap::COL_LAWYERNAME => 6, SuitlawyersTableMap::COL_CREATED => 7, ),
+        self::TYPE_FIELDNAME     => array('id' => 0, 'suitid' => 1, 'suitnumber' => 2, 'lawyerid' => 3, 'lawyertype' => 4, 'lawyernumber' => 5, 'lawyername' => 6, 'created' => 7, ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, )
     );
 
     /**
@@ -164,23 +154,21 @@ class SuitsTableMap extends TableMap
     public function initialize()
     {
         // attributes
-        $this->setName('suits');
-        $this->setPhpName('Suits');
+        $this->setName('suitlawyers');
+        $this->setPhpName('Suitlawyers');
         $this->setIdentifierQuoting(false);
-        $this->setClassName('\\Suits');
+        $this->setClassName('\\Suitlawyers');
         $this->setPackage('');
         $this->setUseIdGenerator(true);
         // columns
-        $this->addPrimaryKey('id', 'Id', 'INTEGER', true, 12, null);
+        $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
+        $this->addColumn('suitid', 'Suitid', 'INTEGER', true, null, null);
         $this->addColumn('suitnumber', 'Suitnumber', 'VARCHAR', true, 255, null);
-        $this->addColumn('title', 'Title', 'LONGVARCHAR', true, null, null);
-        $this->addColumn('type', 'Type', 'VARCHAR', true, 255, null);
-        $this->addColumn('datefiled', 'Datefiled', 'INTEGER', true, null, null);
-        $this->addColumn('suitstatus', 'Suitstatus', 'VARCHAR', true, 255, null);
-        $this->addColumn('suitaccess', 'Suitaccess', 'VARCHAR', true, 255, null);
-        $this->addColumn('dateofadjournment', 'Dateofadjournment', 'INTEGER', false, null, null);
+        $this->addColumn('lawyerid', 'Lawyerid', 'INTEGER', true, null, null);
+        $this->addColumn('lawyertype', 'Lawyertype', 'VARCHAR', true, 255, null);
+        $this->addColumn('lawyernumber', 'Lawyernumber', 'VARCHAR', true, 255, null);
+        $this->addColumn('lawyername', 'Lawyername', 'VARCHAR', true, 255, null);
         $this->addColumn('created', 'Created', 'INTEGER', true, null, null);
-        $this->addColumn('modified', 'Modified', 'INTEGER', true, null, null);
     } // initialize()
 
     /**
@@ -247,7 +235,7 @@ class SuitsTableMap extends TableMap
      */
     public static function getOMClass($withPrefix = true)
     {
-        return $withPrefix ? SuitsTableMap::CLASS_DEFAULT : SuitsTableMap::OM_CLASS;
+        return $withPrefix ? SuitlawyersTableMap::CLASS_DEFAULT : SuitlawyersTableMap::OM_CLASS;
     }
 
     /**
@@ -261,22 +249,22 @@ class SuitsTableMap extends TableMap
      *
      * @throws PropelException Any exceptions caught during processing will be
      *                         rethrown wrapped into a PropelException.
-     * @return array           (Suits object, last column rank)
+     * @return array           (Suitlawyers object, last column rank)
      */
     public static function populateObject($row, $offset = 0, $indexType = TableMap::TYPE_NUM)
     {
-        $key = SuitsTableMap::getPrimaryKeyHashFromRow($row, $offset, $indexType);
-        if (null !== ($obj = SuitsTableMap::getInstanceFromPool($key))) {
+        $key = SuitlawyersTableMap::getPrimaryKeyHashFromRow($row, $offset, $indexType);
+        if (null !== ($obj = SuitlawyersTableMap::getInstanceFromPool($key))) {
             // We no longer rehydrate the object, since this can cause data loss.
             // See http://www.propelorm.org/ticket/509
             // $obj->hydrate($row, $offset, true); // rehydrate
-            $col = $offset + SuitsTableMap::NUM_HYDRATE_COLUMNS;
+            $col = $offset + SuitlawyersTableMap::NUM_HYDRATE_COLUMNS;
         } else {
-            $cls = SuitsTableMap::OM_CLASS;
-            /** @var Suits $obj */
+            $cls = SuitlawyersTableMap::OM_CLASS;
+            /** @var Suitlawyers $obj */
             $obj = new $cls();
             $col = $obj->hydrate($row, $offset, false, $indexType);
-            SuitsTableMap::addInstanceToPool($obj, $key);
+            SuitlawyersTableMap::addInstanceToPool($obj, $key);
         }
 
         return array($obj, $col);
@@ -299,18 +287,18 @@ class SuitsTableMap extends TableMap
         $cls = static::getOMClass(false);
         // populate the object(s)
         while ($row = $dataFetcher->fetch()) {
-            $key = SuitsTableMap::getPrimaryKeyHashFromRow($row, 0, $dataFetcher->getIndexType());
-            if (null !== ($obj = SuitsTableMap::getInstanceFromPool($key))) {
+            $key = SuitlawyersTableMap::getPrimaryKeyHashFromRow($row, 0, $dataFetcher->getIndexType());
+            if (null !== ($obj = SuitlawyersTableMap::getInstanceFromPool($key))) {
                 // We no longer rehydrate the object, since this can cause data loss.
                 // See http://www.propelorm.org/ticket/509
                 // $obj->hydrate($row, 0, true); // rehydrate
                 $results[] = $obj;
             } else {
-                /** @var Suits $obj */
+                /** @var Suitlawyers $obj */
                 $obj = new $cls();
                 $obj->hydrate($row);
                 $results[] = $obj;
-                SuitsTableMap::addInstanceToPool($obj, $key);
+                SuitlawyersTableMap::addInstanceToPool($obj, $key);
             } // if key exists
         }
 
@@ -331,27 +319,23 @@ class SuitsTableMap extends TableMap
     public static function addSelectColumns(Criteria $criteria, $alias = null)
     {
         if (null === $alias) {
-            $criteria->addSelectColumn(SuitsTableMap::COL_ID);
-            $criteria->addSelectColumn(SuitsTableMap::COL_SUITNUMBER);
-            $criteria->addSelectColumn(SuitsTableMap::COL_TITLE);
-            $criteria->addSelectColumn(SuitsTableMap::COL_TYPE);
-            $criteria->addSelectColumn(SuitsTableMap::COL_DATEFILED);
-            $criteria->addSelectColumn(SuitsTableMap::COL_SUITSTATUS);
-            $criteria->addSelectColumn(SuitsTableMap::COL_SUITACCESS);
-            $criteria->addSelectColumn(SuitsTableMap::COL_DATEOFADJOURNMENT);
-            $criteria->addSelectColumn(SuitsTableMap::COL_CREATED);
-            $criteria->addSelectColumn(SuitsTableMap::COL_MODIFIED);
+            $criteria->addSelectColumn(SuitlawyersTableMap::COL_ID);
+            $criteria->addSelectColumn(SuitlawyersTableMap::COL_SUITID);
+            $criteria->addSelectColumn(SuitlawyersTableMap::COL_SUITNUMBER);
+            $criteria->addSelectColumn(SuitlawyersTableMap::COL_LAWYERID);
+            $criteria->addSelectColumn(SuitlawyersTableMap::COL_LAWYERTYPE);
+            $criteria->addSelectColumn(SuitlawyersTableMap::COL_LAWYERNUMBER);
+            $criteria->addSelectColumn(SuitlawyersTableMap::COL_LAWYERNAME);
+            $criteria->addSelectColumn(SuitlawyersTableMap::COL_CREATED);
         } else {
             $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.suitid');
             $criteria->addSelectColumn($alias . '.suitnumber');
-            $criteria->addSelectColumn($alias . '.title');
-            $criteria->addSelectColumn($alias . '.type');
-            $criteria->addSelectColumn($alias . '.datefiled');
-            $criteria->addSelectColumn($alias . '.suitstatus');
-            $criteria->addSelectColumn($alias . '.suitaccess');
-            $criteria->addSelectColumn($alias . '.dateofadjournment');
+            $criteria->addSelectColumn($alias . '.lawyerid');
+            $criteria->addSelectColumn($alias . '.lawyertype');
+            $criteria->addSelectColumn($alias . '.lawyernumber');
+            $criteria->addSelectColumn($alias . '.lawyername');
             $criteria->addSelectColumn($alias . '.created');
-            $criteria->addSelectColumn($alias . '.modified');
         }
     }
 
@@ -364,7 +348,7 @@ class SuitsTableMap extends TableMap
      */
     public static function getTableMap()
     {
-        return Propel::getServiceContainer()->getDatabaseMap(SuitsTableMap::DATABASE_NAME)->getTable(SuitsTableMap::TABLE_NAME);
+        return Propel::getServiceContainer()->getDatabaseMap(SuitlawyersTableMap::DATABASE_NAME)->getTable(SuitlawyersTableMap::TABLE_NAME);
     }
 
     /**
@@ -372,16 +356,16 @@ class SuitsTableMap extends TableMap
      */
     public static function buildTableMap()
     {
-        $dbMap = Propel::getServiceContainer()->getDatabaseMap(SuitsTableMap::DATABASE_NAME);
-        if (!$dbMap->hasTable(SuitsTableMap::TABLE_NAME)) {
-            $dbMap->addTableObject(new SuitsTableMap());
+        $dbMap = Propel::getServiceContainer()->getDatabaseMap(SuitlawyersTableMap::DATABASE_NAME);
+        if (!$dbMap->hasTable(SuitlawyersTableMap::TABLE_NAME)) {
+            $dbMap->addTableObject(new SuitlawyersTableMap());
         }
     }
 
     /**
-     * Performs a DELETE on the database, given a Suits or Criteria object OR a primary key value.
+     * Performs a DELETE on the database, given a Suitlawyers or Criteria object OR a primary key value.
      *
-     * @param mixed               $values Criteria or Suits object or primary key or array of primary keys
+     * @param mixed               $values Criteria or Suitlawyers object or primary key or array of primary keys
      *              which is used to create the DELETE statement
      * @param  ConnectionInterface $con the connection to use
      * @return int             The number of affected rows (if supported by underlying database driver).  This includes CASCADE-related rows
@@ -392,27 +376,27 @@ class SuitsTableMap extends TableMap
      public static function doDelete($values, ConnectionInterface $con = null)
      {
         if (null === $con) {
-            $con = Propel::getServiceContainer()->getWriteConnection(SuitsTableMap::DATABASE_NAME);
+            $con = Propel::getServiceContainer()->getWriteConnection(SuitlawyersTableMap::DATABASE_NAME);
         }
 
         if ($values instanceof Criteria) {
             // rename for clarity
             $criteria = $values;
-        } elseif ($values instanceof \Suits) { // it's a model object
+        } elseif ($values instanceof \Suitlawyers) { // it's a model object
             // create criteria based on pk values
             $criteria = $values->buildPkeyCriteria();
         } else { // it's a primary key, or an array of pks
-            $criteria = new Criteria(SuitsTableMap::DATABASE_NAME);
-            $criteria->add(SuitsTableMap::COL_ID, (array) $values, Criteria::IN);
+            $criteria = new Criteria(SuitlawyersTableMap::DATABASE_NAME);
+            $criteria->add(SuitlawyersTableMap::COL_ID, (array) $values, Criteria::IN);
         }
 
-        $query = SuitsQuery::create()->mergeWith($criteria);
+        $query = SuitlawyersQuery::create()->mergeWith($criteria);
 
         if ($values instanceof Criteria) {
-            SuitsTableMap::clearInstancePool();
+            SuitlawyersTableMap::clearInstancePool();
         } elseif (!is_object($values)) { // it's a primary key, or an array of pks
             foreach ((array) $values as $singleval) {
-                SuitsTableMap::removeInstanceFromPool($singleval);
+                SuitlawyersTableMap::removeInstanceFromPool($singleval);
             }
         }
 
@@ -420,20 +404,20 @@ class SuitsTableMap extends TableMap
     }
 
     /**
-     * Deletes all rows from the suits table.
+     * Deletes all rows from the suitlawyers table.
      *
      * @param ConnectionInterface $con the connection to use
      * @return int The number of affected rows (if supported by underlying database driver).
      */
     public static function doDeleteAll(ConnectionInterface $con = null)
     {
-        return SuitsQuery::create()->doDeleteAll($con);
+        return SuitlawyersQuery::create()->doDeleteAll($con);
     }
 
     /**
-     * Performs an INSERT on the database, given a Suits or Criteria object.
+     * Performs an INSERT on the database, given a Suitlawyers or Criteria object.
      *
-     * @param mixed               $criteria Criteria or Suits object containing data that is used to create the INSERT statement.
+     * @param mixed               $criteria Criteria or Suitlawyers object containing data that is used to create the INSERT statement.
      * @param ConnectionInterface $con the ConnectionInterface connection to use
      * @return mixed           The new primary key.
      * @throws PropelException Any exceptions caught during processing will be
@@ -442,22 +426,22 @@ class SuitsTableMap extends TableMap
     public static function doInsert($criteria, ConnectionInterface $con = null)
     {
         if (null === $con) {
-            $con = Propel::getServiceContainer()->getWriteConnection(SuitsTableMap::DATABASE_NAME);
+            $con = Propel::getServiceContainer()->getWriteConnection(SuitlawyersTableMap::DATABASE_NAME);
         }
 
         if ($criteria instanceof Criteria) {
             $criteria = clone $criteria; // rename for clarity
         } else {
-            $criteria = $criteria->buildCriteria(); // build Criteria from Suits object
+            $criteria = $criteria->buildCriteria(); // build Criteria from Suitlawyers object
         }
 
-        if ($criteria->containsKey(SuitsTableMap::COL_ID) && $criteria->keyContainsValue(SuitsTableMap::COL_ID) ) {
-            throw new PropelException('Cannot insert a value for auto-increment primary key ('.SuitsTableMap::COL_ID.')');
+        if ($criteria->containsKey(SuitlawyersTableMap::COL_ID) && $criteria->keyContainsValue(SuitlawyersTableMap::COL_ID) ) {
+            throw new PropelException('Cannot insert a value for auto-increment primary key ('.SuitlawyersTableMap::COL_ID.')');
         }
 
 
         // Set the correct dbName
-        $query = SuitsQuery::create()->mergeWith($criteria);
+        $query = SuitlawyersQuery::create()->mergeWith($criteria);
 
         // use transaction because $criteria could contain info
         // for more than one table (I guess, conceivably)
@@ -466,7 +450,7 @@ class SuitsTableMap extends TableMap
         });
     }
 
-} // SuitsTableMap
+} // SuitlawyersTableMap
 // This is the static code needed to register the TableMap for this table with the main Propel class.
 //
-SuitsTableMap::buildTableMap();
+SuitlawyersTableMap::buildTableMap();
