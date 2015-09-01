@@ -30,10 +30,65 @@ $app->get('/suits',function() use($app){
     }else{
         $app->response()->status(401);
     }
-    $app->response()->status(401);
+
+});
+$app->get('/suits/:id',function($id) use($app){
+    $appval = verifyToken();
+    if($appval["retState"] == true){
+        $app->render('suits/show.php',array('id' => $id));
+    }else{
+        $app->response()->status(401);
+    }
+
+});
+
+$app->options('/suits',function(){});
+$app->post('/suits',function() use($app){
+    $allPostVars = $app->request->post();
+    $app->render('suits/create.php',
+        array('vars'=>$allPostVars)
+    );
+//    $appval = verifyToken();
+//    if($appval["retState"] == true){
+//
+//    }else{
+//        $app->response()->status(401);
+//    }
+
+});
+$app->put('/suits/:id',function($id) use($app){
+    $appval = verifyToken();
+    if($appval["retState"] == true){
+        $allPutVars = $app->request->put();
+        $app->render('suits/update.php',
+            array('id' => $id,'vars'=>$allPutVars)
+        );
+    }else{
+        $app->response()->status(401);
+    }
+
+});
+$app->delete('/suits/:id',function($id) use($app){
+    $appval = verifyToken();
+    if($appval["retState"] == true){
+        $app->render('suits/delete.php',array('id' => $id));
+    }else{
+        $app->response()->status(401);
+    }
+
+});
+//user
+$app->post('/users/token',function() use($app){
+    $allPostVars = $app->request->post();
+    $app->render('users/gettoken.php',array('vars'=>$allPostVars));
+});
+$app->post('/users/new',function() use($app){
+    $allPostVars = $app->request->post();
+    $app->render('users/new.php',array('vars'=>$allPostVars));
 });
 
 $app->run();
+
 
 function verifyToken() {
     //fist we get the authorization header

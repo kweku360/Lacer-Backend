@@ -16,23 +16,24 @@ require_once 'vendor/autoload.php';
 // setup Propel
 require_once 'generated-conf/config.php';
 
-$suits = SuitsQuery::create()->find();
+$suits = SuitsQuery::create()->findOneBySuitnumber($this->data["id"]);
 $resultArray = Array();
-foreach($suits as $suit) {
-  $item = Array();
-    $item["id"] = $suit->getId();
-    $item["suitnumber"] = $suit->getSuitnumber();
-    $item["title"] = $suit->getTitle();
-    $item["type"] = $suit->getType();
-    $item["datefiled"] = $suit->getDatefiled();
-    $item["suitstatus"] = $suit->getSuitstatus();
-    $item["suitaccess"] = $suit->getSuitaccess();
-    $item["dateofadjournment"] = $suit->getDateofadjournment();
-    $item["created"] = $suit->getCreated();
-    $item["modified"] = $suit->getModified();
-    $resultArray["suits"][] = $item;
+
+if($suits == ""){
+  $resultArray["suits"] = "{}";
+}else{
+    $item = Array();
+    $item["id"] = $suits->getId();
+    $item["suitsnumber"] = $suits->getSuitnumber();
+    $item["title"] = $suits->getTitle();
+    $item["type"] = $suits->getType();
+    $item["datefiled"] = $suits->getDatefiled();
+    $item["suitstatus"] = $suits->getSuitstatus();
+    $item["suitaccess"] = $suits->getSuitaccess();
+    $item["dateofadjournment"] = $suits->getDateofadjournment();
+    $item["created"] = $suits->getCreated();
+    $item["modified"] = $suits->getModified();
+    $resultArray["suits"] = $item;
 }
-$resultArray["meta"][] = Array(
-  "total" => $suits->count()
-);
 echo json_encode($resultArray,JSON_PRETTY_PRINT);
+
