@@ -59,7 +59,7 @@ class NotificationsTableMap extends TableMap
     /**
      * The total number of columns
      */
-    const NUM_COLUMNS = 8;
+    const NUM_COLUMNS = 11;
 
     /**
      * The number of lazy-loaded columns
@@ -69,12 +69,27 @@ class NotificationsTableMap extends TableMap
     /**
      * The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS)
      */
-    const NUM_HYDRATE_COLUMNS = 8;
+    const NUM_HYDRATE_COLUMNS = 11;
 
     /**
      * the column name for the id field
      */
     const COL_ID = 'notifications.id';
+
+    /**
+     * the column name for the documentid field
+     */
+    const COL_DOCUMENTID = 'notifications.documentid';
+
+    /**
+     * the column name for the documentlink field
+     */
+    const COL_DOCUMENTLINK = 'notifications.documentlink';
+
+    /**
+     * the column name for the filer field
+     */
+    const COL_FILER = 'notifications.filer';
 
     /**
      * the column name for the type field
@@ -123,11 +138,11 @@ class NotificationsTableMap extends TableMap
      * e.g. self::$fieldNames[self::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        self::TYPE_PHPNAME       => array('Id', 'Type', 'Suitnumber', 'Datetimesent', 'Recipients', 'Status', 'Created', 'Modified', ),
-        self::TYPE_CAMELNAME     => array('id', 'type', 'suitnumber', 'datetimesent', 'recipients', 'status', 'created', 'modified', ),
-        self::TYPE_COLNAME       => array(NotificationsTableMap::COL_ID, NotificationsTableMap::COL_TYPE, NotificationsTableMap::COL_SUITNUMBER, NotificationsTableMap::COL_DATETIMESENT, NotificationsTableMap::COL_RECIPIENTS, NotificationsTableMap::COL_STATUS, NotificationsTableMap::COL_CREATED, NotificationsTableMap::COL_MODIFIED, ),
-        self::TYPE_FIELDNAME     => array('id', 'type', 'suitnumber', 'datetimesent', 'recipients', 'status', 'created', 'modified', ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, )
+        self::TYPE_PHPNAME       => array('Id', 'Documentid', 'Documentlink', 'Filer', 'Type', 'Suitnumber', 'Datetimesent', 'Recipients', 'Status', 'Created', 'Modified', ),
+        self::TYPE_CAMELNAME     => array('id', 'documentid', 'documentlink', 'filer', 'type', 'suitnumber', 'datetimesent', 'recipients', 'status', 'created', 'modified', ),
+        self::TYPE_COLNAME       => array(NotificationsTableMap::COL_ID, NotificationsTableMap::COL_DOCUMENTID, NotificationsTableMap::COL_DOCUMENTLINK, NotificationsTableMap::COL_FILER, NotificationsTableMap::COL_TYPE, NotificationsTableMap::COL_SUITNUMBER, NotificationsTableMap::COL_DATETIMESENT, NotificationsTableMap::COL_RECIPIENTS, NotificationsTableMap::COL_STATUS, NotificationsTableMap::COL_CREATED, NotificationsTableMap::COL_MODIFIED, ),
+        self::TYPE_FIELDNAME     => array('id', 'documentid', 'documentlink', 'filer', 'type', 'suitnumber', 'datetimesent', 'recipients', 'status', 'created', 'modified', ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, )
     );
 
     /**
@@ -137,11 +152,11 @@ class NotificationsTableMap extends TableMap
      * e.g. self::$fieldKeys[self::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        self::TYPE_PHPNAME       => array('Id' => 0, 'Type' => 1, 'Suitnumber' => 2, 'Datetimesent' => 3, 'Recipients' => 4, 'Status' => 5, 'Created' => 6, 'Modified' => 7, ),
-        self::TYPE_CAMELNAME     => array('id' => 0, 'type' => 1, 'suitnumber' => 2, 'datetimesent' => 3, 'recipients' => 4, 'status' => 5, 'created' => 6, 'modified' => 7, ),
-        self::TYPE_COLNAME       => array(NotificationsTableMap::COL_ID => 0, NotificationsTableMap::COL_TYPE => 1, NotificationsTableMap::COL_SUITNUMBER => 2, NotificationsTableMap::COL_DATETIMESENT => 3, NotificationsTableMap::COL_RECIPIENTS => 4, NotificationsTableMap::COL_STATUS => 5, NotificationsTableMap::COL_CREATED => 6, NotificationsTableMap::COL_MODIFIED => 7, ),
-        self::TYPE_FIELDNAME     => array('id' => 0, 'type' => 1, 'suitnumber' => 2, 'datetimesent' => 3, 'recipients' => 4, 'status' => 5, 'created' => 6, 'modified' => 7, ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, )
+        self::TYPE_PHPNAME       => array('Id' => 0, 'Documentid' => 1, 'Documentlink' => 2, 'Filer' => 3, 'Type' => 4, 'Suitnumber' => 5, 'Datetimesent' => 6, 'Recipients' => 7, 'Status' => 8, 'Created' => 9, 'Modified' => 10, ),
+        self::TYPE_CAMELNAME     => array('id' => 0, 'documentid' => 1, 'documentlink' => 2, 'filer' => 3, 'type' => 4, 'suitnumber' => 5, 'datetimesent' => 6, 'recipients' => 7, 'status' => 8, 'created' => 9, 'modified' => 10, ),
+        self::TYPE_COLNAME       => array(NotificationsTableMap::COL_ID => 0, NotificationsTableMap::COL_DOCUMENTID => 1, NotificationsTableMap::COL_DOCUMENTLINK => 2, NotificationsTableMap::COL_FILER => 3, NotificationsTableMap::COL_TYPE => 4, NotificationsTableMap::COL_SUITNUMBER => 5, NotificationsTableMap::COL_DATETIMESENT => 6, NotificationsTableMap::COL_RECIPIENTS => 7, NotificationsTableMap::COL_STATUS => 8, NotificationsTableMap::COL_CREATED => 9, NotificationsTableMap::COL_MODIFIED => 10, ),
+        self::TYPE_FIELDNAME     => array('id' => 0, 'documentid' => 1, 'documentlink' => 2, 'filer' => 3, 'type' => 4, 'suitnumber' => 5, 'datetimesent' => 6, 'recipients' => 7, 'status' => 8, 'created' => 9, 'modified' => 10, ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, )
     );
 
     /**
@@ -162,6 +177,9 @@ class NotificationsTableMap extends TableMap
         $this->setUseIdGenerator(true);
         // columns
         $this->addPrimaryKey('id', 'Id', 'INTEGER', true, null, null);
+        $this->addColumn('documentid', 'Documentid', 'INTEGER', true, 13, null);
+        $this->addColumn('documentlink', 'Documentlink', 'VARCHAR', true, 255, null);
+        $this->addColumn('filer', 'Filer', 'VARCHAR', true, 255, null);
         $this->addColumn('type', 'Type', 'VARCHAR', true, 255, null);
         $this->addColumn('suitnumber', 'Suitnumber', 'VARCHAR', true, 255, null);
         $this->addColumn('datetimesent', 'Datetimesent', 'INTEGER', true, null, null);
@@ -320,6 +338,9 @@ class NotificationsTableMap extends TableMap
     {
         if (null === $alias) {
             $criteria->addSelectColumn(NotificationsTableMap::COL_ID);
+            $criteria->addSelectColumn(NotificationsTableMap::COL_DOCUMENTID);
+            $criteria->addSelectColumn(NotificationsTableMap::COL_DOCUMENTLINK);
+            $criteria->addSelectColumn(NotificationsTableMap::COL_FILER);
             $criteria->addSelectColumn(NotificationsTableMap::COL_TYPE);
             $criteria->addSelectColumn(NotificationsTableMap::COL_SUITNUMBER);
             $criteria->addSelectColumn(NotificationsTableMap::COL_DATETIMESENT);
@@ -329,6 +350,9 @@ class NotificationsTableMap extends TableMap
             $criteria->addSelectColumn(NotificationsTableMap::COL_MODIFIED);
         } else {
             $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.documentid');
+            $criteria->addSelectColumn($alias . '.documentlink');
+            $criteria->addSelectColumn($alias . '.filer');
             $criteria->addSelectColumn($alias . '.type');
             $criteria->addSelectColumn($alias . '.suitnumber');
             $criteria->addSelectColumn($alias . '.datetimesent');

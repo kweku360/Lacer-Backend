@@ -20,19 +20,20 @@ $suits = SuitsQuery::create()->find();
 $resultArray = Array();
 foreach($suits as $suit) {
   $item = Array();
-    $item["id"] = $suit->getId();
-    $item["suitnumber"] = $suit->getSuitnumber();
-    $item["title"] = $suit->getTitle();
-    $item["type"] = $suit->getType();
-    $item["datefiled"] = $suit->getDatefiled();
-    $item["suitstatus"] = $suit->getSuitstatus();
-    $item["suitaccess"] = $suit->getSuitaccess();
-    $item["dateofadjournment"] = $suit->getDateofadjournment();
-    $item["created"] = $suit->getCreated();
-    $item["modified"] = $suit->getModified();
-    $resultArray["suits"][] = $item;
+  $item["id"] = $suit->getId();
+  $item["suitnumber"] = $suit->getSuitnumber();
+  $item["title"] = $suit->getTitle();
+  $item["type"] = $suit->getType();
+  $item["datefiled"] = $suit->getDatefiled();
+  $item["suitstatus"] = $suit->getSuitstatus();
+  $item["suitaccess"] = $suit->getSuitaccess();
+  $item["suitcourt"] = $suit->getSuitcourt();
+  $item["created"] = $suit->getCreated();
+  $item["modified"] = $suit->getModified();
+  $resultArray["suits"][] = $item;
 }
 $resultArray["meta"][] = Array(
-  "total" => $suits->count()
+    "total" => $suits->count()
 );
+http_response_code(404);
 echo json_encode($resultArray,JSON_PRETTY_PRINT);

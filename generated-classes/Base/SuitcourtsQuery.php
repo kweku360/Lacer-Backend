@@ -24,6 +24,7 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildSuitcourtsQuery orderBySuitnumber($order = Criteria::ASC) Order by the suitnumber column
  * @method     ChildSuitcourtsQuery orderByCourtid($order = Criteria::ASC) Order by the courtid column
  * @method     ChildSuitcourtsQuery orderByCourtname($order = Criteria::ASC) Order by the courtname column
+ * @method     ChildSuitcourtsQuery orderByStatus($order = Criteria::ASC) Order by the status column
  * @method     ChildSuitcourtsQuery orderByCreated($order = Criteria::ASC) Order by the created column
  * @method     ChildSuitcourtsQuery orderByModified($order = Criteria::ASC) Order by the modified column
  *
@@ -32,6 +33,7 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildSuitcourtsQuery groupBySuitnumber() Group by the suitnumber column
  * @method     ChildSuitcourtsQuery groupByCourtid() Group by the courtid column
  * @method     ChildSuitcourtsQuery groupByCourtname() Group by the courtname column
+ * @method     ChildSuitcourtsQuery groupByStatus() Group by the status column
  * @method     ChildSuitcourtsQuery groupByCreated() Group by the created column
  * @method     ChildSuitcourtsQuery groupByModified() Group by the modified column
  *
@@ -51,6 +53,7 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildSuitcourts findOneBySuitnumber(string $suitnumber) Return the first ChildSuitcourts filtered by the suitnumber column
  * @method     ChildSuitcourts findOneByCourtid(int $courtid) Return the first ChildSuitcourts filtered by the courtid column
  * @method     ChildSuitcourts findOneByCourtname(string $courtname) Return the first ChildSuitcourts filtered by the courtname column
+ * @method     ChildSuitcourts findOneByStatus(string $status) Return the first ChildSuitcourts filtered by the status column
  * @method     ChildSuitcourts findOneByCreated(int $created) Return the first ChildSuitcourts filtered by the created column
  * @method     ChildSuitcourts findOneByModified(int $modified) Return the first ChildSuitcourts filtered by the modified column *
 
@@ -62,6 +65,7 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildSuitcourts requireOneBySuitnumber(string $suitnumber) Return the first ChildSuitcourts filtered by the suitnumber column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildSuitcourts requireOneByCourtid(int $courtid) Return the first ChildSuitcourts filtered by the courtid column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildSuitcourts requireOneByCourtname(string $courtname) Return the first ChildSuitcourts filtered by the courtname column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildSuitcourts requireOneByStatus(string $status) Return the first ChildSuitcourts filtered by the status column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildSuitcourts requireOneByCreated(int $created) Return the first ChildSuitcourts filtered by the created column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildSuitcourts requireOneByModified(int $modified) Return the first ChildSuitcourts filtered by the modified column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  *
@@ -71,6 +75,7 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildSuitcourts[]|ObjectCollection findBySuitnumber(string $suitnumber) Return ChildSuitcourts objects filtered by the suitnumber column
  * @method     ChildSuitcourts[]|ObjectCollection findByCourtid(int $courtid) Return ChildSuitcourts objects filtered by the courtid column
  * @method     ChildSuitcourts[]|ObjectCollection findByCourtname(string $courtname) Return ChildSuitcourts objects filtered by the courtname column
+ * @method     ChildSuitcourts[]|ObjectCollection findByStatus(string $status) Return ChildSuitcourts objects filtered by the status column
  * @method     ChildSuitcourts[]|ObjectCollection findByCreated(int $created) Return ChildSuitcourts objects filtered by the created column
  * @method     ChildSuitcourts[]|ObjectCollection findByModified(int $modified) Return ChildSuitcourts objects filtered by the modified column
  * @method     ChildSuitcourts[]|\Propel\Runtime\Util\PropelModelPager paginate($page = 1, $maxPerPage = 10, ConnectionInterface $con = null) Issue a SELECT query based on the current ModelCriteria and uses a page and a maximum number of results per page to compute an offset and a limit
@@ -165,7 +170,7 @@ abstract class SuitcourtsQuery extends ModelCriteria
      */
     protected function findPkSimple($key, ConnectionInterface $con)
     {
-        $sql = 'SELECT id, suitid, suitnumber, courtid, courtname, created, modified FROM suitcourts WHERE id = :p0';
+        $sql = 'SELECT id, suitid, suitnumber, courtid, courtname, status, created, modified FROM suitcourts WHERE id = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -434,6 +439,35 @@ abstract class SuitcourtsQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(SuitcourtsTableMap::COL_COURTNAME, $courtname, $comparison);
+    }
+
+    /**
+     * Filter the query on the status column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByStatus('fooValue');   // WHERE status = 'fooValue'
+     * $query->filterByStatus('%fooValue%'); // WHERE status LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $status The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildSuitcourtsQuery The current query, for fluid interface
+     */
+    public function filterByStatus($status = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($status)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $status)) {
+                $status = str_replace('*', '%', $status);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(SuitcourtsTableMap::COL_STATUS, $status, $comparison);
     }
 
     /**

@@ -59,7 +59,7 @@ class SuitsTableMap extends TableMap
     /**
      * The total number of columns
      */
-    const NUM_COLUMNS = 10;
+    const NUM_COLUMNS = 13;
 
     /**
      * The number of lazy-loaded columns
@@ -69,7 +69,7 @@ class SuitsTableMap extends TableMap
     /**
      * The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS)
      */
-    const NUM_HYDRATE_COLUMNS = 10;
+    const NUM_HYDRATE_COLUMNS = 13;
 
     /**
      * the column name for the id field
@@ -107,9 +107,24 @@ class SuitsTableMap extends TableMap
     const COL_SUITACCESS = 'suits.suitaccess';
 
     /**
-     * the column name for the dateofadjournment field
+     * the column name for the suitdateid field
      */
-    const COL_DATEOFADJOURNMENT = 'suits.dateofadjournment';
+    const COL_SUITDATEID = 'suits.suitdateid';
+
+    /**
+     * the column name for the suitcourt field
+     */
+    const COL_SUITCOURT = 'suits.suitcourt';
+
+    /**
+     * the column name for the userid field
+     */
+    const COL_USERID = 'suits.userid';
+
+    /**
+     * the column name for the dataentryname field
+     */
+    const COL_DATAENTRYNAME = 'suits.dataentryname';
 
     /**
      * the column name for the created field
@@ -133,11 +148,11 @@ class SuitsTableMap extends TableMap
      * e.g. self::$fieldNames[self::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        self::TYPE_PHPNAME       => array('Id', 'Suitnumber', 'Title', 'Type', 'Datefiled', 'Suitstatus', 'Suitaccess', 'Dateofadjournment', 'Created', 'Modified', ),
-        self::TYPE_CAMELNAME     => array('id', 'suitnumber', 'title', 'type', 'datefiled', 'suitstatus', 'suitaccess', 'dateofadjournment', 'created', 'modified', ),
-        self::TYPE_COLNAME       => array(SuitsTableMap::COL_ID, SuitsTableMap::COL_SUITNUMBER, SuitsTableMap::COL_TITLE, SuitsTableMap::COL_TYPE, SuitsTableMap::COL_DATEFILED, SuitsTableMap::COL_SUITSTATUS, SuitsTableMap::COL_SUITACCESS, SuitsTableMap::COL_DATEOFADJOURNMENT, SuitsTableMap::COL_CREATED, SuitsTableMap::COL_MODIFIED, ),
-        self::TYPE_FIELDNAME     => array('id', 'suitnumber', 'title', 'type', 'datefiled', 'suitstatus', 'suitaccess', 'dateofadjournment', 'created', 'modified', ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, )
+        self::TYPE_PHPNAME       => array('Id', 'Suitnumber', 'Title', 'Type', 'Datefiled', 'Suitstatus', 'Suitaccess', 'Suitdateid', 'Suitcourt', 'Userid', 'Dataentryname', 'Created', 'Modified', ),
+        self::TYPE_CAMELNAME     => array('id', 'suitnumber', 'title', 'type', 'datefiled', 'suitstatus', 'suitaccess', 'suitdateid', 'suitcourt', 'userid', 'dataentryname', 'created', 'modified', ),
+        self::TYPE_COLNAME       => array(SuitsTableMap::COL_ID, SuitsTableMap::COL_SUITNUMBER, SuitsTableMap::COL_TITLE, SuitsTableMap::COL_TYPE, SuitsTableMap::COL_DATEFILED, SuitsTableMap::COL_SUITSTATUS, SuitsTableMap::COL_SUITACCESS, SuitsTableMap::COL_SUITDATEID, SuitsTableMap::COL_SUITCOURT, SuitsTableMap::COL_USERID, SuitsTableMap::COL_DATAENTRYNAME, SuitsTableMap::COL_CREATED, SuitsTableMap::COL_MODIFIED, ),
+        self::TYPE_FIELDNAME     => array('id', 'suitnumber', 'title', 'type', 'datefiled', 'suitstatus', 'suitaccess', 'suitdateid', 'suitcourt', 'userid', 'dataentryname', 'created', 'modified', ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, )
     );
 
     /**
@@ -147,11 +162,11 @@ class SuitsTableMap extends TableMap
      * e.g. self::$fieldKeys[self::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        self::TYPE_PHPNAME       => array('Id' => 0, 'Suitnumber' => 1, 'Title' => 2, 'Type' => 3, 'Datefiled' => 4, 'Suitstatus' => 5, 'Suitaccess' => 6, 'Dateofadjournment' => 7, 'Created' => 8, 'Modified' => 9, ),
-        self::TYPE_CAMELNAME     => array('id' => 0, 'suitnumber' => 1, 'title' => 2, 'type' => 3, 'datefiled' => 4, 'suitstatus' => 5, 'suitaccess' => 6, 'dateofadjournment' => 7, 'created' => 8, 'modified' => 9, ),
-        self::TYPE_COLNAME       => array(SuitsTableMap::COL_ID => 0, SuitsTableMap::COL_SUITNUMBER => 1, SuitsTableMap::COL_TITLE => 2, SuitsTableMap::COL_TYPE => 3, SuitsTableMap::COL_DATEFILED => 4, SuitsTableMap::COL_SUITSTATUS => 5, SuitsTableMap::COL_SUITACCESS => 6, SuitsTableMap::COL_DATEOFADJOURNMENT => 7, SuitsTableMap::COL_CREATED => 8, SuitsTableMap::COL_MODIFIED => 9, ),
-        self::TYPE_FIELDNAME     => array('id' => 0, 'suitnumber' => 1, 'title' => 2, 'type' => 3, 'datefiled' => 4, 'suitstatus' => 5, 'suitaccess' => 6, 'dateofadjournment' => 7, 'created' => 8, 'modified' => 9, ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, )
+        self::TYPE_PHPNAME       => array('Id' => 0, 'Suitnumber' => 1, 'Title' => 2, 'Type' => 3, 'Datefiled' => 4, 'Suitstatus' => 5, 'Suitaccess' => 6, 'Suitdateid' => 7, 'Suitcourt' => 8, 'Userid' => 9, 'Dataentryname' => 10, 'Created' => 11, 'Modified' => 12, ),
+        self::TYPE_CAMELNAME     => array('id' => 0, 'suitnumber' => 1, 'title' => 2, 'type' => 3, 'datefiled' => 4, 'suitstatus' => 5, 'suitaccess' => 6, 'suitdateid' => 7, 'suitcourt' => 8, 'userid' => 9, 'dataentryname' => 10, 'created' => 11, 'modified' => 12, ),
+        self::TYPE_COLNAME       => array(SuitsTableMap::COL_ID => 0, SuitsTableMap::COL_SUITNUMBER => 1, SuitsTableMap::COL_TITLE => 2, SuitsTableMap::COL_TYPE => 3, SuitsTableMap::COL_DATEFILED => 4, SuitsTableMap::COL_SUITSTATUS => 5, SuitsTableMap::COL_SUITACCESS => 6, SuitsTableMap::COL_SUITDATEID => 7, SuitsTableMap::COL_SUITCOURT => 8, SuitsTableMap::COL_USERID => 9, SuitsTableMap::COL_DATAENTRYNAME => 10, SuitsTableMap::COL_CREATED => 11, SuitsTableMap::COL_MODIFIED => 12, ),
+        self::TYPE_FIELDNAME     => array('id' => 0, 'suitnumber' => 1, 'title' => 2, 'type' => 3, 'datefiled' => 4, 'suitstatus' => 5, 'suitaccess' => 6, 'suitdateid' => 7, 'suitcourt' => 8, 'userid' => 9, 'dataentryname' => 10, 'created' => 11, 'modified' => 12, ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, )
     );
 
     /**
@@ -178,7 +193,10 @@ class SuitsTableMap extends TableMap
         $this->addColumn('datefiled', 'Datefiled', 'INTEGER', true, null, null);
         $this->addColumn('suitstatus', 'Suitstatus', 'VARCHAR', true, 255, null);
         $this->addColumn('suitaccess', 'Suitaccess', 'VARCHAR', true, 255, null);
-        $this->addColumn('dateofadjournment', 'Dateofadjournment', 'INTEGER', false, null, null);
+        $this->addColumn('suitdateid', 'Suitdateid', 'INTEGER', false, 20, null);
+        $this->addColumn('suitcourt', 'Suitcourt', 'VARCHAR', true, 255, null);
+        $this->addColumn('userid', 'Userid', 'INTEGER', true, null, null);
+        $this->addColumn('dataentryname', 'Dataentryname', 'INTEGER', true, null, null);
         $this->addColumn('created', 'Created', 'INTEGER', true, null, null);
         $this->addColumn('modified', 'Modified', 'INTEGER', true, null, null);
     } // initialize()
@@ -338,7 +356,10 @@ class SuitsTableMap extends TableMap
             $criteria->addSelectColumn(SuitsTableMap::COL_DATEFILED);
             $criteria->addSelectColumn(SuitsTableMap::COL_SUITSTATUS);
             $criteria->addSelectColumn(SuitsTableMap::COL_SUITACCESS);
-            $criteria->addSelectColumn(SuitsTableMap::COL_DATEOFADJOURNMENT);
+            $criteria->addSelectColumn(SuitsTableMap::COL_SUITDATEID);
+            $criteria->addSelectColumn(SuitsTableMap::COL_SUITCOURT);
+            $criteria->addSelectColumn(SuitsTableMap::COL_USERID);
+            $criteria->addSelectColumn(SuitsTableMap::COL_DATAENTRYNAME);
             $criteria->addSelectColumn(SuitsTableMap::COL_CREATED);
             $criteria->addSelectColumn(SuitsTableMap::COL_MODIFIED);
         } else {
@@ -349,7 +370,10 @@ class SuitsTableMap extends TableMap
             $criteria->addSelectColumn($alias . '.datefiled');
             $criteria->addSelectColumn($alias . '.suitstatus');
             $criteria->addSelectColumn($alias . '.suitaccess');
-            $criteria->addSelectColumn($alias . '.dateofadjournment');
+            $criteria->addSelectColumn($alias . '.suitdateid');
+            $criteria->addSelectColumn($alias . '.suitcourt');
+            $criteria->addSelectColumn($alias . '.userid');
+            $criteria->addSelectColumn($alias . '.dataentryname');
             $criteria->addSelectColumn($alias . '.created');
             $criteria->addSelectColumn($alias . '.modified');
         }

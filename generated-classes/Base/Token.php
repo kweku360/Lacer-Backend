@@ -84,10 +84,22 @@ abstract class Token implements ActiveRecordInterface
     protected $userid;
 
     /**
+     * The value for the type field.
+     * @var        string
+     */
+    protected $type;
+
+    /**
      * The value for the expires field.
      * @var        int
      */
     protected $expires;
+
+    /**
+     * The value for the status field.
+     * @var        string
+     */
+    protected $status;
 
     /**
      * The value for the created field.
@@ -367,6 +379,16 @@ abstract class Token implements ActiveRecordInterface
     }
 
     /**
+     * Get the [type] column value.
+     *
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
      * Get the [expires] column value.
      *
      * @return int
@@ -374,6 +396,16 @@ abstract class Token implements ActiveRecordInterface
     public function getExpires()
     {
         return $this->expires;
+    }
+
+    /**
+     * Get the [status] column value.
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
     }
 
     /**
@@ -477,6 +509,26 @@ abstract class Token implements ActiveRecordInterface
     } // setUserid()
 
     /**
+     * Set the value of [type] column.
+     *
+     * @param string $v new value
+     * @return $this|\Token The current object (for fluent API support)
+     */
+    public function setType($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->type !== $v) {
+            $this->type = $v;
+            $this->modifiedColumns[TokenTableMap::COL_TYPE] = true;
+        }
+
+        return $this;
+    } // setType()
+
+    /**
      * Set the value of [expires] column.
      *
      * @param int $v new value
@@ -495,6 +547,26 @@ abstract class Token implements ActiveRecordInterface
 
         return $this;
     } // setExpires()
+
+    /**
+     * Set the value of [status] column.
+     *
+     * @param string $v new value
+     * @return $this|\Token The current object (for fluent API support)
+     */
+    public function setStatus($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->status !== $v) {
+            $this->status = $v;
+            $this->modifiedColumns[TokenTableMap::COL_STATUS] = true;
+        }
+
+        return $this;
+    } // setStatus()
 
     /**
      * Set the value of [created] column.
@@ -584,13 +656,19 @@ abstract class Token implements ActiveRecordInterface
             $col = $row[TableMap::TYPE_NUM == $indexType ? 3 + $startcol : TokenTableMap::translateFieldName('Userid', TableMap::TYPE_PHPNAME, $indexType)];
             $this->userid = (null !== $col) ? (int) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 4 + $startcol : TokenTableMap::translateFieldName('Expires', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 4 + $startcol : TokenTableMap::translateFieldName('Type', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->type = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 5 + $startcol : TokenTableMap::translateFieldName('Expires', TableMap::TYPE_PHPNAME, $indexType)];
             $this->expires = (null !== $col) ? (int) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 5 + $startcol : TokenTableMap::translateFieldName('Created', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 6 + $startcol : TokenTableMap::translateFieldName('Status', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->status = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 7 + $startcol : TokenTableMap::translateFieldName('Created', TableMap::TYPE_PHPNAME, $indexType)];
             $this->created = (null !== $col) ? (int) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 6 + $startcol : TokenTableMap::translateFieldName('Modified', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 8 + $startcol : TokenTableMap::translateFieldName('Modified', TableMap::TYPE_PHPNAME, $indexType)];
             $this->modified = (null !== $col) ? (int) $col : null;
             $this->resetModified();
 
@@ -600,7 +678,7 @@ abstract class Token implements ActiveRecordInterface
                 $this->ensureConsistency();
             }
 
-            return $startcol + 7; // 7 = TokenTableMap::NUM_HYDRATE_COLUMNS.
+            return $startcol + 9; // 9 = TokenTableMap::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException(sprintf('Error populating %s object', '\\Token'), 0, $e);
@@ -809,8 +887,14 @@ abstract class Token implements ActiveRecordInterface
         if ($this->isColumnModified(TokenTableMap::COL_USERID)) {
             $modifiedColumns[':p' . $index++]  = 'userid';
         }
+        if ($this->isColumnModified(TokenTableMap::COL_TYPE)) {
+            $modifiedColumns[':p' . $index++]  = 'type';
+        }
         if ($this->isColumnModified(TokenTableMap::COL_EXPIRES)) {
             $modifiedColumns[':p' . $index++]  = 'expires';
+        }
+        if ($this->isColumnModified(TokenTableMap::COL_STATUS)) {
+            $modifiedColumns[':p' . $index++]  = 'status';
         }
         if ($this->isColumnModified(TokenTableMap::COL_CREATED)) {
             $modifiedColumns[':p' . $index++]  = 'created';
@@ -841,8 +925,14 @@ abstract class Token implements ActiveRecordInterface
                     case 'userid':
                         $stmt->bindValue($identifier, $this->userid, PDO::PARAM_INT);
                         break;
+                    case 'type':
+                        $stmt->bindValue($identifier, $this->type, PDO::PARAM_STR);
+                        break;
                     case 'expires':
                         $stmt->bindValue($identifier, $this->expires, PDO::PARAM_INT);
+                        break;
+                    case 'status':
+                        $stmt->bindValue($identifier, $this->status, PDO::PARAM_STR);
                         break;
                     case 'created':
                         $stmt->bindValue($identifier, $this->created, PDO::PARAM_INT);
@@ -925,12 +1015,18 @@ abstract class Token implements ActiveRecordInterface
                 return $this->getUserid();
                 break;
             case 4:
-                return $this->getExpires();
+                return $this->getType();
                 break;
             case 5:
-                return $this->getCreated();
+                return $this->getExpires();
                 break;
             case 6:
+                return $this->getStatus();
+                break;
+            case 7:
+                return $this->getCreated();
+                break;
+            case 8:
                 return $this->getModified();
                 break;
             default:
@@ -966,9 +1062,11 @@ abstract class Token implements ActiveRecordInterface
             $keys[1] => $this->getSelector(),
             $keys[2] => $this->getToken(),
             $keys[3] => $this->getUserid(),
-            $keys[4] => $this->getExpires(),
-            $keys[5] => $this->getCreated(),
-            $keys[6] => $this->getModified(),
+            $keys[4] => $this->getType(),
+            $keys[5] => $this->getExpires(),
+            $keys[6] => $this->getStatus(),
+            $keys[7] => $this->getCreated(),
+            $keys[8] => $this->getModified(),
         );
         $virtualColumns = $this->virtualColumns;
         foreach ($virtualColumns as $key => $virtualColumn) {
@@ -1021,12 +1119,18 @@ abstract class Token implements ActiveRecordInterface
                 $this->setUserid($value);
                 break;
             case 4:
-                $this->setExpires($value);
+                $this->setType($value);
                 break;
             case 5:
-                $this->setCreated($value);
+                $this->setExpires($value);
                 break;
             case 6:
+                $this->setStatus($value);
+                break;
+            case 7:
+                $this->setCreated($value);
+                break;
+            case 8:
                 $this->setModified($value);
                 break;
         } // switch()
@@ -1068,13 +1172,19 @@ abstract class Token implements ActiveRecordInterface
             $this->setUserid($arr[$keys[3]]);
         }
         if (array_key_exists($keys[4], $arr)) {
-            $this->setExpires($arr[$keys[4]]);
+            $this->setType($arr[$keys[4]]);
         }
         if (array_key_exists($keys[5], $arr)) {
-            $this->setCreated($arr[$keys[5]]);
+            $this->setExpires($arr[$keys[5]]);
         }
         if (array_key_exists($keys[6], $arr)) {
-            $this->setModified($arr[$keys[6]]);
+            $this->setStatus($arr[$keys[6]]);
+        }
+        if (array_key_exists($keys[7], $arr)) {
+            $this->setCreated($arr[$keys[7]]);
+        }
+        if (array_key_exists($keys[8], $arr)) {
+            $this->setModified($arr[$keys[8]]);
         }
     }
 
@@ -1129,8 +1239,14 @@ abstract class Token implements ActiveRecordInterface
         if ($this->isColumnModified(TokenTableMap::COL_USERID)) {
             $criteria->add(TokenTableMap::COL_USERID, $this->userid);
         }
+        if ($this->isColumnModified(TokenTableMap::COL_TYPE)) {
+            $criteria->add(TokenTableMap::COL_TYPE, $this->type);
+        }
         if ($this->isColumnModified(TokenTableMap::COL_EXPIRES)) {
             $criteria->add(TokenTableMap::COL_EXPIRES, $this->expires);
+        }
+        if ($this->isColumnModified(TokenTableMap::COL_STATUS)) {
+            $criteria->add(TokenTableMap::COL_STATUS, $this->status);
         }
         if ($this->isColumnModified(TokenTableMap::COL_CREATED)) {
             $criteria->add(TokenTableMap::COL_CREATED, $this->created);
@@ -1227,7 +1343,9 @@ abstract class Token implements ActiveRecordInterface
         $copyObj->setSelector($this->getSelector());
         $copyObj->setToken($this->getToken());
         $copyObj->setUserid($this->getUserid());
+        $copyObj->setType($this->getType());
         $copyObj->setExpires($this->getExpires());
+        $copyObj->setStatus($this->getStatus());
         $copyObj->setCreated($this->getCreated());
         $copyObj->setModified($this->getModified());
         if ($makeNew) {
@@ -1269,7 +1387,9 @@ abstract class Token implements ActiveRecordInterface
         $this->selector = null;
         $this->token = null;
         $this->userid = null;
+        $this->type = null;
         $this->expires = null;
+        $this->status = null;
         $this->created = null;
         $this->modified = null;
         $this->alreadyInSave = false;

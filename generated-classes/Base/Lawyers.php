@@ -66,22 +66,16 @@ abstract class Lawyers implements ActiveRecordInterface
     protected $id;
 
     /**
+     * The value for the lawyerid field.
+     * @var        string
+     */
+    protected $lawyerid;
+
+    /**
      * The value for the fullname field.
      * @var        string
      */
     protected $fullname;
-
-    /**
-     * The value for the phone field.
-     * @var        int
-     */
-    protected $phone;
-
-    /**
-     * The value for the phonealt field.
-     * @var        int
-     */
-    protected $phonealt;
 
     /**
      * The value for the email field.
@@ -94,6 +88,42 @@ abstract class Lawyers implements ActiveRecordInterface
      * @var        string
      */
     protected $address;
+
+    /**
+     * The value for the phone1 field.
+     * @var        string
+     */
+    protected $phone1;
+
+    /**
+     * The value for the phone2 field.
+     * @var        string
+     */
+    protected $phone2;
+
+    /**
+     * The value for the lawfirmid field.
+     * @var        int
+     */
+    protected $lawfirmid;
+
+    /**
+     * The value for the lawfirmname field.
+     * @var        string
+     */
+    protected $lawfirmname;
+
+    /**
+     * The value for the speciality field.
+     * @var        string
+     */
+    protected $speciality;
+
+    /**
+     * The value for the status field.
+     * @var        string
+     */
+    protected $status;
 
     /**
      * The value for the created field.
@@ -343,6 +373,16 @@ abstract class Lawyers implements ActiveRecordInterface
     }
 
     /**
+     * Get the [lawyerid] column value.
+     *
+     * @return string
+     */
+    public function getLawyerid()
+    {
+        return $this->lawyerid;
+    }
+
+    /**
      * Get the [fullname] column value.
      *
      * @return string
@@ -350,26 +390,6 @@ abstract class Lawyers implements ActiveRecordInterface
     public function getFullname()
     {
         return $this->fullname;
-    }
-
-    /**
-     * Get the [phone] column value.
-     *
-     * @return int
-     */
-    public function getPhone()
-    {
-        return $this->phone;
-    }
-
-    /**
-     * Get the [phonealt] column value.
-     *
-     * @return int
-     */
-    public function getPhonealt()
-    {
-        return $this->phonealt;
     }
 
     /**
@@ -390,6 +410,66 @@ abstract class Lawyers implements ActiveRecordInterface
     public function getAddress()
     {
         return $this->address;
+    }
+
+    /**
+     * Get the [phone1] column value.
+     *
+     * @return string
+     */
+    public function getPhone1()
+    {
+        return $this->phone1;
+    }
+
+    /**
+     * Get the [phone2] column value.
+     *
+     * @return string
+     */
+    public function getPhone2()
+    {
+        return $this->phone2;
+    }
+
+    /**
+     * Get the [lawfirmid] column value.
+     *
+     * @return int
+     */
+    public function getLawfirmid()
+    {
+        return $this->lawfirmid;
+    }
+
+    /**
+     * Get the [lawfirmname] column value.
+     *
+     * @return string
+     */
+    public function getLawfirmname()
+    {
+        return $this->lawfirmname;
+    }
+
+    /**
+     * Get the [speciality] column value.
+     *
+     * @return string
+     */
+    public function getSpeciality()
+    {
+        return $this->speciality;
+    }
+
+    /**
+     * Get the [status] column value.
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
     }
 
     /**
@@ -433,6 +513,26 @@ abstract class Lawyers implements ActiveRecordInterface
     } // setId()
 
     /**
+     * Set the value of [lawyerid] column.
+     *
+     * @param string $v new value
+     * @return $this|\Lawyers The current object (for fluent API support)
+     */
+    public function setLawyerid($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->lawyerid !== $v) {
+            $this->lawyerid = $v;
+            $this->modifiedColumns[LawyersTableMap::COL_LAWYERID] = true;
+        }
+
+        return $this;
+    } // setLawyerid()
+
+    /**
      * Set the value of [fullname] column.
      *
      * @param string $v new value
@@ -451,46 +551,6 @@ abstract class Lawyers implements ActiveRecordInterface
 
         return $this;
     } // setFullname()
-
-    /**
-     * Set the value of [phone] column.
-     *
-     * @param int $v new value
-     * @return $this|\Lawyers The current object (for fluent API support)
-     */
-    public function setPhone($v)
-    {
-        if ($v !== null) {
-            $v = (int) $v;
-        }
-
-        if ($this->phone !== $v) {
-            $this->phone = $v;
-            $this->modifiedColumns[LawyersTableMap::COL_PHONE] = true;
-        }
-
-        return $this;
-    } // setPhone()
-
-    /**
-     * Set the value of [phonealt] column.
-     *
-     * @param int $v new value
-     * @return $this|\Lawyers The current object (for fluent API support)
-     */
-    public function setPhonealt($v)
-    {
-        if ($v !== null) {
-            $v = (int) $v;
-        }
-
-        if ($this->phonealt !== $v) {
-            $this->phonealt = $v;
-            $this->modifiedColumns[LawyersTableMap::COL_PHONEALT] = true;
-        }
-
-        return $this;
-    } // setPhonealt()
 
     /**
      * Set the value of [email] column.
@@ -531,6 +591,126 @@ abstract class Lawyers implements ActiveRecordInterface
 
         return $this;
     } // setAddress()
+
+    /**
+     * Set the value of [phone1] column.
+     *
+     * @param string $v new value
+     * @return $this|\Lawyers The current object (for fluent API support)
+     */
+    public function setPhone1($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->phone1 !== $v) {
+            $this->phone1 = $v;
+            $this->modifiedColumns[LawyersTableMap::COL_PHONE1] = true;
+        }
+
+        return $this;
+    } // setPhone1()
+
+    /**
+     * Set the value of [phone2] column.
+     *
+     * @param string $v new value
+     * @return $this|\Lawyers The current object (for fluent API support)
+     */
+    public function setPhone2($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->phone2 !== $v) {
+            $this->phone2 = $v;
+            $this->modifiedColumns[LawyersTableMap::COL_PHONE2] = true;
+        }
+
+        return $this;
+    } // setPhone2()
+
+    /**
+     * Set the value of [lawfirmid] column.
+     *
+     * @param int $v new value
+     * @return $this|\Lawyers The current object (for fluent API support)
+     */
+    public function setLawfirmid($v)
+    {
+        if ($v !== null) {
+            $v = (int) $v;
+        }
+
+        if ($this->lawfirmid !== $v) {
+            $this->lawfirmid = $v;
+            $this->modifiedColumns[LawyersTableMap::COL_LAWFIRMID] = true;
+        }
+
+        return $this;
+    } // setLawfirmid()
+
+    /**
+     * Set the value of [lawfirmname] column.
+     *
+     * @param string $v new value
+     * @return $this|\Lawyers The current object (for fluent API support)
+     */
+    public function setLawfirmname($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->lawfirmname !== $v) {
+            $this->lawfirmname = $v;
+            $this->modifiedColumns[LawyersTableMap::COL_LAWFIRMNAME] = true;
+        }
+
+        return $this;
+    } // setLawfirmname()
+
+    /**
+     * Set the value of [speciality] column.
+     *
+     * @param string $v new value
+     * @return $this|\Lawyers The current object (for fluent API support)
+     */
+    public function setSpeciality($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->speciality !== $v) {
+            $this->speciality = $v;
+            $this->modifiedColumns[LawyersTableMap::COL_SPECIALITY] = true;
+        }
+
+        return $this;
+    } // setSpeciality()
+
+    /**
+     * Set the value of [status] column.
+     *
+     * @param string $v new value
+     * @return $this|\Lawyers The current object (for fluent API support)
+     */
+    public function setStatus($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->status !== $v) {
+            $this->status = $v;
+            $this->modifiedColumns[LawyersTableMap::COL_STATUS] = true;
+        }
+
+        return $this;
+    } // setStatus()
 
     /**
      * Set the value of [created] column.
@@ -611,25 +791,40 @@ abstract class Lawyers implements ActiveRecordInterface
             $col = $row[TableMap::TYPE_NUM == $indexType ? 0 + $startcol : LawyersTableMap::translateFieldName('Id', TableMap::TYPE_PHPNAME, $indexType)];
             $this->id = (null !== $col) ? (int) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 1 + $startcol : LawyersTableMap::translateFieldName('Fullname', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 1 + $startcol : LawyersTableMap::translateFieldName('Lawyerid', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->lawyerid = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 2 + $startcol : LawyersTableMap::translateFieldName('Fullname', TableMap::TYPE_PHPNAME, $indexType)];
             $this->fullname = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 2 + $startcol : LawyersTableMap::translateFieldName('Phone', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->phone = (null !== $col) ? (int) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 3 + $startcol : LawyersTableMap::translateFieldName('Phonealt', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->phonealt = (null !== $col) ? (int) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 4 + $startcol : LawyersTableMap::translateFieldName('Email', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 3 + $startcol : LawyersTableMap::translateFieldName('Email', TableMap::TYPE_PHPNAME, $indexType)];
             $this->email = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 5 + $startcol : LawyersTableMap::translateFieldName('Address', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 4 + $startcol : LawyersTableMap::translateFieldName('Address', TableMap::TYPE_PHPNAME, $indexType)];
             $this->address = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 6 + $startcol : LawyersTableMap::translateFieldName('Created', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 5 + $startcol : LawyersTableMap::translateFieldName('Phone1', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->phone1 = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 6 + $startcol : LawyersTableMap::translateFieldName('Phone2', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->phone2 = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 7 + $startcol : LawyersTableMap::translateFieldName('Lawfirmid', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->lawfirmid = (null !== $col) ? (int) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 8 + $startcol : LawyersTableMap::translateFieldName('Lawfirmname', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->lawfirmname = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 9 + $startcol : LawyersTableMap::translateFieldName('Speciality', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->speciality = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 10 + $startcol : LawyersTableMap::translateFieldName('Status', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->status = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 11 + $startcol : LawyersTableMap::translateFieldName('Created', TableMap::TYPE_PHPNAME, $indexType)];
             $this->created = (null !== $col) ? (int) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 7 + $startcol : LawyersTableMap::translateFieldName('Modified', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 12 + $startcol : LawyersTableMap::translateFieldName('Modified', TableMap::TYPE_PHPNAME, $indexType)];
             $this->modified = (null !== $col) ? (int) $col : null;
             $this->resetModified();
 
@@ -639,7 +834,7 @@ abstract class Lawyers implements ActiveRecordInterface
                 $this->ensureConsistency();
             }
 
-            return $startcol + 8; // 8 = LawyersTableMap::NUM_HYDRATE_COLUMNS.
+            return $startcol + 13; // 13 = LawyersTableMap::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException(sprintf('Error populating %s object', '\\Lawyers'), 0, $e);
@@ -839,20 +1034,35 @@ abstract class Lawyers implements ActiveRecordInterface
         if ($this->isColumnModified(LawyersTableMap::COL_ID)) {
             $modifiedColumns[':p' . $index++]  = 'id';
         }
+        if ($this->isColumnModified(LawyersTableMap::COL_LAWYERID)) {
+            $modifiedColumns[':p' . $index++]  = 'lawyerid';
+        }
         if ($this->isColumnModified(LawyersTableMap::COL_FULLNAME)) {
             $modifiedColumns[':p' . $index++]  = 'fullname';
-        }
-        if ($this->isColumnModified(LawyersTableMap::COL_PHONE)) {
-            $modifiedColumns[':p' . $index++]  = 'phone';
-        }
-        if ($this->isColumnModified(LawyersTableMap::COL_PHONEALT)) {
-            $modifiedColumns[':p' . $index++]  = 'phonealt';
         }
         if ($this->isColumnModified(LawyersTableMap::COL_EMAIL)) {
             $modifiedColumns[':p' . $index++]  = 'email';
         }
         if ($this->isColumnModified(LawyersTableMap::COL_ADDRESS)) {
             $modifiedColumns[':p' . $index++]  = 'address';
+        }
+        if ($this->isColumnModified(LawyersTableMap::COL_PHONE1)) {
+            $modifiedColumns[':p' . $index++]  = 'phone1';
+        }
+        if ($this->isColumnModified(LawyersTableMap::COL_PHONE2)) {
+            $modifiedColumns[':p' . $index++]  = 'phone2';
+        }
+        if ($this->isColumnModified(LawyersTableMap::COL_LAWFIRMID)) {
+            $modifiedColumns[':p' . $index++]  = 'lawfirmid';
+        }
+        if ($this->isColumnModified(LawyersTableMap::COL_LAWFIRMNAME)) {
+            $modifiedColumns[':p' . $index++]  = 'lawfirmname';
+        }
+        if ($this->isColumnModified(LawyersTableMap::COL_SPECIALITY)) {
+            $modifiedColumns[':p' . $index++]  = 'speciality';
+        }
+        if ($this->isColumnModified(LawyersTableMap::COL_STATUS)) {
+            $modifiedColumns[':p' . $index++]  = 'status';
         }
         if ($this->isColumnModified(LawyersTableMap::COL_CREATED)) {
             $modifiedColumns[':p' . $index++]  = 'created';
@@ -874,20 +1084,35 @@ abstract class Lawyers implements ActiveRecordInterface
                     case 'id':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
+                    case 'lawyerid':
+                        $stmt->bindValue($identifier, $this->lawyerid, PDO::PARAM_STR);
+                        break;
                     case 'fullname':
                         $stmt->bindValue($identifier, $this->fullname, PDO::PARAM_STR);
-                        break;
-                    case 'phone':
-                        $stmt->bindValue($identifier, $this->phone, PDO::PARAM_INT);
-                        break;
-                    case 'phonealt':
-                        $stmt->bindValue($identifier, $this->phonealt, PDO::PARAM_INT);
                         break;
                     case 'email':
                         $stmt->bindValue($identifier, $this->email, PDO::PARAM_STR);
                         break;
                     case 'address':
                         $stmt->bindValue($identifier, $this->address, PDO::PARAM_STR);
+                        break;
+                    case 'phone1':
+                        $stmt->bindValue($identifier, $this->phone1, PDO::PARAM_STR);
+                        break;
+                    case 'phone2':
+                        $stmt->bindValue($identifier, $this->phone2, PDO::PARAM_STR);
+                        break;
+                    case 'lawfirmid':
+                        $stmt->bindValue($identifier, $this->lawfirmid, PDO::PARAM_INT);
+                        break;
+                    case 'lawfirmname':
+                        $stmt->bindValue($identifier, $this->lawfirmname, PDO::PARAM_STR);
+                        break;
+                    case 'speciality':
+                        $stmt->bindValue($identifier, $this->speciality, PDO::PARAM_STR);
+                        break;
+                    case 'status':
+                        $stmt->bindValue($identifier, $this->status, PDO::PARAM_STR);
                         break;
                     case 'created':
                         $stmt->bindValue($identifier, $this->created, PDO::PARAM_INT);
@@ -961,24 +1186,39 @@ abstract class Lawyers implements ActiveRecordInterface
                 return $this->getId();
                 break;
             case 1:
-                return $this->getFullname();
+                return $this->getLawyerid();
                 break;
             case 2:
-                return $this->getPhone();
+                return $this->getFullname();
                 break;
             case 3:
-                return $this->getPhonealt();
-                break;
-            case 4:
                 return $this->getEmail();
                 break;
-            case 5:
+            case 4:
                 return $this->getAddress();
                 break;
+            case 5:
+                return $this->getPhone1();
+                break;
             case 6:
-                return $this->getCreated();
+                return $this->getPhone2();
                 break;
             case 7:
+                return $this->getLawfirmid();
+                break;
+            case 8:
+                return $this->getLawfirmname();
+                break;
+            case 9:
+                return $this->getSpeciality();
+                break;
+            case 10:
+                return $this->getStatus();
+                break;
+            case 11:
+                return $this->getCreated();
+                break;
+            case 12:
                 return $this->getModified();
                 break;
             default:
@@ -1011,13 +1251,18 @@ abstract class Lawyers implements ActiveRecordInterface
         $keys = LawyersTableMap::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
-            $keys[1] => $this->getFullname(),
-            $keys[2] => $this->getPhone(),
-            $keys[3] => $this->getPhonealt(),
-            $keys[4] => $this->getEmail(),
-            $keys[5] => $this->getAddress(),
-            $keys[6] => $this->getCreated(),
-            $keys[7] => $this->getModified(),
+            $keys[1] => $this->getLawyerid(),
+            $keys[2] => $this->getFullname(),
+            $keys[3] => $this->getEmail(),
+            $keys[4] => $this->getAddress(),
+            $keys[5] => $this->getPhone1(),
+            $keys[6] => $this->getPhone2(),
+            $keys[7] => $this->getLawfirmid(),
+            $keys[8] => $this->getLawfirmname(),
+            $keys[9] => $this->getSpeciality(),
+            $keys[10] => $this->getStatus(),
+            $keys[11] => $this->getCreated(),
+            $keys[12] => $this->getModified(),
         );
         $virtualColumns = $this->virtualColumns;
         foreach ($virtualColumns as $key => $virtualColumn) {
@@ -1061,24 +1306,39 @@ abstract class Lawyers implements ActiveRecordInterface
                 $this->setId($value);
                 break;
             case 1:
-                $this->setFullname($value);
+                $this->setLawyerid($value);
                 break;
             case 2:
-                $this->setPhone($value);
+                $this->setFullname($value);
                 break;
             case 3:
-                $this->setPhonealt($value);
-                break;
-            case 4:
                 $this->setEmail($value);
                 break;
-            case 5:
+            case 4:
                 $this->setAddress($value);
                 break;
+            case 5:
+                $this->setPhone1($value);
+                break;
             case 6:
-                $this->setCreated($value);
+                $this->setPhone2($value);
                 break;
             case 7:
+                $this->setLawfirmid($value);
+                break;
+            case 8:
+                $this->setLawfirmname($value);
+                break;
+            case 9:
+                $this->setSpeciality($value);
+                break;
+            case 10:
+                $this->setStatus($value);
+                break;
+            case 11:
+                $this->setCreated($value);
+                break;
+            case 12:
                 $this->setModified($value);
                 break;
         } // switch()
@@ -1111,25 +1371,40 @@ abstract class Lawyers implements ActiveRecordInterface
             $this->setId($arr[$keys[0]]);
         }
         if (array_key_exists($keys[1], $arr)) {
-            $this->setFullname($arr[$keys[1]]);
+            $this->setLawyerid($arr[$keys[1]]);
         }
         if (array_key_exists($keys[2], $arr)) {
-            $this->setPhone($arr[$keys[2]]);
+            $this->setFullname($arr[$keys[2]]);
         }
         if (array_key_exists($keys[3], $arr)) {
-            $this->setPhonealt($arr[$keys[3]]);
+            $this->setEmail($arr[$keys[3]]);
         }
         if (array_key_exists($keys[4], $arr)) {
-            $this->setEmail($arr[$keys[4]]);
+            $this->setAddress($arr[$keys[4]]);
         }
         if (array_key_exists($keys[5], $arr)) {
-            $this->setAddress($arr[$keys[5]]);
+            $this->setPhone1($arr[$keys[5]]);
         }
         if (array_key_exists($keys[6], $arr)) {
-            $this->setCreated($arr[$keys[6]]);
+            $this->setPhone2($arr[$keys[6]]);
         }
         if (array_key_exists($keys[7], $arr)) {
-            $this->setModified($arr[$keys[7]]);
+            $this->setLawfirmid($arr[$keys[7]]);
+        }
+        if (array_key_exists($keys[8], $arr)) {
+            $this->setLawfirmname($arr[$keys[8]]);
+        }
+        if (array_key_exists($keys[9], $arr)) {
+            $this->setSpeciality($arr[$keys[9]]);
+        }
+        if (array_key_exists($keys[10], $arr)) {
+            $this->setStatus($arr[$keys[10]]);
+        }
+        if (array_key_exists($keys[11], $arr)) {
+            $this->setCreated($arr[$keys[11]]);
+        }
+        if (array_key_exists($keys[12], $arr)) {
+            $this->setModified($arr[$keys[12]]);
         }
     }
 
@@ -1175,20 +1450,35 @@ abstract class Lawyers implements ActiveRecordInterface
         if ($this->isColumnModified(LawyersTableMap::COL_ID)) {
             $criteria->add(LawyersTableMap::COL_ID, $this->id);
         }
+        if ($this->isColumnModified(LawyersTableMap::COL_LAWYERID)) {
+            $criteria->add(LawyersTableMap::COL_LAWYERID, $this->lawyerid);
+        }
         if ($this->isColumnModified(LawyersTableMap::COL_FULLNAME)) {
             $criteria->add(LawyersTableMap::COL_FULLNAME, $this->fullname);
-        }
-        if ($this->isColumnModified(LawyersTableMap::COL_PHONE)) {
-            $criteria->add(LawyersTableMap::COL_PHONE, $this->phone);
-        }
-        if ($this->isColumnModified(LawyersTableMap::COL_PHONEALT)) {
-            $criteria->add(LawyersTableMap::COL_PHONEALT, $this->phonealt);
         }
         if ($this->isColumnModified(LawyersTableMap::COL_EMAIL)) {
             $criteria->add(LawyersTableMap::COL_EMAIL, $this->email);
         }
         if ($this->isColumnModified(LawyersTableMap::COL_ADDRESS)) {
             $criteria->add(LawyersTableMap::COL_ADDRESS, $this->address);
+        }
+        if ($this->isColumnModified(LawyersTableMap::COL_PHONE1)) {
+            $criteria->add(LawyersTableMap::COL_PHONE1, $this->phone1);
+        }
+        if ($this->isColumnModified(LawyersTableMap::COL_PHONE2)) {
+            $criteria->add(LawyersTableMap::COL_PHONE2, $this->phone2);
+        }
+        if ($this->isColumnModified(LawyersTableMap::COL_LAWFIRMID)) {
+            $criteria->add(LawyersTableMap::COL_LAWFIRMID, $this->lawfirmid);
+        }
+        if ($this->isColumnModified(LawyersTableMap::COL_LAWFIRMNAME)) {
+            $criteria->add(LawyersTableMap::COL_LAWFIRMNAME, $this->lawfirmname);
+        }
+        if ($this->isColumnModified(LawyersTableMap::COL_SPECIALITY)) {
+            $criteria->add(LawyersTableMap::COL_SPECIALITY, $this->speciality);
+        }
+        if ($this->isColumnModified(LawyersTableMap::COL_STATUS)) {
+            $criteria->add(LawyersTableMap::COL_STATUS, $this->status);
         }
         if ($this->isColumnModified(LawyersTableMap::COL_CREATED)) {
             $criteria->add(LawyersTableMap::COL_CREATED, $this->created);
@@ -1282,11 +1572,16 @@ abstract class Lawyers implements ActiveRecordInterface
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
+        $copyObj->setLawyerid($this->getLawyerid());
         $copyObj->setFullname($this->getFullname());
-        $copyObj->setPhone($this->getPhone());
-        $copyObj->setPhonealt($this->getPhonealt());
         $copyObj->setEmail($this->getEmail());
         $copyObj->setAddress($this->getAddress());
+        $copyObj->setPhone1($this->getPhone1());
+        $copyObj->setPhone2($this->getPhone2());
+        $copyObj->setLawfirmid($this->getLawfirmid());
+        $copyObj->setLawfirmname($this->getLawfirmname());
+        $copyObj->setSpeciality($this->getSpeciality());
+        $copyObj->setStatus($this->getStatus());
         $copyObj->setCreated($this->getCreated());
         $copyObj->setModified($this->getModified());
         if ($makeNew) {
@@ -1325,11 +1620,16 @@ abstract class Lawyers implements ActiveRecordInterface
     public function clear()
     {
         $this->id = null;
+        $this->lawyerid = null;
         $this->fullname = null;
-        $this->phone = null;
-        $this->phonealt = null;
         $this->email = null;
         $this->address = null;
+        $this->phone1 = null;
+        $this->phone2 = null;
+        $this->lawfirmid = null;
+        $this->lawfirmname = null;
+        $this->speciality = null;
+        $this->status = null;
         $this->created = null;
         $this->modified = null;
         $this->alreadyInSave = false;

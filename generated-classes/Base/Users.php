@@ -66,10 +66,10 @@ abstract class Users implements ActiveRecordInterface
     protected $id;
 
     /**
-     * The value for the username field.
+     * The value for the phone field.
      * @var        string
      */
-    protected $username;
+    protected $phone;
 
     /**
      * The value for the password field.
@@ -100,6 +100,24 @@ abstract class Users implements ActiveRecordInterface
      * @var        string
      */
     protected $picture;
+
+    /**
+     * The value for the position field.
+     * @var        string
+     */
+    protected $position;
+
+    /**
+     * The value for the emailcode field.
+     * @var        string
+     */
+    protected $emailcode;
+
+    /**
+     * The value for the mobilecode field.
+     * @var        string
+     */
+    protected $mobilecode;
 
     /**
      * The value for the created field.
@@ -349,13 +367,13 @@ abstract class Users implements ActiveRecordInterface
     }
 
     /**
-     * Get the [username] column value.
+     * Get the [phone] column value.
      *
      * @return string
      */
-    public function getUsername()
+    public function getPhone()
     {
-        return $this->username;
+        return $this->phone;
     }
 
     /**
@@ -409,6 +427,36 @@ abstract class Users implements ActiveRecordInterface
     }
 
     /**
+     * Get the [position] column value.
+     *
+     * @return string
+     */
+    public function getPosition()
+    {
+        return $this->position;
+    }
+
+    /**
+     * Get the [emailcode] column value.
+     *
+     * @return string
+     */
+    public function getEmailcode()
+    {
+        return $this->emailcode;
+    }
+
+    /**
+     * Get the [mobilecode] column value.
+     *
+     * @return string
+     */
+    public function getMobilecode()
+    {
+        return $this->mobilecode;
+    }
+
+    /**
      * Get the [created] column value.
      *
      * @return int
@@ -449,24 +497,24 @@ abstract class Users implements ActiveRecordInterface
     } // setId()
 
     /**
-     * Set the value of [username] column.
+     * Set the value of [phone] column.
      *
      * @param string $v new value
      * @return $this|\Users The current object (for fluent API support)
      */
-    public function setUsername($v)
+    public function setPhone($v)
     {
         if ($v !== null) {
             $v = (string) $v;
         }
 
-        if ($this->username !== $v) {
-            $this->username = $v;
-            $this->modifiedColumns[UsersTableMap::COL_USERNAME] = true;
+        if ($this->phone !== $v) {
+            $this->phone = $v;
+            $this->modifiedColumns[UsersTableMap::COL_PHONE] = true;
         }
 
         return $this;
-    } // setUsername()
+    } // setPhone()
 
     /**
      * Set the value of [password] column.
@@ -569,6 +617,66 @@ abstract class Users implements ActiveRecordInterface
     } // setPicture()
 
     /**
+     * Set the value of [position] column.
+     *
+     * @param string $v new value
+     * @return $this|\Users The current object (for fluent API support)
+     */
+    public function setPosition($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->position !== $v) {
+            $this->position = $v;
+            $this->modifiedColumns[UsersTableMap::COL_POSITION] = true;
+        }
+
+        return $this;
+    } // setPosition()
+
+    /**
+     * Set the value of [emailcode] column.
+     *
+     * @param string $v new value
+     * @return $this|\Users The current object (for fluent API support)
+     */
+    public function setEmailcode($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->emailcode !== $v) {
+            $this->emailcode = $v;
+            $this->modifiedColumns[UsersTableMap::COL_EMAILCODE] = true;
+        }
+
+        return $this;
+    } // setEmailcode()
+
+    /**
+     * Set the value of [mobilecode] column.
+     *
+     * @param string $v new value
+     * @return $this|\Users The current object (for fluent API support)
+     */
+    public function setMobilecode($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->mobilecode !== $v) {
+            $this->mobilecode = $v;
+            $this->modifiedColumns[UsersTableMap::COL_MOBILECODE] = true;
+        }
+
+        return $this;
+    } // setMobilecode()
+
+    /**
      * Set the value of [created] column.
      *
      * @param int $v new value
@@ -647,8 +755,8 @@ abstract class Users implements ActiveRecordInterface
             $col = $row[TableMap::TYPE_NUM == $indexType ? 0 + $startcol : UsersTableMap::translateFieldName('Id', TableMap::TYPE_PHPNAME, $indexType)];
             $this->id = (null !== $col) ? (int) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 1 + $startcol : UsersTableMap::translateFieldName('Username', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->username = (null !== $col) ? (string) $col : null;
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 1 + $startcol : UsersTableMap::translateFieldName('Phone', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->phone = (null !== $col) ? (string) $col : null;
 
             $col = $row[TableMap::TYPE_NUM == $indexType ? 2 + $startcol : UsersTableMap::translateFieldName('Password', TableMap::TYPE_PHPNAME, $indexType)];
             $this->password = (null !== $col) ? (string) $col : null;
@@ -665,10 +773,19 @@ abstract class Users implements ActiveRecordInterface
             $col = $row[TableMap::TYPE_NUM == $indexType ? 6 + $startcol : UsersTableMap::translateFieldName('Picture', TableMap::TYPE_PHPNAME, $indexType)];
             $this->picture = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 7 + $startcol : UsersTableMap::translateFieldName('Created', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 7 + $startcol : UsersTableMap::translateFieldName('Position', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->position = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 8 + $startcol : UsersTableMap::translateFieldName('Emailcode', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->emailcode = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 9 + $startcol : UsersTableMap::translateFieldName('Mobilecode', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->mobilecode = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 10 + $startcol : UsersTableMap::translateFieldName('Created', TableMap::TYPE_PHPNAME, $indexType)];
             $this->created = (null !== $col) ? (int) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 8 + $startcol : UsersTableMap::translateFieldName('Modified', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 11 + $startcol : UsersTableMap::translateFieldName('Modified', TableMap::TYPE_PHPNAME, $indexType)];
             $this->modified = (null !== $col) ? (int) $col : null;
             $this->resetModified();
 
@@ -678,7 +795,7 @@ abstract class Users implements ActiveRecordInterface
                 $this->ensureConsistency();
             }
 
-            return $startcol + 9; // 9 = UsersTableMap::NUM_HYDRATE_COLUMNS.
+            return $startcol + 12; // 12 = UsersTableMap::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException(sprintf('Error populating %s object', '\\Users'), 0, $e);
@@ -878,8 +995,8 @@ abstract class Users implements ActiveRecordInterface
         if ($this->isColumnModified(UsersTableMap::COL_ID)) {
             $modifiedColumns[':p' . $index++]  = 'id';
         }
-        if ($this->isColumnModified(UsersTableMap::COL_USERNAME)) {
-            $modifiedColumns[':p' . $index++]  = 'username';
+        if ($this->isColumnModified(UsersTableMap::COL_PHONE)) {
+            $modifiedColumns[':p' . $index++]  = 'phone';
         }
         if ($this->isColumnModified(UsersTableMap::COL_PASSWORD)) {
             $modifiedColumns[':p' . $index++]  = 'password';
@@ -895,6 +1012,15 @@ abstract class Users implements ActiveRecordInterface
         }
         if ($this->isColumnModified(UsersTableMap::COL_PICTURE)) {
             $modifiedColumns[':p' . $index++]  = 'picture';
+        }
+        if ($this->isColumnModified(UsersTableMap::COL_POSITION)) {
+            $modifiedColumns[':p' . $index++]  = 'position';
+        }
+        if ($this->isColumnModified(UsersTableMap::COL_EMAILCODE)) {
+            $modifiedColumns[':p' . $index++]  = 'emailcode';
+        }
+        if ($this->isColumnModified(UsersTableMap::COL_MOBILECODE)) {
+            $modifiedColumns[':p' . $index++]  = 'mobilecode';
         }
         if ($this->isColumnModified(UsersTableMap::COL_CREATED)) {
             $modifiedColumns[':p' . $index++]  = 'created';
@@ -916,8 +1042,8 @@ abstract class Users implements ActiveRecordInterface
                     case 'id':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case 'username':
-                        $stmt->bindValue($identifier, $this->username, PDO::PARAM_STR);
+                    case 'phone':
+                        $stmt->bindValue($identifier, $this->phone, PDO::PARAM_STR);
                         break;
                     case 'password':
                         $stmt->bindValue($identifier, $this->password, PDO::PARAM_STR);
@@ -933,6 +1059,15 @@ abstract class Users implements ActiveRecordInterface
                         break;
                     case 'picture':
                         $stmt->bindValue($identifier, $this->picture, PDO::PARAM_STR);
+                        break;
+                    case 'position':
+                        $stmt->bindValue($identifier, $this->position, PDO::PARAM_STR);
+                        break;
+                    case 'emailcode':
+                        $stmt->bindValue($identifier, $this->emailcode, PDO::PARAM_STR);
+                        break;
+                    case 'mobilecode':
+                        $stmt->bindValue($identifier, $this->mobilecode, PDO::PARAM_STR);
                         break;
                     case 'created':
                         $stmt->bindValue($identifier, $this->created, PDO::PARAM_INT);
@@ -1006,7 +1141,7 @@ abstract class Users implements ActiveRecordInterface
                 return $this->getId();
                 break;
             case 1:
-                return $this->getUsername();
+                return $this->getPhone();
                 break;
             case 2:
                 return $this->getPassword();
@@ -1024,9 +1159,18 @@ abstract class Users implements ActiveRecordInterface
                 return $this->getPicture();
                 break;
             case 7:
-                return $this->getCreated();
+                return $this->getPosition();
                 break;
             case 8:
+                return $this->getEmailcode();
+                break;
+            case 9:
+                return $this->getMobilecode();
+                break;
+            case 10:
+                return $this->getCreated();
+                break;
+            case 11:
                 return $this->getModified();
                 break;
             default:
@@ -1059,14 +1203,17 @@ abstract class Users implements ActiveRecordInterface
         $keys = UsersTableMap::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
-            $keys[1] => $this->getUsername(),
+            $keys[1] => $this->getPhone(),
             $keys[2] => $this->getPassword(),
             $keys[3] => $this->getName(),
             $keys[4] => $this->getEmail(),
             $keys[5] => $this->getStatus(),
             $keys[6] => $this->getPicture(),
-            $keys[7] => $this->getCreated(),
-            $keys[8] => $this->getModified(),
+            $keys[7] => $this->getPosition(),
+            $keys[8] => $this->getEmailcode(),
+            $keys[9] => $this->getMobilecode(),
+            $keys[10] => $this->getCreated(),
+            $keys[11] => $this->getModified(),
         );
         $virtualColumns = $this->virtualColumns;
         foreach ($virtualColumns as $key => $virtualColumn) {
@@ -1110,7 +1257,7 @@ abstract class Users implements ActiveRecordInterface
                 $this->setId($value);
                 break;
             case 1:
-                $this->setUsername($value);
+                $this->setPhone($value);
                 break;
             case 2:
                 $this->setPassword($value);
@@ -1128,9 +1275,18 @@ abstract class Users implements ActiveRecordInterface
                 $this->setPicture($value);
                 break;
             case 7:
-                $this->setCreated($value);
+                $this->setPosition($value);
                 break;
             case 8:
+                $this->setEmailcode($value);
+                break;
+            case 9:
+                $this->setMobilecode($value);
+                break;
+            case 10:
+                $this->setCreated($value);
+                break;
+            case 11:
                 $this->setModified($value);
                 break;
         } // switch()
@@ -1163,7 +1319,7 @@ abstract class Users implements ActiveRecordInterface
             $this->setId($arr[$keys[0]]);
         }
         if (array_key_exists($keys[1], $arr)) {
-            $this->setUsername($arr[$keys[1]]);
+            $this->setPhone($arr[$keys[1]]);
         }
         if (array_key_exists($keys[2], $arr)) {
             $this->setPassword($arr[$keys[2]]);
@@ -1181,10 +1337,19 @@ abstract class Users implements ActiveRecordInterface
             $this->setPicture($arr[$keys[6]]);
         }
         if (array_key_exists($keys[7], $arr)) {
-            $this->setCreated($arr[$keys[7]]);
+            $this->setPosition($arr[$keys[7]]);
         }
         if (array_key_exists($keys[8], $arr)) {
-            $this->setModified($arr[$keys[8]]);
+            $this->setEmailcode($arr[$keys[8]]);
+        }
+        if (array_key_exists($keys[9], $arr)) {
+            $this->setMobilecode($arr[$keys[9]]);
+        }
+        if (array_key_exists($keys[10], $arr)) {
+            $this->setCreated($arr[$keys[10]]);
+        }
+        if (array_key_exists($keys[11], $arr)) {
+            $this->setModified($arr[$keys[11]]);
         }
     }
 
@@ -1230,8 +1395,8 @@ abstract class Users implements ActiveRecordInterface
         if ($this->isColumnModified(UsersTableMap::COL_ID)) {
             $criteria->add(UsersTableMap::COL_ID, $this->id);
         }
-        if ($this->isColumnModified(UsersTableMap::COL_USERNAME)) {
-            $criteria->add(UsersTableMap::COL_USERNAME, $this->username);
+        if ($this->isColumnModified(UsersTableMap::COL_PHONE)) {
+            $criteria->add(UsersTableMap::COL_PHONE, $this->phone);
         }
         if ($this->isColumnModified(UsersTableMap::COL_PASSWORD)) {
             $criteria->add(UsersTableMap::COL_PASSWORD, $this->password);
@@ -1247,6 +1412,15 @@ abstract class Users implements ActiveRecordInterface
         }
         if ($this->isColumnModified(UsersTableMap::COL_PICTURE)) {
             $criteria->add(UsersTableMap::COL_PICTURE, $this->picture);
+        }
+        if ($this->isColumnModified(UsersTableMap::COL_POSITION)) {
+            $criteria->add(UsersTableMap::COL_POSITION, $this->position);
+        }
+        if ($this->isColumnModified(UsersTableMap::COL_EMAILCODE)) {
+            $criteria->add(UsersTableMap::COL_EMAILCODE, $this->emailcode);
+        }
+        if ($this->isColumnModified(UsersTableMap::COL_MOBILECODE)) {
+            $criteria->add(UsersTableMap::COL_MOBILECODE, $this->mobilecode);
         }
         if ($this->isColumnModified(UsersTableMap::COL_CREATED)) {
             $criteria->add(UsersTableMap::COL_CREATED, $this->created);
@@ -1340,12 +1514,15 @@ abstract class Users implements ActiveRecordInterface
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
-        $copyObj->setUsername($this->getUsername());
+        $copyObj->setPhone($this->getPhone());
         $copyObj->setPassword($this->getPassword());
         $copyObj->setName($this->getName());
         $copyObj->setEmail($this->getEmail());
         $copyObj->setStatus($this->getStatus());
         $copyObj->setPicture($this->getPicture());
+        $copyObj->setPosition($this->getPosition());
+        $copyObj->setEmailcode($this->getEmailcode());
+        $copyObj->setMobilecode($this->getMobilecode());
         $copyObj->setCreated($this->getCreated());
         $copyObj->setModified($this->getModified());
         if ($makeNew) {
@@ -1384,12 +1561,15 @@ abstract class Users implements ActiveRecordInterface
     public function clear()
     {
         $this->id = null;
-        $this->username = null;
+        $this->phone = null;
         $this->password = null;
         $this->name = null;
         $this->email = null;
         $this->status = null;
         $this->picture = null;
+        $this->position = null;
+        $this->emailcode = null;
+        $this->mobilecode = null;
         $this->created = null;
         $this->modified = null;
         $this->alreadyInSave = false;

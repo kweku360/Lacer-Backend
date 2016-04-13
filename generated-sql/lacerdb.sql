@@ -30,10 +30,12 @@ DROP TABLE IF EXISTS `defendants`;
 CREATE TABLE `defendants`
 (
     `id` INTEGER(12) NOT NULL AUTO_INCREMENT,
-    `suitno` VARCHAR(255) NOT NULL,
+    `suitnumber` VARCHAR(255) NOT NULL,
     `fullname` VARCHAR(255) NOT NULL,
     `address` TEXT,
-    `phone` INTEGER(12),
+    `phone1` VARCHAR(20),
+    `phone2` VARCHAR(20) NOT NULL,
+    `email` VARCHAR(233),
     `created` INTEGER NOT NULL,
     `modified` INTEGER NOT NULL,
     PRIMARY KEY (`id`)
@@ -47,19 +49,19 @@ DROP TABLE IF EXISTS `documents`;
 
 CREATE TABLE `documents`
 (
-    `id` INTEGER(12) NOT NULL,
+    `id` INTEGER(12) NOT NULL AUTO_INCREMENT,
+    `suitnumber` VARCHAR(255) NOT NULL,
     `code` VARCHAR(64) NOT NULL,
-    `typeid` INTEGER(12) NOT NULL,
     `type` VARCHAR(255) NOT NULL,
-    `suitid` VARCHAR(255) NOT NULL,
     `name` VARCHAR(255) NOT NULL,
     `datefiled` INTEGER NOT NULL,
-    `format` VARCHAR(255) NOT NULL,
-    `pagecount` INTEGER NOT NULL,
+    `link` VARCHAR(255) NOT NULL,
+    `filer` VARCHAR(255) NOT NULL,
     `dataentrypersonid` INTEGER NOT NULL,
     `accessstatus` VARCHAR(255) NOT NULL,
     `created` INTEGER NOT NULL,
-    `modified` INTEGER NOT NULL
+    `modified` INTEGER NOT NULL,
+    PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
 
 -- ---------------------------------------------------------------------
@@ -87,11 +89,14 @@ DROP TABLE IF EXISTS `judges`;
 CREATE TABLE `judges`
 (
     `id` INTEGER(10) NOT NULL AUTO_INCREMENT,
+    `judgeid` VARCHAR(255) NOT NULL,
     `fullname` VARCHAR(255) NOT NULL,
-    `phone` INTEGER(12) NOT NULL,
-    `phonealt` INTEGER(12),
-    `email` VARCHAR(255),
     `address` TEXT,
+    `email` VARCHAR(255),
+    `court` VARCHAR(255) NOT NULL,
+    `phone` VARCHAR(20) NOT NULL,
+    `courtnumber` VARCHAR(50) NOT NULL,
+    `status` VARCHAR(20) NOT NULL,
     `created` INTEGER NOT NULL,
     `modified` INTEGER NOT NULL,
     PRIMARY KEY (`id`)
@@ -106,13 +111,39 @@ DROP TABLE IF EXISTS `lawyers`;
 CREATE TABLE `lawyers`
 (
     `id` INTEGER(10) NOT NULL AUTO_INCREMENT,
+    `lawyerid` VARCHAR(255) NOT NULL,
     `fullname` VARCHAR(255) NOT NULL,
-    `phone` INTEGER(12) NOT NULL,
-    `phonealt` INTEGER(12),
     `email` VARCHAR(255),
     `address` TEXT,
+    `phone1` VARCHAR(20) NOT NULL,
+    `phone2` VARCHAR(20),
+    `lawfirmid` INTEGER(10) NOT NULL,
+    `lawfirmname` VARCHAR(255) NOT NULL,
+    `speciality` VARCHAR(255) NOT NULL,
+    `status` VARCHAR(255) NOT NULL,
     `created` INTEGER NOT NULL,
     `modified` INTEGER NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
+-- ---------------------------------------------------------------------
+-- notificationdetail
+-- ---------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `notificationdetail`;
+
+CREATE TABLE `notificationdetail`
+(
+    `id` INTEGER(13) NOT NULL AUTO_INCREMENT,
+    `suitnumber` INTEGER(13) NOT NULL,
+    `notificationId` INTEGER(13) NOT NULL,
+    `msgstatus` VARCHAR(255) NOT NULL,
+    `phone` INTEGER(15) NOT NULL,
+    `msgtxt` TEXT NOT NULL,
+    `datetimesent` INTEGER(15) NOT NULL,
+    `msgid` INTEGER(13) NOT NULL,
+    `created` INTEGER(13) NOT NULL,
+    `modified` INTEGER(13) NOT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
 
@@ -125,12 +156,33 @@ DROP TABLE IF EXISTS `notifications`;
 CREATE TABLE `notifications`
 (
     `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `documentid` INTEGER(13) NOT NULL,
+    `documentlink` VARCHAR(255) NOT NULL,
+    `filer` VARCHAR(255) NOT NULL,
     `type` VARCHAR(255) NOT NULL,
     `suitnumber` VARCHAR(255) NOT NULL,
     `datetimesent` INTEGER NOT NULL,
     `recipients` TEXT NOT NULL,
     `status` VARCHAR(255) NOT NULL,
     `created` INTEGER NOT NULL,
+    `modified` INTEGER NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
+-- ---------------------------------------------------------------------
+-- permission
+-- ---------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `permission`;
+
+CREATE TABLE `permission`
+(
+    `id` INTEGER(12) NOT NULL AUTO_INCREMENT,
+    `userid` INTEGER(12) NOT NULL,
+    `code` INTEGER(12) NOT NULL,
+    `value` INTEGER(2) NOT NULL,
+    `state` VARCHAR(255) NOT NULL,
+    `created` INTEGER(12) NOT NULL,
     `modified` INTEGER NOT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
@@ -147,9 +199,30 @@ CREATE TABLE `plaintiffs`
     `suitnumber` VARCHAR(255) NOT NULL,
     `fullname` VARCHAR(255) NOT NULL,
     `address` TEXT,
-    `phone` INTEGER(12),
+    `phone1` VARCHAR(20),
+    `phone2` VARCHAR(20) NOT NULL,
+    `email` VARCHAR(255) NOT NULL,
+    `status` VARCHAR(255) NOT NULL,
     `created` INTEGER(12) NOT NULL,
     `modified` INTEGER(12) NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
+-- ---------------------------------------------------------------------
+-- regcode
+-- ---------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `regcode`;
+
+CREATE TABLE `regcode`
+(
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `code` INTEGER(20) NOT NULL,
+    `phone` INTEGER(20) NOT NULL,
+    `status` VARCHAR(60) NOT NULL,
+    `msgstatus` VARCHAR(255) NOT NULL,
+    `created` INTEGER(20) NOT NULL,
+    `modified` INTEGER(20) NOT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
 
@@ -166,6 +239,7 @@ CREATE TABLE `suitcourts`
     `suitnumber` VARCHAR(255) NOT NULL,
     `courtid` INTEGER NOT NULL,
     `courtname` VARCHAR(255) NOT NULL,
+    `status` VARCHAR(255) NOT NULL,
     `created` INTEGER NOT NULL,
     `modified` INTEGER NOT NULL,
     PRIMARY KEY (`id`)
@@ -183,8 +257,8 @@ CREATE TABLE `suitjudges`
     `suitid` INTEGER NOT NULL,
     `suitnumber` VARCHAR(255) NOT NULL,
     `judgeid` INTEGER NOT NULL,
-    `judgenumber` VARCHAR(255) NOT NULL,
     `judgename` VARCHAR(255) NOT NULL,
+    `status` VARCHAR(255) NOT NULL,
     `created` INTEGER NOT NULL,
     `modified` INTEGER NOT NULL,
     PRIMARY KEY (`id`)
@@ -205,7 +279,10 @@ CREATE TABLE `suitlawyers`
     `lawyertype` VARCHAR(255) NOT NULL,
     `lawyernumber` VARCHAR(255) NOT NULL,
     `lawyername` VARCHAR(255) NOT NULL,
+    `registertype` VARCHAR(255) NOT NULL,
+    `status` VARCHAR(255) NOT NULL,
     `created` INTEGER NOT NULL,
+    `modified` INTEGER(12) NOT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
 
@@ -224,7 +301,10 @@ CREATE TABLE `suits`
     `datefiled` INTEGER NOT NULL,
     `suitstatus` VARCHAR(255) NOT NULL,
     `suitaccess` VARCHAR(255) NOT NULL,
-    `dateofadjournment` INTEGER,
+    `suitdateid` INTEGER(20),
+    `suitcourt` VARCHAR(255) NOT NULL,
+    `userid` INTEGER NOT NULL,
+    `dataentryname` INTEGER NOT NULL,
     `created` INTEGER NOT NULL,
     `modified` INTEGER NOT NULL,
     PRIMARY KEY (`id`),
@@ -243,9 +323,32 @@ CREATE TABLE `token`
     `selector` CHAR(12) NOT NULL,
     `token` CHAR(64) NOT NULL,
     `userid` INTEGER NOT NULL,
+    `type` VARCHAR(255) NOT NULL,
     `expires` INTEGER NOT NULL,
+    `status` VARCHAR(255) NOT NULL,
     `created` INTEGER NOT NULL,
     `modified` INTEGER NOT NULL,
+    PRIMARY KEY (`id`)
+) ENGINE=InnoDB;
+
+-- ---------------------------------------------------------------------
+-- unregisteredlawyers
+-- ---------------------------------------------------------------------
+
+DROP TABLE IF EXISTS `unregisteredlawyers`;
+
+CREATE TABLE `unregisteredlawyers`
+(
+    `id` INTEGER NOT NULL AUTO_INCREMENT,
+    `fullname` VARCHAR(255) NOT NULL,
+    `address` VARCHAR(255) NOT NULL,
+    `phone` VARCHAR(20) NOT NULL,
+    `email` VARCHAR(255) NOT NULL,
+    `status` VARCHAR(255) NOT NULL,
+    `lawfirmid` INTEGER(12) NOT NULL,
+    `lawfirmname` VARCHAR(255) NOT NULL,
+    `created` INTEGER(20) NOT NULL,
+    `modified` INTEGER(20) NOT NULL,
     PRIMARY KEY (`id`)
 ) ENGINE=InnoDB;
 
@@ -258,16 +361,19 @@ DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users`
 (
     `id` INTEGER(12) NOT NULL AUTO_INCREMENT,
-    `username` VARCHAR(45) NOT NULL,
+    `phone` VARCHAR(45) NOT NULL,
     `password` VARCHAR(45) NOT NULL,
     `name` VARCHAR(255) NOT NULL,
     `email` VARCHAR(255),
     `status` VARCHAR(255) NOT NULL,
     `picture` VARCHAR(255),
+    `position` VARCHAR(255) NOT NULL,
+    `emailcode` VARCHAR(255) NOT NULL,
+    `mobilecode` VARCHAR(16) NOT NULL,
     `created` INTEGER NOT NULL,
     `modified` INTEGER NOT NULL,
     PRIMARY KEY (`id`),
-    UNIQUE INDEX `username` (`username`),
+    UNIQUE INDEX `username` (`phone`),
     UNIQUE INDEX `email` (`email`)
 ) ENGINE=InnoDB;
 

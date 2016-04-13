@@ -59,7 +59,7 @@ class LawyersTableMap extends TableMap
     /**
      * The total number of columns
      */
-    const NUM_COLUMNS = 8;
+    const NUM_COLUMNS = 13;
 
     /**
      * The number of lazy-loaded columns
@@ -69,7 +69,7 @@ class LawyersTableMap extends TableMap
     /**
      * The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS)
      */
-    const NUM_HYDRATE_COLUMNS = 8;
+    const NUM_HYDRATE_COLUMNS = 13;
 
     /**
      * the column name for the id field
@@ -77,19 +77,14 @@ class LawyersTableMap extends TableMap
     const COL_ID = 'lawyers.id';
 
     /**
+     * the column name for the lawyerid field
+     */
+    const COL_LAWYERID = 'lawyers.lawyerid';
+
+    /**
      * the column name for the fullname field
      */
     const COL_FULLNAME = 'lawyers.fullname';
-
-    /**
-     * the column name for the phone field
-     */
-    const COL_PHONE = 'lawyers.phone';
-
-    /**
-     * the column name for the phonealt field
-     */
-    const COL_PHONEALT = 'lawyers.phonealt';
 
     /**
      * the column name for the email field
@@ -100,6 +95,36 @@ class LawyersTableMap extends TableMap
      * the column name for the address field
      */
     const COL_ADDRESS = 'lawyers.address';
+
+    /**
+     * the column name for the phone1 field
+     */
+    const COL_PHONE1 = 'lawyers.phone1';
+
+    /**
+     * the column name for the phone2 field
+     */
+    const COL_PHONE2 = 'lawyers.phone2';
+
+    /**
+     * the column name for the lawfirmid field
+     */
+    const COL_LAWFIRMID = 'lawyers.lawfirmid';
+
+    /**
+     * the column name for the lawfirmname field
+     */
+    const COL_LAWFIRMNAME = 'lawyers.lawfirmname';
+
+    /**
+     * the column name for the speciality field
+     */
+    const COL_SPECIALITY = 'lawyers.speciality';
+
+    /**
+     * the column name for the status field
+     */
+    const COL_STATUS = 'lawyers.status';
 
     /**
      * the column name for the created field
@@ -123,11 +148,11 @@ class LawyersTableMap extends TableMap
      * e.g. self::$fieldNames[self::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        self::TYPE_PHPNAME       => array('Id', 'Fullname', 'Phone', 'Phonealt', 'Email', 'Address', 'Created', 'Modified', ),
-        self::TYPE_CAMELNAME     => array('id', 'fullname', 'phone', 'phonealt', 'email', 'address', 'created', 'modified', ),
-        self::TYPE_COLNAME       => array(LawyersTableMap::COL_ID, LawyersTableMap::COL_FULLNAME, LawyersTableMap::COL_PHONE, LawyersTableMap::COL_PHONEALT, LawyersTableMap::COL_EMAIL, LawyersTableMap::COL_ADDRESS, LawyersTableMap::COL_CREATED, LawyersTableMap::COL_MODIFIED, ),
-        self::TYPE_FIELDNAME     => array('id', 'fullname', 'phone', 'phonealt', 'email', 'address', 'created', 'modified', ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, )
+        self::TYPE_PHPNAME       => array('Id', 'Lawyerid', 'Fullname', 'Email', 'Address', 'Phone1', 'Phone2', 'Lawfirmid', 'Lawfirmname', 'Speciality', 'Status', 'Created', 'Modified', ),
+        self::TYPE_CAMELNAME     => array('id', 'lawyerid', 'fullname', 'email', 'address', 'phone1', 'phone2', 'lawfirmid', 'lawfirmname', 'speciality', 'status', 'created', 'modified', ),
+        self::TYPE_COLNAME       => array(LawyersTableMap::COL_ID, LawyersTableMap::COL_LAWYERID, LawyersTableMap::COL_FULLNAME, LawyersTableMap::COL_EMAIL, LawyersTableMap::COL_ADDRESS, LawyersTableMap::COL_PHONE1, LawyersTableMap::COL_PHONE2, LawyersTableMap::COL_LAWFIRMID, LawyersTableMap::COL_LAWFIRMNAME, LawyersTableMap::COL_SPECIALITY, LawyersTableMap::COL_STATUS, LawyersTableMap::COL_CREATED, LawyersTableMap::COL_MODIFIED, ),
+        self::TYPE_FIELDNAME     => array('id', 'lawyerid', 'fullname', 'email', 'address', 'phone1', 'phone2', 'lawfirmid', 'lawfirmname', 'speciality', 'status', 'created', 'modified', ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, )
     );
 
     /**
@@ -137,11 +162,11 @@ class LawyersTableMap extends TableMap
      * e.g. self::$fieldKeys[self::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        self::TYPE_PHPNAME       => array('Id' => 0, 'Fullname' => 1, 'Phone' => 2, 'Phonealt' => 3, 'Email' => 4, 'Address' => 5, 'Created' => 6, 'Modified' => 7, ),
-        self::TYPE_CAMELNAME     => array('id' => 0, 'fullname' => 1, 'phone' => 2, 'phonealt' => 3, 'email' => 4, 'address' => 5, 'created' => 6, 'modified' => 7, ),
-        self::TYPE_COLNAME       => array(LawyersTableMap::COL_ID => 0, LawyersTableMap::COL_FULLNAME => 1, LawyersTableMap::COL_PHONE => 2, LawyersTableMap::COL_PHONEALT => 3, LawyersTableMap::COL_EMAIL => 4, LawyersTableMap::COL_ADDRESS => 5, LawyersTableMap::COL_CREATED => 6, LawyersTableMap::COL_MODIFIED => 7, ),
-        self::TYPE_FIELDNAME     => array('id' => 0, 'fullname' => 1, 'phone' => 2, 'phonealt' => 3, 'email' => 4, 'address' => 5, 'created' => 6, 'modified' => 7, ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, )
+        self::TYPE_PHPNAME       => array('Id' => 0, 'Lawyerid' => 1, 'Fullname' => 2, 'Email' => 3, 'Address' => 4, 'Phone1' => 5, 'Phone2' => 6, 'Lawfirmid' => 7, 'Lawfirmname' => 8, 'Speciality' => 9, 'Status' => 10, 'Created' => 11, 'Modified' => 12, ),
+        self::TYPE_CAMELNAME     => array('id' => 0, 'lawyerid' => 1, 'fullname' => 2, 'email' => 3, 'address' => 4, 'phone1' => 5, 'phone2' => 6, 'lawfirmid' => 7, 'lawfirmname' => 8, 'speciality' => 9, 'status' => 10, 'created' => 11, 'modified' => 12, ),
+        self::TYPE_COLNAME       => array(LawyersTableMap::COL_ID => 0, LawyersTableMap::COL_LAWYERID => 1, LawyersTableMap::COL_FULLNAME => 2, LawyersTableMap::COL_EMAIL => 3, LawyersTableMap::COL_ADDRESS => 4, LawyersTableMap::COL_PHONE1 => 5, LawyersTableMap::COL_PHONE2 => 6, LawyersTableMap::COL_LAWFIRMID => 7, LawyersTableMap::COL_LAWFIRMNAME => 8, LawyersTableMap::COL_SPECIALITY => 9, LawyersTableMap::COL_STATUS => 10, LawyersTableMap::COL_CREATED => 11, LawyersTableMap::COL_MODIFIED => 12, ),
+        self::TYPE_FIELDNAME     => array('id' => 0, 'lawyerid' => 1, 'fullname' => 2, 'email' => 3, 'address' => 4, 'phone1' => 5, 'phone2' => 6, 'lawfirmid' => 7, 'lawfirmname' => 8, 'speciality' => 9, 'status' => 10, 'created' => 11, 'modified' => 12, ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, )
     );
 
     /**
@@ -162,11 +187,16 @@ class LawyersTableMap extends TableMap
         $this->setUseIdGenerator(true);
         // columns
         $this->addPrimaryKey('id', 'Id', 'INTEGER', true, 10, null);
+        $this->addColumn('lawyerid', 'Lawyerid', 'VARCHAR', true, 255, null);
         $this->addColumn('fullname', 'Fullname', 'VARCHAR', true, 255, null);
-        $this->addColumn('phone', 'Phone', 'INTEGER', true, 12, null);
-        $this->addColumn('phonealt', 'Phonealt', 'INTEGER', false, 12, null);
         $this->addColumn('email', 'Email', 'VARCHAR', false, 255, null);
         $this->addColumn('address', 'Address', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('phone1', 'Phone1', 'VARCHAR', true, 20, null);
+        $this->addColumn('phone2', 'Phone2', 'VARCHAR', false, 20, null);
+        $this->addColumn('lawfirmid', 'Lawfirmid', 'INTEGER', true, 10, null);
+        $this->addColumn('lawfirmname', 'Lawfirmname', 'VARCHAR', true, 255, null);
+        $this->addColumn('speciality', 'Speciality', 'VARCHAR', true, 255, null);
+        $this->addColumn('status', 'Status', 'VARCHAR', true, 255, null);
         $this->addColumn('created', 'Created', 'INTEGER', true, null, null);
         $this->addColumn('modified', 'Modified', 'INTEGER', true, null, null);
     } // initialize()
@@ -320,20 +350,30 @@ class LawyersTableMap extends TableMap
     {
         if (null === $alias) {
             $criteria->addSelectColumn(LawyersTableMap::COL_ID);
+            $criteria->addSelectColumn(LawyersTableMap::COL_LAWYERID);
             $criteria->addSelectColumn(LawyersTableMap::COL_FULLNAME);
-            $criteria->addSelectColumn(LawyersTableMap::COL_PHONE);
-            $criteria->addSelectColumn(LawyersTableMap::COL_PHONEALT);
             $criteria->addSelectColumn(LawyersTableMap::COL_EMAIL);
             $criteria->addSelectColumn(LawyersTableMap::COL_ADDRESS);
+            $criteria->addSelectColumn(LawyersTableMap::COL_PHONE1);
+            $criteria->addSelectColumn(LawyersTableMap::COL_PHONE2);
+            $criteria->addSelectColumn(LawyersTableMap::COL_LAWFIRMID);
+            $criteria->addSelectColumn(LawyersTableMap::COL_LAWFIRMNAME);
+            $criteria->addSelectColumn(LawyersTableMap::COL_SPECIALITY);
+            $criteria->addSelectColumn(LawyersTableMap::COL_STATUS);
             $criteria->addSelectColumn(LawyersTableMap::COL_CREATED);
             $criteria->addSelectColumn(LawyersTableMap::COL_MODIFIED);
         } else {
             $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.lawyerid');
             $criteria->addSelectColumn($alias . '.fullname');
-            $criteria->addSelectColumn($alias . '.phone');
-            $criteria->addSelectColumn($alias . '.phonealt');
             $criteria->addSelectColumn($alias . '.email');
             $criteria->addSelectColumn($alias . '.address');
+            $criteria->addSelectColumn($alias . '.phone1');
+            $criteria->addSelectColumn($alias . '.phone2');
+            $criteria->addSelectColumn($alias . '.lawfirmid');
+            $criteria->addSelectColumn($alias . '.lawfirmname');
+            $criteria->addSelectColumn($alias . '.speciality');
+            $criteria->addSelectColumn($alias . '.status');
             $criteria->addSelectColumn($alias . '.created');
             $criteria->addSelectColumn($alias . '.modified');
         }

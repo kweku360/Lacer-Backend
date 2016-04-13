@@ -59,7 +59,7 @@ class SuitcourtsTableMap extends TableMap
     /**
      * The total number of columns
      */
-    const NUM_COLUMNS = 7;
+    const NUM_COLUMNS = 8;
 
     /**
      * The number of lazy-loaded columns
@@ -69,7 +69,7 @@ class SuitcourtsTableMap extends TableMap
     /**
      * The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS)
      */
-    const NUM_HYDRATE_COLUMNS = 7;
+    const NUM_HYDRATE_COLUMNS = 8;
 
     /**
      * the column name for the id field
@@ -97,6 +97,11 @@ class SuitcourtsTableMap extends TableMap
     const COL_COURTNAME = 'suitcourts.courtname';
 
     /**
+     * the column name for the status field
+     */
+    const COL_STATUS = 'suitcourts.status';
+
+    /**
      * the column name for the created field
      */
     const COL_CREATED = 'suitcourts.created';
@@ -118,11 +123,11 @@ class SuitcourtsTableMap extends TableMap
      * e.g. self::$fieldNames[self::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        self::TYPE_PHPNAME       => array('Id', 'Suitid', 'Suitnumber', 'Courtid', 'Courtname', 'Created', 'Modified', ),
-        self::TYPE_CAMELNAME     => array('id', 'suitid', 'suitnumber', 'courtid', 'courtname', 'created', 'modified', ),
-        self::TYPE_COLNAME       => array(SuitcourtsTableMap::COL_ID, SuitcourtsTableMap::COL_SUITID, SuitcourtsTableMap::COL_SUITNUMBER, SuitcourtsTableMap::COL_COURTID, SuitcourtsTableMap::COL_COURTNAME, SuitcourtsTableMap::COL_CREATED, SuitcourtsTableMap::COL_MODIFIED, ),
-        self::TYPE_FIELDNAME     => array('id', 'suitid', 'suitnumber', 'courtid', 'courtname', 'created', 'modified', ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, )
+        self::TYPE_PHPNAME       => array('Id', 'Suitid', 'Suitnumber', 'Courtid', 'Courtname', 'Status', 'Created', 'Modified', ),
+        self::TYPE_CAMELNAME     => array('id', 'suitid', 'suitnumber', 'courtid', 'courtname', 'status', 'created', 'modified', ),
+        self::TYPE_COLNAME       => array(SuitcourtsTableMap::COL_ID, SuitcourtsTableMap::COL_SUITID, SuitcourtsTableMap::COL_SUITNUMBER, SuitcourtsTableMap::COL_COURTID, SuitcourtsTableMap::COL_COURTNAME, SuitcourtsTableMap::COL_STATUS, SuitcourtsTableMap::COL_CREATED, SuitcourtsTableMap::COL_MODIFIED, ),
+        self::TYPE_FIELDNAME     => array('id', 'suitid', 'suitnumber', 'courtid', 'courtname', 'status', 'created', 'modified', ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, )
     );
 
     /**
@@ -132,11 +137,11 @@ class SuitcourtsTableMap extends TableMap
      * e.g. self::$fieldKeys[self::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        self::TYPE_PHPNAME       => array('Id' => 0, 'Suitid' => 1, 'Suitnumber' => 2, 'Courtid' => 3, 'Courtname' => 4, 'Created' => 5, 'Modified' => 6, ),
-        self::TYPE_CAMELNAME     => array('id' => 0, 'suitid' => 1, 'suitnumber' => 2, 'courtid' => 3, 'courtname' => 4, 'created' => 5, 'modified' => 6, ),
-        self::TYPE_COLNAME       => array(SuitcourtsTableMap::COL_ID => 0, SuitcourtsTableMap::COL_SUITID => 1, SuitcourtsTableMap::COL_SUITNUMBER => 2, SuitcourtsTableMap::COL_COURTID => 3, SuitcourtsTableMap::COL_COURTNAME => 4, SuitcourtsTableMap::COL_CREATED => 5, SuitcourtsTableMap::COL_MODIFIED => 6, ),
-        self::TYPE_FIELDNAME     => array('id' => 0, 'suitid' => 1, 'suitnumber' => 2, 'courtid' => 3, 'courtname' => 4, 'created' => 5, 'modified' => 6, ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, )
+        self::TYPE_PHPNAME       => array('Id' => 0, 'Suitid' => 1, 'Suitnumber' => 2, 'Courtid' => 3, 'Courtname' => 4, 'Status' => 5, 'Created' => 6, 'Modified' => 7, ),
+        self::TYPE_CAMELNAME     => array('id' => 0, 'suitid' => 1, 'suitnumber' => 2, 'courtid' => 3, 'courtname' => 4, 'status' => 5, 'created' => 6, 'modified' => 7, ),
+        self::TYPE_COLNAME       => array(SuitcourtsTableMap::COL_ID => 0, SuitcourtsTableMap::COL_SUITID => 1, SuitcourtsTableMap::COL_SUITNUMBER => 2, SuitcourtsTableMap::COL_COURTID => 3, SuitcourtsTableMap::COL_COURTNAME => 4, SuitcourtsTableMap::COL_STATUS => 5, SuitcourtsTableMap::COL_CREATED => 6, SuitcourtsTableMap::COL_MODIFIED => 7, ),
+        self::TYPE_FIELDNAME     => array('id' => 0, 'suitid' => 1, 'suitnumber' => 2, 'courtid' => 3, 'courtname' => 4, 'status' => 5, 'created' => 6, 'modified' => 7, ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, )
     );
 
     /**
@@ -161,6 +166,7 @@ class SuitcourtsTableMap extends TableMap
         $this->addColumn('suitnumber', 'Suitnumber', 'VARCHAR', true, 255, null);
         $this->addColumn('courtid', 'Courtid', 'INTEGER', true, null, null);
         $this->addColumn('courtname', 'Courtname', 'VARCHAR', true, 255, null);
+        $this->addColumn('status', 'Status', 'VARCHAR', true, 255, null);
         $this->addColumn('created', 'Created', 'INTEGER', true, null, null);
         $this->addColumn('modified', 'Modified', 'INTEGER', true, null, null);
     } // initialize()
@@ -318,6 +324,7 @@ class SuitcourtsTableMap extends TableMap
             $criteria->addSelectColumn(SuitcourtsTableMap::COL_SUITNUMBER);
             $criteria->addSelectColumn(SuitcourtsTableMap::COL_COURTID);
             $criteria->addSelectColumn(SuitcourtsTableMap::COL_COURTNAME);
+            $criteria->addSelectColumn(SuitcourtsTableMap::COL_STATUS);
             $criteria->addSelectColumn(SuitcourtsTableMap::COL_CREATED);
             $criteria->addSelectColumn(SuitcourtsTableMap::COL_MODIFIED);
         } else {
@@ -326,6 +333,7 @@ class SuitcourtsTableMap extends TableMap
             $criteria->addSelectColumn($alias . '.suitnumber');
             $criteria->addSelectColumn($alias . '.courtid');
             $criteria->addSelectColumn($alias . '.courtname');
+            $criteria->addSelectColumn($alias . '.status');
             $criteria->addSelectColumn($alias . '.created');
             $criteria->addSelectColumn($alias . '.modified');
         }

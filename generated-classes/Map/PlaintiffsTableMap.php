@@ -59,7 +59,7 @@ class PlaintiffsTableMap extends TableMap
     /**
      * The total number of columns
      */
-    const NUM_COLUMNS = 7;
+    const NUM_COLUMNS = 10;
 
     /**
      * The number of lazy-loaded columns
@@ -69,7 +69,7 @@ class PlaintiffsTableMap extends TableMap
     /**
      * The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS)
      */
-    const NUM_HYDRATE_COLUMNS = 7;
+    const NUM_HYDRATE_COLUMNS = 10;
 
     /**
      * the column name for the id field
@@ -92,9 +92,24 @@ class PlaintiffsTableMap extends TableMap
     const COL_ADDRESS = 'plaintiffs.address';
 
     /**
-     * the column name for the phone field
+     * the column name for the phone1 field
      */
-    const COL_PHONE = 'plaintiffs.phone';
+    const COL_PHONE1 = 'plaintiffs.phone1';
+
+    /**
+     * the column name for the phone2 field
+     */
+    const COL_PHONE2 = 'plaintiffs.phone2';
+
+    /**
+     * the column name for the email field
+     */
+    const COL_EMAIL = 'plaintiffs.email';
+
+    /**
+     * the column name for the status field
+     */
+    const COL_STATUS = 'plaintiffs.status';
 
     /**
      * the column name for the created field
@@ -118,11 +133,11 @@ class PlaintiffsTableMap extends TableMap
      * e.g. self::$fieldNames[self::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        self::TYPE_PHPNAME       => array('Id', 'Suitnumber', 'Fullname', 'Address', 'Phone', 'Created', 'Modified', ),
-        self::TYPE_CAMELNAME     => array('id', 'suitnumber', 'fullname', 'address', 'phone', 'created', 'modified', ),
-        self::TYPE_COLNAME       => array(PlaintiffsTableMap::COL_ID, PlaintiffsTableMap::COL_SUITNUMBER, PlaintiffsTableMap::COL_FULLNAME, PlaintiffsTableMap::COL_ADDRESS, PlaintiffsTableMap::COL_PHONE, PlaintiffsTableMap::COL_CREATED, PlaintiffsTableMap::COL_MODIFIED, ),
-        self::TYPE_FIELDNAME     => array('id', 'suitnumber', 'fullname', 'address', 'phone', 'created', 'modified', ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, )
+        self::TYPE_PHPNAME       => array('Id', 'Suitnumber', 'Fullname', 'Address', 'Phone1', 'Phone2', 'Email', 'Status', 'Created', 'Modified', ),
+        self::TYPE_CAMELNAME     => array('id', 'suitnumber', 'fullname', 'address', 'phone1', 'phone2', 'email', 'status', 'created', 'modified', ),
+        self::TYPE_COLNAME       => array(PlaintiffsTableMap::COL_ID, PlaintiffsTableMap::COL_SUITNUMBER, PlaintiffsTableMap::COL_FULLNAME, PlaintiffsTableMap::COL_ADDRESS, PlaintiffsTableMap::COL_PHONE1, PlaintiffsTableMap::COL_PHONE2, PlaintiffsTableMap::COL_EMAIL, PlaintiffsTableMap::COL_STATUS, PlaintiffsTableMap::COL_CREATED, PlaintiffsTableMap::COL_MODIFIED, ),
+        self::TYPE_FIELDNAME     => array('id', 'suitnumber', 'fullname', 'address', 'phone1', 'phone2', 'email', 'status', 'created', 'modified', ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, )
     );
 
     /**
@@ -132,11 +147,11 @@ class PlaintiffsTableMap extends TableMap
      * e.g. self::$fieldKeys[self::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        self::TYPE_PHPNAME       => array('Id' => 0, 'Suitnumber' => 1, 'Fullname' => 2, 'Address' => 3, 'Phone' => 4, 'Created' => 5, 'Modified' => 6, ),
-        self::TYPE_CAMELNAME     => array('id' => 0, 'suitnumber' => 1, 'fullname' => 2, 'address' => 3, 'phone' => 4, 'created' => 5, 'modified' => 6, ),
-        self::TYPE_COLNAME       => array(PlaintiffsTableMap::COL_ID => 0, PlaintiffsTableMap::COL_SUITNUMBER => 1, PlaintiffsTableMap::COL_FULLNAME => 2, PlaintiffsTableMap::COL_ADDRESS => 3, PlaintiffsTableMap::COL_PHONE => 4, PlaintiffsTableMap::COL_CREATED => 5, PlaintiffsTableMap::COL_MODIFIED => 6, ),
-        self::TYPE_FIELDNAME     => array('id' => 0, 'suitnumber' => 1, 'fullname' => 2, 'address' => 3, 'phone' => 4, 'created' => 5, 'modified' => 6, ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, )
+        self::TYPE_PHPNAME       => array('Id' => 0, 'Suitnumber' => 1, 'Fullname' => 2, 'Address' => 3, 'Phone1' => 4, 'Phone2' => 5, 'Email' => 6, 'Status' => 7, 'Created' => 8, 'Modified' => 9, ),
+        self::TYPE_CAMELNAME     => array('id' => 0, 'suitnumber' => 1, 'fullname' => 2, 'address' => 3, 'phone1' => 4, 'phone2' => 5, 'email' => 6, 'status' => 7, 'created' => 8, 'modified' => 9, ),
+        self::TYPE_COLNAME       => array(PlaintiffsTableMap::COL_ID => 0, PlaintiffsTableMap::COL_SUITNUMBER => 1, PlaintiffsTableMap::COL_FULLNAME => 2, PlaintiffsTableMap::COL_ADDRESS => 3, PlaintiffsTableMap::COL_PHONE1 => 4, PlaintiffsTableMap::COL_PHONE2 => 5, PlaintiffsTableMap::COL_EMAIL => 6, PlaintiffsTableMap::COL_STATUS => 7, PlaintiffsTableMap::COL_CREATED => 8, PlaintiffsTableMap::COL_MODIFIED => 9, ),
+        self::TYPE_FIELDNAME     => array('id' => 0, 'suitnumber' => 1, 'fullname' => 2, 'address' => 3, 'phone1' => 4, 'phone2' => 5, 'email' => 6, 'status' => 7, 'created' => 8, 'modified' => 9, ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, )
     );
 
     /**
@@ -160,7 +175,10 @@ class PlaintiffsTableMap extends TableMap
         $this->addColumn('suitnumber', 'Suitnumber', 'VARCHAR', true, 255, null);
         $this->addColumn('fullname', 'Fullname', 'VARCHAR', true, 255, null);
         $this->addColumn('address', 'Address', 'LONGVARCHAR', false, null, null);
-        $this->addColumn('phone', 'Phone', 'INTEGER', false, 12, null);
+        $this->addColumn('phone1', 'Phone1', 'VARCHAR', false, 20, null);
+        $this->addColumn('phone2', 'Phone2', 'VARCHAR', true, 20, null);
+        $this->addColumn('email', 'Email', 'VARCHAR', true, 255, null);
+        $this->addColumn('status', 'Status', 'VARCHAR', true, 255, null);
         $this->addColumn('created', 'Created', 'INTEGER', true, 12, null);
         $this->addColumn('modified', 'Modified', 'INTEGER', true, 12, null);
     } // initialize()
@@ -317,7 +335,10 @@ class PlaintiffsTableMap extends TableMap
             $criteria->addSelectColumn(PlaintiffsTableMap::COL_SUITNUMBER);
             $criteria->addSelectColumn(PlaintiffsTableMap::COL_FULLNAME);
             $criteria->addSelectColumn(PlaintiffsTableMap::COL_ADDRESS);
-            $criteria->addSelectColumn(PlaintiffsTableMap::COL_PHONE);
+            $criteria->addSelectColumn(PlaintiffsTableMap::COL_PHONE1);
+            $criteria->addSelectColumn(PlaintiffsTableMap::COL_PHONE2);
+            $criteria->addSelectColumn(PlaintiffsTableMap::COL_EMAIL);
+            $criteria->addSelectColumn(PlaintiffsTableMap::COL_STATUS);
             $criteria->addSelectColumn(PlaintiffsTableMap::COL_CREATED);
             $criteria->addSelectColumn(PlaintiffsTableMap::COL_MODIFIED);
         } else {
@@ -325,7 +346,10 @@ class PlaintiffsTableMap extends TableMap
             $criteria->addSelectColumn($alias . '.suitnumber');
             $criteria->addSelectColumn($alias . '.fullname');
             $criteria->addSelectColumn($alias . '.address');
-            $criteria->addSelectColumn($alias . '.phone');
+            $criteria->addSelectColumn($alias . '.phone1');
+            $criteria->addSelectColumn($alias . '.phone2');
+            $criteria->addSelectColumn($alias . '.email');
+            $criteria->addSelectColumn($alias . '.status');
             $criteria->addSelectColumn($alias . '.created');
             $criteria->addSelectColumn($alias . '.modified');
         }

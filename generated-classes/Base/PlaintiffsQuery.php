@@ -23,7 +23,10 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildPlaintiffsQuery orderBySuitnumber($order = Criteria::ASC) Order by the suitnumber column
  * @method     ChildPlaintiffsQuery orderByFullname($order = Criteria::ASC) Order by the fullname column
  * @method     ChildPlaintiffsQuery orderByAddress($order = Criteria::ASC) Order by the address column
- * @method     ChildPlaintiffsQuery orderByPhone($order = Criteria::ASC) Order by the phone column
+ * @method     ChildPlaintiffsQuery orderByPhone1($order = Criteria::ASC) Order by the phone1 column
+ * @method     ChildPlaintiffsQuery orderByPhone2($order = Criteria::ASC) Order by the phone2 column
+ * @method     ChildPlaintiffsQuery orderByEmail($order = Criteria::ASC) Order by the email column
+ * @method     ChildPlaintiffsQuery orderByStatus($order = Criteria::ASC) Order by the status column
  * @method     ChildPlaintiffsQuery orderByCreated($order = Criteria::ASC) Order by the created column
  * @method     ChildPlaintiffsQuery orderByModified($order = Criteria::ASC) Order by the modified column
  *
@@ -31,7 +34,10 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildPlaintiffsQuery groupBySuitnumber() Group by the suitnumber column
  * @method     ChildPlaintiffsQuery groupByFullname() Group by the fullname column
  * @method     ChildPlaintiffsQuery groupByAddress() Group by the address column
- * @method     ChildPlaintiffsQuery groupByPhone() Group by the phone column
+ * @method     ChildPlaintiffsQuery groupByPhone1() Group by the phone1 column
+ * @method     ChildPlaintiffsQuery groupByPhone2() Group by the phone2 column
+ * @method     ChildPlaintiffsQuery groupByEmail() Group by the email column
+ * @method     ChildPlaintiffsQuery groupByStatus() Group by the status column
  * @method     ChildPlaintiffsQuery groupByCreated() Group by the created column
  * @method     ChildPlaintiffsQuery groupByModified() Group by the modified column
  *
@@ -50,7 +56,10 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildPlaintiffs findOneBySuitnumber(string $suitnumber) Return the first ChildPlaintiffs filtered by the suitnumber column
  * @method     ChildPlaintiffs findOneByFullname(string $fullname) Return the first ChildPlaintiffs filtered by the fullname column
  * @method     ChildPlaintiffs findOneByAddress(string $address) Return the first ChildPlaintiffs filtered by the address column
- * @method     ChildPlaintiffs findOneByPhone(int $phone) Return the first ChildPlaintiffs filtered by the phone column
+ * @method     ChildPlaintiffs findOneByPhone1(string $phone1) Return the first ChildPlaintiffs filtered by the phone1 column
+ * @method     ChildPlaintiffs findOneByPhone2(string $phone2) Return the first ChildPlaintiffs filtered by the phone2 column
+ * @method     ChildPlaintiffs findOneByEmail(string $email) Return the first ChildPlaintiffs filtered by the email column
+ * @method     ChildPlaintiffs findOneByStatus(string $status) Return the first ChildPlaintiffs filtered by the status column
  * @method     ChildPlaintiffs findOneByCreated(int $created) Return the first ChildPlaintiffs filtered by the created column
  * @method     ChildPlaintiffs findOneByModified(int $modified) Return the first ChildPlaintiffs filtered by the modified column *
 
@@ -61,7 +70,10 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildPlaintiffs requireOneBySuitnumber(string $suitnumber) Return the first ChildPlaintiffs filtered by the suitnumber column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildPlaintiffs requireOneByFullname(string $fullname) Return the first ChildPlaintiffs filtered by the fullname column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildPlaintiffs requireOneByAddress(string $address) Return the first ChildPlaintiffs filtered by the address column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildPlaintiffs requireOneByPhone(int $phone) Return the first ChildPlaintiffs filtered by the phone column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildPlaintiffs requireOneByPhone1(string $phone1) Return the first ChildPlaintiffs filtered by the phone1 column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildPlaintiffs requireOneByPhone2(string $phone2) Return the first ChildPlaintiffs filtered by the phone2 column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildPlaintiffs requireOneByEmail(string $email) Return the first ChildPlaintiffs filtered by the email column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildPlaintiffs requireOneByStatus(string $status) Return the first ChildPlaintiffs filtered by the status column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildPlaintiffs requireOneByCreated(int $created) Return the first ChildPlaintiffs filtered by the created column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildPlaintiffs requireOneByModified(int $modified) Return the first ChildPlaintiffs filtered by the modified column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  *
@@ -70,7 +82,10 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildPlaintiffs[]|ObjectCollection findBySuitnumber(string $suitnumber) Return ChildPlaintiffs objects filtered by the suitnumber column
  * @method     ChildPlaintiffs[]|ObjectCollection findByFullname(string $fullname) Return ChildPlaintiffs objects filtered by the fullname column
  * @method     ChildPlaintiffs[]|ObjectCollection findByAddress(string $address) Return ChildPlaintiffs objects filtered by the address column
- * @method     ChildPlaintiffs[]|ObjectCollection findByPhone(int $phone) Return ChildPlaintiffs objects filtered by the phone column
+ * @method     ChildPlaintiffs[]|ObjectCollection findByPhone1(string $phone1) Return ChildPlaintiffs objects filtered by the phone1 column
+ * @method     ChildPlaintiffs[]|ObjectCollection findByPhone2(string $phone2) Return ChildPlaintiffs objects filtered by the phone2 column
+ * @method     ChildPlaintiffs[]|ObjectCollection findByEmail(string $email) Return ChildPlaintiffs objects filtered by the email column
+ * @method     ChildPlaintiffs[]|ObjectCollection findByStatus(string $status) Return ChildPlaintiffs objects filtered by the status column
  * @method     ChildPlaintiffs[]|ObjectCollection findByCreated(int $created) Return ChildPlaintiffs objects filtered by the created column
  * @method     ChildPlaintiffs[]|ObjectCollection findByModified(int $modified) Return ChildPlaintiffs objects filtered by the modified column
  * @method     ChildPlaintiffs[]|\Propel\Runtime\Util\PropelModelPager paginate($page = 1, $maxPerPage = 10, ConnectionInterface $con = null) Issue a SELECT query based on the current ModelCriteria and uses a page and a maximum number of results per page to compute an offset and a limit
@@ -165,7 +180,7 @@ abstract class PlaintiffsQuery extends ModelCriteria
      */
     protected function findPkSimple($key, ConnectionInterface $con)
     {
-        $sql = 'SELECT id, suitnumber, fullname, address, phone, created, modified FROM plaintiffs WHERE id = :p0';
+        $sql = 'SELECT id, suitnumber, fullname, address, phone1, phone2, email, status, created, modified FROM plaintiffs WHERE id = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -384,44 +399,119 @@ abstract class PlaintiffsQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the phone column
+     * Filter the query on the phone1 column
      *
      * Example usage:
      * <code>
-     * $query->filterByPhone(1234); // WHERE phone = 1234
-     * $query->filterByPhone(array(12, 34)); // WHERE phone IN (12, 34)
-     * $query->filterByPhone(array('min' => 12)); // WHERE phone > 12
+     * $query->filterByPhone1('fooValue');   // WHERE phone1 = 'fooValue'
+     * $query->filterByPhone1('%fooValue%'); // WHERE phone1 LIKE '%fooValue%'
      * </code>
      *
-     * @param     mixed $phone The value to use as filter.
-     *              Use scalar values for equality.
-     *              Use array values for in_array() equivalent.
-     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $phone1 The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return $this|ChildPlaintiffsQuery The current query, for fluid interface
      */
-    public function filterByPhone($phone = null, $comparison = null)
+    public function filterByPhone1($phone1 = null, $comparison = null)
     {
-        if (is_array($phone)) {
-            $useMinMax = false;
-            if (isset($phone['min'])) {
-                $this->addUsingAlias(PlaintiffsTableMap::COL_PHONE, $phone['min'], Criteria::GREATER_EQUAL);
-                $useMinMax = true;
-            }
-            if (isset($phone['max'])) {
-                $this->addUsingAlias(PlaintiffsTableMap::COL_PHONE, $phone['max'], Criteria::LESS_EQUAL);
-                $useMinMax = true;
-            }
-            if ($useMinMax) {
-                return $this;
-            }
-            if (null === $comparison) {
+        if (null === $comparison) {
+            if (is_array($phone1)) {
                 $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $phone1)) {
+                $phone1 = str_replace('*', '%', $phone1);
+                $comparison = Criteria::LIKE;
             }
         }
 
-        return $this->addUsingAlias(PlaintiffsTableMap::COL_PHONE, $phone, $comparison);
+        return $this->addUsingAlias(PlaintiffsTableMap::COL_PHONE1, $phone1, $comparison);
+    }
+
+    /**
+     * Filter the query on the phone2 column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByPhone2('fooValue');   // WHERE phone2 = 'fooValue'
+     * $query->filterByPhone2('%fooValue%'); // WHERE phone2 LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $phone2 The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildPlaintiffsQuery The current query, for fluid interface
+     */
+    public function filterByPhone2($phone2 = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($phone2)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $phone2)) {
+                $phone2 = str_replace('*', '%', $phone2);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(PlaintiffsTableMap::COL_PHONE2, $phone2, $comparison);
+    }
+
+    /**
+     * Filter the query on the email column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByEmail('fooValue');   // WHERE email = 'fooValue'
+     * $query->filterByEmail('%fooValue%'); // WHERE email LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $email The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildPlaintiffsQuery The current query, for fluid interface
+     */
+    public function filterByEmail($email = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($email)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $email)) {
+                $email = str_replace('*', '%', $email);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(PlaintiffsTableMap::COL_EMAIL, $email, $comparison);
+    }
+
+    /**
+     * Filter the query on the status column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByStatus('fooValue');   // WHERE status = 'fooValue'
+     * $query->filterByStatus('%fooValue%'); // WHERE status LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $status The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildPlaintiffsQuery The current query, for fluid interface
+     */
+    public function filterByStatus($status = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($status)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $status)) {
+                $status = str_replace('*', '%', $status);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(PlaintiffsTableMap::COL_STATUS, $status, $comparison);
     }
 
     /**

@@ -102,10 +102,28 @@ abstract class Suitlawyers implements ActiveRecordInterface
     protected $lawyername;
 
     /**
+     * The value for the registertype field.
+     * @var        string
+     */
+    protected $registertype;
+
+    /**
+     * The value for the status field.
+     * @var        string
+     */
+    protected $status;
+
+    /**
      * The value for the created field.
      * @var        int
      */
     protected $created;
+
+    /**
+     * The value for the modified field.
+     * @var        int
+     */
+    protected $modified;
 
     /**
      * Flag to prevent endless save loop, if this object is referenced
@@ -403,6 +421,26 @@ abstract class Suitlawyers implements ActiveRecordInterface
     }
 
     /**
+     * Get the [registertype] column value.
+     *
+     * @return string
+     */
+    public function getRegistertype()
+    {
+        return $this->registertype;
+    }
+
+    /**
+     * Get the [status] column value.
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
      * Get the [created] column value.
      *
      * @return int
@@ -410,6 +448,16 @@ abstract class Suitlawyers implements ActiveRecordInterface
     public function getCreated()
     {
         return $this->created;
+    }
+
+    /**
+     * Get the [modified] column value.
+     *
+     * @return int
+     */
+    public function getModified()
+    {
+        return $this->modified;
     }
 
     /**
@@ -553,6 +601,46 @@ abstract class Suitlawyers implements ActiveRecordInterface
     } // setLawyername()
 
     /**
+     * Set the value of [registertype] column.
+     *
+     * @param string $v new value
+     * @return $this|\Suitlawyers The current object (for fluent API support)
+     */
+    public function setRegistertype($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->registertype !== $v) {
+            $this->registertype = $v;
+            $this->modifiedColumns[SuitlawyersTableMap::COL_REGISTERTYPE] = true;
+        }
+
+        return $this;
+    } // setRegistertype()
+
+    /**
+     * Set the value of [status] column.
+     *
+     * @param string $v new value
+     * @return $this|\Suitlawyers The current object (for fluent API support)
+     */
+    public function setStatus($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->status !== $v) {
+            $this->status = $v;
+            $this->modifiedColumns[SuitlawyersTableMap::COL_STATUS] = true;
+        }
+
+        return $this;
+    } // setStatus()
+
+    /**
      * Set the value of [created] column.
      *
      * @param int $v new value
@@ -571,6 +659,26 @@ abstract class Suitlawyers implements ActiveRecordInterface
 
         return $this;
     } // setCreated()
+
+    /**
+     * Set the value of [modified] column.
+     *
+     * @param int $v new value
+     * @return $this|\Suitlawyers The current object (for fluent API support)
+     */
+    public function setModified($v)
+    {
+        if ($v !== null) {
+            $v = (int) $v;
+        }
+
+        if ($this->modified !== $v) {
+            $this->modified = $v;
+            $this->modifiedColumns[SuitlawyersTableMap::COL_MODIFIED] = true;
+        }
+
+        return $this;
+    } // setModified()
 
     /**
      * Indicates whether the columns in this object are only set to default values.
@@ -629,8 +737,17 @@ abstract class Suitlawyers implements ActiveRecordInterface
             $col = $row[TableMap::TYPE_NUM == $indexType ? 6 + $startcol : SuitlawyersTableMap::translateFieldName('Lawyername', TableMap::TYPE_PHPNAME, $indexType)];
             $this->lawyername = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 7 + $startcol : SuitlawyersTableMap::translateFieldName('Created', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 7 + $startcol : SuitlawyersTableMap::translateFieldName('Registertype', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->registertype = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 8 + $startcol : SuitlawyersTableMap::translateFieldName('Status', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->status = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 9 + $startcol : SuitlawyersTableMap::translateFieldName('Created', TableMap::TYPE_PHPNAME, $indexType)];
             $this->created = (null !== $col) ? (int) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 10 + $startcol : SuitlawyersTableMap::translateFieldName('Modified', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->modified = (null !== $col) ? (int) $col : null;
             $this->resetModified();
 
             $this->setNew(false);
@@ -639,7 +756,7 @@ abstract class Suitlawyers implements ActiveRecordInterface
                 $this->ensureConsistency();
             }
 
-            return $startcol + 8; // 8 = SuitlawyersTableMap::NUM_HYDRATE_COLUMNS.
+            return $startcol + 11; // 11 = SuitlawyersTableMap::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException(sprintf('Error populating %s object', '\\Suitlawyers'), 0, $e);
@@ -857,8 +974,17 @@ abstract class Suitlawyers implements ActiveRecordInterface
         if ($this->isColumnModified(SuitlawyersTableMap::COL_LAWYERNAME)) {
             $modifiedColumns[':p' . $index++]  = 'lawyername';
         }
+        if ($this->isColumnModified(SuitlawyersTableMap::COL_REGISTERTYPE)) {
+            $modifiedColumns[':p' . $index++]  = 'registertype';
+        }
+        if ($this->isColumnModified(SuitlawyersTableMap::COL_STATUS)) {
+            $modifiedColumns[':p' . $index++]  = 'status';
+        }
         if ($this->isColumnModified(SuitlawyersTableMap::COL_CREATED)) {
             $modifiedColumns[':p' . $index++]  = 'created';
+        }
+        if ($this->isColumnModified(SuitlawyersTableMap::COL_MODIFIED)) {
+            $modifiedColumns[':p' . $index++]  = 'modified';
         }
 
         $sql = sprintf(
@@ -892,8 +1018,17 @@ abstract class Suitlawyers implements ActiveRecordInterface
                     case 'lawyername':
                         $stmt->bindValue($identifier, $this->lawyername, PDO::PARAM_STR);
                         break;
+                    case 'registertype':
+                        $stmt->bindValue($identifier, $this->registertype, PDO::PARAM_STR);
+                        break;
+                    case 'status':
+                        $stmt->bindValue($identifier, $this->status, PDO::PARAM_STR);
+                        break;
                     case 'created':
                         $stmt->bindValue($identifier, $this->created, PDO::PARAM_INT);
+                        break;
+                    case 'modified':
+                        $stmt->bindValue($identifier, $this->modified, PDO::PARAM_INT);
                         break;
                 }
             }
@@ -979,7 +1114,16 @@ abstract class Suitlawyers implements ActiveRecordInterface
                 return $this->getLawyername();
                 break;
             case 7:
+                return $this->getRegistertype();
+                break;
+            case 8:
+                return $this->getStatus();
+                break;
+            case 9:
                 return $this->getCreated();
+                break;
+            case 10:
+                return $this->getModified();
                 break;
             default:
                 return null;
@@ -1017,7 +1161,10 @@ abstract class Suitlawyers implements ActiveRecordInterface
             $keys[4] => $this->getLawyertype(),
             $keys[5] => $this->getLawyernumber(),
             $keys[6] => $this->getLawyername(),
-            $keys[7] => $this->getCreated(),
+            $keys[7] => $this->getRegistertype(),
+            $keys[8] => $this->getStatus(),
+            $keys[9] => $this->getCreated(),
+            $keys[10] => $this->getModified(),
         );
         $virtualColumns = $this->virtualColumns;
         foreach ($virtualColumns as $key => $virtualColumn) {
@@ -1079,7 +1226,16 @@ abstract class Suitlawyers implements ActiveRecordInterface
                 $this->setLawyername($value);
                 break;
             case 7:
+                $this->setRegistertype($value);
+                break;
+            case 8:
+                $this->setStatus($value);
+                break;
+            case 9:
                 $this->setCreated($value);
+                break;
+            case 10:
+                $this->setModified($value);
                 break;
         } // switch()
 
@@ -1129,7 +1285,16 @@ abstract class Suitlawyers implements ActiveRecordInterface
             $this->setLawyername($arr[$keys[6]]);
         }
         if (array_key_exists($keys[7], $arr)) {
-            $this->setCreated($arr[$keys[7]]);
+            $this->setRegistertype($arr[$keys[7]]);
+        }
+        if (array_key_exists($keys[8], $arr)) {
+            $this->setStatus($arr[$keys[8]]);
+        }
+        if (array_key_exists($keys[9], $arr)) {
+            $this->setCreated($arr[$keys[9]]);
+        }
+        if (array_key_exists($keys[10], $arr)) {
+            $this->setModified($arr[$keys[10]]);
         }
     }
 
@@ -1193,8 +1358,17 @@ abstract class Suitlawyers implements ActiveRecordInterface
         if ($this->isColumnModified(SuitlawyersTableMap::COL_LAWYERNAME)) {
             $criteria->add(SuitlawyersTableMap::COL_LAWYERNAME, $this->lawyername);
         }
+        if ($this->isColumnModified(SuitlawyersTableMap::COL_REGISTERTYPE)) {
+            $criteria->add(SuitlawyersTableMap::COL_REGISTERTYPE, $this->registertype);
+        }
+        if ($this->isColumnModified(SuitlawyersTableMap::COL_STATUS)) {
+            $criteria->add(SuitlawyersTableMap::COL_STATUS, $this->status);
+        }
         if ($this->isColumnModified(SuitlawyersTableMap::COL_CREATED)) {
             $criteria->add(SuitlawyersTableMap::COL_CREATED, $this->created);
+        }
+        if ($this->isColumnModified(SuitlawyersTableMap::COL_MODIFIED)) {
+            $criteria->add(SuitlawyersTableMap::COL_MODIFIED, $this->modified);
         }
 
         return $criteria;
@@ -1288,7 +1462,10 @@ abstract class Suitlawyers implements ActiveRecordInterface
         $copyObj->setLawyertype($this->getLawyertype());
         $copyObj->setLawyernumber($this->getLawyernumber());
         $copyObj->setLawyername($this->getLawyername());
+        $copyObj->setRegistertype($this->getRegistertype());
+        $copyObj->setStatus($this->getStatus());
         $copyObj->setCreated($this->getCreated());
+        $copyObj->setModified($this->getModified());
         if ($makeNew) {
             $copyObj->setNew(true);
             $copyObj->setId(NULL); // this is a auto-increment column, so set to default value
@@ -1331,7 +1508,10 @@ abstract class Suitlawyers implements ActiveRecordInterface
         $this->lawyertype = null;
         $this->lawyernumber = null;
         $this->lawyername = null;
+        $this->registertype = null;
+        $this->status = null;
         $this->created = null;
+        $this->modified = null;
         $this->alreadyInSave = false;
         $this->clearAllReferences();
         $this->resetModified();

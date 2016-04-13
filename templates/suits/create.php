@@ -16,7 +16,9 @@ require_once 'vendor/autoload.php';
 // setup Propel
 require_once 'generated-conf/config.php';
 
-$suits = SuitsQuery::create()->findOneBySuitnumber($this->data["vars"]["suitnumber"]);
+
+
+$suits = SuitsQuery::create()->findOneBySuitnumber($this->data["suitnumber"]);
 
 $resultArray = Array();
 
@@ -29,23 +31,25 @@ if($suits == ""){
     try{$newSuit->setDatefiled($this->data["vars"]["datefiled"]);}catch (Exception $x){}
     try{$newSuit->setSuitstatus($this->data["vars"]["suitstatus"]);}catch (Exception $x){}
     try{$newSuit->setSuitaccess($this->data["vars"]["suitaccess"]);}catch (Exception $x){}
-    try{$newSuit->setDateofadjournment($this->data["vars"]["dateofadjournment"]);}catch (Exception $x){}
+    try{$newSuit->setSuitcourt($this->data["vars"]["suitcourt"]);}catch (Exception $x){}
+
     try{$newSuit->setCreated(time());}catch (Exception $x){}
     try{$newSuit->setModified(time());}catch (Exception $x){}
     $newSuit->save();
 
     $item = Array();
     $item["id"] = $newSuit->getSuitnumber();
-    $item["message"] = "Update Successfull";
+    $item["message"] = "Save Successfull";
     $resultArray["meta"] = $item;
-
+    echo json_encode($resultArray,JSON_PRETTY_PRINT);
 
 }else{
+
     $item = Array();
     $item["message"] = "Suit Number Exists";
     $item["code"] = "422";
     $resultArray["meta"] = $item;
 
 }
-echo json_encode($resultArray,JSON_PRETTY_PRINT);
+//echo json_encode($resultArray,JSON_PRETTY_PRINT);
 

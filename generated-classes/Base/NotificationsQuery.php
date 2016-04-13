@@ -20,6 +20,9 @@ use Propel\Runtime\Exception\PropelException;
  *
  *
  * @method     ChildNotificationsQuery orderById($order = Criteria::ASC) Order by the id column
+ * @method     ChildNotificationsQuery orderByDocumentid($order = Criteria::ASC) Order by the documentid column
+ * @method     ChildNotificationsQuery orderByDocumentlink($order = Criteria::ASC) Order by the documentlink column
+ * @method     ChildNotificationsQuery orderByFiler($order = Criteria::ASC) Order by the filer column
  * @method     ChildNotificationsQuery orderByType($order = Criteria::ASC) Order by the type column
  * @method     ChildNotificationsQuery orderBySuitnumber($order = Criteria::ASC) Order by the suitnumber column
  * @method     ChildNotificationsQuery orderByDatetimesent($order = Criteria::ASC) Order by the datetimesent column
@@ -29,6 +32,9 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildNotificationsQuery orderByModified($order = Criteria::ASC) Order by the modified column
  *
  * @method     ChildNotificationsQuery groupById() Group by the id column
+ * @method     ChildNotificationsQuery groupByDocumentid() Group by the documentid column
+ * @method     ChildNotificationsQuery groupByDocumentlink() Group by the documentlink column
+ * @method     ChildNotificationsQuery groupByFiler() Group by the filer column
  * @method     ChildNotificationsQuery groupByType() Group by the type column
  * @method     ChildNotificationsQuery groupBySuitnumber() Group by the suitnumber column
  * @method     ChildNotificationsQuery groupByDatetimesent() Group by the datetimesent column
@@ -49,6 +55,9 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildNotifications findOneOrCreate(ConnectionInterface $con = null) Return the first ChildNotifications matching the query, or a new ChildNotifications object populated from the query conditions when no match is found
  *
  * @method     ChildNotifications findOneById(int $id) Return the first ChildNotifications filtered by the id column
+ * @method     ChildNotifications findOneByDocumentid(int $documentid) Return the first ChildNotifications filtered by the documentid column
+ * @method     ChildNotifications findOneByDocumentlink(string $documentlink) Return the first ChildNotifications filtered by the documentlink column
+ * @method     ChildNotifications findOneByFiler(string $filer) Return the first ChildNotifications filtered by the filer column
  * @method     ChildNotifications findOneByType(string $type) Return the first ChildNotifications filtered by the type column
  * @method     ChildNotifications findOneBySuitnumber(string $suitnumber) Return the first ChildNotifications filtered by the suitnumber column
  * @method     ChildNotifications findOneByDatetimesent(int $datetimesent) Return the first ChildNotifications filtered by the datetimesent column
@@ -61,6 +70,9 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildNotifications requireOne(ConnectionInterface $con = null) Return the first ChildNotifications matching the query and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  *
  * @method     ChildNotifications requireOneById(int $id) Return the first ChildNotifications filtered by the id column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildNotifications requireOneByDocumentid(int $documentid) Return the first ChildNotifications filtered by the documentid column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildNotifications requireOneByDocumentlink(string $documentlink) Return the first ChildNotifications filtered by the documentlink column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildNotifications requireOneByFiler(string $filer) Return the first ChildNotifications filtered by the filer column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildNotifications requireOneByType(string $type) Return the first ChildNotifications filtered by the type column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildNotifications requireOneBySuitnumber(string $suitnumber) Return the first ChildNotifications filtered by the suitnumber column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildNotifications requireOneByDatetimesent(int $datetimesent) Return the first ChildNotifications filtered by the datetimesent column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
@@ -71,6 +83,9 @@ use Propel\Runtime\Exception\PropelException;
  *
  * @method     ChildNotifications[]|ObjectCollection find(ConnectionInterface $con = null) Return ChildNotifications objects based on current ModelCriteria
  * @method     ChildNotifications[]|ObjectCollection findById(int $id) Return ChildNotifications objects filtered by the id column
+ * @method     ChildNotifications[]|ObjectCollection findByDocumentid(int $documentid) Return ChildNotifications objects filtered by the documentid column
+ * @method     ChildNotifications[]|ObjectCollection findByDocumentlink(string $documentlink) Return ChildNotifications objects filtered by the documentlink column
+ * @method     ChildNotifications[]|ObjectCollection findByFiler(string $filer) Return ChildNotifications objects filtered by the filer column
  * @method     ChildNotifications[]|ObjectCollection findByType(string $type) Return ChildNotifications objects filtered by the type column
  * @method     ChildNotifications[]|ObjectCollection findBySuitnumber(string $suitnumber) Return ChildNotifications objects filtered by the suitnumber column
  * @method     ChildNotifications[]|ObjectCollection findByDatetimesent(int $datetimesent) Return ChildNotifications objects filtered by the datetimesent column
@@ -170,7 +185,7 @@ abstract class NotificationsQuery extends ModelCriteria
      */
     protected function findPkSimple($key, ConnectionInterface $con)
     {
-        $sql = 'SELECT id, type, suitnumber, datetimesent, recipients, status, created, modified FROM notifications WHERE id = :p0';
+        $sql = 'SELECT id, documentid, documentlink, filer, type, suitnumber, datetimesent, recipients, status, created, modified FROM notifications WHERE id = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -299,6 +314,105 @@ abstract class NotificationsQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(NotificationsTableMap::COL_ID, $id, $comparison);
+    }
+
+    /**
+     * Filter the query on the documentid column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByDocumentid(1234); // WHERE documentid = 1234
+     * $query->filterByDocumentid(array(12, 34)); // WHERE documentid IN (12, 34)
+     * $query->filterByDocumentid(array('min' => 12)); // WHERE documentid > 12
+     * </code>
+     *
+     * @param     mixed $documentid The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildNotificationsQuery The current query, for fluid interface
+     */
+    public function filterByDocumentid($documentid = null, $comparison = null)
+    {
+        if (is_array($documentid)) {
+            $useMinMax = false;
+            if (isset($documentid['min'])) {
+                $this->addUsingAlias(NotificationsTableMap::COL_DOCUMENTID, $documentid['min'], Criteria::GREATER_EQUAL);
+                $useMinMax = true;
+            }
+            if (isset($documentid['max'])) {
+                $this->addUsingAlias(NotificationsTableMap::COL_DOCUMENTID, $documentid['max'], Criteria::LESS_EQUAL);
+                $useMinMax = true;
+            }
+            if ($useMinMax) {
+                return $this;
+            }
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+        }
+
+        return $this->addUsingAlias(NotificationsTableMap::COL_DOCUMENTID, $documentid, $comparison);
+    }
+
+    /**
+     * Filter the query on the documentlink column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByDocumentlink('fooValue');   // WHERE documentlink = 'fooValue'
+     * $query->filterByDocumentlink('%fooValue%'); // WHERE documentlink LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $documentlink The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildNotificationsQuery The current query, for fluid interface
+     */
+    public function filterByDocumentlink($documentlink = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($documentlink)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $documentlink)) {
+                $documentlink = str_replace('*', '%', $documentlink);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(NotificationsTableMap::COL_DOCUMENTLINK, $documentlink, $comparison);
+    }
+
+    /**
+     * Filter the query on the filer column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByFiler('fooValue');   // WHERE filer = 'fooValue'
+     * $query->filterByFiler('%fooValue%'); // WHERE filer LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $filer The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildNotificationsQuery The current query, for fluid interface
+     */
+    public function filterByFiler($filer = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($filer)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $filer)) {
+                $filer = str_replace('*', '%', $filer);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(NotificationsTableMap::COL_FILER, $filer, $comparison);
     }
 
     /**

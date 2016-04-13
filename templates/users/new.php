@@ -21,15 +21,17 @@ require_once 'generated-conf/config.php';
 require_once 'libs/StringGenerator.php';
 use Sinergi\Token\StringGenerator;
 
-$userCheck = UsersQuery::create()->findOneByUsername($this->data["vars"]["username"]);
+$userCheck = UsersQuery::create()->findOneByPhone($this->data["vars"]["phone"]);
 $resultArray = Array();
-var_dump($this->data["vars"]);
+
 if ($userCheck == "") {
 
         $user = new Users();
-        $user->setUsername($this->data["vars"]["username"]);
+        $user->setPhone($this->data["vars"]["phone"]);
         $user->setPassword($this->data["vars"]["password"]);
-        $user->setName("none");
+        $user->setPosition($this->data["vars"]["position"]);
+        $user->setEmailcode($this->data["vars"]["emailcode"]);
+        $user->setName($this->data["vars"]["fullname"]);
         $user->setEmail($this->data["vars"]["email"]);
         $user->setStatus("active");
         $user->setPicture("none");
@@ -39,6 +41,33 @@ if ($userCheck == "") {
         $user->save();
 
         if ($user != null) {
+
+            //lets create a lawyer or a judge or a registrar :)
+            if($user->getPosition() == "Lawyer"){
+                $newLawyer = new Lawyers();
+                try{$newLawyer->setLawyerid($this->data["vars"]["phone"]);}catch (Exception $x){}
+                try{$newLawyer->setFullname($this->data["vars"]["fullname"]);}catch (Exception $x){}
+                try{$newLawyer->setPhone1($this->data["vars"]["phone"]);}catch (Exception $x){}
+                try{$newLawyer->setEmail($this->data["vars"]["email"]);}catch (Exception $x){}
+                try{$newLawyer->setStatus("active");}catch (Exception $x){}
+
+                try{$newLawyer->setCreated(time());}catch (Exception $x){}
+                try{$newLawyer->setModified(time());}catch (Exception $x){}
+
+                $newLawyer->save();
+            }
+            if($user->getPosition() == "Judge"){
+                $newJudge = new Judges();
+                try{$newJudge->setJudgeid($this->data["vars"]["phone"]);}catch (Exception $x){}
+                try{$newJudge->setFullname($this->data["vars"]["fullname"]);}catch (Exception $x){}
+                try{$newJudge->setEmail($this->data["vars"]["email"]);}catch (Exception $x){}
+                try{$newJudge->setPhone1($this->data["vars"]["phone"]);}catch (Exception $x){}
+                try{$newJudge->setStatus("active");}catch (Exception $x){}
+
+                try{$newJudge->setCreated(time());}catch (Exception $x){}
+                try{$newJudge->setModified(time());}catch (Exception $x){}
+                $newJudge->save();
+            }
             $item = Array();
             $item["message"] = "Success";
             $item["code"] = $user->getId();
@@ -53,4 +82,12 @@ if ($userCheck == "") {
     $resultArray["meta"] = $item;
 
 }
+
+function saveLawyer($this){
+
+}
+function saveJudge(){
+
+}
+
 echo json_encode($resultArray,JSON_PRETTY_PRINT);

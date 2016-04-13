@@ -23,8 +23,8 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildSuitjudgesQuery orderBySuitid($order = Criteria::ASC) Order by the suitid column
  * @method     ChildSuitjudgesQuery orderBySuitnumber($order = Criteria::ASC) Order by the suitnumber column
  * @method     ChildSuitjudgesQuery orderByJudgeid($order = Criteria::ASC) Order by the judgeid column
- * @method     ChildSuitjudgesQuery orderByJudgenumber($order = Criteria::ASC) Order by the judgenumber column
  * @method     ChildSuitjudgesQuery orderByJudgename($order = Criteria::ASC) Order by the judgename column
+ * @method     ChildSuitjudgesQuery orderByStatus($order = Criteria::ASC) Order by the status column
  * @method     ChildSuitjudgesQuery orderByCreated($order = Criteria::ASC) Order by the created column
  * @method     ChildSuitjudgesQuery orderByModified($order = Criteria::ASC) Order by the modified column
  *
@@ -32,8 +32,8 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildSuitjudgesQuery groupBySuitid() Group by the suitid column
  * @method     ChildSuitjudgesQuery groupBySuitnumber() Group by the suitnumber column
  * @method     ChildSuitjudgesQuery groupByJudgeid() Group by the judgeid column
- * @method     ChildSuitjudgesQuery groupByJudgenumber() Group by the judgenumber column
  * @method     ChildSuitjudgesQuery groupByJudgename() Group by the judgename column
+ * @method     ChildSuitjudgesQuery groupByStatus() Group by the status column
  * @method     ChildSuitjudgesQuery groupByCreated() Group by the created column
  * @method     ChildSuitjudgesQuery groupByModified() Group by the modified column
  *
@@ -52,8 +52,8 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildSuitjudges findOneBySuitid(int $suitid) Return the first ChildSuitjudges filtered by the suitid column
  * @method     ChildSuitjudges findOneBySuitnumber(string $suitnumber) Return the first ChildSuitjudges filtered by the suitnumber column
  * @method     ChildSuitjudges findOneByJudgeid(int $judgeid) Return the first ChildSuitjudges filtered by the judgeid column
- * @method     ChildSuitjudges findOneByJudgenumber(string $judgenumber) Return the first ChildSuitjudges filtered by the judgenumber column
  * @method     ChildSuitjudges findOneByJudgename(string $judgename) Return the first ChildSuitjudges filtered by the judgename column
+ * @method     ChildSuitjudges findOneByStatus(string $status) Return the first ChildSuitjudges filtered by the status column
  * @method     ChildSuitjudges findOneByCreated(int $created) Return the first ChildSuitjudges filtered by the created column
  * @method     ChildSuitjudges findOneByModified(int $modified) Return the first ChildSuitjudges filtered by the modified column *
 
@@ -64,8 +64,8 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildSuitjudges requireOneBySuitid(int $suitid) Return the first ChildSuitjudges filtered by the suitid column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildSuitjudges requireOneBySuitnumber(string $suitnumber) Return the first ChildSuitjudges filtered by the suitnumber column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildSuitjudges requireOneByJudgeid(int $judgeid) Return the first ChildSuitjudges filtered by the judgeid column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildSuitjudges requireOneByJudgenumber(string $judgenumber) Return the first ChildSuitjudges filtered by the judgenumber column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildSuitjudges requireOneByJudgename(string $judgename) Return the first ChildSuitjudges filtered by the judgename column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildSuitjudges requireOneByStatus(string $status) Return the first ChildSuitjudges filtered by the status column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildSuitjudges requireOneByCreated(int $created) Return the first ChildSuitjudges filtered by the created column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildSuitjudges requireOneByModified(int $modified) Return the first ChildSuitjudges filtered by the modified column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  *
@@ -74,8 +74,8 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildSuitjudges[]|ObjectCollection findBySuitid(int $suitid) Return ChildSuitjudges objects filtered by the suitid column
  * @method     ChildSuitjudges[]|ObjectCollection findBySuitnumber(string $suitnumber) Return ChildSuitjudges objects filtered by the suitnumber column
  * @method     ChildSuitjudges[]|ObjectCollection findByJudgeid(int $judgeid) Return ChildSuitjudges objects filtered by the judgeid column
- * @method     ChildSuitjudges[]|ObjectCollection findByJudgenumber(string $judgenumber) Return ChildSuitjudges objects filtered by the judgenumber column
  * @method     ChildSuitjudges[]|ObjectCollection findByJudgename(string $judgename) Return ChildSuitjudges objects filtered by the judgename column
+ * @method     ChildSuitjudges[]|ObjectCollection findByStatus(string $status) Return ChildSuitjudges objects filtered by the status column
  * @method     ChildSuitjudges[]|ObjectCollection findByCreated(int $created) Return ChildSuitjudges objects filtered by the created column
  * @method     ChildSuitjudges[]|ObjectCollection findByModified(int $modified) Return ChildSuitjudges objects filtered by the modified column
  * @method     ChildSuitjudges[]|\Propel\Runtime\Util\PropelModelPager paginate($page = 1, $maxPerPage = 10, ConnectionInterface $con = null) Issue a SELECT query based on the current ModelCriteria and uses a page and a maximum number of results per page to compute an offset and a limit
@@ -170,7 +170,7 @@ abstract class SuitjudgesQuery extends ModelCriteria
      */
     protected function findPkSimple($key, ConnectionInterface $con)
     {
-        $sql = 'SELECT id, suitid, suitnumber, judgeid, judgenumber, judgename, created, modified FROM suitjudges WHERE id = :p0';
+        $sql = 'SELECT id, suitid, suitnumber, judgeid, judgename, status, created, modified FROM suitjudges WHERE id = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -413,35 +413,6 @@ abstract class SuitjudgesQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the judgenumber column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByJudgenumber('fooValue');   // WHERE judgenumber = 'fooValue'
-     * $query->filterByJudgenumber('%fooValue%'); // WHERE judgenumber LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $judgenumber The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return $this|ChildSuitjudgesQuery The current query, for fluid interface
-     */
-    public function filterByJudgenumber($judgenumber = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($judgenumber)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $judgenumber)) {
-                $judgenumber = str_replace('*', '%', $judgenumber);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(SuitjudgesTableMap::COL_JUDGENUMBER, $judgenumber, $comparison);
-    }
-
-    /**
      * Filter the query on the judgename column
      *
      * Example usage:
@@ -468,6 +439,35 @@ abstract class SuitjudgesQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(SuitjudgesTableMap::COL_JUDGENAME, $judgename, $comparison);
+    }
+
+    /**
+     * Filter the query on the status column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByStatus('fooValue');   // WHERE status = 'fooValue'
+     * $query->filterByStatus('%fooValue%'); // WHERE status LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $status The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildSuitjudgesQuery The current query, for fluid interface
+     */
+    public function filterByStatus($status = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($status)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $status)) {
+                $status = str_replace('*', '%', $status);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(SuitjudgesTableMap::COL_STATUS, $status, $comparison);
     }
 
     /**

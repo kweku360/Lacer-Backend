@@ -66,10 +66,10 @@ abstract class Defendants implements ActiveRecordInterface
     protected $id;
 
     /**
-     * The value for the suitno field.
+     * The value for the suitnumber field.
      * @var        string
      */
-    protected $suitno;
+    protected $suitnumber;
 
     /**
      * The value for the fullname field.
@@ -84,10 +84,22 @@ abstract class Defendants implements ActiveRecordInterface
     protected $address;
 
     /**
-     * The value for the phone field.
-     * @var        int
+     * The value for the phone1 field.
+     * @var        string
      */
-    protected $phone;
+    protected $phone1;
+
+    /**
+     * The value for the phone2 field.
+     * @var        string
+     */
+    protected $phone2;
+
+    /**
+     * The value for the email field.
+     * @var        string
+     */
+    protected $email;
 
     /**
      * The value for the created field.
@@ -337,13 +349,13 @@ abstract class Defendants implements ActiveRecordInterface
     }
 
     /**
-     * Get the [suitno] column value.
+     * Get the [suitnumber] column value.
      *
      * @return string
      */
-    public function getSuitno()
+    public function getSuitnumber()
     {
-        return $this->suitno;
+        return $this->suitnumber;
     }
 
     /**
@@ -367,13 +379,33 @@ abstract class Defendants implements ActiveRecordInterface
     }
 
     /**
-     * Get the [phone] column value.
+     * Get the [phone1] column value.
      *
-     * @return int
+     * @return string
      */
-    public function getPhone()
+    public function getPhone1()
     {
-        return $this->phone;
+        return $this->phone1;
+    }
+
+    /**
+     * Get the [phone2] column value.
+     *
+     * @return string
+     */
+    public function getPhone2()
+    {
+        return $this->phone2;
+    }
+
+    /**
+     * Get the [email] column value.
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
     }
 
     /**
@@ -417,24 +449,24 @@ abstract class Defendants implements ActiveRecordInterface
     } // setId()
 
     /**
-     * Set the value of [suitno] column.
+     * Set the value of [suitnumber] column.
      *
      * @param string $v new value
      * @return $this|\Defendants The current object (for fluent API support)
      */
-    public function setSuitno($v)
+    public function setSuitnumber($v)
     {
         if ($v !== null) {
             $v = (string) $v;
         }
 
-        if ($this->suitno !== $v) {
-            $this->suitno = $v;
-            $this->modifiedColumns[DefendantsTableMap::COL_SUITNO] = true;
+        if ($this->suitnumber !== $v) {
+            $this->suitnumber = $v;
+            $this->modifiedColumns[DefendantsTableMap::COL_SUITNUMBER] = true;
         }
 
         return $this;
-    } // setSuitno()
+    } // setSuitnumber()
 
     /**
      * Set the value of [fullname] column.
@@ -477,24 +509,64 @@ abstract class Defendants implements ActiveRecordInterface
     } // setAddress()
 
     /**
-     * Set the value of [phone] column.
+     * Set the value of [phone1] column.
      *
-     * @param int $v new value
+     * @param string $v new value
      * @return $this|\Defendants The current object (for fluent API support)
      */
-    public function setPhone($v)
+    public function setPhone1($v)
     {
         if ($v !== null) {
-            $v = (int) $v;
+            $v = (string) $v;
         }
 
-        if ($this->phone !== $v) {
-            $this->phone = $v;
-            $this->modifiedColumns[DefendantsTableMap::COL_PHONE] = true;
+        if ($this->phone1 !== $v) {
+            $this->phone1 = $v;
+            $this->modifiedColumns[DefendantsTableMap::COL_PHONE1] = true;
         }
 
         return $this;
-    } // setPhone()
+    } // setPhone1()
+
+    /**
+     * Set the value of [phone2] column.
+     *
+     * @param string $v new value
+     * @return $this|\Defendants The current object (for fluent API support)
+     */
+    public function setPhone2($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->phone2 !== $v) {
+            $this->phone2 = $v;
+            $this->modifiedColumns[DefendantsTableMap::COL_PHONE2] = true;
+        }
+
+        return $this;
+    } // setPhone2()
+
+    /**
+     * Set the value of [email] column.
+     *
+     * @param string $v new value
+     * @return $this|\Defendants The current object (for fluent API support)
+     */
+    public function setEmail($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->email !== $v) {
+            $this->email = $v;
+            $this->modifiedColumns[DefendantsTableMap::COL_EMAIL] = true;
+        }
+
+        return $this;
+    } // setEmail()
 
     /**
      * Set the value of [created] column.
@@ -575,8 +647,8 @@ abstract class Defendants implements ActiveRecordInterface
             $col = $row[TableMap::TYPE_NUM == $indexType ? 0 + $startcol : DefendantsTableMap::translateFieldName('Id', TableMap::TYPE_PHPNAME, $indexType)];
             $this->id = (null !== $col) ? (int) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 1 + $startcol : DefendantsTableMap::translateFieldName('Suitno', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->suitno = (null !== $col) ? (string) $col : null;
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 1 + $startcol : DefendantsTableMap::translateFieldName('Suitnumber', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->suitnumber = (null !== $col) ? (string) $col : null;
 
             $col = $row[TableMap::TYPE_NUM == $indexType ? 2 + $startcol : DefendantsTableMap::translateFieldName('Fullname', TableMap::TYPE_PHPNAME, $indexType)];
             $this->fullname = (null !== $col) ? (string) $col : null;
@@ -584,13 +656,19 @@ abstract class Defendants implements ActiveRecordInterface
             $col = $row[TableMap::TYPE_NUM == $indexType ? 3 + $startcol : DefendantsTableMap::translateFieldName('Address', TableMap::TYPE_PHPNAME, $indexType)];
             $this->address = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 4 + $startcol : DefendantsTableMap::translateFieldName('Phone', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->phone = (null !== $col) ? (int) $col : null;
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 4 + $startcol : DefendantsTableMap::translateFieldName('Phone1', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->phone1 = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 5 + $startcol : DefendantsTableMap::translateFieldName('Created', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 5 + $startcol : DefendantsTableMap::translateFieldName('Phone2', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->phone2 = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 6 + $startcol : DefendantsTableMap::translateFieldName('Email', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->email = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 7 + $startcol : DefendantsTableMap::translateFieldName('Created', TableMap::TYPE_PHPNAME, $indexType)];
             $this->created = (null !== $col) ? (int) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 6 + $startcol : DefendantsTableMap::translateFieldName('Modified', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 8 + $startcol : DefendantsTableMap::translateFieldName('Modified', TableMap::TYPE_PHPNAME, $indexType)];
             $this->modified = (null !== $col) ? (int) $col : null;
             $this->resetModified();
 
@@ -600,7 +678,7 @@ abstract class Defendants implements ActiveRecordInterface
                 $this->ensureConsistency();
             }
 
-            return $startcol + 7; // 7 = DefendantsTableMap::NUM_HYDRATE_COLUMNS.
+            return $startcol + 9; // 9 = DefendantsTableMap::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException(sprintf('Error populating %s object', '\\Defendants'), 0, $e);
@@ -800,8 +878,8 @@ abstract class Defendants implements ActiveRecordInterface
         if ($this->isColumnModified(DefendantsTableMap::COL_ID)) {
             $modifiedColumns[':p' . $index++]  = 'id';
         }
-        if ($this->isColumnModified(DefendantsTableMap::COL_SUITNO)) {
-            $modifiedColumns[':p' . $index++]  = 'suitno';
+        if ($this->isColumnModified(DefendantsTableMap::COL_SUITNUMBER)) {
+            $modifiedColumns[':p' . $index++]  = 'suitnumber';
         }
         if ($this->isColumnModified(DefendantsTableMap::COL_FULLNAME)) {
             $modifiedColumns[':p' . $index++]  = 'fullname';
@@ -809,8 +887,14 @@ abstract class Defendants implements ActiveRecordInterface
         if ($this->isColumnModified(DefendantsTableMap::COL_ADDRESS)) {
             $modifiedColumns[':p' . $index++]  = 'address';
         }
-        if ($this->isColumnModified(DefendantsTableMap::COL_PHONE)) {
-            $modifiedColumns[':p' . $index++]  = 'phone';
+        if ($this->isColumnModified(DefendantsTableMap::COL_PHONE1)) {
+            $modifiedColumns[':p' . $index++]  = 'phone1';
+        }
+        if ($this->isColumnModified(DefendantsTableMap::COL_PHONE2)) {
+            $modifiedColumns[':p' . $index++]  = 'phone2';
+        }
+        if ($this->isColumnModified(DefendantsTableMap::COL_EMAIL)) {
+            $modifiedColumns[':p' . $index++]  = 'email';
         }
         if ($this->isColumnModified(DefendantsTableMap::COL_CREATED)) {
             $modifiedColumns[':p' . $index++]  = 'created';
@@ -832,8 +916,8 @@ abstract class Defendants implements ActiveRecordInterface
                     case 'id':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
-                    case 'suitno':
-                        $stmt->bindValue($identifier, $this->suitno, PDO::PARAM_STR);
+                    case 'suitnumber':
+                        $stmt->bindValue($identifier, $this->suitnumber, PDO::PARAM_STR);
                         break;
                     case 'fullname':
                         $stmt->bindValue($identifier, $this->fullname, PDO::PARAM_STR);
@@ -841,8 +925,14 @@ abstract class Defendants implements ActiveRecordInterface
                     case 'address':
                         $stmt->bindValue($identifier, $this->address, PDO::PARAM_STR);
                         break;
-                    case 'phone':
-                        $stmt->bindValue($identifier, $this->phone, PDO::PARAM_INT);
+                    case 'phone1':
+                        $stmt->bindValue($identifier, $this->phone1, PDO::PARAM_STR);
+                        break;
+                    case 'phone2':
+                        $stmt->bindValue($identifier, $this->phone2, PDO::PARAM_STR);
+                        break;
+                    case 'email':
+                        $stmt->bindValue($identifier, $this->email, PDO::PARAM_STR);
                         break;
                     case 'created':
                         $stmt->bindValue($identifier, $this->created, PDO::PARAM_INT);
@@ -916,7 +1006,7 @@ abstract class Defendants implements ActiveRecordInterface
                 return $this->getId();
                 break;
             case 1:
-                return $this->getSuitno();
+                return $this->getSuitnumber();
                 break;
             case 2:
                 return $this->getFullname();
@@ -925,12 +1015,18 @@ abstract class Defendants implements ActiveRecordInterface
                 return $this->getAddress();
                 break;
             case 4:
-                return $this->getPhone();
+                return $this->getPhone1();
                 break;
             case 5:
-                return $this->getCreated();
+                return $this->getPhone2();
                 break;
             case 6:
+                return $this->getEmail();
+                break;
+            case 7:
+                return $this->getCreated();
+                break;
+            case 8:
                 return $this->getModified();
                 break;
             default:
@@ -963,12 +1059,14 @@ abstract class Defendants implements ActiveRecordInterface
         $keys = DefendantsTableMap::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
-            $keys[1] => $this->getSuitno(),
+            $keys[1] => $this->getSuitnumber(),
             $keys[2] => $this->getFullname(),
             $keys[3] => $this->getAddress(),
-            $keys[4] => $this->getPhone(),
-            $keys[5] => $this->getCreated(),
-            $keys[6] => $this->getModified(),
+            $keys[4] => $this->getPhone1(),
+            $keys[5] => $this->getPhone2(),
+            $keys[6] => $this->getEmail(),
+            $keys[7] => $this->getCreated(),
+            $keys[8] => $this->getModified(),
         );
         $virtualColumns = $this->virtualColumns;
         foreach ($virtualColumns as $key => $virtualColumn) {
@@ -1012,7 +1110,7 @@ abstract class Defendants implements ActiveRecordInterface
                 $this->setId($value);
                 break;
             case 1:
-                $this->setSuitno($value);
+                $this->setSuitnumber($value);
                 break;
             case 2:
                 $this->setFullname($value);
@@ -1021,12 +1119,18 @@ abstract class Defendants implements ActiveRecordInterface
                 $this->setAddress($value);
                 break;
             case 4:
-                $this->setPhone($value);
+                $this->setPhone1($value);
                 break;
             case 5:
-                $this->setCreated($value);
+                $this->setPhone2($value);
                 break;
             case 6:
+                $this->setEmail($value);
+                break;
+            case 7:
+                $this->setCreated($value);
+                break;
+            case 8:
                 $this->setModified($value);
                 break;
         } // switch()
@@ -1059,7 +1163,7 @@ abstract class Defendants implements ActiveRecordInterface
             $this->setId($arr[$keys[0]]);
         }
         if (array_key_exists($keys[1], $arr)) {
-            $this->setSuitno($arr[$keys[1]]);
+            $this->setSuitnumber($arr[$keys[1]]);
         }
         if (array_key_exists($keys[2], $arr)) {
             $this->setFullname($arr[$keys[2]]);
@@ -1068,13 +1172,19 @@ abstract class Defendants implements ActiveRecordInterface
             $this->setAddress($arr[$keys[3]]);
         }
         if (array_key_exists($keys[4], $arr)) {
-            $this->setPhone($arr[$keys[4]]);
+            $this->setPhone1($arr[$keys[4]]);
         }
         if (array_key_exists($keys[5], $arr)) {
-            $this->setCreated($arr[$keys[5]]);
+            $this->setPhone2($arr[$keys[5]]);
         }
         if (array_key_exists($keys[6], $arr)) {
-            $this->setModified($arr[$keys[6]]);
+            $this->setEmail($arr[$keys[6]]);
+        }
+        if (array_key_exists($keys[7], $arr)) {
+            $this->setCreated($arr[$keys[7]]);
+        }
+        if (array_key_exists($keys[8], $arr)) {
+            $this->setModified($arr[$keys[8]]);
         }
     }
 
@@ -1120,8 +1230,8 @@ abstract class Defendants implements ActiveRecordInterface
         if ($this->isColumnModified(DefendantsTableMap::COL_ID)) {
             $criteria->add(DefendantsTableMap::COL_ID, $this->id);
         }
-        if ($this->isColumnModified(DefendantsTableMap::COL_SUITNO)) {
-            $criteria->add(DefendantsTableMap::COL_SUITNO, $this->suitno);
+        if ($this->isColumnModified(DefendantsTableMap::COL_SUITNUMBER)) {
+            $criteria->add(DefendantsTableMap::COL_SUITNUMBER, $this->suitnumber);
         }
         if ($this->isColumnModified(DefendantsTableMap::COL_FULLNAME)) {
             $criteria->add(DefendantsTableMap::COL_FULLNAME, $this->fullname);
@@ -1129,8 +1239,14 @@ abstract class Defendants implements ActiveRecordInterface
         if ($this->isColumnModified(DefendantsTableMap::COL_ADDRESS)) {
             $criteria->add(DefendantsTableMap::COL_ADDRESS, $this->address);
         }
-        if ($this->isColumnModified(DefendantsTableMap::COL_PHONE)) {
-            $criteria->add(DefendantsTableMap::COL_PHONE, $this->phone);
+        if ($this->isColumnModified(DefendantsTableMap::COL_PHONE1)) {
+            $criteria->add(DefendantsTableMap::COL_PHONE1, $this->phone1);
+        }
+        if ($this->isColumnModified(DefendantsTableMap::COL_PHONE2)) {
+            $criteria->add(DefendantsTableMap::COL_PHONE2, $this->phone2);
+        }
+        if ($this->isColumnModified(DefendantsTableMap::COL_EMAIL)) {
+            $criteria->add(DefendantsTableMap::COL_EMAIL, $this->email);
         }
         if ($this->isColumnModified(DefendantsTableMap::COL_CREATED)) {
             $criteria->add(DefendantsTableMap::COL_CREATED, $this->created);
@@ -1224,10 +1340,12 @@ abstract class Defendants implements ActiveRecordInterface
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
-        $copyObj->setSuitno($this->getSuitno());
+        $copyObj->setSuitnumber($this->getSuitnumber());
         $copyObj->setFullname($this->getFullname());
         $copyObj->setAddress($this->getAddress());
-        $copyObj->setPhone($this->getPhone());
+        $copyObj->setPhone1($this->getPhone1());
+        $copyObj->setPhone2($this->getPhone2());
+        $copyObj->setEmail($this->getEmail());
         $copyObj->setCreated($this->getCreated());
         $copyObj->setModified($this->getModified());
         if ($makeNew) {
@@ -1266,10 +1384,12 @@ abstract class Defendants implements ActiveRecordInterface
     public function clear()
     {
         $this->id = null;
-        $this->suitno = null;
+        $this->suitnumber = null;
         $this->fullname = null;
         $this->address = null;
-        $this->phone = null;
+        $this->phone1 = null;
+        $this->phone2 = null;
+        $this->email = null;
         $this->created = null;
         $this->modified = null;
         $this->alreadyInSave = false;

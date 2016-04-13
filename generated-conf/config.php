@@ -7,7 +7,7 @@ $manager->setConfiguration(array (
   'classname' => 'Propel\\Runtime\\Connection\\ConnectionWrapper',
   'dsn' => 'mysql:host=localhost;dbname=lacerdb',
   'user' => 'root',
-  'password' => 'root',
+  'password' => '',
   'attributes' =>
   array (
     'ATTR_EMULATE_PREPARES' => false,

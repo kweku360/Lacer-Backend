@@ -1,0 +1,10 @@
+Propel Steps // please run command inside a shell - eg. git bash.
+//Reverse an existing database schema
+propel reverse "mysql:host=localhost;dbname=db;user=root;password=pwd"
+propel reverse "mysql:host=localhost;dbname=lacerdb;user=root;password=" //lacer example
+
+ propel sql:build // --overwrite in cases
+
+ propel model:build
+
+ composer dump-autoload

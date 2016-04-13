@@ -1,7 +1,282 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ddfadc7c-8380-443c-ae13-3d7e9a946d45" name="Default" comment="" />
+    <list default="true" id="ddfadc7c-8380-443c-ae13-3d7e9a946d45" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Login.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/Register.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/defendants.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/judge.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/lacerdb.sql" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/suits.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/users.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/valuestore.csv" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/valuestore.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.htaccess" afterPath="$PROJECT_DIR$/.htaccess" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/encodings.xml" afterPath="$PROJECT_DIR$/.idea/encodings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Slim/Environment.php" afterPath="$PROJECT_DIR$/Slim/Environment.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Slim/Exception/Pass.php" afterPath="$PROJECT_DIR$/Slim/Exception/Pass.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Slim/Exception/Stop.php" afterPath="$PROJECT_DIR$/Slim/Exception/Stop.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Slim/Helper/Set.php" afterPath="$PROJECT_DIR$/Slim/Helper/Set.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Slim/Http/Cookies.php" afterPath="$PROJECT_DIR$/Slim/Http/Cookies.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Slim/Http/Headers.php" afterPath="$PROJECT_DIR$/Slim/Http/Headers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Slim/Http/Request.php" afterPath="$PROJECT_DIR$/Slim/Http/Request.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Slim/Http/Response.php" afterPath="$PROJECT_DIR$/Slim/Http/Response.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Slim/Http/Util.php" afterPath="$PROJECT_DIR$/Slim/Http/Util.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Slim/Log.php" afterPath="$PROJECT_DIR$/Slim/Log.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Slim/LogWriter.php" afterPath="$PROJECT_DIR$/Slim/LogWriter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Slim/Middleware.php" afterPath="$PROJECT_DIR$/Slim/Middleware.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Slim/Middleware/ContentTypes.php" afterPath="$PROJECT_DIR$/Slim/Middleware/ContentTypes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Slim/Middleware/Flash.php" afterPath="$PROJECT_DIR$/Slim/Middleware/Flash.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Slim/Middleware/MethodOverride.php" afterPath="$PROJECT_DIR$/Slim/Middleware/MethodOverride.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Slim/Middleware/PrettyExceptions.php" afterPath="$PROJECT_DIR$/Slim/Middleware/PrettyExceptions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Slim/Middleware/SessionCookie.php" afterPath="$PROJECT_DIR$/Slim/Middleware/SessionCookie.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Slim/Route.php" afterPath="$PROJECT_DIR$/Slim/Route.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Slim/Router.php" afterPath="$PROJECT_DIR$/Slim/Router.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Slim/Slim.php" afterPath="$PROJECT_DIR$/Slim/Slim.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Slim/View.php" afterPath="$PROJECT_DIR$/Slim/View.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Base/Defendants.php" afterPath="$PROJECT_DIR$/generated-classes/Base/Defendants.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Base/DefendantsQuery.php" afterPath="$PROJECT_DIR$/generated-classes/Base/DefendantsQuery.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Base/Documents.php" afterPath="$PROJECT_DIR$/generated-classes/Base/Documents.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Base/DocumentsQuery.php" afterPath="$PROJECT_DIR$/generated-classes/Base/DocumentsQuery.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Base/Judges.php" afterPath="$PROJECT_DIR$/generated-classes/Base/Judges.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Base/JudgesQuery.php" afterPath="$PROJECT_DIR$/generated-classes/Base/JudgesQuery.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Base/Lawyers.php" afterPath="$PROJECT_DIR$/generated-classes/Base/Lawyers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Base/LawyersQuery.php" afterPath="$PROJECT_DIR$/generated-classes/Base/LawyersQuery.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Base/Notifications.php" afterPath="$PROJECT_DIR$/generated-classes/Base/Notifications.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Base/NotificationsQuery.php" afterPath="$PROJECT_DIR$/generated-classes/Base/NotificationsQuery.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Base/Plaintiffs.php" afterPath="$PROJECT_DIR$/generated-classes/Base/Plaintiffs.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Base/PlaintiffsQuery.php" afterPath="$PROJECT_DIR$/generated-classes/Base/PlaintiffsQuery.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Base/Suitcourts.php" afterPath="$PROJECT_DIR$/generated-classes/Base/Suitcourts.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Base/SuitcourtsQuery.php" afterPath="$PROJECT_DIR$/generated-classes/Base/SuitcourtsQuery.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Base/Suitjudges.php" afterPath="$PROJECT_DIR$/generated-classes/Base/Suitjudges.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Base/SuitjudgesQuery.php" afterPath="$PROJECT_DIR$/generated-classes/Base/SuitjudgesQuery.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Base/Suitlawyers.php" afterPath="$PROJECT_DIR$/generated-classes/Base/Suitlawyers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Base/SuitlawyersQuery.php" afterPath="$PROJECT_DIR$/generated-classes/Base/SuitlawyersQuery.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Base/Suits.php" afterPath="$PROJECT_DIR$/generated-classes/Base/Suits.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Base/SuitsQuery.php" afterPath="$PROJECT_DIR$/generated-classes/Base/SuitsQuery.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Base/Token.php" afterPath="$PROJECT_DIR$/generated-classes/Base/Token.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Base/TokenQuery.php" afterPath="$PROJECT_DIR$/generated-classes/Base/TokenQuery.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Base/Users.php" afterPath="$PROJECT_DIR$/generated-classes/Base/Users.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Base/UsersQuery.php" afterPath="$PROJECT_DIR$/generated-classes/Base/UsersQuery.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Map/DefendantsTableMap.php" afterPath="$PROJECT_DIR$/generated-classes/Map/DefendantsTableMap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Map/DocumentsTableMap.php" afterPath="$PROJECT_DIR$/generated-classes/Map/DocumentsTableMap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Map/JudgesTableMap.php" afterPath="$PROJECT_DIR$/generated-classes/Map/JudgesTableMap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Map/LawyersTableMap.php" afterPath="$PROJECT_DIR$/generated-classes/Map/LawyersTableMap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Map/NotificationsTableMap.php" afterPath="$PROJECT_DIR$/generated-classes/Map/NotificationsTableMap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Map/PlaintiffsTableMap.php" afterPath="$PROJECT_DIR$/generated-classes/Map/PlaintiffsTableMap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Map/SuitcourtsTableMap.php" afterPath="$PROJECT_DIR$/generated-classes/Map/SuitcourtsTableMap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Map/SuitjudgesTableMap.php" afterPath="$PROJECT_DIR$/generated-classes/Map/SuitjudgesTableMap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Map/SuitlawyersTableMap.php" afterPath="$PROJECT_DIR$/generated-classes/Map/SuitlawyersTableMap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Map/SuitsTableMap.php" afterPath="$PROJECT_DIR$/generated-classes/Map/SuitsTableMap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Map/TokenTableMap.php" afterPath="$PROJECT_DIR$/generated-classes/Map/TokenTableMap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-classes/Map/UsersTableMap.php" afterPath="$PROJECT_DIR$/generated-classes/Map/UsersTableMap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-conf/config.php" afterPath="$PROJECT_DIR$/generated-conf/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-reversed-database/schema.xml" afterPath="$PROJECT_DIR$/generated-reversed-database/schema.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/generated-sql/lacerdb.sql" afterPath="$PROJECT_DIR$/generated-sql/lacerdb.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.php" afterPath="$PROJECT_DIR$/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/PasswordLock.php" afterPath="$PROJECT_DIR$/libs/PasswordLock.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/.gitignore" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/.htaccess" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/.htaccess" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/.travis.yml" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/.travis.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/CONTRIBUTING.md" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/CONTRIBUTING.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/LICENSE" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/README.markdown" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/README.markdown" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Environment.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Environment.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Exception/Pass.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Exception/Pass.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Exception/Stop.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Exception/Stop.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Helper/Set.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Helper/Set.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Http/Cookies.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Http/Cookies.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Http/Headers.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Http/Headers.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Http/Request.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Http/Request.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Http/Response.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Http/Response.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Http/Util.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Http/Util.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Log.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Log.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/LogWriter.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/LogWriter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Middleware.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Middleware.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Middleware/ContentTypes.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Middleware/ContentTypes.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Middleware/Flash.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Middleware/Flash.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Middleware/MethodOverride.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Middleware/MethodOverride.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Middleware/PrettyExceptions.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Middleware/PrettyExceptions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Middleware/SessionCookie.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Middleware/SessionCookie.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Route.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Route.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Router.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Router.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Slim.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/Slim.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/View.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/Slim/View.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/composer.json" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/index.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/phpunit.xml.dist" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/phpunit.xml.dist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/EnvironmentTest.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/EnvironmentTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/Foo.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/Foo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/Helper/SetTest.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/Helper/SetTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/Http/CookiesTest.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/Http/CookiesTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/Http/HeadersTest.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/Http/HeadersTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/Http/RequestTest.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/Http/RequestTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/Http/ResponseTest.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/Http/ResponseTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/Http/UtilTest.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/Http/UtilTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/LogTest.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/LogTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/LogWriterTest.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/LogWriterTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/Middleware/ContentTypesTest.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/Middleware/ContentTypesTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/Middleware/FlashTest.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/Middleware/FlashTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/Middleware/MethodOverrideTest.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/Middleware/MethodOverrideTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/Middleware/PrettyExceptionsTest.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/Middleware/PrettyExceptionsTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/Middleware/SessionCookieTest.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/Middleware/SessionCookieTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/MiddlewareTest.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/MiddlewareTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/README" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/README" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/RouteTest.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/RouteTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/RouterTest.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/RouterTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/SlimTest.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/SlimTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/ViewTest.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/ViewTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/bootstrap.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/bootstrap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/templates/test.php" afterPath="$PROJECT_DIR$/libs/Slim-2.6.2/tests/templates/test.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/StringGenerator.php" afterPath="$PROJECT_DIR$/libs/StringGenerator.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/.gitignore" afterPath="$PROJECT_DIR$/libs/phpactiverecord/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/.travis.yml" afterPath="$PROJECT_DIR$/libs/phpactiverecord/.travis.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/ActiveRecord.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/ActiveRecord.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/CHANGELOG" afterPath="$PROJECT_DIR$/libs/phpactiverecord/CHANGELOG" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/CONTRIBUTING.md" afterPath="$PROJECT_DIR$/libs/phpactiverecord/CONTRIBUTING.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/LICENSE" afterPath="$PROJECT_DIR$/libs/phpactiverecord/LICENSE" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/README.md" afterPath="$PROJECT_DIR$/libs/phpactiverecord/README.md" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/composer.json" afterPath="$PROJECT_DIR$/libs/phpactiverecord/composer.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/examples/orders/models/Order.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/examples/orders/models/Order.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/examples/orders/models/Payment.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/examples/orders/models/Payment.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/examples/orders/models/Person.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/examples/orders/models/Person.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/examples/orders/orders.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/examples/orders/orders.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/examples/orders/orders.sql" afterPath="$PROJECT_DIR$/libs/phpactiverecord/examples/orders/orders.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/examples/simple/simple.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/examples/simple/simple.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/examples/simple/simple.sql" afterPath="$PROJECT_DIR$/libs/phpactiverecord/examples/simple/simple.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/examples/simple/simple_with_options.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/examples/simple/simple_with_options.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/examples/simple/simple_with_options.sql" afterPath="$PROJECT_DIR$/libs/phpactiverecord/examples/simple/simple_with_options.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/lib/Cache.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/lib/Cache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/lib/CallBack.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/lib/CallBack.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/lib/Column.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/lib/Column.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/lib/Config.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/lib/Config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/lib/Connection.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/lib/Connection.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/lib/ConnectionManager.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/lib/ConnectionManager.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/lib/DateTime.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/lib/DateTime.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/lib/Exceptions.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/lib/Exceptions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/lib/Expressions.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/lib/Expressions.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/lib/Inflector.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/lib/Inflector.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/lib/Model.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/lib/Model.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/lib/Reflections.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/lib/Reflections.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/lib/Relationship.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/lib/Relationship.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/lib/SQLBuilder.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/lib/SQLBuilder.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/lib/Serialization.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/lib/Serialization.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/lib/Singleton.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/lib/Singleton.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/lib/Table.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/lib/Table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/lib/Utils.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/lib/Utils.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/lib/Validations.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/lib/Validations.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/lib/adapters/MysqlAdapter.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/lib/adapters/MysqlAdapter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/lib/adapters/OciAdapter.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/lib/adapters/OciAdapter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/lib/adapters/PgsqlAdapter.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/lib/adapters/PgsqlAdapter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/lib/adapters/SqliteAdapter.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/lib/adapters/SqliteAdapter.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/lib/cache/Memcache.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/lib/cache/Memcache.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/phpunit.xml.dist" afterPath="$PROJECT_DIR$/libs/phpactiverecord/phpunit.xml.dist" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/ActiveRecordCacheTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/ActiveRecordCacheTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/ActiveRecordFindTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/ActiveRecordFindTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/ActiveRecordTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/ActiveRecordTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/ActiveRecordWriteTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/ActiveRecordWriteTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/CacheModelTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/CacheModelTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/CacheTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/CacheTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/CallbackTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/CallbackTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/ColumnTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/ColumnTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/ConfigTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/ConfigTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/ConnectionManagerTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/ConnectionManagerTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/ConnectionTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/ConnectionTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/DateFormatTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/DateFormatTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/DateTimeTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/DateTimeTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/ExpressionsTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/ExpressionsTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/HasManyThroughTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/HasManyThroughTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/InflectorTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/InflectorTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/ModelCallbackTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/ModelCallbackTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/MysqlAdapterTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/MysqlAdapterTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/OciAdapterTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/OciAdapterTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/PgsqlAdapterTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/PgsqlAdapterTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/RelationshipTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/RelationshipTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/SQLBuilderTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/SQLBuilderTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/SerializationTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/SerializationTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/SqliteAdapterTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/SqliteAdapterTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/UtilsTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/UtilsTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/ValidatesFormatOfTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/ValidatesFormatOfTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/ValidatesInclusionAndExclusionOfTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/ValidatesInclusionAndExclusionOfTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/ValidatesLengthOfTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/ValidatesLengthOfTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/ValidatesNumericalityOfTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/ValidatesNumericalityOfTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/ValidatesPresenceOfTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/ValidatesPresenceOfTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/ValidationsTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/ValidationsTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/amenities.csv" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/amenities.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/authors.csv" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/authors.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/awesome_people.csv" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/awesome_people.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/books.csv" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/books.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/employees.csv" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/employees.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/events.csv" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/events.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/hosts.csv" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/hosts.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/newsletters.csv" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/newsletters.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/positions.csv" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/positions.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/property.csv" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/property.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/property_amenities.csv" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/property_amenities.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/publishers.csv" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/publishers.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/rm-bldg.csv" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/rm-bldg.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/user_newsletters.csv" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/user_newsletters.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/users.csv" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/users.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/venues.csv" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/fixtures/venues.csv" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/helpers/AdapterTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/helpers/AdapterTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/helpers/DatabaseLoader.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/helpers/DatabaseLoader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/helpers/DatabaseTest.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/helpers/DatabaseTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/helpers/SnakeCase_PHPUnit_Framework_TestCase.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/helpers/SnakeCase_PHPUnit_Framework_TestCase.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/helpers/config.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/helpers/config.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/helpers/foo.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/helpers/foo.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/models/Amenity.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/models/Amenity.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/models/Author.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/models/Author.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/models/AuthorAttrAccessible.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/models/AuthorAttrAccessible.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/models/AwesomePerson.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/models/AwesomePerson.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/models/Book.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/models/Book.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/models/BookAttrAccessible.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/models/BookAttrAccessible.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/models/BookAttrProtected.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/models/BookAttrProtected.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/models/Employee.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/models/Employee.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/models/Event.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/models/Event.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/models/Host.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/models/Host.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/models/JoinAuthor.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/models/JoinAuthor.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/models/JoinBook.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/models/JoinBook.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/models/NamespaceTest/Book.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/models/NamespaceTest/Book.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/models/NamespaceTest/SubNamespaceTest/Page.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/models/NamespaceTest/SubNamespaceTest/Page.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/models/Position.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/models/Position.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/models/Property.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/models/Property.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/models/PropertyAmenity.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/models/PropertyAmenity.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/models/Publisher.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/models/Publisher.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/models/RmBldg.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/models/RmBldg.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/models/Venue.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/models/Venue.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/models/VenueAfterCreate.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/models/VenueAfterCreate.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/models/VenueCB.php" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/models/VenueCB.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/sql/mysql.sql" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/sql/mysql.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/sql/oci-after-fixtures.sql" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/sql/oci-after-fixtures.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/sql/oci.sql" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/sql/oci.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/sql/pgsql-after-fixtures.sql" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/sql/pgsql-after-fixtures.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/sql/pgsql.sql" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/sql/pgsql.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/libs/phpactiverecord/test/sql/sqlite.sql" afterPath="$PROJECT_DIR$/libs/phpactiverecord/test/sql/sqlite.sql" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/schema.xml" afterPath="$PROJECT_DIR$/schema.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/suits/create.php" afterPath="$PROJECT_DIR$/templates/suits/create.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/suits/index.php" afterPath="$PROJECT_DIR$/templates/suits/index.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/suits/show.php" afterPath="$PROJECT_DIR$/templates/suits/show.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/users/gettoken.php" afterPath="$PROJECT_DIR$/templates/users/gettoken.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/users/new.php" afterPath="$PROJECT_DIR$/templates/users/new.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.php" afterPath="$PROJECT_DIR$/test.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/bin/propel" afterPath="$PROJECT_DIR$/vendor/bin/propel" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/propel/propel/bin/propel" afterPath="$PROJECT_DIR$/vendor/propel/propel/bin/propel" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/propel/propel/bin/propel.bat" afterPath="$PROJECT_DIR$/vendor/propel/propel/bin/propel.bat" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/propel/propel/src/Propel/Generator/Reverse/PgsqlSchemaParser.php" afterPath="$PROJECT_DIR$/vendor/propel/propel/src/Propel/Generator/Reverse/PgsqlSchemaParser.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/propel/propel/tests/Propel/Tests/Generator/Behavior/Validate/ValidateBehaviorTest.php" afterPath="$PROJECT_DIR$/vendor/propel/propel/tests/Propel/Tests/Generator/Behavior/Validate/ValidateBehaviorTest.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/propel/propel/tests/bin/phpunit.agnostic.sh" afterPath="$PROJECT_DIR$/vendor/propel/propel/tests/bin/phpunit.agnostic.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/propel/propel/tests/bin/phpunit.circleci.sh" afterPath="$PROJECT_DIR$/vendor/propel/propel/tests/bin/phpunit.circleci.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/propel/propel/tests/bin/phpunit.mysql.sh" afterPath="$PROJECT_DIR$/vendor/propel/propel/tests/bin/phpunit.mysql.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/propel/propel/tests/bin/phpunit.pgsql.sh" afterPath="$PROJECT_DIR$/vendor/propel/propel/tests/bin/phpunit.pgsql.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/propel/propel/tests/bin/phpunit.sqlite.sh" afterPath="$PROJECT_DIR$/vendor/propel/propel/tests/bin/phpunit.sqlite.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/propel/propel/tests/bin/setup.mysql.sh" afterPath="$PROJECT_DIR$/vendor/propel/propel/tests/bin/setup.mysql.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/propel/propel/tests/bin/setup.pgsql.sh" afterPath="$PROJECT_DIR$/vendor/propel/propel/tests/bin/setup.pgsql.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/propel/propel/tests/bin/setup.sqlite.sh" afterPath="$PROJECT_DIR$/vendor/propel/propel/tests/bin/setup.sqlite.sh" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/symfony/finder/Tests/GlobTest.php" afterPath="$PROJECT_DIR$/vendor/symfony/finder/Tests/GlobTest.php" />
+    </list>
     <ignored path="Lacer.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -16,70 +291,27 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
-  <component name="DaemonCodeAnalyzer">
-    <disable_hints />
-  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FavoritesManager">
     <favorites_list name="Lacer" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file leaf-file-name="index.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-14.791667" vertical-offset="965" max-vertical-offset="1785">
-              <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
+            <state vertical-scroll-proportion="-12.129032">
+              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="36" selection-end-column="3" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/users/new.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.22193211" vertical-offset="215" max-vertical-offset="840">
-              <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gettoken.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="gettoken.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/templates/users/gettoken.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.791667" vertical-offset="140" max-vertical-offset="885">
-              <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="create.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/templates/suits/create.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.25" vertical-offset="72" max-vertical-offset="855">
-              <caret line="18" column="84" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="84" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="users.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/users.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.25" vertical-offset="1185" max-vertical-offset="2625">
-              <caret line="105" column="22" selection-start-line="95" selection-start-column="7" selection-end-line="105" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".htaccess" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.htaccess">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
-              <caret line="14" column="88" selection-start-line="14" selection-start-column="88" selection-end-line="14" selection-end-column="88" />
+            <state vertical-scroll-proportion="0.6592866">
+              <caret line="71" column="52" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
               <folding />
             </state>
           </provider>
@@ -87,45 +319,79 @@
       </file>
     </leaf>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/test.php" />
-        <option value="$PROJECT_DIR$/models/judge.php" />
-        <option value="$PROJECT_DIR$/judge.php" />
-        <option value="$PROJECT_DIR$/models/User.php" />
-        <option value="$PROJECT_DIR$/Register.php" />
-        <option value="$PROJECT_DIR$/Login.php" />
-        <option value="$PROJECT_DIR$/propel.json" />
-        <option value="$PROJECT_DIR$/schema.xml" />
-        <option value="$PROJECT_DIR$/users.php" />
-        <option value="$PROJECT_DIR$/defendants.php" />
-        <option value="$PROJECT_DIR$/generated-reversed-database/schema.xml" />
-        <option value="$PROJECT_DIR$/suits.php" />
-        <option value="$PROJECT_DIR$/myget.php" />
-        <option value="$PROJECT_DIR$/templates/suits/myget.php" />
-        <option value="$PROJECT_DIR$/composer.json" />
-        <option value="$PROJECT_DIR$/classes/JsonParse.php" />
-        <option value="$PROJECT_DIR$/classes/authtoken.php" />
-        <option value="$PROJECT_DIR$/templates/suits/index.php" />
-        <option value="$PROJECT_DIR$/templates/suits/show.php" />
-        <option value="$PROJECT_DIR$/templates/users/gettoken.php" />
-        <option value="$PROJECT_DIR$/templates/suits/update.php" />
-        <option value="$PROJECT_DIR$/templates/suits/create.php" />
-        <option value="$PROJECT_DIR$/.htaccess" />
-        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/templates/lawyers/showall.php" />
+        <option value="$PROJECT_DIR$/templates/defendants/show.php" />
+        <option value="$PROJECT_DIR$/templates/defendants/create.php" />
+        <option value="$PROJECT_DIR$/templates/defendants/delete.php" />
+        <option value="$PROJECT_DIR$/templates/defendants/update.php" />
+        <option value="$PROJECT_DIR$/templates/suitlawyers/showlawyersuits.php" />
+        <option value="$PROJECT_DIR$/templates/users/checkregcode.php" />
         <option value="$PROJECT_DIR$/templates/users/new.php" />
+        <option value="$PROJECT_DIR$/templates/lawyers/create.php" />
+        <option value="$PROJECT_DIR$/templates/suitlawyers/create.php" />
+        <option value="$PROJECT_DIR$/templates/plaintiffs/create.php" />
+        <option value="$PROJECT_DIR$/templates/suitlawyers/delete.php" />
+        <option value="$PROJECT_DIR$/templates/suits/authorize.php" />
+        <option value="$PROJECT_DIR$/templates/suits/usercases.php" />
+        <option value="$PROJECT_DIR$/templates/suitjudges/create.php" />
+        <option value="$PROJECT_DIR$/templates/documents/show.php" />
+        <option value="$PROJECT_DIR$/templates/judges/showall.php" />
+        <option value="$PROJECT_DIR$/templates/notifications/sendsms.php" />
+        <option value="$PROJECT_DIR$/schema.xml" />
+        <option value="$PROJECT_DIR$/templates/documents/update.php" />
+        <option value="$PROJECT_DIR$/templates/plaintiffs/update.php" />
+        <option value="$PROJECT_DIR$/templates/documents/create.php" />
+        <option value="$PROJECT_DIR$/templates/notifications/create.php" />
+        <option value="$PROJECT_DIR$/templates/suits/create.php" />
+        <option value="$PROJECT_DIR$/templates/suits/show.php" />
+        <option value="$PROJECT_DIR$/templates/judges/create.php" />
+        <option value="$PROJECT_DIR$/templates/notifications/update.php" />
+        <option value="$PROJECT_DIR$/templates/notifications/sendemail.php" />
+        <option value="$PROJECT_DIR$/templates/notifications/show.php" />
+        <option value="$PROJECT_DIR$/templates/notificationdetail/create.php" />
+        <option value="$PROJECT_DIR$/templates/notificationdetail/show.php" />
+        <option value="$PROJECT_DIR$/templates/notificationdetail/update.php" />
+        <option value="$PROJECT_DIR$/templates/users/saveregcode.php" />
+        <option value="$PROJECT_DIR$/templates/suitlawyers/show.php" />
+        <option value="$PROJECT_DIR$/templates/suitjudges/delete.php" />
+        <option value="$PROJECT_DIR$/templates/suitjudges/show.php" />
+        <option value="$PROJECT_DIR$/templates/lawyers/createunregistered.php" />
+        <option value="$PROJECT_DIR$/templates/suitjudges/update.php" />
+        <option value="$PROJECT_DIR$/templates/suitlawyers/showUserSuits.php" />
+        <option value="$PROJECT_DIR$/templates/users/showAdminUsers.php" />
+        <option value="$PROJECT_DIR$/templates/users/adminnew.php" />
+        <option value="$PROJECT_DIR$/generated-classes/Base/PermissionQuery.php" />
+        <option value="$PROJECT_DIR$/templates/permissions/showallbyuser.php" />
+        <option value="$PROJECT_DIR$/templates/permissions/update.php" />
+        <option value="$PROJECT_DIR$/templates/users/update.php" />
+        <option value="$PROJECT_DIR$/templates/suitlawyers/update.php" />
+        <option value="$PROJECT_DIR$/upload.php" />
+        <option value="$PROJECT_DIR$/templates/suits/index.php" />
+        <option value="$PROJECT_DIR$/appnotes.txt" />
+        <option value="$PROJECT_DIR$/index.php" />
+        <option value="$PROJECT_DIR$/templates/users/gettoken.php" />
       </list>
     </option>
   </component>
+  <component name="JsBuildToolGruntFileManager" detection-done="true" />
+  <component name="JsBuildToolPackageJson" detection-done="true" />
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
   </component>
+  <component name="PhpServers">
+    <servers />
+  </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="739" />
+    <option name="x" value="-8" />
+    <option name="width" value="1932" />
+    <option name="height" value="1038" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -148,8 +414,12 @@
       <autoscrollToSource />
       <autoscrollFromSource />
       <sortByType />
+      <manualOrder />
+      <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -168,28 +438,74 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lacer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lacerapi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lacer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lacerapi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="users" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lacer" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Lacerapi" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="classes" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="FullScreen" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../myprojects/trinity" />
     <property name="LayoutCode.rearrangeEntriesPHP" value="false" />
+    <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\kfivehub\xampp\htdocs\Lacerapi\templates\users" />
+      <recent name="$PROJECT_DIR$/templates/suitjudges" />
+      <recent name="$PROJECT_DIR$/templates/suitlawyers" />
+      <recent name="$PROJECT_DIR$/templates/notifications" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/templates/users" />
-      <recent name="$PROJECT_DIR$/templates/suits" />
-      <recent name="$PROJECT_DIR$/libs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/oldSchemas" />
       <recent name="$PROJECT_DIR$/templates/suits" />
       <recent name="$PROJECT_DIR$/templates" />
-      <recent name="$PROJECT_DIR$/oldSchemas" />
       <recent name="$PROJECT_DIR$/oldSchemas27-09-15" />
     </key>
   </component>
@@ -197,29 +513,21 @@
     <configuration default="true" type="JavascriptDebugType" factoryName="JavaScript Debug">
       <method />
     </configuration>
-    <configuration default="true" type="PhpUnitRemoteRunConfigurationType" factoryName="PHPUnit on Server">
-      <method />
-    </configuration>
-    <configuration default="true" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
-      <TestRunner />
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpLocalRunConfigurationType" factoryName="PHP Console">
-      <method />
-    </configuration>
-    <configuration default="true" type="PhpBehatConfigurationType" factoryName="Behat">
-      <BehatRunner />
-      <method />
-    </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
       <node-options />
       <gulpfile />
       <tasks />
+      <arguments />
       <pass-parent-envs>true</pass-parent-envs>
       <envs />
       <method />
     </configuration>
-    <list size="0" />
+    <configuration default="true" type="js.build_tools.npm" factoryName="npm">
+      <command value="run-script" />
+      <scripts />
+      <envs />
+      <method />
+    </configuration>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
   <component name="SvnConfiguration">
@@ -235,28 +543,29 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="739" extended-state="0" />
+    <frame x="-8" y="0" width="1932" height="1038" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2819063" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32766616" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32766616" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24086021" sideWeight="0.4992272" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32766616" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32956383" sideWeight="0.5007728" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32896176" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32901135" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -270,392 +579,369 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <option name="myTodoPanelSettings">
-      <TodoPanelSettings />
-    </option>
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/suits.php</url>
-          <line>27</line>
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="1" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/templates/notificationdetail/show.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.58655465">
+          <caret line="30" column="46" selection-start-line="30" selection-start-column="46" selection-end-line="30" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/suits/usercases.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.541666">
+          <caret line="38" column="29" selection-start-line="38" selection-start-column="29" selection-end-line="38" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/lawyers/showall.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.041666">
+          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/users/saveregcode.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4857143">
+          <caret line="41" column="50" selection-start-line="41" selection-start-column="50" selection-end-line="41" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/lawyers/create.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.2100841">
+          <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/schema.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33333334">
+          <caret line="55" column="21" selection-start-line="55" selection-start-column="15" selection-end-line="55" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/plaintiffs/show.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4789916">
+          <caret line="23" column="20" selection-start-line="23" selection-start-column="4" selection-end-line="23" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/lawyers/createunregistered.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.5416667">
+          <caret line="19" column="2" selection-start-line="19" selection-start-column="2" selection-end-line="19" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/suitjudges/delete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.875">
+          <caret line="27" column="33" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/suitjudges/update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.4166666">
+          <caret line="65" column="27" selection-start-line="65" selection-start-column="27" selection-end-line="65" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/suitjudges/create.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.1579832">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="33" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/suitlawyers/showlawyersuits.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.741936">
+          <caret line="22" column="0" selection-start-line="22" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/suitlawyers/showUserSuits.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.077373974">
+          <caret line="29" column="37" selection-start-line="29" selection-start-column="37" selection-end-line="30" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generated-classes/Base/PermissionQuery.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.34466588">
+          <caret line="49" column="25" selection-start-line="49" selection-start-column="25" selection-end-line="49" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/permissions/create.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/permissions/update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.60297483">
+          <caret line="31" column="24" selection-start-line="31" selection-start-column="24" selection-end-line="31" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/users/adminnew.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1670481">
+          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/users/showAdminUsers.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.58352405">
+          <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/permissions/showallbyuser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5640732">
+          <caret line="29" column="49" selection-start-line="29" selection-start-column="49" selection-end-line="29" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/users/update.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-23.538462">
+          <caret line="36" column="38" selection-start-line="36" selection-start-column="38" selection-end-line="36" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/suitlawyers/delete.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38901603">
+          <caret line="20" column="6" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.htaccess">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="135">
-          <caret line="3" column="42" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/authtoken.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="195">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="1020">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="930">
-          <caret line="16" column="24" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/propel.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="60" max-vertical-offset="435">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generated-classes/Base/Users.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="13414" max-vertical-offset="23055">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="360">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/judge.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="410" max-vertical-offset="975">
-          <caret line="50" column="4" selection-start-line="49" selection-start-column="3" selection-end-line="57" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="1020">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="365" max-vertical-offset="930">
-          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/phppass/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="515" max-vertical-offset="1095">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="360">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/judge.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="410" max-vertical-offset="975">
-          <caret line="50" column="4" selection-start-line="49" selection-start-column="3" selection-end-line="57" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="1020">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="435" max-vertical-offset="1020">
-          <caret line="54" column="17" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/phppass/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="515" max-vertical-offset="1095">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="135" max-vertical-offset="360">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/judge.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="410" max-vertical-offset="975">
-          <caret line="50" column="4" selection-start-line="49" selection-start-column="3" selection-end-line="57" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="440" max-vertical-offset="1005">
-          <caret line="43" column="27" selection-start-line="43" selection-start-column="27" selection-end-line="43" selection-end-column="27" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="350" max-vertical-offset="960">
-          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/phppass/test.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="515" max-vertical-offset="1095">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/phpactiverecord/ActiveRecord.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="810">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/libs/phppass/test.php">
+    <entry file="file://$PROJECT_DIR$/templates/judges/showall.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.9668508" vertical-offset="515" max-vertical-offset="1095">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="39" />
+        <state vertical-scroll-proportion="-25.5">
+          <caret line="39" column="31" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="31" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generated-conf/config.php">
+    <entry file="file://$PROJECT_DIR$/templates/judges/update.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="386">
+        <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.php">
+    <entry file="file://$PROJECT_DIR$/templates/suitlawyers/create.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.625" vertical-offset="0" max-vertical-offset="360">
-          <caret line="9" column="17" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
+        <state vertical-scroll-proportion="-17.653847">
+          <caret line="27" column="73" selection-start-line="27" selection-start-column="73" selection-end-line="27" selection-end-column="73" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/generated-classes/Base/Users.php">
+    <entry file="file://$PROJECT_DIR$/templates/suitlawyers/update.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-23.64855" vertical-offset="13414" max-vertical-offset="23055">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="29" column="62" selection-start-line="29" selection-start-column="62" selection-end-line="29" selection-end-column="62" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/propel.json">
+    <entry file="file://$PROJECT_DIR$/templates/suitlawyers/show.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10619469" vertical-offset="0" max-vertical-offset="565">
-          <caret line="4" column="16" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/libs/StringGenerator.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2535">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/Judge.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07964602" vertical-offset="0" max-vertical-offset="565">
-          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/models/User.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.07964602" vertical-offset="0" max-vertical-offset="565">
-          <caret line="8" column="38" selection-start-line="8" selection-start-column="38" selection-end-line="8" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Register.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="90" max-vertical-offset="1020">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Login.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="240" max-vertical-offset="930">
-          <caret line="16" column="24" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/defendants.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.916667" vertical-offset="1160" max-vertical-offset="1755">
-          <caret line="98" column="0" selection-start-line="98" selection-start-column="0" selection-end-line="98" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generated-classes/Base/Suits.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.0824742" vertical-offset="630" max-vertical-offset="27555">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generated-classes/Suits.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="619">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/generated-reversed-database/schema.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03685504" vertical-offset="0" max-vertical-offset="2985">
-          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/oldSchemas/schema.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2295">
-          <caret line="1" column="23" selection-start-line="1" selection-start-column="16" selection-end-line="1" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/composer.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="210">
-          <caret line="5" column="47" selection-start-line="5" selection-start-column="47" selection-end-line="5" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/JsonParse.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.125" vertical-offset="0" max-vertical-offset="375">
-          <caret line="10" column="20" selection-start-line="10" selection-start-column="15" selection-end-line="10" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/judge.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.03916449" vertical-offset="375" max-vertical-offset="975">
-          <caret line="26" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="27" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/authtoken.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.375" vertical-offset="0" max-vertical-offset="420">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/suits.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="2.142857" vertical-offset="0" max-vertical-offset="2055">
-          <caret line="85" column="42" selection-start-line="85" selection-start-column="4" selection-end-line="85" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/suits/update.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.394958" vertical-offset="125" max-vertical-offset="780">
-          <caret line="24" column="41" selection-start-line="24" selection-start-column="41" selection-end-line="24" selection-end-column="41" />
-          <folding />
+        <state vertical-scroll-proportion="0.13501143">
+          <caret line="38" column="49" selection-start-line="38" selection-start-column="49" selection-end-line="38" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/suits/show.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.38487396" vertical-offset="56" max-vertical-offset="675">
-          <caret line="19" column="23" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="23" />
-          <folding />
+        <state vertical-scroll-proportion="1.3152174">
+          <caret line="33" column="45" selection-start-line="33" selection-start-column="4" selection-end-line="33" selection-end-column="48" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/suits/index.php">
+    <entry file="file://$PROJECT_DIR$/templates/documents/show.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.86386555" vertical-offset="41" max-vertical-offset="660">
-          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="49" />
-          <folding />
+        <state vertical-scroll-proportion="1.2355072">
+          <caret line="31" column="40" selection-start-line="31" selection-start-column="40" selection-end-line="31" selection-end-column="40" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.htaccess">
+    <entry file="file://$PROJECT_DIR$/templates/suits/update.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="315">
-          <caret line="14" column="88" selection-start-line="14" selection-start-column="88" selection-end-line="14" selection-end-column="88" />
-          <folding />
+        <state vertical-scroll-proportion="1.2753624">
+          <caret line="32" column="55" selection-start-line="32" selection-start-column="51" selection-end-line="32" selection-end-column="61" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/index.php">
+    <entry file="file://$PROJECT_DIR$/templates/suits/authorize.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-14.791667" vertical-offset="965" max-vertical-offset="1785">
-          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
-          <folding />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/users.php">
+    <entry file="file://$PROJECT_DIR$/templates/suitjudges/show.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.25" vertical-offset="1185" max-vertical-offset="2625">
-          <caret line="105" column="22" selection-start-line="95" selection-start-column="7" selection-end-line="105" selection-end-column="22" />
-          <folding />
+        <state vertical-scroll-proportion="1.5942029">
+          <caret line="40" column="32" selection-start-line="40" selection-start-column="22" selection-end-line="40" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/autoload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_classmap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="51.741936">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_psr4.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_real.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.2546126">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/composer/ClassLoader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.8708487">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/composer/autoload_namespaces.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/propel/propel/autoload.php.dist">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/suits/create.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.25" vertical-offset="72" max-vertical-offset="855">
-          <caret line="18" column="84" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="84" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/upload.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.5161295">
+          <caret line="12" column="29" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/defendants/create.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/suits/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-26.258064">
+          <caret line="37" column="24" selection-start-line="37" selection-start-column="24" selection-end-line="37" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/users/new.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/appnotes.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="23" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/generated-conf/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/composer.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/authtoken.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/JsonParse.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.129032">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="36" selection-end-column="3" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/users/gettoken.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.791667" vertical-offset="140" max-vertical-offset="885">
-          <caret line="30" column="33" selection-start-line="30" selection-start-column="33" selection-end-line="30" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/users/new.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22193211" vertical-offset="215" max-vertical-offset="840">
-          <caret line="25" column="30" selection-start-line="25" selection-start-column="30" selection-end-line="25" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.6592866">
+          <caret line="71" column="52" selection-start-line="71" selection-start-column="52" selection-end-line="71" selection-end-column="52" />
           <folding />
         </state>
       </provider>

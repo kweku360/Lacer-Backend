@@ -59,7 +59,7 @@ class UsersTableMap extends TableMap
     /**
      * The total number of columns
      */
-    const NUM_COLUMNS = 9;
+    const NUM_COLUMNS = 12;
 
     /**
      * The number of lazy-loaded columns
@@ -69,7 +69,7 @@ class UsersTableMap extends TableMap
     /**
      * The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS)
      */
-    const NUM_HYDRATE_COLUMNS = 9;
+    const NUM_HYDRATE_COLUMNS = 12;
 
     /**
      * the column name for the id field
@@ -77,9 +77,9 @@ class UsersTableMap extends TableMap
     const COL_ID = 'users.id';
 
     /**
-     * the column name for the username field
+     * the column name for the phone field
      */
-    const COL_USERNAME = 'users.username';
+    const COL_PHONE = 'users.phone';
 
     /**
      * the column name for the password field
@@ -107,6 +107,21 @@ class UsersTableMap extends TableMap
     const COL_PICTURE = 'users.picture';
 
     /**
+     * the column name for the position field
+     */
+    const COL_POSITION = 'users.position';
+
+    /**
+     * the column name for the emailcode field
+     */
+    const COL_EMAILCODE = 'users.emailcode';
+
+    /**
+     * the column name for the mobilecode field
+     */
+    const COL_MOBILECODE = 'users.mobilecode';
+
+    /**
      * the column name for the created field
      */
     const COL_CREATED = 'users.created';
@@ -128,11 +143,11 @@ class UsersTableMap extends TableMap
      * e.g. self::$fieldNames[self::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        self::TYPE_PHPNAME       => array('Id', 'Username', 'Password', 'Name', 'Email', 'Status', 'Picture', 'Created', 'Modified', ),
-        self::TYPE_CAMELNAME     => array('id', 'username', 'password', 'name', 'email', 'status', 'picture', 'created', 'modified', ),
-        self::TYPE_COLNAME       => array(UsersTableMap::COL_ID, UsersTableMap::COL_USERNAME, UsersTableMap::COL_PASSWORD, UsersTableMap::COL_NAME, UsersTableMap::COL_EMAIL, UsersTableMap::COL_STATUS, UsersTableMap::COL_PICTURE, UsersTableMap::COL_CREATED, UsersTableMap::COL_MODIFIED, ),
-        self::TYPE_FIELDNAME     => array('id', 'username', 'password', 'name', 'email', 'status', 'picture', 'created', 'modified', ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, )
+        self::TYPE_PHPNAME       => array('Id', 'Phone', 'Password', 'Name', 'Email', 'Status', 'Picture', 'Position', 'Emailcode', 'Mobilecode', 'Created', 'Modified', ),
+        self::TYPE_CAMELNAME     => array('id', 'phone', 'password', 'name', 'email', 'status', 'picture', 'position', 'emailcode', 'mobilecode', 'created', 'modified', ),
+        self::TYPE_COLNAME       => array(UsersTableMap::COL_ID, UsersTableMap::COL_PHONE, UsersTableMap::COL_PASSWORD, UsersTableMap::COL_NAME, UsersTableMap::COL_EMAIL, UsersTableMap::COL_STATUS, UsersTableMap::COL_PICTURE, UsersTableMap::COL_POSITION, UsersTableMap::COL_EMAILCODE, UsersTableMap::COL_MOBILECODE, UsersTableMap::COL_CREATED, UsersTableMap::COL_MODIFIED, ),
+        self::TYPE_FIELDNAME     => array('id', 'phone', 'password', 'name', 'email', 'status', 'picture', 'position', 'emailcode', 'mobilecode', 'created', 'modified', ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, )
     );
 
     /**
@@ -142,11 +157,11 @@ class UsersTableMap extends TableMap
      * e.g. self::$fieldKeys[self::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        self::TYPE_PHPNAME       => array('Id' => 0, 'Username' => 1, 'Password' => 2, 'Name' => 3, 'Email' => 4, 'Status' => 5, 'Picture' => 6, 'Created' => 7, 'Modified' => 8, ),
-        self::TYPE_CAMELNAME     => array('id' => 0, 'username' => 1, 'password' => 2, 'name' => 3, 'email' => 4, 'status' => 5, 'picture' => 6, 'created' => 7, 'modified' => 8, ),
-        self::TYPE_COLNAME       => array(UsersTableMap::COL_ID => 0, UsersTableMap::COL_USERNAME => 1, UsersTableMap::COL_PASSWORD => 2, UsersTableMap::COL_NAME => 3, UsersTableMap::COL_EMAIL => 4, UsersTableMap::COL_STATUS => 5, UsersTableMap::COL_PICTURE => 6, UsersTableMap::COL_CREATED => 7, UsersTableMap::COL_MODIFIED => 8, ),
-        self::TYPE_FIELDNAME     => array('id' => 0, 'username' => 1, 'password' => 2, 'name' => 3, 'email' => 4, 'status' => 5, 'picture' => 6, 'created' => 7, 'modified' => 8, ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, )
+        self::TYPE_PHPNAME       => array('Id' => 0, 'Phone' => 1, 'Password' => 2, 'Name' => 3, 'Email' => 4, 'Status' => 5, 'Picture' => 6, 'Position' => 7, 'Emailcode' => 8, 'Mobilecode' => 9, 'Created' => 10, 'Modified' => 11, ),
+        self::TYPE_CAMELNAME     => array('id' => 0, 'phone' => 1, 'password' => 2, 'name' => 3, 'email' => 4, 'status' => 5, 'picture' => 6, 'position' => 7, 'emailcode' => 8, 'mobilecode' => 9, 'created' => 10, 'modified' => 11, ),
+        self::TYPE_COLNAME       => array(UsersTableMap::COL_ID => 0, UsersTableMap::COL_PHONE => 1, UsersTableMap::COL_PASSWORD => 2, UsersTableMap::COL_NAME => 3, UsersTableMap::COL_EMAIL => 4, UsersTableMap::COL_STATUS => 5, UsersTableMap::COL_PICTURE => 6, UsersTableMap::COL_POSITION => 7, UsersTableMap::COL_EMAILCODE => 8, UsersTableMap::COL_MOBILECODE => 9, UsersTableMap::COL_CREATED => 10, UsersTableMap::COL_MODIFIED => 11, ),
+        self::TYPE_FIELDNAME     => array('id' => 0, 'phone' => 1, 'password' => 2, 'name' => 3, 'email' => 4, 'status' => 5, 'picture' => 6, 'position' => 7, 'emailcode' => 8, 'mobilecode' => 9, 'created' => 10, 'modified' => 11, ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, )
     );
 
     /**
@@ -167,12 +182,15 @@ class UsersTableMap extends TableMap
         $this->setUseIdGenerator(true);
         // columns
         $this->addPrimaryKey('id', 'Id', 'INTEGER', true, 12, null);
-        $this->addColumn('username', 'Username', 'VARCHAR', true, 45, null);
+        $this->addColumn('phone', 'Phone', 'VARCHAR', true, 45, null);
         $this->addColumn('password', 'Password', 'VARCHAR', true, 45, null);
         $this->addColumn('name', 'Name', 'VARCHAR', true, 255, null);
         $this->addColumn('email', 'Email', 'VARCHAR', false, 255, null);
         $this->addColumn('status', 'Status', 'VARCHAR', true, 255, null);
         $this->addColumn('picture', 'Picture', 'VARCHAR', false, 255, null);
+        $this->addColumn('position', 'Position', 'VARCHAR', true, 255, null);
+        $this->addColumn('emailcode', 'Emailcode', 'VARCHAR', true, 255, null);
+        $this->addColumn('mobilecode', 'Mobilecode', 'VARCHAR', true, 16, null);
         $this->addColumn('created', 'Created', 'INTEGER', true, null, null);
         $this->addColumn('modified', 'Modified', 'INTEGER', true, null, null);
     } // initialize()
@@ -326,22 +344,28 @@ class UsersTableMap extends TableMap
     {
         if (null === $alias) {
             $criteria->addSelectColumn(UsersTableMap::COL_ID);
-            $criteria->addSelectColumn(UsersTableMap::COL_USERNAME);
+            $criteria->addSelectColumn(UsersTableMap::COL_PHONE);
             $criteria->addSelectColumn(UsersTableMap::COL_PASSWORD);
             $criteria->addSelectColumn(UsersTableMap::COL_NAME);
             $criteria->addSelectColumn(UsersTableMap::COL_EMAIL);
             $criteria->addSelectColumn(UsersTableMap::COL_STATUS);
             $criteria->addSelectColumn(UsersTableMap::COL_PICTURE);
+            $criteria->addSelectColumn(UsersTableMap::COL_POSITION);
+            $criteria->addSelectColumn(UsersTableMap::COL_EMAILCODE);
+            $criteria->addSelectColumn(UsersTableMap::COL_MOBILECODE);
             $criteria->addSelectColumn(UsersTableMap::COL_CREATED);
             $criteria->addSelectColumn(UsersTableMap::COL_MODIFIED);
         } else {
             $criteria->addSelectColumn($alias . '.id');
-            $criteria->addSelectColumn($alias . '.username');
+            $criteria->addSelectColumn($alias . '.phone');
             $criteria->addSelectColumn($alias . '.password');
             $criteria->addSelectColumn($alias . '.name');
             $criteria->addSelectColumn($alias . '.email');
             $criteria->addSelectColumn($alias . '.status');
             $criteria->addSelectColumn($alias . '.picture');
+            $criteria->addSelectColumn($alias . '.position');
+            $criteria->addSelectColumn($alias . '.emailcode');
+            $criteria->addSelectColumn($alias . '.mobilecode');
             $criteria->addSelectColumn($alias . '.created');
             $criteria->addSelectColumn($alias . '.modified');
         }

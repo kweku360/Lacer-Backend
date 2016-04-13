@@ -12,4 +12,4 @@ RewriteRule ^ index.php [QSA,L]
 
 Header add Access-Control-Allow-Origin "*"
 Header add Access-Control-Allow-Methods: "GET,POST,OPTIONS,DELETE,PUT"
-Header set Access-Control-Allow-Headers "Origin, X-Requested-With, Content-Type, Accept"
+Header set Access-Control-Allow-Headers "Origin,Authorization, X-Requested-With, Content-Type, Accept"

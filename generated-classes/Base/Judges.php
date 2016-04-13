@@ -66,22 +66,22 @@ abstract class Judges implements ActiveRecordInterface
     protected $id;
 
     /**
+     * The value for the judgeid field.
+     * @var        string
+     */
+    protected $judgeid;
+
+    /**
      * The value for the fullname field.
      * @var        string
      */
     protected $fullname;
 
     /**
-     * The value for the phone field.
-     * @var        int
+     * The value for the address field.
+     * @var        string
      */
-    protected $phone;
-
-    /**
-     * The value for the phonealt field.
-     * @var        int
-     */
-    protected $phonealt;
+    protected $address;
 
     /**
      * The value for the email field.
@@ -90,10 +90,28 @@ abstract class Judges implements ActiveRecordInterface
     protected $email;
 
     /**
-     * The value for the address field.
+     * The value for the court field.
      * @var        string
      */
-    protected $address;
+    protected $court;
+
+    /**
+     * The value for the phone field.
+     * @var        string
+     */
+    protected $phone;
+
+    /**
+     * The value for the courtnumber field.
+     * @var        string
+     */
+    protected $courtnumber;
+
+    /**
+     * The value for the status field.
+     * @var        string
+     */
+    protected $status;
 
     /**
      * The value for the created field.
@@ -343,6 +361,16 @@ abstract class Judges implements ActiveRecordInterface
     }
 
     /**
+     * Get the [judgeid] column value.
+     *
+     * @return string
+     */
+    public function getJudgeid()
+    {
+        return $this->judgeid;
+    }
+
+    /**
      * Get the [fullname] column value.
      *
      * @return string
@@ -353,23 +381,13 @@ abstract class Judges implements ActiveRecordInterface
     }
 
     /**
-     * Get the [phone] column value.
+     * Get the [address] column value.
      *
-     * @return int
+     * @return string
      */
-    public function getPhone()
+    public function getAddress()
     {
-        return $this->phone;
-    }
-
-    /**
-     * Get the [phonealt] column value.
-     *
-     * @return int
-     */
-    public function getPhonealt()
-    {
-        return $this->phonealt;
+        return $this->address;
     }
 
     /**
@@ -383,13 +401,43 @@ abstract class Judges implements ActiveRecordInterface
     }
 
     /**
-     * Get the [address] column value.
+     * Get the [court] column value.
      *
      * @return string
      */
-    public function getAddress()
+    public function getCourt()
     {
-        return $this->address;
+        return $this->court;
+    }
+
+    /**
+     * Get the [phone] column value.
+     *
+     * @return string
+     */
+    public function getPhone()
+    {
+        return $this->phone;
+    }
+
+    /**
+     * Get the [courtnumber] column value.
+     *
+     * @return string
+     */
+    public function getCourtnumber()
+    {
+        return $this->courtnumber;
+    }
+
+    /**
+     * Get the [status] column value.
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
     }
 
     /**
@@ -433,6 +481,26 @@ abstract class Judges implements ActiveRecordInterface
     } // setId()
 
     /**
+     * Set the value of [judgeid] column.
+     *
+     * @param string $v new value
+     * @return $this|\Judges The current object (for fluent API support)
+     */
+    public function setJudgeid($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->judgeid !== $v) {
+            $this->judgeid = $v;
+            $this->modifiedColumns[JudgesTableMap::COL_JUDGEID] = true;
+        }
+
+        return $this;
+    } // setJudgeid()
+
+    /**
      * Set the value of [fullname] column.
      *
      * @param string $v new value
@@ -453,44 +521,24 @@ abstract class Judges implements ActiveRecordInterface
     } // setFullname()
 
     /**
-     * Set the value of [phone] column.
+     * Set the value of [address] column.
      *
-     * @param int $v new value
+     * @param string $v new value
      * @return $this|\Judges The current object (for fluent API support)
      */
-    public function setPhone($v)
+    public function setAddress($v)
     {
         if ($v !== null) {
-            $v = (int) $v;
+            $v = (string) $v;
         }
 
-        if ($this->phone !== $v) {
-            $this->phone = $v;
-            $this->modifiedColumns[JudgesTableMap::COL_PHONE] = true;
+        if ($this->address !== $v) {
+            $this->address = $v;
+            $this->modifiedColumns[JudgesTableMap::COL_ADDRESS] = true;
         }
 
         return $this;
-    } // setPhone()
-
-    /**
-     * Set the value of [phonealt] column.
-     *
-     * @param int $v new value
-     * @return $this|\Judges The current object (for fluent API support)
-     */
-    public function setPhonealt($v)
-    {
-        if ($v !== null) {
-            $v = (int) $v;
-        }
-
-        if ($this->phonealt !== $v) {
-            $this->phonealt = $v;
-            $this->modifiedColumns[JudgesTableMap::COL_PHONEALT] = true;
-        }
-
-        return $this;
-    } // setPhonealt()
+    } // setAddress()
 
     /**
      * Set the value of [email] column.
@@ -513,24 +561,84 @@ abstract class Judges implements ActiveRecordInterface
     } // setEmail()
 
     /**
-     * Set the value of [address] column.
+     * Set the value of [court] column.
      *
      * @param string $v new value
      * @return $this|\Judges The current object (for fluent API support)
      */
-    public function setAddress($v)
+    public function setCourt($v)
     {
         if ($v !== null) {
             $v = (string) $v;
         }
 
-        if ($this->address !== $v) {
-            $this->address = $v;
-            $this->modifiedColumns[JudgesTableMap::COL_ADDRESS] = true;
+        if ($this->court !== $v) {
+            $this->court = $v;
+            $this->modifiedColumns[JudgesTableMap::COL_COURT] = true;
         }
 
         return $this;
-    } // setAddress()
+    } // setCourt()
+
+    /**
+     * Set the value of [phone] column.
+     *
+     * @param string $v new value
+     * @return $this|\Judges The current object (for fluent API support)
+     */
+    public function setPhone($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->phone !== $v) {
+            $this->phone = $v;
+            $this->modifiedColumns[JudgesTableMap::COL_PHONE] = true;
+        }
+
+        return $this;
+    } // setPhone()
+
+    /**
+     * Set the value of [courtnumber] column.
+     *
+     * @param string $v new value
+     * @return $this|\Judges The current object (for fluent API support)
+     */
+    public function setCourtnumber($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->courtnumber !== $v) {
+            $this->courtnumber = $v;
+            $this->modifiedColumns[JudgesTableMap::COL_COURTNUMBER] = true;
+        }
+
+        return $this;
+    } // setCourtnumber()
+
+    /**
+     * Set the value of [status] column.
+     *
+     * @param string $v new value
+     * @return $this|\Judges The current object (for fluent API support)
+     */
+    public function setStatus($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->status !== $v) {
+            $this->status = $v;
+            $this->modifiedColumns[JudgesTableMap::COL_STATUS] = true;
+        }
+
+        return $this;
+    } // setStatus()
 
     /**
      * Set the value of [created] column.
@@ -611,25 +719,34 @@ abstract class Judges implements ActiveRecordInterface
             $col = $row[TableMap::TYPE_NUM == $indexType ? 0 + $startcol : JudgesTableMap::translateFieldName('Id', TableMap::TYPE_PHPNAME, $indexType)];
             $this->id = (null !== $col) ? (int) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 1 + $startcol : JudgesTableMap::translateFieldName('Fullname', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 1 + $startcol : JudgesTableMap::translateFieldName('Judgeid', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->judgeid = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 2 + $startcol : JudgesTableMap::translateFieldName('Fullname', TableMap::TYPE_PHPNAME, $indexType)];
             $this->fullname = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 2 + $startcol : JudgesTableMap::translateFieldName('Phone', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->phone = (null !== $col) ? (int) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 3 + $startcol : JudgesTableMap::translateFieldName('Phonealt', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->phonealt = (null !== $col) ? (int) $col : null;
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 3 + $startcol : JudgesTableMap::translateFieldName('Address', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->address = (null !== $col) ? (string) $col : null;
 
             $col = $row[TableMap::TYPE_NUM == $indexType ? 4 + $startcol : JudgesTableMap::translateFieldName('Email', TableMap::TYPE_PHPNAME, $indexType)];
             $this->email = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 5 + $startcol : JudgesTableMap::translateFieldName('Address', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->address = (null !== $col) ? (string) $col : null;
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 5 + $startcol : JudgesTableMap::translateFieldName('Court', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->court = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 6 + $startcol : JudgesTableMap::translateFieldName('Created', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 6 + $startcol : JudgesTableMap::translateFieldName('Phone', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->phone = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 7 + $startcol : JudgesTableMap::translateFieldName('Courtnumber', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->courtnumber = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 8 + $startcol : JudgesTableMap::translateFieldName('Status', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->status = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 9 + $startcol : JudgesTableMap::translateFieldName('Created', TableMap::TYPE_PHPNAME, $indexType)];
             $this->created = (null !== $col) ? (int) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 7 + $startcol : JudgesTableMap::translateFieldName('Modified', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 10 + $startcol : JudgesTableMap::translateFieldName('Modified', TableMap::TYPE_PHPNAME, $indexType)];
             $this->modified = (null !== $col) ? (int) $col : null;
             $this->resetModified();
 
@@ -639,7 +756,7 @@ abstract class Judges implements ActiveRecordInterface
                 $this->ensureConsistency();
             }
 
-            return $startcol + 8; // 8 = JudgesTableMap::NUM_HYDRATE_COLUMNS.
+            return $startcol + 11; // 11 = JudgesTableMap::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException(sprintf('Error populating %s object', '\\Judges'), 0, $e);
@@ -839,20 +956,29 @@ abstract class Judges implements ActiveRecordInterface
         if ($this->isColumnModified(JudgesTableMap::COL_ID)) {
             $modifiedColumns[':p' . $index++]  = 'id';
         }
+        if ($this->isColumnModified(JudgesTableMap::COL_JUDGEID)) {
+            $modifiedColumns[':p' . $index++]  = 'judgeid';
+        }
         if ($this->isColumnModified(JudgesTableMap::COL_FULLNAME)) {
             $modifiedColumns[':p' . $index++]  = 'fullname';
         }
-        if ($this->isColumnModified(JudgesTableMap::COL_PHONE)) {
-            $modifiedColumns[':p' . $index++]  = 'phone';
-        }
-        if ($this->isColumnModified(JudgesTableMap::COL_PHONEALT)) {
-            $modifiedColumns[':p' . $index++]  = 'phonealt';
+        if ($this->isColumnModified(JudgesTableMap::COL_ADDRESS)) {
+            $modifiedColumns[':p' . $index++]  = 'address';
         }
         if ($this->isColumnModified(JudgesTableMap::COL_EMAIL)) {
             $modifiedColumns[':p' . $index++]  = 'email';
         }
-        if ($this->isColumnModified(JudgesTableMap::COL_ADDRESS)) {
-            $modifiedColumns[':p' . $index++]  = 'address';
+        if ($this->isColumnModified(JudgesTableMap::COL_COURT)) {
+            $modifiedColumns[':p' . $index++]  = 'court';
+        }
+        if ($this->isColumnModified(JudgesTableMap::COL_PHONE)) {
+            $modifiedColumns[':p' . $index++]  = 'phone';
+        }
+        if ($this->isColumnModified(JudgesTableMap::COL_COURTNUMBER)) {
+            $modifiedColumns[':p' . $index++]  = 'courtnumber';
+        }
+        if ($this->isColumnModified(JudgesTableMap::COL_STATUS)) {
+            $modifiedColumns[':p' . $index++]  = 'status';
         }
         if ($this->isColumnModified(JudgesTableMap::COL_CREATED)) {
             $modifiedColumns[':p' . $index++]  = 'created';
@@ -874,20 +1000,29 @@ abstract class Judges implements ActiveRecordInterface
                     case 'id':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
+                    case 'judgeid':
+                        $stmt->bindValue($identifier, $this->judgeid, PDO::PARAM_STR);
+                        break;
                     case 'fullname':
                         $stmt->bindValue($identifier, $this->fullname, PDO::PARAM_STR);
                         break;
-                    case 'phone':
-                        $stmt->bindValue($identifier, $this->phone, PDO::PARAM_INT);
-                        break;
-                    case 'phonealt':
-                        $stmt->bindValue($identifier, $this->phonealt, PDO::PARAM_INT);
+                    case 'address':
+                        $stmt->bindValue($identifier, $this->address, PDO::PARAM_STR);
                         break;
                     case 'email':
                         $stmt->bindValue($identifier, $this->email, PDO::PARAM_STR);
                         break;
-                    case 'address':
-                        $stmt->bindValue($identifier, $this->address, PDO::PARAM_STR);
+                    case 'court':
+                        $stmt->bindValue($identifier, $this->court, PDO::PARAM_STR);
+                        break;
+                    case 'phone':
+                        $stmt->bindValue($identifier, $this->phone, PDO::PARAM_STR);
+                        break;
+                    case 'courtnumber':
+                        $stmt->bindValue($identifier, $this->courtnumber, PDO::PARAM_STR);
+                        break;
+                    case 'status':
+                        $stmt->bindValue($identifier, $this->status, PDO::PARAM_STR);
                         break;
                     case 'created':
                         $stmt->bindValue($identifier, $this->created, PDO::PARAM_INT);
@@ -961,24 +1096,33 @@ abstract class Judges implements ActiveRecordInterface
                 return $this->getId();
                 break;
             case 1:
-                return $this->getFullname();
+                return $this->getJudgeid();
                 break;
             case 2:
-                return $this->getPhone();
+                return $this->getFullname();
                 break;
             case 3:
-                return $this->getPhonealt();
+                return $this->getAddress();
                 break;
             case 4:
                 return $this->getEmail();
                 break;
             case 5:
-                return $this->getAddress();
+                return $this->getCourt();
                 break;
             case 6:
-                return $this->getCreated();
+                return $this->getPhone();
                 break;
             case 7:
+                return $this->getCourtnumber();
+                break;
+            case 8:
+                return $this->getStatus();
+                break;
+            case 9:
+                return $this->getCreated();
+                break;
+            case 10:
                 return $this->getModified();
                 break;
             default:
@@ -1011,13 +1155,16 @@ abstract class Judges implements ActiveRecordInterface
         $keys = JudgesTableMap::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
-            $keys[1] => $this->getFullname(),
-            $keys[2] => $this->getPhone(),
-            $keys[3] => $this->getPhonealt(),
+            $keys[1] => $this->getJudgeid(),
+            $keys[2] => $this->getFullname(),
+            $keys[3] => $this->getAddress(),
             $keys[4] => $this->getEmail(),
-            $keys[5] => $this->getAddress(),
-            $keys[6] => $this->getCreated(),
-            $keys[7] => $this->getModified(),
+            $keys[5] => $this->getCourt(),
+            $keys[6] => $this->getPhone(),
+            $keys[7] => $this->getCourtnumber(),
+            $keys[8] => $this->getStatus(),
+            $keys[9] => $this->getCreated(),
+            $keys[10] => $this->getModified(),
         );
         $virtualColumns = $this->virtualColumns;
         foreach ($virtualColumns as $key => $virtualColumn) {
@@ -1061,24 +1208,33 @@ abstract class Judges implements ActiveRecordInterface
                 $this->setId($value);
                 break;
             case 1:
-                $this->setFullname($value);
+                $this->setJudgeid($value);
                 break;
             case 2:
-                $this->setPhone($value);
+                $this->setFullname($value);
                 break;
             case 3:
-                $this->setPhonealt($value);
+                $this->setAddress($value);
                 break;
             case 4:
                 $this->setEmail($value);
                 break;
             case 5:
-                $this->setAddress($value);
+                $this->setCourt($value);
                 break;
             case 6:
-                $this->setCreated($value);
+                $this->setPhone($value);
                 break;
             case 7:
+                $this->setCourtnumber($value);
+                break;
+            case 8:
+                $this->setStatus($value);
+                break;
+            case 9:
+                $this->setCreated($value);
+                break;
+            case 10:
                 $this->setModified($value);
                 break;
         } // switch()
@@ -1111,25 +1267,34 @@ abstract class Judges implements ActiveRecordInterface
             $this->setId($arr[$keys[0]]);
         }
         if (array_key_exists($keys[1], $arr)) {
-            $this->setFullname($arr[$keys[1]]);
+            $this->setJudgeid($arr[$keys[1]]);
         }
         if (array_key_exists($keys[2], $arr)) {
-            $this->setPhone($arr[$keys[2]]);
+            $this->setFullname($arr[$keys[2]]);
         }
         if (array_key_exists($keys[3], $arr)) {
-            $this->setPhonealt($arr[$keys[3]]);
+            $this->setAddress($arr[$keys[3]]);
         }
         if (array_key_exists($keys[4], $arr)) {
             $this->setEmail($arr[$keys[4]]);
         }
         if (array_key_exists($keys[5], $arr)) {
-            $this->setAddress($arr[$keys[5]]);
+            $this->setCourt($arr[$keys[5]]);
         }
         if (array_key_exists($keys[6], $arr)) {
-            $this->setCreated($arr[$keys[6]]);
+            $this->setPhone($arr[$keys[6]]);
         }
         if (array_key_exists($keys[7], $arr)) {
-            $this->setModified($arr[$keys[7]]);
+            $this->setCourtnumber($arr[$keys[7]]);
+        }
+        if (array_key_exists($keys[8], $arr)) {
+            $this->setStatus($arr[$keys[8]]);
+        }
+        if (array_key_exists($keys[9], $arr)) {
+            $this->setCreated($arr[$keys[9]]);
+        }
+        if (array_key_exists($keys[10], $arr)) {
+            $this->setModified($arr[$keys[10]]);
         }
     }
 
@@ -1175,20 +1340,29 @@ abstract class Judges implements ActiveRecordInterface
         if ($this->isColumnModified(JudgesTableMap::COL_ID)) {
             $criteria->add(JudgesTableMap::COL_ID, $this->id);
         }
+        if ($this->isColumnModified(JudgesTableMap::COL_JUDGEID)) {
+            $criteria->add(JudgesTableMap::COL_JUDGEID, $this->judgeid);
+        }
         if ($this->isColumnModified(JudgesTableMap::COL_FULLNAME)) {
             $criteria->add(JudgesTableMap::COL_FULLNAME, $this->fullname);
         }
-        if ($this->isColumnModified(JudgesTableMap::COL_PHONE)) {
-            $criteria->add(JudgesTableMap::COL_PHONE, $this->phone);
-        }
-        if ($this->isColumnModified(JudgesTableMap::COL_PHONEALT)) {
-            $criteria->add(JudgesTableMap::COL_PHONEALT, $this->phonealt);
+        if ($this->isColumnModified(JudgesTableMap::COL_ADDRESS)) {
+            $criteria->add(JudgesTableMap::COL_ADDRESS, $this->address);
         }
         if ($this->isColumnModified(JudgesTableMap::COL_EMAIL)) {
             $criteria->add(JudgesTableMap::COL_EMAIL, $this->email);
         }
-        if ($this->isColumnModified(JudgesTableMap::COL_ADDRESS)) {
-            $criteria->add(JudgesTableMap::COL_ADDRESS, $this->address);
+        if ($this->isColumnModified(JudgesTableMap::COL_COURT)) {
+            $criteria->add(JudgesTableMap::COL_COURT, $this->court);
+        }
+        if ($this->isColumnModified(JudgesTableMap::COL_PHONE)) {
+            $criteria->add(JudgesTableMap::COL_PHONE, $this->phone);
+        }
+        if ($this->isColumnModified(JudgesTableMap::COL_COURTNUMBER)) {
+            $criteria->add(JudgesTableMap::COL_COURTNUMBER, $this->courtnumber);
+        }
+        if ($this->isColumnModified(JudgesTableMap::COL_STATUS)) {
+            $criteria->add(JudgesTableMap::COL_STATUS, $this->status);
         }
         if ($this->isColumnModified(JudgesTableMap::COL_CREATED)) {
             $criteria->add(JudgesTableMap::COL_CREATED, $this->created);
@@ -1282,11 +1456,14 @@ abstract class Judges implements ActiveRecordInterface
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
+        $copyObj->setJudgeid($this->getJudgeid());
         $copyObj->setFullname($this->getFullname());
-        $copyObj->setPhone($this->getPhone());
-        $copyObj->setPhonealt($this->getPhonealt());
-        $copyObj->setEmail($this->getEmail());
         $copyObj->setAddress($this->getAddress());
+        $copyObj->setEmail($this->getEmail());
+        $copyObj->setCourt($this->getCourt());
+        $copyObj->setPhone($this->getPhone());
+        $copyObj->setCourtnumber($this->getCourtnumber());
+        $copyObj->setStatus($this->getStatus());
         $copyObj->setCreated($this->getCreated());
         $copyObj->setModified($this->getModified());
         if ($makeNew) {
@@ -1325,11 +1502,14 @@ abstract class Judges implements ActiveRecordInterface
     public function clear()
     {
         $this->id = null;
+        $this->judgeid = null;
         $this->fullname = null;
-        $this->phone = null;
-        $this->phonealt = null;
-        $this->email = null;
         $this->address = null;
+        $this->email = null;
+        $this->court = null;
+        $this->phone = null;
+        $this->courtnumber = null;
+        $this->status = null;
         $this->created = null;
         $this->modified = null;
         $this->alreadyInSave = false;

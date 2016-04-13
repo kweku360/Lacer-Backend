@@ -59,7 +59,7 @@ class DefendantsTableMap extends TableMap
     /**
      * The total number of columns
      */
-    const NUM_COLUMNS = 7;
+    const NUM_COLUMNS = 9;
 
     /**
      * The number of lazy-loaded columns
@@ -69,7 +69,7 @@ class DefendantsTableMap extends TableMap
     /**
      * The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS)
      */
-    const NUM_HYDRATE_COLUMNS = 7;
+    const NUM_HYDRATE_COLUMNS = 9;
 
     /**
      * the column name for the id field
@@ -77,9 +77,9 @@ class DefendantsTableMap extends TableMap
     const COL_ID = 'defendants.id';
 
     /**
-     * the column name for the suitno field
+     * the column name for the suitnumber field
      */
-    const COL_SUITNO = 'defendants.suitno';
+    const COL_SUITNUMBER = 'defendants.suitnumber';
 
     /**
      * the column name for the fullname field
@@ -92,9 +92,19 @@ class DefendantsTableMap extends TableMap
     const COL_ADDRESS = 'defendants.address';
 
     /**
-     * the column name for the phone field
+     * the column name for the phone1 field
      */
-    const COL_PHONE = 'defendants.phone';
+    const COL_PHONE1 = 'defendants.phone1';
+
+    /**
+     * the column name for the phone2 field
+     */
+    const COL_PHONE2 = 'defendants.phone2';
+
+    /**
+     * the column name for the email field
+     */
+    const COL_EMAIL = 'defendants.email';
 
     /**
      * the column name for the created field
@@ -118,11 +128,11 @@ class DefendantsTableMap extends TableMap
      * e.g. self::$fieldNames[self::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        self::TYPE_PHPNAME       => array('Id', 'Suitno', 'Fullname', 'Address', 'Phone', 'Created', 'Modified', ),
-        self::TYPE_CAMELNAME     => array('id', 'suitno', 'fullname', 'address', 'phone', 'created', 'modified', ),
-        self::TYPE_COLNAME       => array(DefendantsTableMap::COL_ID, DefendantsTableMap::COL_SUITNO, DefendantsTableMap::COL_FULLNAME, DefendantsTableMap::COL_ADDRESS, DefendantsTableMap::COL_PHONE, DefendantsTableMap::COL_CREATED, DefendantsTableMap::COL_MODIFIED, ),
-        self::TYPE_FIELDNAME     => array('id', 'suitno', 'fullname', 'address', 'phone', 'created', 'modified', ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, )
+        self::TYPE_PHPNAME       => array('Id', 'Suitnumber', 'Fullname', 'Address', 'Phone1', 'Phone2', 'Email', 'Created', 'Modified', ),
+        self::TYPE_CAMELNAME     => array('id', 'suitnumber', 'fullname', 'address', 'phone1', 'phone2', 'email', 'created', 'modified', ),
+        self::TYPE_COLNAME       => array(DefendantsTableMap::COL_ID, DefendantsTableMap::COL_SUITNUMBER, DefendantsTableMap::COL_FULLNAME, DefendantsTableMap::COL_ADDRESS, DefendantsTableMap::COL_PHONE1, DefendantsTableMap::COL_PHONE2, DefendantsTableMap::COL_EMAIL, DefendantsTableMap::COL_CREATED, DefendantsTableMap::COL_MODIFIED, ),
+        self::TYPE_FIELDNAME     => array('id', 'suitnumber', 'fullname', 'address', 'phone1', 'phone2', 'email', 'created', 'modified', ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, )
     );
 
     /**
@@ -132,11 +142,11 @@ class DefendantsTableMap extends TableMap
      * e.g. self::$fieldKeys[self::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        self::TYPE_PHPNAME       => array('Id' => 0, 'Suitno' => 1, 'Fullname' => 2, 'Address' => 3, 'Phone' => 4, 'Created' => 5, 'Modified' => 6, ),
-        self::TYPE_CAMELNAME     => array('id' => 0, 'suitno' => 1, 'fullname' => 2, 'address' => 3, 'phone' => 4, 'created' => 5, 'modified' => 6, ),
-        self::TYPE_COLNAME       => array(DefendantsTableMap::COL_ID => 0, DefendantsTableMap::COL_SUITNO => 1, DefendantsTableMap::COL_FULLNAME => 2, DefendantsTableMap::COL_ADDRESS => 3, DefendantsTableMap::COL_PHONE => 4, DefendantsTableMap::COL_CREATED => 5, DefendantsTableMap::COL_MODIFIED => 6, ),
-        self::TYPE_FIELDNAME     => array('id' => 0, 'suitno' => 1, 'fullname' => 2, 'address' => 3, 'phone' => 4, 'created' => 5, 'modified' => 6, ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, )
+        self::TYPE_PHPNAME       => array('Id' => 0, 'Suitnumber' => 1, 'Fullname' => 2, 'Address' => 3, 'Phone1' => 4, 'Phone2' => 5, 'Email' => 6, 'Created' => 7, 'Modified' => 8, ),
+        self::TYPE_CAMELNAME     => array('id' => 0, 'suitnumber' => 1, 'fullname' => 2, 'address' => 3, 'phone1' => 4, 'phone2' => 5, 'email' => 6, 'created' => 7, 'modified' => 8, ),
+        self::TYPE_COLNAME       => array(DefendantsTableMap::COL_ID => 0, DefendantsTableMap::COL_SUITNUMBER => 1, DefendantsTableMap::COL_FULLNAME => 2, DefendantsTableMap::COL_ADDRESS => 3, DefendantsTableMap::COL_PHONE1 => 4, DefendantsTableMap::COL_PHONE2 => 5, DefendantsTableMap::COL_EMAIL => 6, DefendantsTableMap::COL_CREATED => 7, DefendantsTableMap::COL_MODIFIED => 8, ),
+        self::TYPE_FIELDNAME     => array('id' => 0, 'suitnumber' => 1, 'fullname' => 2, 'address' => 3, 'phone1' => 4, 'phone2' => 5, 'email' => 6, 'created' => 7, 'modified' => 8, ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, )
     );
 
     /**
@@ -157,10 +167,12 @@ class DefendantsTableMap extends TableMap
         $this->setUseIdGenerator(true);
         // columns
         $this->addPrimaryKey('id', 'Id', 'INTEGER', true, 12, null);
-        $this->addColumn('suitno', 'Suitno', 'VARCHAR', true, 255, null);
+        $this->addColumn('suitnumber', 'Suitnumber', 'VARCHAR', true, 255, null);
         $this->addColumn('fullname', 'Fullname', 'VARCHAR', true, 255, null);
         $this->addColumn('address', 'Address', 'LONGVARCHAR', false, null, null);
-        $this->addColumn('phone', 'Phone', 'INTEGER', false, 12, null);
+        $this->addColumn('phone1', 'Phone1', 'VARCHAR', false, 20, null);
+        $this->addColumn('phone2', 'Phone2', 'VARCHAR', true, 20, null);
+        $this->addColumn('email', 'Email', 'VARCHAR', false, 233, null);
         $this->addColumn('created', 'Created', 'INTEGER', true, null, null);
         $this->addColumn('modified', 'Modified', 'INTEGER', true, null, null);
     } // initialize()
@@ -314,18 +326,22 @@ class DefendantsTableMap extends TableMap
     {
         if (null === $alias) {
             $criteria->addSelectColumn(DefendantsTableMap::COL_ID);
-            $criteria->addSelectColumn(DefendantsTableMap::COL_SUITNO);
+            $criteria->addSelectColumn(DefendantsTableMap::COL_SUITNUMBER);
             $criteria->addSelectColumn(DefendantsTableMap::COL_FULLNAME);
             $criteria->addSelectColumn(DefendantsTableMap::COL_ADDRESS);
-            $criteria->addSelectColumn(DefendantsTableMap::COL_PHONE);
+            $criteria->addSelectColumn(DefendantsTableMap::COL_PHONE1);
+            $criteria->addSelectColumn(DefendantsTableMap::COL_PHONE2);
+            $criteria->addSelectColumn(DefendantsTableMap::COL_EMAIL);
             $criteria->addSelectColumn(DefendantsTableMap::COL_CREATED);
             $criteria->addSelectColumn(DefendantsTableMap::COL_MODIFIED);
         } else {
             $criteria->addSelectColumn($alias . '.id');
-            $criteria->addSelectColumn($alias . '.suitno');
+            $criteria->addSelectColumn($alias . '.suitnumber');
             $criteria->addSelectColumn($alias . '.fullname');
             $criteria->addSelectColumn($alias . '.address');
-            $criteria->addSelectColumn($alias . '.phone');
+            $criteria->addSelectColumn($alias . '.phone1');
+            $criteria->addSelectColumn($alias . '.phone2');
+            $criteria->addSelectColumn($alias . '.email');
             $criteria->addSelectColumn($alias . '.created');
             $criteria->addSelectColumn($alias . '.modified');
         }

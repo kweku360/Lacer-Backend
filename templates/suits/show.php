@@ -24,13 +24,14 @@ if($suits == ""){
 }else{
     $item = Array();
     $item["id"] = $suits->getId();
-    $item["suitsnumber"] = $suits->getSuitnumber();
+    $item["suitnumber"] = $suits->getSuitnumber();
     $item["title"] = $suits->getTitle();
     $item["type"] = $suits->getType();
     $item["datefiled"] = $suits->getDatefiled();
     $item["suitstatus"] = $suits->getSuitstatus();
     $item["suitaccess"] = $suits->getSuitaccess();
-    $item["dateofadjournment"] = $suits->getDateofadjournment();
+    $item["suitdateid"] = $suits->getSuitdateid();
+    $item["suitcourt"] = $suits->getSuitcourt();
     $item["created"] = $suits->getCreated();
     $item["modified"] = $suits->getModified();
     $resultArray["suits"] = $item;

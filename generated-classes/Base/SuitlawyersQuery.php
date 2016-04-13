@@ -26,7 +26,10 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildSuitlawyersQuery orderByLawyertype($order = Criteria::ASC) Order by the lawyertype column
  * @method     ChildSuitlawyersQuery orderByLawyernumber($order = Criteria::ASC) Order by the lawyernumber column
  * @method     ChildSuitlawyersQuery orderByLawyername($order = Criteria::ASC) Order by the lawyername column
+ * @method     ChildSuitlawyersQuery orderByRegistertype($order = Criteria::ASC) Order by the registertype column
+ * @method     ChildSuitlawyersQuery orderByStatus($order = Criteria::ASC) Order by the status column
  * @method     ChildSuitlawyersQuery orderByCreated($order = Criteria::ASC) Order by the created column
+ * @method     ChildSuitlawyersQuery orderByModified($order = Criteria::ASC) Order by the modified column
  *
  * @method     ChildSuitlawyersQuery groupById() Group by the id column
  * @method     ChildSuitlawyersQuery groupBySuitid() Group by the suitid column
@@ -35,7 +38,10 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildSuitlawyersQuery groupByLawyertype() Group by the lawyertype column
  * @method     ChildSuitlawyersQuery groupByLawyernumber() Group by the lawyernumber column
  * @method     ChildSuitlawyersQuery groupByLawyername() Group by the lawyername column
+ * @method     ChildSuitlawyersQuery groupByRegistertype() Group by the registertype column
+ * @method     ChildSuitlawyersQuery groupByStatus() Group by the status column
  * @method     ChildSuitlawyersQuery groupByCreated() Group by the created column
+ * @method     ChildSuitlawyersQuery groupByModified() Group by the modified column
  *
  * @method     ChildSuitlawyersQuery leftJoin($relation) Adds a LEFT JOIN clause to the query
  * @method     ChildSuitlawyersQuery rightJoin($relation) Adds a RIGHT JOIN clause to the query
@@ -55,7 +61,10 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildSuitlawyers findOneByLawyertype(string $lawyertype) Return the first ChildSuitlawyers filtered by the lawyertype column
  * @method     ChildSuitlawyers findOneByLawyernumber(string $lawyernumber) Return the first ChildSuitlawyers filtered by the lawyernumber column
  * @method     ChildSuitlawyers findOneByLawyername(string $lawyername) Return the first ChildSuitlawyers filtered by the lawyername column
- * @method     ChildSuitlawyers findOneByCreated(int $created) Return the first ChildSuitlawyers filtered by the created column *
+ * @method     ChildSuitlawyers findOneByRegistertype(string $registertype) Return the first ChildSuitlawyers filtered by the registertype column
+ * @method     ChildSuitlawyers findOneByStatus(string $status) Return the first ChildSuitlawyers filtered by the status column
+ * @method     ChildSuitlawyers findOneByCreated(int $created) Return the first ChildSuitlawyers filtered by the created column
+ * @method     ChildSuitlawyers findOneByModified(int $modified) Return the first ChildSuitlawyers filtered by the modified column *
 
  * @method     ChildSuitlawyers requirePk($key, ConnectionInterface $con = null) Return the ChildSuitlawyers by primary key and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildSuitlawyers requireOne(ConnectionInterface $con = null) Return the first ChildSuitlawyers matching the query and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
@@ -67,7 +76,10 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildSuitlawyers requireOneByLawyertype(string $lawyertype) Return the first ChildSuitlawyers filtered by the lawyertype column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildSuitlawyers requireOneByLawyernumber(string $lawyernumber) Return the first ChildSuitlawyers filtered by the lawyernumber column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildSuitlawyers requireOneByLawyername(string $lawyername) Return the first ChildSuitlawyers filtered by the lawyername column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildSuitlawyers requireOneByRegistertype(string $registertype) Return the first ChildSuitlawyers filtered by the registertype column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildSuitlawyers requireOneByStatus(string $status) Return the first ChildSuitlawyers filtered by the status column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildSuitlawyers requireOneByCreated(int $created) Return the first ChildSuitlawyers filtered by the created column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildSuitlawyers requireOneByModified(int $modified) Return the first ChildSuitlawyers filtered by the modified column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  *
  * @method     ChildSuitlawyers[]|ObjectCollection find(ConnectionInterface $con = null) Return ChildSuitlawyers objects based on current ModelCriteria
  * @method     ChildSuitlawyers[]|ObjectCollection findById(int $id) Return ChildSuitlawyers objects filtered by the id column
@@ -77,7 +89,10 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildSuitlawyers[]|ObjectCollection findByLawyertype(string $lawyertype) Return ChildSuitlawyers objects filtered by the lawyertype column
  * @method     ChildSuitlawyers[]|ObjectCollection findByLawyernumber(string $lawyernumber) Return ChildSuitlawyers objects filtered by the lawyernumber column
  * @method     ChildSuitlawyers[]|ObjectCollection findByLawyername(string $lawyername) Return ChildSuitlawyers objects filtered by the lawyername column
+ * @method     ChildSuitlawyers[]|ObjectCollection findByRegistertype(string $registertype) Return ChildSuitlawyers objects filtered by the registertype column
+ * @method     ChildSuitlawyers[]|ObjectCollection findByStatus(string $status) Return ChildSuitlawyers objects filtered by the status column
  * @method     ChildSuitlawyers[]|ObjectCollection findByCreated(int $created) Return ChildSuitlawyers objects filtered by the created column
+ * @method     ChildSuitlawyers[]|ObjectCollection findByModified(int $modified) Return ChildSuitlawyers objects filtered by the modified column
  * @method     ChildSuitlawyers[]|\Propel\Runtime\Util\PropelModelPager paginate($page = 1, $maxPerPage = 10, ConnectionInterface $con = null) Issue a SELECT query based on the current ModelCriteria and uses a page and a maximum number of results per page to compute an offset and a limit
  *
  */
@@ -170,7 +185,7 @@ abstract class SuitlawyersQuery extends ModelCriteria
      */
     protected function findPkSimple($key, ConnectionInterface $con)
     {
-        $sql = 'SELECT id, suitid, suitnumber, lawyerid, lawyertype, lawyernumber, lawyername, created FROM suitlawyers WHERE id = :p0';
+        $sql = 'SELECT id, suitid, suitnumber, lawyerid, lawyertype, lawyernumber, lawyername, registertype, status, created, modified FROM suitlawyers WHERE id = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -500,6 +515,64 @@ abstract class SuitlawyersQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query on the registertype column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByRegistertype('fooValue');   // WHERE registertype = 'fooValue'
+     * $query->filterByRegistertype('%fooValue%'); // WHERE registertype LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $registertype The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildSuitlawyersQuery The current query, for fluid interface
+     */
+    public function filterByRegistertype($registertype = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($registertype)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $registertype)) {
+                $registertype = str_replace('*', '%', $registertype);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(SuitlawyersTableMap::COL_REGISTERTYPE, $registertype, $comparison);
+    }
+
+    /**
+     * Filter the query on the status column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByStatus('fooValue');   // WHERE status = 'fooValue'
+     * $query->filterByStatus('%fooValue%'); // WHERE status LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $status The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildSuitlawyersQuery The current query, for fluid interface
+     */
+    public function filterByStatus($status = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($status)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $status)) {
+                $status = str_replace('*', '%', $status);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(SuitlawyersTableMap::COL_STATUS, $status, $comparison);
+    }
+
+    /**
      * Filter the query on the created column
      *
      * Example usage:
@@ -538,6 +611,47 @@ abstract class SuitlawyersQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(SuitlawyersTableMap::COL_CREATED, $created, $comparison);
+    }
+
+    /**
+     * Filter the query on the modified column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByModified(1234); // WHERE modified = 1234
+     * $query->filterByModified(array(12, 34)); // WHERE modified IN (12, 34)
+     * $query->filterByModified(array('min' => 12)); // WHERE modified > 12
+     * </code>
+     *
+     * @param     mixed $modified The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildSuitlawyersQuery The current query, for fluid interface
+     */
+    public function filterByModified($modified = null, $comparison = null)
+    {
+        if (is_array($modified)) {
+            $useMinMax = false;
+            if (isset($modified['min'])) {
+                $this->addUsingAlias(SuitlawyersTableMap::COL_MODIFIED, $modified['min'], Criteria::GREATER_EQUAL);
+                $useMinMax = true;
+            }
+            if (isset($modified['max'])) {
+                $this->addUsingAlias(SuitlawyersTableMap::COL_MODIFIED, $modified['max'], Criteria::LESS_EQUAL);
+                $useMinMax = true;
+            }
+            if ($useMinMax) {
+                return $this;
+            }
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+        }
+
+        return $this->addUsingAlias(SuitlawyersTableMap::COL_MODIFIED, $modified, $comparison);
     }
 
     /**

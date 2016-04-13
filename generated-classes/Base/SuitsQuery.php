@@ -26,7 +26,10 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildSuitsQuery orderByDatefiled($order = Criteria::ASC) Order by the datefiled column
  * @method     ChildSuitsQuery orderBySuitstatus($order = Criteria::ASC) Order by the suitstatus column
  * @method     ChildSuitsQuery orderBySuitaccess($order = Criteria::ASC) Order by the suitaccess column
- * @method     ChildSuitsQuery orderByDateofadjournment($order = Criteria::ASC) Order by the dateofadjournment column
+ * @method     ChildSuitsQuery orderBySuitdateid($order = Criteria::ASC) Order by the suitdateid column
+ * @method     ChildSuitsQuery orderBySuitcourt($order = Criteria::ASC) Order by the suitcourt column
+ * @method     ChildSuitsQuery orderByUserid($order = Criteria::ASC) Order by the userid column
+ * @method     ChildSuitsQuery orderByDataentryname($order = Criteria::ASC) Order by the dataentryname column
  * @method     ChildSuitsQuery orderByCreated($order = Criteria::ASC) Order by the created column
  * @method     ChildSuitsQuery orderByModified($order = Criteria::ASC) Order by the modified column
  *
@@ -37,7 +40,10 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildSuitsQuery groupByDatefiled() Group by the datefiled column
  * @method     ChildSuitsQuery groupBySuitstatus() Group by the suitstatus column
  * @method     ChildSuitsQuery groupBySuitaccess() Group by the suitaccess column
- * @method     ChildSuitsQuery groupByDateofadjournment() Group by the dateofadjournment column
+ * @method     ChildSuitsQuery groupBySuitdateid() Group by the suitdateid column
+ * @method     ChildSuitsQuery groupBySuitcourt() Group by the suitcourt column
+ * @method     ChildSuitsQuery groupByUserid() Group by the userid column
+ * @method     ChildSuitsQuery groupByDataentryname() Group by the dataentryname column
  * @method     ChildSuitsQuery groupByCreated() Group by the created column
  * @method     ChildSuitsQuery groupByModified() Group by the modified column
  *
@@ -59,7 +65,10 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildSuits findOneByDatefiled(int $datefiled) Return the first ChildSuits filtered by the datefiled column
  * @method     ChildSuits findOneBySuitstatus(string $suitstatus) Return the first ChildSuits filtered by the suitstatus column
  * @method     ChildSuits findOneBySuitaccess(string $suitaccess) Return the first ChildSuits filtered by the suitaccess column
- * @method     ChildSuits findOneByDateofadjournment(int $dateofadjournment) Return the first ChildSuits filtered by the dateofadjournment column
+ * @method     ChildSuits findOneBySuitdateid(int $suitdateid) Return the first ChildSuits filtered by the suitdateid column
+ * @method     ChildSuits findOneBySuitcourt(string $suitcourt) Return the first ChildSuits filtered by the suitcourt column
+ * @method     ChildSuits findOneByUserid(int $userid) Return the first ChildSuits filtered by the userid column
+ * @method     ChildSuits findOneByDataentryname(int $dataentryname) Return the first ChildSuits filtered by the dataentryname column
  * @method     ChildSuits findOneByCreated(int $created) Return the first ChildSuits filtered by the created column
  * @method     ChildSuits findOneByModified(int $modified) Return the first ChildSuits filtered by the modified column *
 
@@ -73,7 +82,10 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildSuits requireOneByDatefiled(int $datefiled) Return the first ChildSuits filtered by the datefiled column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildSuits requireOneBySuitstatus(string $suitstatus) Return the first ChildSuits filtered by the suitstatus column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildSuits requireOneBySuitaccess(string $suitaccess) Return the first ChildSuits filtered by the suitaccess column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildSuits requireOneByDateofadjournment(int $dateofadjournment) Return the first ChildSuits filtered by the dateofadjournment column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildSuits requireOneBySuitdateid(int $suitdateid) Return the first ChildSuits filtered by the suitdateid column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildSuits requireOneBySuitcourt(string $suitcourt) Return the first ChildSuits filtered by the suitcourt column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildSuits requireOneByUserid(int $userid) Return the first ChildSuits filtered by the userid column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildSuits requireOneByDataentryname(int $dataentryname) Return the first ChildSuits filtered by the dataentryname column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildSuits requireOneByCreated(int $created) Return the first ChildSuits filtered by the created column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildSuits requireOneByModified(int $modified) Return the first ChildSuits filtered by the modified column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  *
@@ -85,7 +97,10 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildSuits[]|ObjectCollection findByDatefiled(int $datefiled) Return ChildSuits objects filtered by the datefiled column
  * @method     ChildSuits[]|ObjectCollection findBySuitstatus(string $suitstatus) Return ChildSuits objects filtered by the suitstatus column
  * @method     ChildSuits[]|ObjectCollection findBySuitaccess(string $suitaccess) Return ChildSuits objects filtered by the suitaccess column
- * @method     ChildSuits[]|ObjectCollection findByDateofadjournment(int $dateofadjournment) Return ChildSuits objects filtered by the dateofadjournment column
+ * @method     ChildSuits[]|ObjectCollection findBySuitdateid(int $suitdateid) Return ChildSuits objects filtered by the suitdateid column
+ * @method     ChildSuits[]|ObjectCollection findBySuitcourt(string $suitcourt) Return ChildSuits objects filtered by the suitcourt column
+ * @method     ChildSuits[]|ObjectCollection findByUserid(int $userid) Return ChildSuits objects filtered by the userid column
+ * @method     ChildSuits[]|ObjectCollection findByDataentryname(int $dataentryname) Return ChildSuits objects filtered by the dataentryname column
  * @method     ChildSuits[]|ObjectCollection findByCreated(int $created) Return ChildSuits objects filtered by the created column
  * @method     ChildSuits[]|ObjectCollection findByModified(int $modified) Return ChildSuits objects filtered by the modified column
  * @method     ChildSuits[]|\Propel\Runtime\Util\PropelModelPager paginate($page = 1, $maxPerPage = 10, ConnectionInterface $con = null) Issue a SELECT query based on the current ModelCriteria and uses a page and a maximum number of results per page to compute an offset and a limit
@@ -180,7 +195,7 @@ abstract class SuitsQuery extends ModelCriteria
      */
     protected function findPkSimple($key, ConnectionInterface $con)
     {
-        $sql = 'SELECT id, suitnumber, title, type, datefiled, suitstatus, suitaccess, dateofadjournment, created, modified FROM suits WHERE id = :p0';
+        $sql = 'SELECT id, suitnumber, title, type, datefiled, suitstatus, suitaccess, suitdateid, suitcourt, userid, dataentryname, created, modified FROM suits WHERE id = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -498,16 +513,16 @@ abstract class SuitsQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the dateofadjournment column
+     * Filter the query on the suitdateid column
      *
      * Example usage:
      * <code>
-     * $query->filterByDateofadjournment(1234); // WHERE dateofadjournment = 1234
-     * $query->filterByDateofadjournment(array(12, 34)); // WHERE dateofadjournment IN (12, 34)
-     * $query->filterByDateofadjournment(array('min' => 12)); // WHERE dateofadjournment > 12
+     * $query->filterBySuitdateid(1234); // WHERE suitdateid = 1234
+     * $query->filterBySuitdateid(array(12, 34)); // WHERE suitdateid IN (12, 34)
+     * $query->filterBySuitdateid(array('min' => 12)); // WHERE suitdateid > 12
      * </code>
      *
-     * @param     mixed $dateofadjournment The value to use as filter.
+     * @param     mixed $suitdateid The value to use as filter.
      *              Use scalar values for equality.
      *              Use array values for in_array() equivalent.
      *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
@@ -515,16 +530,16 @@ abstract class SuitsQuery extends ModelCriteria
      *
      * @return $this|ChildSuitsQuery The current query, for fluid interface
      */
-    public function filterByDateofadjournment($dateofadjournment = null, $comparison = null)
+    public function filterBySuitdateid($suitdateid = null, $comparison = null)
     {
-        if (is_array($dateofadjournment)) {
+        if (is_array($suitdateid)) {
             $useMinMax = false;
-            if (isset($dateofadjournment['min'])) {
-                $this->addUsingAlias(SuitsTableMap::COL_DATEOFADJOURNMENT, $dateofadjournment['min'], Criteria::GREATER_EQUAL);
+            if (isset($suitdateid['min'])) {
+                $this->addUsingAlias(SuitsTableMap::COL_SUITDATEID, $suitdateid['min'], Criteria::GREATER_EQUAL);
                 $useMinMax = true;
             }
-            if (isset($dateofadjournment['max'])) {
-                $this->addUsingAlias(SuitsTableMap::COL_DATEOFADJOURNMENT, $dateofadjournment['max'], Criteria::LESS_EQUAL);
+            if (isset($suitdateid['max'])) {
+                $this->addUsingAlias(SuitsTableMap::COL_SUITDATEID, $suitdateid['max'], Criteria::LESS_EQUAL);
                 $useMinMax = true;
             }
             if ($useMinMax) {
@@ -535,7 +550,118 @@ abstract class SuitsQuery extends ModelCriteria
             }
         }
 
-        return $this->addUsingAlias(SuitsTableMap::COL_DATEOFADJOURNMENT, $dateofadjournment, $comparison);
+        return $this->addUsingAlias(SuitsTableMap::COL_SUITDATEID, $suitdateid, $comparison);
+    }
+
+    /**
+     * Filter the query on the suitcourt column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterBySuitcourt('fooValue');   // WHERE suitcourt = 'fooValue'
+     * $query->filterBySuitcourt('%fooValue%'); // WHERE suitcourt LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $suitcourt The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildSuitsQuery The current query, for fluid interface
+     */
+    public function filterBySuitcourt($suitcourt = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($suitcourt)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $suitcourt)) {
+                $suitcourt = str_replace('*', '%', $suitcourt);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(SuitsTableMap::COL_SUITCOURT, $suitcourt, $comparison);
+    }
+
+    /**
+     * Filter the query on the userid column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByUserid(1234); // WHERE userid = 1234
+     * $query->filterByUserid(array(12, 34)); // WHERE userid IN (12, 34)
+     * $query->filterByUserid(array('min' => 12)); // WHERE userid > 12
+     * </code>
+     *
+     * @param     mixed $userid The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildSuitsQuery The current query, for fluid interface
+     */
+    public function filterByUserid($userid = null, $comparison = null)
+    {
+        if (is_array($userid)) {
+            $useMinMax = false;
+            if (isset($userid['min'])) {
+                $this->addUsingAlias(SuitsTableMap::COL_USERID, $userid['min'], Criteria::GREATER_EQUAL);
+                $useMinMax = true;
+            }
+            if (isset($userid['max'])) {
+                $this->addUsingAlias(SuitsTableMap::COL_USERID, $userid['max'], Criteria::LESS_EQUAL);
+                $useMinMax = true;
+            }
+            if ($useMinMax) {
+                return $this;
+            }
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+        }
+
+        return $this->addUsingAlias(SuitsTableMap::COL_USERID, $userid, $comparison);
+    }
+
+    /**
+     * Filter the query on the dataentryname column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByDataentryname(1234); // WHERE dataentryname = 1234
+     * $query->filterByDataentryname(array(12, 34)); // WHERE dataentryname IN (12, 34)
+     * $query->filterByDataentryname(array('min' => 12)); // WHERE dataentryname > 12
+     * </code>
+     *
+     * @param     mixed $dataentryname The value to use as filter.
+     *              Use scalar values for equality.
+     *              Use array values for in_array() equivalent.
+     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildSuitsQuery The current query, for fluid interface
+     */
+    public function filterByDataentryname($dataentryname = null, $comparison = null)
+    {
+        if (is_array($dataentryname)) {
+            $useMinMax = false;
+            if (isset($dataentryname['min'])) {
+                $this->addUsingAlias(SuitsTableMap::COL_DATAENTRYNAME, $dataentryname['min'], Criteria::GREATER_EQUAL);
+                $useMinMax = true;
+            }
+            if (isset($dataentryname['max'])) {
+                $this->addUsingAlias(SuitsTableMap::COL_DATAENTRYNAME, $dataentryname['max'], Criteria::LESS_EQUAL);
+                $useMinMax = true;
+            }
+            if ($useMinMax) {
+                return $this;
+            }
+            if (null === $comparison) {
+                $comparison = Criteria::IN;
+            }
+        }
+
+        return $this->addUsingAlias(SuitsTableMap::COL_DATAENTRYNAME, $dataentryname, $comparison);
     }
 
     /**

@@ -21,7 +21,7 @@ require_once 'generated-conf/config.php';
 require_once 'libs/StringGenerator.php';
 use Sinergi\Token\StringGenerator;
 
-$userCheck = UsersQuery::create()->findOneByUsername($this->data["vars"]["username"]);
+$userCheck = UsersQuery::create()->findOneByEmail($this->data["vars"]["email"]);
 $resultArray = Array();
 
 if ($userCheck == "") {
@@ -36,7 +36,12 @@ if ($userCheck == "") {
         $item["message"] = "invalid - Password";
         $item["code"] = "401";
         $resultArray["meta"] = $item;
-    } else {
+    } elseif($userCheck->getStatus() != "active"){
+        $item = Array();
+        $item["message"] = "user account deactivated";
+        $item["code"] = "407";
+        $resultArray["meta"] = $item;
+    } else{
         //password valid - generate token and return it
         $userToken = new Token();
         $userToken->setSelector(StringGenerator::randomId());
@@ -48,9 +53,27 @@ if ($userCheck == "") {
 
         $userToken->save();
         if ($userToken != null) {
+            //get permissions too
+
+                $permissions = PermissionQuery::create()->findByUserid($userCheck->getId());
+                foreach($permissions as $permission){
+                    $item = Array();
+                    $item["code"] = $permission->getCode();
+                    $item["value"] = $permission->getValue();
+                    $resultArray["permissions"][] = $item;
+                }
+
+
             $item = Array();
             $item["message"] = "Success";
             $item["code"] = $userToken->getToken();
+            $item["position"] = $userCheck->getPosition();
+            $item["fullname"] = $userCheck->getName();
+            $item["phone"] = $userCheck->getPhone();
+            $item["email"] = $userCheck->getEmail();
+            $item["id"] = $userCheck->getId();
+            $item["user"] = $userCheck;
+
             $resultArray["meta"] = $item;
 
         }

@@ -20,22 +20,28 @@ use Propel\Runtime\Exception\PropelException;
  *
  *
  * @method     ChildUsersQuery orderById($order = Criteria::ASC) Order by the id column
- * @method     ChildUsersQuery orderByUsername($order = Criteria::ASC) Order by the username column
+ * @method     ChildUsersQuery orderByPhone($order = Criteria::ASC) Order by the phone column
  * @method     ChildUsersQuery orderByPassword($order = Criteria::ASC) Order by the password column
  * @method     ChildUsersQuery orderByName($order = Criteria::ASC) Order by the name column
  * @method     ChildUsersQuery orderByEmail($order = Criteria::ASC) Order by the email column
  * @method     ChildUsersQuery orderByStatus($order = Criteria::ASC) Order by the status column
  * @method     ChildUsersQuery orderByPicture($order = Criteria::ASC) Order by the picture column
+ * @method     ChildUsersQuery orderByPosition($order = Criteria::ASC) Order by the position column
+ * @method     ChildUsersQuery orderByEmailcode($order = Criteria::ASC) Order by the emailcode column
+ * @method     ChildUsersQuery orderByMobilecode($order = Criteria::ASC) Order by the mobilecode column
  * @method     ChildUsersQuery orderByCreated($order = Criteria::ASC) Order by the created column
  * @method     ChildUsersQuery orderByModified($order = Criteria::ASC) Order by the modified column
  *
  * @method     ChildUsersQuery groupById() Group by the id column
- * @method     ChildUsersQuery groupByUsername() Group by the username column
+ * @method     ChildUsersQuery groupByPhone() Group by the phone column
  * @method     ChildUsersQuery groupByPassword() Group by the password column
  * @method     ChildUsersQuery groupByName() Group by the name column
  * @method     ChildUsersQuery groupByEmail() Group by the email column
  * @method     ChildUsersQuery groupByStatus() Group by the status column
  * @method     ChildUsersQuery groupByPicture() Group by the picture column
+ * @method     ChildUsersQuery groupByPosition() Group by the position column
+ * @method     ChildUsersQuery groupByEmailcode() Group by the emailcode column
+ * @method     ChildUsersQuery groupByMobilecode() Group by the mobilecode column
  * @method     ChildUsersQuery groupByCreated() Group by the created column
  * @method     ChildUsersQuery groupByModified() Group by the modified column
  *
@@ -51,12 +57,15 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildUsers findOneOrCreate(ConnectionInterface $con = null) Return the first ChildUsers matching the query, or a new ChildUsers object populated from the query conditions when no match is found
  *
  * @method     ChildUsers findOneById(int $id) Return the first ChildUsers filtered by the id column
- * @method     ChildUsers findOneByUsername(string $username) Return the first ChildUsers filtered by the username column
+ * @method     ChildUsers findOneByPhone(string $phone) Return the first ChildUsers filtered by the phone column
  * @method     ChildUsers findOneByPassword(string $password) Return the first ChildUsers filtered by the password column
  * @method     ChildUsers findOneByName(string $name) Return the first ChildUsers filtered by the name column
  * @method     ChildUsers findOneByEmail(string $email) Return the first ChildUsers filtered by the email column
  * @method     ChildUsers findOneByStatus(string $status) Return the first ChildUsers filtered by the status column
  * @method     ChildUsers findOneByPicture(string $picture) Return the first ChildUsers filtered by the picture column
+ * @method     ChildUsers findOneByPosition(string $position) Return the first ChildUsers filtered by the position column
+ * @method     ChildUsers findOneByEmailcode(string $emailcode) Return the first ChildUsers filtered by the emailcode column
+ * @method     ChildUsers findOneByMobilecode(string $mobilecode) Return the first ChildUsers filtered by the mobilecode column
  * @method     ChildUsers findOneByCreated(int $created) Return the first ChildUsers filtered by the created column
  * @method     ChildUsers findOneByModified(int $modified) Return the first ChildUsers filtered by the modified column *
 
@@ -64,23 +73,29 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildUsers requireOne(ConnectionInterface $con = null) Return the first ChildUsers matching the query and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  *
  * @method     ChildUsers requireOneById(int $id) Return the first ChildUsers filtered by the id column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildUsers requireOneByUsername(string $username) Return the first ChildUsers filtered by the username column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildUsers requireOneByPhone(string $phone) Return the first ChildUsers filtered by the phone column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildUsers requireOneByPassword(string $password) Return the first ChildUsers filtered by the password column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildUsers requireOneByName(string $name) Return the first ChildUsers filtered by the name column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildUsers requireOneByEmail(string $email) Return the first ChildUsers filtered by the email column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildUsers requireOneByStatus(string $status) Return the first ChildUsers filtered by the status column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildUsers requireOneByPicture(string $picture) Return the first ChildUsers filtered by the picture column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildUsers requireOneByPosition(string $position) Return the first ChildUsers filtered by the position column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildUsers requireOneByEmailcode(string $emailcode) Return the first ChildUsers filtered by the emailcode column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildUsers requireOneByMobilecode(string $mobilecode) Return the first ChildUsers filtered by the mobilecode column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildUsers requireOneByCreated(int $created) Return the first ChildUsers filtered by the created column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildUsers requireOneByModified(int $modified) Return the first ChildUsers filtered by the modified column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  *
  * @method     ChildUsers[]|ObjectCollection find(ConnectionInterface $con = null) Return ChildUsers objects based on current ModelCriteria
  * @method     ChildUsers[]|ObjectCollection findById(int $id) Return ChildUsers objects filtered by the id column
- * @method     ChildUsers[]|ObjectCollection findByUsername(string $username) Return ChildUsers objects filtered by the username column
+ * @method     ChildUsers[]|ObjectCollection findByPhone(string $phone) Return ChildUsers objects filtered by the phone column
  * @method     ChildUsers[]|ObjectCollection findByPassword(string $password) Return ChildUsers objects filtered by the password column
  * @method     ChildUsers[]|ObjectCollection findByName(string $name) Return ChildUsers objects filtered by the name column
  * @method     ChildUsers[]|ObjectCollection findByEmail(string $email) Return ChildUsers objects filtered by the email column
  * @method     ChildUsers[]|ObjectCollection findByStatus(string $status) Return ChildUsers objects filtered by the status column
  * @method     ChildUsers[]|ObjectCollection findByPicture(string $picture) Return ChildUsers objects filtered by the picture column
+ * @method     ChildUsers[]|ObjectCollection findByPosition(string $position) Return ChildUsers objects filtered by the position column
+ * @method     ChildUsers[]|ObjectCollection findByEmailcode(string $emailcode) Return ChildUsers objects filtered by the emailcode column
+ * @method     ChildUsers[]|ObjectCollection findByMobilecode(string $mobilecode) Return ChildUsers objects filtered by the mobilecode column
  * @method     ChildUsers[]|ObjectCollection findByCreated(int $created) Return ChildUsers objects filtered by the created column
  * @method     ChildUsers[]|ObjectCollection findByModified(int $modified) Return ChildUsers objects filtered by the modified column
  * @method     ChildUsers[]|\Propel\Runtime\Util\PropelModelPager paginate($page = 1, $maxPerPage = 10, ConnectionInterface $con = null) Issue a SELECT query based on the current ModelCriteria and uses a page and a maximum number of results per page to compute an offset and a limit
@@ -175,7 +190,7 @@ abstract class UsersQuery extends ModelCriteria
      */
     protected function findPkSimple($key, ConnectionInterface $con)
     {
-        $sql = 'SELECT id, username, password, name, email, status, picture, created, modified FROM users WHERE id = :p0';
+        $sql = 'SELECT id, phone, password, name, email, status, picture, position, emailcode, mobilecode, created, modified FROM users WHERE id = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -307,32 +322,32 @@ abstract class UsersQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the username column
+     * Filter the query on the phone column
      *
      * Example usage:
      * <code>
-     * $query->filterByUsername('fooValue');   // WHERE username = 'fooValue'
-     * $query->filterByUsername('%fooValue%'); // WHERE username LIKE '%fooValue%'
+     * $query->filterByPhone('fooValue');   // WHERE phone = 'fooValue'
+     * $query->filterByPhone('%fooValue%'); // WHERE phone LIKE '%fooValue%'
      * </code>
      *
-     * @param     string $username The value to use as filter.
+     * @param     string $phone The value to use as filter.
      *              Accepts wildcards (* and % trigger a LIKE)
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return $this|ChildUsersQuery The current query, for fluid interface
      */
-    public function filterByUsername($username = null, $comparison = null)
+    public function filterByPhone($phone = null, $comparison = null)
     {
         if (null === $comparison) {
-            if (is_array($username)) {
+            if (is_array($phone)) {
                 $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $username)) {
-                $username = str_replace('*', '%', $username);
+            } elseif (preg_match('/[\%\*]/', $phone)) {
+                $phone = str_replace('*', '%', $phone);
                 $comparison = Criteria::LIKE;
             }
         }
 
-        return $this->addUsingAlias(UsersTableMap::COL_USERNAME, $username, $comparison);
+        return $this->addUsingAlias(UsersTableMap::COL_PHONE, $phone, $comparison);
     }
 
     /**
@@ -478,6 +493,93 @@ abstract class UsersQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(UsersTableMap::COL_PICTURE, $picture, $comparison);
+    }
+
+    /**
+     * Filter the query on the position column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByPosition('fooValue');   // WHERE position = 'fooValue'
+     * $query->filterByPosition('%fooValue%'); // WHERE position LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $position The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildUsersQuery The current query, for fluid interface
+     */
+    public function filterByPosition($position = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($position)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $position)) {
+                $position = str_replace('*', '%', $position);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(UsersTableMap::COL_POSITION, $position, $comparison);
+    }
+
+    /**
+     * Filter the query on the emailcode column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByEmailcode('fooValue');   // WHERE emailcode = 'fooValue'
+     * $query->filterByEmailcode('%fooValue%'); // WHERE emailcode LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $emailcode The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildUsersQuery The current query, for fluid interface
+     */
+    public function filterByEmailcode($emailcode = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($emailcode)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $emailcode)) {
+                $emailcode = str_replace('*', '%', $emailcode);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(UsersTableMap::COL_EMAILCODE, $emailcode, $comparison);
+    }
+
+    /**
+     * Filter the query on the mobilecode column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByMobilecode('fooValue');   // WHERE mobilecode = 'fooValue'
+     * $query->filterByMobilecode('%fooValue%'); // WHERE mobilecode LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $mobilecode The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildUsersQuery The current query, for fluid interface
+     */
+    public function filterByMobilecode($mobilecode = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($mobilecode)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $mobilecode)) {
+                $mobilecode = str_replace('*', '%', $mobilecode);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(UsersTableMap::COL_MOBILECODE, $mobilecode, $comparison);
     }
 
     /**

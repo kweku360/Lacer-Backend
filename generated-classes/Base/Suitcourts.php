@@ -90,6 +90,12 @@ abstract class Suitcourts implements ActiveRecordInterface
     protected $courtname;
 
     /**
+     * The value for the status field.
+     * @var        string
+     */
+    protected $status;
+
+    /**
      * The value for the created field.
      * @var        int
      */
@@ -377,6 +383,16 @@ abstract class Suitcourts implements ActiveRecordInterface
     }
 
     /**
+     * Get the [status] column value.
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    /**
      * Get the [created] column value.
      *
      * @return int
@@ -497,6 +513,26 @@ abstract class Suitcourts implements ActiveRecordInterface
     } // setCourtname()
 
     /**
+     * Set the value of [status] column.
+     *
+     * @param string $v new value
+     * @return $this|\Suitcourts The current object (for fluent API support)
+     */
+    public function setStatus($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->status !== $v) {
+            $this->status = $v;
+            $this->modifiedColumns[SuitcourtsTableMap::COL_STATUS] = true;
+        }
+
+        return $this;
+    } // setStatus()
+
+    /**
      * Set the value of [created] column.
      *
      * @param int $v new value
@@ -587,10 +623,13 @@ abstract class Suitcourts implements ActiveRecordInterface
             $col = $row[TableMap::TYPE_NUM == $indexType ? 4 + $startcol : SuitcourtsTableMap::translateFieldName('Courtname', TableMap::TYPE_PHPNAME, $indexType)];
             $this->courtname = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 5 + $startcol : SuitcourtsTableMap::translateFieldName('Created', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 5 + $startcol : SuitcourtsTableMap::translateFieldName('Status', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->status = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 6 + $startcol : SuitcourtsTableMap::translateFieldName('Created', TableMap::TYPE_PHPNAME, $indexType)];
             $this->created = (null !== $col) ? (int) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 6 + $startcol : SuitcourtsTableMap::translateFieldName('Modified', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 7 + $startcol : SuitcourtsTableMap::translateFieldName('Modified', TableMap::TYPE_PHPNAME, $indexType)];
             $this->modified = (null !== $col) ? (int) $col : null;
             $this->resetModified();
 
@@ -600,7 +639,7 @@ abstract class Suitcourts implements ActiveRecordInterface
                 $this->ensureConsistency();
             }
 
-            return $startcol + 7; // 7 = SuitcourtsTableMap::NUM_HYDRATE_COLUMNS.
+            return $startcol + 8; // 8 = SuitcourtsTableMap::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException(sprintf('Error populating %s object', '\\Suitcourts'), 0, $e);
@@ -812,6 +851,9 @@ abstract class Suitcourts implements ActiveRecordInterface
         if ($this->isColumnModified(SuitcourtsTableMap::COL_COURTNAME)) {
             $modifiedColumns[':p' . $index++]  = 'courtname';
         }
+        if ($this->isColumnModified(SuitcourtsTableMap::COL_STATUS)) {
+            $modifiedColumns[':p' . $index++]  = 'status';
+        }
         if ($this->isColumnModified(SuitcourtsTableMap::COL_CREATED)) {
             $modifiedColumns[':p' . $index++]  = 'created';
         }
@@ -843,6 +885,9 @@ abstract class Suitcourts implements ActiveRecordInterface
                         break;
                     case 'courtname':
                         $stmt->bindValue($identifier, $this->courtname, PDO::PARAM_STR);
+                        break;
+                    case 'status':
+                        $stmt->bindValue($identifier, $this->status, PDO::PARAM_STR);
                         break;
                     case 'created':
                         $stmt->bindValue($identifier, $this->created, PDO::PARAM_INT);
@@ -928,9 +973,12 @@ abstract class Suitcourts implements ActiveRecordInterface
                 return $this->getCourtname();
                 break;
             case 5:
-                return $this->getCreated();
+                return $this->getStatus();
                 break;
             case 6:
+                return $this->getCreated();
+                break;
+            case 7:
                 return $this->getModified();
                 break;
             default:
@@ -967,8 +1015,9 @@ abstract class Suitcourts implements ActiveRecordInterface
             $keys[2] => $this->getSuitnumber(),
             $keys[3] => $this->getCourtid(),
             $keys[4] => $this->getCourtname(),
-            $keys[5] => $this->getCreated(),
-            $keys[6] => $this->getModified(),
+            $keys[5] => $this->getStatus(),
+            $keys[6] => $this->getCreated(),
+            $keys[7] => $this->getModified(),
         );
         $virtualColumns = $this->virtualColumns;
         foreach ($virtualColumns as $key => $virtualColumn) {
@@ -1024,9 +1073,12 @@ abstract class Suitcourts implements ActiveRecordInterface
                 $this->setCourtname($value);
                 break;
             case 5:
-                $this->setCreated($value);
+                $this->setStatus($value);
                 break;
             case 6:
+                $this->setCreated($value);
+                break;
+            case 7:
                 $this->setModified($value);
                 break;
         } // switch()
@@ -1071,10 +1123,13 @@ abstract class Suitcourts implements ActiveRecordInterface
             $this->setCourtname($arr[$keys[4]]);
         }
         if (array_key_exists($keys[5], $arr)) {
-            $this->setCreated($arr[$keys[5]]);
+            $this->setStatus($arr[$keys[5]]);
         }
         if (array_key_exists($keys[6], $arr)) {
-            $this->setModified($arr[$keys[6]]);
+            $this->setCreated($arr[$keys[6]]);
+        }
+        if (array_key_exists($keys[7], $arr)) {
+            $this->setModified($arr[$keys[7]]);
         }
     }
 
@@ -1131,6 +1186,9 @@ abstract class Suitcourts implements ActiveRecordInterface
         }
         if ($this->isColumnModified(SuitcourtsTableMap::COL_COURTNAME)) {
             $criteria->add(SuitcourtsTableMap::COL_COURTNAME, $this->courtname);
+        }
+        if ($this->isColumnModified(SuitcourtsTableMap::COL_STATUS)) {
+            $criteria->add(SuitcourtsTableMap::COL_STATUS, $this->status);
         }
         if ($this->isColumnModified(SuitcourtsTableMap::COL_CREATED)) {
             $criteria->add(SuitcourtsTableMap::COL_CREATED, $this->created);
@@ -1228,6 +1286,7 @@ abstract class Suitcourts implements ActiveRecordInterface
         $copyObj->setSuitnumber($this->getSuitnumber());
         $copyObj->setCourtid($this->getCourtid());
         $copyObj->setCourtname($this->getCourtname());
+        $copyObj->setStatus($this->getStatus());
         $copyObj->setCreated($this->getCreated());
         $copyObj->setModified($this->getModified());
         if ($makeNew) {
@@ -1270,6 +1329,7 @@ abstract class Suitcourts implements ActiveRecordInterface
         $this->suitnumber = null;
         $this->courtid = null;
         $this->courtname = null;
+        $this->status = null;
         $this->created = null;
         $this->modified = null;
         $this->alreadyInSave = false;

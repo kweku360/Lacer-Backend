@@ -66,28 +66,22 @@ abstract class Documents implements ActiveRecordInterface
     protected $id;
 
     /**
+     * The value for the suitnumber field.
+     * @var        string
+     */
+    protected $suitnumber;
+
+    /**
      * The value for the code field.
      * @var        string
      */
     protected $code;
 
     /**
-     * The value for the typeid field.
-     * @var        int
-     */
-    protected $typeid;
-
-    /**
      * The value for the type field.
      * @var        string
      */
     protected $type;
-
-    /**
-     * The value for the suitid field.
-     * @var        string
-     */
-    protected $suitid;
 
     /**
      * The value for the name field.
@@ -102,16 +96,16 @@ abstract class Documents implements ActiveRecordInterface
     protected $datefiled;
 
     /**
-     * The value for the format field.
+     * The value for the link field.
      * @var        string
      */
-    protected $format;
+    protected $link;
 
     /**
-     * The value for the pagecount field.
-     * @var        int
+     * The value for the filer field.
+     * @var        string
      */
-    protected $pagecount;
+    protected $filer;
 
     /**
      * The value for the dataentrypersonid field.
@@ -373,6 +367,16 @@ abstract class Documents implements ActiveRecordInterface
     }
 
     /**
+     * Get the [suitnumber] column value.
+     *
+     * @return string
+     */
+    public function getSuitnumber()
+    {
+        return $this->suitnumber;
+    }
+
+    /**
      * Get the [code] column value.
      *
      * @return string
@@ -383,16 +387,6 @@ abstract class Documents implements ActiveRecordInterface
     }
 
     /**
-     * Get the [typeid] column value.
-     *
-     * @return int
-     */
-    public function getTypeid()
-    {
-        return $this->typeid;
-    }
-
-    /**
      * Get the [type] column value.
      *
      * @return string
@@ -400,16 +394,6 @@ abstract class Documents implements ActiveRecordInterface
     public function getType()
     {
         return $this->type;
-    }
-
-    /**
-     * Get the [suitid] column value.
-     *
-     * @return string
-     */
-    public function getSuitid()
-    {
-        return $this->suitid;
     }
 
     /**
@@ -433,23 +417,23 @@ abstract class Documents implements ActiveRecordInterface
     }
 
     /**
-     * Get the [format] column value.
+     * Get the [link] column value.
      *
      * @return string
      */
-    public function getFormat()
+    public function getLink()
     {
-        return $this->format;
+        return $this->link;
     }
 
     /**
-     * Get the [pagecount] column value.
+     * Get the [filer] column value.
      *
-     * @return int
+     * @return string
      */
-    public function getPagecount()
+    public function getFiler()
     {
-        return $this->pagecount;
+        return $this->filer;
     }
 
     /**
@@ -513,6 +497,26 @@ abstract class Documents implements ActiveRecordInterface
     } // setId()
 
     /**
+     * Set the value of [suitnumber] column.
+     *
+     * @param string $v new value
+     * @return $this|\Documents The current object (for fluent API support)
+     */
+    public function setSuitnumber($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->suitnumber !== $v) {
+            $this->suitnumber = $v;
+            $this->modifiedColumns[DocumentsTableMap::COL_SUITNUMBER] = true;
+        }
+
+        return $this;
+    } // setSuitnumber()
+
+    /**
      * Set the value of [code] column.
      *
      * @param string $v new value
@@ -533,26 +537,6 @@ abstract class Documents implements ActiveRecordInterface
     } // setCode()
 
     /**
-     * Set the value of [typeid] column.
-     *
-     * @param int $v new value
-     * @return $this|\Documents The current object (for fluent API support)
-     */
-    public function setTypeid($v)
-    {
-        if ($v !== null) {
-            $v = (int) $v;
-        }
-
-        if ($this->typeid !== $v) {
-            $this->typeid = $v;
-            $this->modifiedColumns[DocumentsTableMap::COL_TYPEID] = true;
-        }
-
-        return $this;
-    } // setTypeid()
-
-    /**
      * Set the value of [type] column.
      *
      * @param string $v new value
@@ -571,26 +555,6 @@ abstract class Documents implements ActiveRecordInterface
 
         return $this;
     } // setType()
-
-    /**
-     * Set the value of [suitid] column.
-     *
-     * @param string $v new value
-     * @return $this|\Documents The current object (for fluent API support)
-     */
-    public function setSuitid($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->suitid !== $v) {
-            $this->suitid = $v;
-            $this->modifiedColumns[DocumentsTableMap::COL_SUITID] = true;
-        }
-
-        return $this;
-    } // setSuitid()
 
     /**
      * Set the value of [name] column.
@@ -633,44 +597,44 @@ abstract class Documents implements ActiveRecordInterface
     } // setDatefiled()
 
     /**
-     * Set the value of [format] column.
+     * Set the value of [link] column.
      *
      * @param string $v new value
      * @return $this|\Documents The current object (for fluent API support)
      */
-    public function setFormat($v)
+    public function setLink($v)
     {
         if ($v !== null) {
             $v = (string) $v;
         }
 
-        if ($this->format !== $v) {
-            $this->format = $v;
-            $this->modifiedColumns[DocumentsTableMap::COL_FORMAT] = true;
+        if ($this->link !== $v) {
+            $this->link = $v;
+            $this->modifiedColumns[DocumentsTableMap::COL_LINK] = true;
         }
 
         return $this;
-    } // setFormat()
+    } // setLink()
 
     /**
-     * Set the value of [pagecount] column.
+     * Set the value of [filer] column.
      *
-     * @param int $v new value
+     * @param string $v new value
      * @return $this|\Documents The current object (for fluent API support)
      */
-    public function setPagecount($v)
+    public function setFiler($v)
     {
         if ($v !== null) {
-            $v = (int) $v;
+            $v = (string) $v;
         }
 
-        if ($this->pagecount !== $v) {
-            $this->pagecount = $v;
-            $this->modifiedColumns[DocumentsTableMap::COL_PAGECOUNT] = true;
+        if ($this->filer !== $v) {
+            $this->filer = $v;
+            $this->modifiedColumns[DocumentsTableMap::COL_FILER] = true;
         }
 
         return $this;
-    } // setPagecount()
+    } // setFiler()
 
     /**
      * Set the value of [dataentrypersonid] column.
@@ -791,40 +755,37 @@ abstract class Documents implements ActiveRecordInterface
             $col = $row[TableMap::TYPE_NUM == $indexType ? 0 + $startcol : DocumentsTableMap::translateFieldName('Id', TableMap::TYPE_PHPNAME, $indexType)];
             $this->id = (null !== $col) ? (int) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 1 + $startcol : DocumentsTableMap::translateFieldName('Code', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->code = (null !== $col) ? (string) $col : null;
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 1 + $startcol : DocumentsTableMap::translateFieldName('Suitnumber', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->suitnumber = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 2 + $startcol : DocumentsTableMap::translateFieldName('Typeid', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->typeid = (null !== $col) ? (int) $col : null;
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 2 + $startcol : DocumentsTableMap::translateFieldName('Code', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->code = (null !== $col) ? (string) $col : null;
 
             $col = $row[TableMap::TYPE_NUM == $indexType ? 3 + $startcol : DocumentsTableMap::translateFieldName('Type', TableMap::TYPE_PHPNAME, $indexType)];
             $this->type = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 4 + $startcol : DocumentsTableMap::translateFieldName('Suitid', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->suitid = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 5 + $startcol : DocumentsTableMap::translateFieldName('Name', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 4 + $startcol : DocumentsTableMap::translateFieldName('Name', TableMap::TYPE_PHPNAME, $indexType)];
             $this->name = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 6 + $startcol : DocumentsTableMap::translateFieldName('Datefiled', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 5 + $startcol : DocumentsTableMap::translateFieldName('Datefiled', TableMap::TYPE_PHPNAME, $indexType)];
             $this->datefiled = (null !== $col) ? (int) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 7 + $startcol : DocumentsTableMap::translateFieldName('Format', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->format = (null !== $col) ? (string) $col : null;
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 6 + $startcol : DocumentsTableMap::translateFieldName('Link', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->link = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 8 + $startcol : DocumentsTableMap::translateFieldName('Pagecount', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->pagecount = (null !== $col) ? (int) $col : null;
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 7 + $startcol : DocumentsTableMap::translateFieldName('Filer', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->filer = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 9 + $startcol : DocumentsTableMap::translateFieldName('Dataentrypersonid', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 8 + $startcol : DocumentsTableMap::translateFieldName('Dataentrypersonid', TableMap::TYPE_PHPNAME, $indexType)];
             $this->dataentrypersonid = (null !== $col) ? (int) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 10 + $startcol : DocumentsTableMap::translateFieldName('Accessstatus', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 9 + $startcol : DocumentsTableMap::translateFieldName('Accessstatus', TableMap::TYPE_PHPNAME, $indexType)];
             $this->accessstatus = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 11 + $startcol : DocumentsTableMap::translateFieldName('Created', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 10 + $startcol : DocumentsTableMap::translateFieldName('Created', TableMap::TYPE_PHPNAME, $indexType)];
             $this->created = (null !== $col) ? (int) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 12 + $startcol : DocumentsTableMap::translateFieldName('Modified', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 11 + $startcol : DocumentsTableMap::translateFieldName('Modified', TableMap::TYPE_PHPNAME, $indexType)];
             $this->modified = (null !== $col) ? (int) $col : null;
             $this->resetModified();
 
@@ -834,7 +795,7 @@ abstract class Documents implements ActiveRecordInterface
                 $this->ensureConsistency();
             }
 
-            return $startcol + 13; // 13 = DocumentsTableMap::NUM_HYDRATE_COLUMNS.
+            return $startcol + 12; // 12 = DocumentsTableMap::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException(sprintf('Error populating %s object', '\\Documents'), 0, $e);
@@ -1025,22 +986,23 @@ abstract class Documents implements ActiveRecordInterface
         $modifiedColumns = array();
         $index = 0;
 
+        $this->modifiedColumns[DocumentsTableMap::COL_ID] = true;
+        if (null !== $this->id) {
+            throw new PropelException('Cannot insert a value for auto-increment primary key (' . DocumentsTableMap::COL_ID . ')');
+        }
 
          // check the columns in natural order for more readable SQL queries
         if ($this->isColumnModified(DocumentsTableMap::COL_ID)) {
             $modifiedColumns[':p' . $index++]  = 'id';
         }
+        if ($this->isColumnModified(DocumentsTableMap::COL_SUITNUMBER)) {
+            $modifiedColumns[':p' . $index++]  = 'suitnumber';
+        }
         if ($this->isColumnModified(DocumentsTableMap::COL_CODE)) {
             $modifiedColumns[':p' . $index++]  = 'code';
         }
-        if ($this->isColumnModified(DocumentsTableMap::COL_TYPEID)) {
-            $modifiedColumns[':p' . $index++]  = 'typeid';
-        }
         if ($this->isColumnModified(DocumentsTableMap::COL_TYPE)) {
             $modifiedColumns[':p' . $index++]  = 'type';
-        }
-        if ($this->isColumnModified(DocumentsTableMap::COL_SUITID)) {
-            $modifiedColumns[':p' . $index++]  = 'suitid';
         }
         if ($this->isColumnModified(DocumentsTableMap::COL_NAME)) {
             $modifiedColumns[':p' . $index++]  = 'name';
@@ -1048,11 +1010,11 @@ abstract class Documents implements ActiveRecordInterface
         if ($this->isColumnModified(DocumentsTableMap::COL_DATEFILED)) {
             $modifiedColumns[':p' . $index++]  = 'datefiled';
         }
-        if ($this->isColumnModified(DocumentsTableMap::COL_FORMAT)) {
-            $modifiedColumns[':p' . $index++]  = 'format';
+        if ($this->isColumnModified(DocumentsTableMap::COL_LINK)) {
+            $modifiedColumns[':p' . $index++]  = 'link';
         }
-        if ($this->isColumnModified(DocumentsTableMap::COL_PAGECOUNT)) {
-            $modifiedColumns[':p' . $index++]  = 'pagecount';
+        if ($this->isColumnModified(DocumentsTableMap::COL_FILER)) {
+            $modifiedColumns[':p' . $index++]  = 'filer';
         }
         if ($this->isColumnModified(DocumentsTableMap::COL_DATAENTRYPERSONID)) {
             $modifiedColumns[':p' . $index++]  = 'dataentrypersonid';
@@ -1080,17 +1042,14 @@ abstract class Documents implements ActiveRecordInterface
                     case 'id':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
                         break;
+                    case 'suitnumber':
+                        $stmt->bindValue($identifier, $this->suitnumber, PDO::PARAM_STR);
+                        break;
                     case 'code':
                         $stmt->bindValue($identifier, $this->code, PDO::PARAM_STR);
                         break;
-                    case 'typeid':
-                        $stmt->bindValue($identifier, $this->typeid, PDO::PARAM_INT);
-                        break;
                     case 'type':
                         $stmt->bindValue($identifier, $this->type, PDO::PARAM_STR);
-                        break;
-                    case 'suitid':
-                        $stmt->bindValue($identifier, $this->suitid, PDO::PARAM_STR);
                         break;
                     case 'name':
                         $stmt->bindValue($identifier, $this->name, PDO::PARAM_STR);
@@ -1098,11 +1057,11 @@ abstract class Documents implements ActiveRecordInterface
                     case 'datefiled':
                         $stmt->bindValue($identifier, $this->datefiled, PDO::PARAM_INT);
                         break;
-                    case 'format':
-                        $stmt->bindValue($identifier, $this->format, PDO::PARAM_STR);
+                    case 'link':
+                        $stmt->bindValue($identifier, $this->link, PDO::PARAM_STR);
                         break;
-                    case 'pagecount':
-                        $stmt->bindValue($identifier, $this->pagecount, PDO::PARAM_INT);
+                    case 'filer':
+                        $stmt->bindValue($identifier, $this->filer, PDO::PARAM_STR);
                         break;
                     case 'dataentrypersonid':
                         $stmt->bindValue($identifier, $this->dataentrypersonid, PDO::PARAM_INT);
@@ -1123,6 +1082,13 @@ abstract class Documents implements ActiveRecordInterface
             Propel::log($e->getMessage(), Propel::LOG_ERR);
             throw new PropelException(sprintf('Unable to execute INSERT statement [%s]', $sql), 0, $e);
         }
+
+        try {
+            $pk = $con->lastInsertId();
+        } catch (Exception $e) {
+            throw new PropelException('Unable to get autoincrement id.', 0, $e);
+        }
+        $this->setId($pk);
 
         $this->setNew(false);
     }
@@ -1175,39 +1141,36 @@ abstract class Documents implements ActiveRecordInterface
                 return $this->getId();
                 break;
             case 1:
-                return $this->getCode();
+                return $this->getSuitnumber();
                 break;
             case 2:
-                return $this->getTypeid();
+                return $this->getCode();
                 break;
             case 3:
                 return $this->getType();
                 break;
             case 4:
-                return $this->getSuitid();
-                break;
-            case 5:
                 return $this->getName();
                 break;
-            case 6:
+            case 5:
                 return $this->getDatefiled();
                 break;
+            case 6:
+                return $this->getLink();
+                break;
             case 7:
-                return $this->getFormat();
+                return $this->getFiler();
                 break;
             case 8:
-                return $this->getPagecount();
-                break;
-            case 9:
                 return $this->getDataentrypersonid();
                 break;
-            case 10:
+            case 9:
                 return $this->getAccessstatus();
                 break;
-            case 11:
+            case 10:
                 return $this->getCreated();
                 break;
-            case 12:
+            case 11:
                 return $this->getModified();
                 break;
             default:
@@ -1240,18 +1203,17 @@ abstract class Documents implements ActiveRecordInterface
         $keys = DocumentsTableMap::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
-            $keys[1] => $this->getCode(),
-            $keys[2] => $this->getTypeid(),
+            $keys[1] => $this->getSuitnumber(),
+            $keys[2] => $this->getCode(),
             $keys[3] => $this->getType(),
-            $keys[4] => $this->getSuitid(),
-            $keys[5] => $this->getName(),
-            $keys[6] => $this->getDatefiled(),
-            $keys[7] => $this->getFormat(),
-            $keys[8] => $this->getPagecount(),
-            $keys[9] => $this->getDataentrypersonid(),
-            $keys[10] => $this->getAccessstatus(),
-            $keys[11] => $this->getCreated(),
-            $keys[12] => $this->getModified(),
+            $keys[4] => $this->getName(),
+            $keys[5] => $this->getDatefiled(),
+            $keys[6] => $this->getLink(),
+            $keys[7] => $this->getFiler(),
+            $keys[8] => $this->getDataentrypersonid(),
+            $keys[9] => $this->getAccessstatus(),
+            $keys[10] => $this->getCreated(),
+            $keys[11] => $this->getModified(),
         );
         $virtualColumns = $this->virtualColumns;
         foreach ($virtualColumns as $key => $virtualColumn) {
@@ -1295,39 +1257,36 @@ abstract class Documents implements ActiveRecordInterface
                 $this->setId($value);
                 break;
             case 1:
-                $this->setCode($value);
+                $this->setSuitnumber($value);
                 break;
             case 2:
-                $this->setTypeid($value);
+                $this->setCode($value);
                 break;
             case 3:
                 $this->setType($value);
                 break;
             case 4:
-                $this->setSuitid($value);
-                break;
-            case 5:
                 $this->setName($value);
                 break;
-            case 6:
+            case 5:
                 $this->setDatefiled($value);
                 break;
+            case 6:
+                $this->setLink($value);
+                break;
             case 7:
-                $this->setFormat($value);
+                $this->setFiler($value);
                 break;
             case 8:
-                $this->setPagecount($value);
-                break;
-            case 9:
                 $this->setDataentrypersonid($value);
                 break;
-            case 10:
+            case 9:
                 $this->setAccessstatus($value);
                 break;
-            case 11:
+            case 10:
                 $this->setCreated($value);
                 break;
-            case 12:
+            case 11:
                 $this->setModified($value);
                 break;
         } // switch()
@@ -1360,40 +1319,37 @@ abstract class Documents implements ActiveRecordInterface
             $this->setId($arr[$keys[0]]);
         }
         if (array_key_exists($keys[1], $arr)) {
-            $this->setCode($arr[$keys[1]]);
+            $this->setSuitnumber($arr[$keys[1]]);
         }
         if (array_key_exists($keys[2], $arr)) {
-            $this->setTypeid($arr[$keys[2]]);
+            $this->setCode($arr[$keys[2]]);
         }
         if (array_key_exists($keys[3], $arr)) {
             $this->setType($arr[$keys[3]]);
         }
         if (array_key_exists($keys[4], $arr)) {
-            $this->setSuitid($arr[$keys[4]]);
+            $this->setName($arr[$keys[4]]);
         }
         if (array_key_exists($keys[5], $arr)) {
-            $this->setName($arr[$keys[5]]);
+            $this->setDatefiled($arr[$keys[5]]);
         }
         if (array_key_exists($keys[6], $arr)) {
-            $this->setDatefiled($arr[$keys[6]]);
+            $this->setLink($arr[$keys[6]]);
         }
         if (array_key_exists($keys[7], $arr)) {
-            $this->setFormat($arr[$keys[7]]);
+            $this->setFiler($arr[$keys[7]]);
         }
         if (array_key_exists($keys[8], $arr)) {
-            $this->setPagecount($arr[$keys[8]]);
+            $this->setDataentrypersonid($arr[$keys[8]]);
         }
         if (array_key_exists($keys[9], $arr)) {
-            $this->setDataentrypersonid($arr[$keys[9]]);
+            $this->setAccessstatus($arr[$keys[9]]);
         }
         if (array_key_exists($keys[10], $arr)) {
-            $this->setAccessstatus($arr[$keys[10]]);
+            $this->setCreated($arr[$keys[10]]);
         }
         if (array_key_exists($keys[11], $arr)) {
-            $this->setCreated($arr[$keys[11]]);
-        }
-        if (array_key_exists($keys[12], $arr)) {
-            $this->setModified($arr[$keys[12]]);
+            $this->setModified($arr[$keys[11]]);
         }
     }
 
@@ -1439,17 +1395,14 @@ abstract class Documents implements ActiveRecordInterface
         if ($this->isColumnModified(DocumentsTableMap::COL_ID)) {
             $criteria->add(DocumentsTableMap::COL_ID, $this->id);
         }
+        if ($this->isColumnModified(DocumentsTableMap::COL_SUITNUMBER)) {
+            $criteria->add(DocumentsTableMap::COL_SUITNUMBER, $this->suitnumber);
+        }
         if ($this->isColumnModified(DocumentsTableMap::COL_CODE)) {
             $criteria->add(DocumentsTableMap::COL_CODE, $this->code);
         }
-        if ($this->isColumnModified(DocumentsTableMap::COL_TYPEID)) {
-            $criteria->add(DocumentsTableMap::COL_TYPEID, $this->typeid);
-        }
         if ($this->isColumnModified(DocumentsTableMap::COL_TYPE)) {
             $criteria->add(DocumentsTableMap::COL_TYPE, $this->type);
-        }
-        if ($this->isColumnModified(DocumentsTableMap::COL_SUITID)) {
-            $criteria->add(DocumentsTableMap::COL_SUITID, $this->suitid);
         }
         if ($this->isColumnModified(DocumentsTableMap::COL_NAME)) {
             $criteria->add(DocumentsTableMap::COL_NAME, $this->name);
@@ -1457,11 +1410,11 @@ abstract class Documents implements ActiveRecordInterface
         if ($this->isColumnModified(DocumentsTableMap::COL_DATEFILED)) {
             $criteria->add(DocumentsTableMap::COL_DATEFILED, $this->datefiled);
         }
-        if ($this->isColumnModified(DocumentsTableMap::COL_FORMAT)) {
-            $criteria->add(DocumentsTableMap::COL_FORMAT, $this->format);
+        if ($this->isColumnModified(DocumentsTableMap::COL_LINK)) {
+            $criteria->add(DocumentsTableMap::COL_LINK, $this->link);
         }
-        if ($this->isColumnModified(DocumentsTableMap::COL_PAGECOUNT)) {
-            $criteria->add(DocumentsTableMap::COL_PAGECOUNT, $this->pagecount);
+        if ($this->isColumnModified(DocumentsTableMap::COL_FILER)) {
+            $criteria->add(DocumentsTableMap::COL_FILER, $this->filer);
         }
         if ($this->isColumnModified(DocumentsTableMap::COL_DATAENTRYPERSONID)) {
             $criteria->add(DocumentsTableMap::COL_DATAENTRYPERSONID, $this->dataentrypersonid);
@@ -1491,7 +1444,8 @@ abstract class Documents implements ActiveRecordInterface
      */
     public function buildPkeyCriteria()
     {
-        throw new LogicException('The Documents object has no primary key');
+        $criteria = ChildDocumentsQuery::create();
+        $criteria->add(DocumentsTableMap::COL_ID, $this->id);
 
         return $criteria;
     }
@@ -1504,7 +1458,7 @@ abstract class Documents implements ActiveRecordInterface
      */
     public function hashCode()
     {
-        $validPk = false;
+        $validPk = null !== $this->getId();
 
         $validPrimaryKeyFKs = 0;
         $primaryKeyFKs = [];
@@ -1519,27 +1473,23 @@ abstract class Documents implements ActiveRecordInterface
     }
 
     /**
-     * Returns NULL since this table doesn't have a primary key.
-     * This method exists only for BC and is deprecated!
-     * @return null
+     * Returns the primary key for this object (row).
+     * @return int
      */
     public function getPrimaryKey()
     {
-        return null;
+        return $this->getId();
     }
 
     /**
-     * Dummy primary key setter.
+     * Generic method to set the primary key (id column).
      *
-     * This function only exists to preserve backwards compatibility.  It is no longer
-     * needed or required by the Persistent interface.  It will be removed in next BC-breaking
-     * release of Propel.
-     *
-     * @deprecated
+     * @param       int $key Primary key.
+     * @return void
      */
-    public function setPrimaryKey($pk)
+    public function setPrimaryKey($key)
     {
-        // do nothing, because this object doesn't have any primary keys
+        $this->setId($key);
     }
 
     /**
@@ -1548,7 +1498,7 @@ abstract class Documents implements ActiveRecordInterface
      */
     public function isPrimaryKeyNull()
     {
-        return ;
+        return null === $this->getId();
     }
 
     /**
@@ -1564,21 +1514,20 @@ abstract class Documents implements ActiveRecordInterface
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
-        $copyObj->setId($this->getId());
+        $copyObj->setSuitnumber($this->getSuitnumber());
         $copyObj->setCode($this->getCode());
-        $copyObj->setTypeid($this->getTypeid());
         $copyObj->setType($this->getType());
-        $copyObj->setSuitid($this->getSuitid());
         $copyObj->setName($this->getName());
         $copyObj->setDatefiled($this->getDatefiled());
-        $copyObj->setFormat($this->getFormat());
-        $copyObj->setPagecount($this->getPagecount());
+        $copyObj->setLink($this->getLink());
+        $copyObj->setFiler($this->getFiler());
         $copyObj->setDataentrypersonid($this->getDataentrypersonid());
         $copyObj->setAccessstatus($this->getAccessstatus());
         $copyObj->setCreated($this->getCreated());
         $copyObj->setModified($this->getModified());
         if ($makeNew) {
             $copyObj->setNew(true);
+            $copyObj->setId(NULL); // this is a auto-increment column, so set to default value
         }
     }
 
@@ -1612,14 +1561,13 @@ abstract class Documents implements ActiveRecordInterface
     public function clear()
     {
         $this->id = null;
+        $this->suitnumber = null;
         $this->code = null;
-        $this->typeid = null;
         $this->type = null;
-        $this->suitid = null;
         $this->name = null;
         $this->datefiled = null;
-        $this->format = null;
-        $this->pagecount = null;
+        $this->link = null;
+        $this->filer = null;
         $this->dataentrypersonid = null;
         $this->accessstatus = null;
         $this->created = null;

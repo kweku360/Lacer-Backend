@@ -23,7 +23,9 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildTokenQuery orderBySelector($order = Criteria::ASC) Order by the selector column
  * @method     ChildTokenQuery orderByToken($order = Criteria::ASC) Order by the token column
  * @method     ChildTokenQuery orderByUserid($order = Criteria::ASC) Order by the userid column
+ * @method     ChildTokenQuery orderByType($order = Criteria::ASC) Order by the type column
  * @method     ChildTokenQuery orderByExpires($order = Criteria::ASC) Order by the expires column
+ * @method     ChildTokenQuery orderByStatus($order = Criteria::ASC) Order by the status column
  * @method     ChildTokenQuery orderByCreated($order = Criteria::ASC) Order by the created column
  * @method     ChildTokenQuery orderByModified($order = Criteria::ASC) Order by the modified column
  *
@@ -31,7 +33,9 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildTokenQuery groupBySelector() Group by the selector column
  * @method     ChildTokenQuery groupByToken() Group by the token column
  * @method     ChildTokenQuery groupByUserid() Group by the userid column
+ * @method     ChildTokenQuery groupByType() Group by the type column
  * @method     ChildTokenQuery groupByExpires() Group by the expires column
+ * @method     ChildTokenQuery groupByStatus() Group by the status column
  * @method     ChildTokenQuery groupByCreated() Group by the created column
  * @method     ChildTokenQuery groupByModified() Group by the modified column
  *
@@ -50,7 +54,9 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildToken findOneBySelector(string $selector) Return the first ChildToken filtered by the selector column
  * @method     ChildToken findOneByToken(string $token) Return the first ChildToken filtered by the token column
  * @method     ChildToken findOneByUserid(int $userid) Return the first ChildToken filtered by the userid column
+ * @method     ChildToken findOneByType(string $type) Return the first ChildToken filtered by the type column
  * @method     ChildToken findOneByExpires(int $expires) Return the first ChildToken filtered by the expires column
+ * @method     ChildToken findOneByStatus(string $status) Return the first ChildToken filtered by the status column
  * @method     ChildToken findOneByCreated(int $created) Return the first ChildToken filtered by the created column
  * @method     ChildToken findOneByModified(int $modified) Return the first ChildToken filtered by the modified column *
 
@@ -61,7 +67,9 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildToken requireOneBySelector(string $selector) Return the first ChildToken filtered by the selector column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildToken requireOneByToken(string $token) Return the first ChildToken filtered by the token column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildToken requireOneByUserid(int $userid) Return the first ChildToken filtered by the userid column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildToken requireOneByType(string $type) Return the first ChildToken filtered by the type column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildToken requireOneByExpires(int $expires) Return the first ChildToken filtered by the expires column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildToken requireOneByStatus(string $status) Return the first ChildToken filtered by the status column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildToken requireOneByCreated(int $created) Return the first ChildToken filtered by the created column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildToken requireOneByModified(int $modified) Return the first ChildToken filtered by the modified column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  *
@@ -70,7 +78,9 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildToken[]|ObjectCollection findBySelector(string $selector) Return ChildToken objects filtered by the selector column
  * @method     ChildToken[]|ObjectCollection findByToken(string $token) Return ChildToken objects filtered by the token column
  * @method     ChildToken[]|ObjectCollection findByUserid(int $userid) Return ChildToken objects filtered by the userid column
+ * @method     ChildToken[]|ObjectCollection findByType(string $type) Return ChildToken objects filtered by the type column
  * @method     ChildToken[]|ObjectCollection findByExpires(int $expires) Return ChildToken objects filtered by the expires column
+ * @method     ChildToken[]|ObjectCollection findByStatus(string $status) Return ChildToken objects filtered by the status column
  * @method     ChildToken[]|ObjectCollection findByCreated(int $created) Return ChildToken objects filtered by the created column
  * @method     ChildToken[]|ObjectCollection findByModified(int $modified) Return ChildToken objects filtered by the modified column
  * @method     ChildToken[]|\Propel\Runtime\Util\PropelModelPager paginate($page = 1, $maxPerPage = 10, ConnectionInterface $con = null) Issue a SELECT query based on the current ModelCriteria and uses a page and a maximum number of results per page to compute an offset and a limit
@@ -165,7 +175,7 @@ abstract class TokenQuery extends ModelCriteria
      */
     protected function findPkSimple($key, ConnectionInterface $con)
     {
-        $sql = 'SELECT id, selector, token, userid, expires, created, modified FROM token WHERE id = :p0';
+        $sql = 'SELECT id, selector, token, userid, type, expires, status, created, modified FROM token WHERE id = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -396,6 +406,35 @@ abstract class TokenQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query on the type column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByType('fooValue');   // WHERE type = 'fooValue'
+     * $query->filterByType('%fooValue%'); // WHERE type LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $type The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildTokenQuery The current query, for fluid interface
+     */
+    public function filterByType($type = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($type)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $type)) {
+                $type = str_replace('*', '%', $type);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(TokenTableMap::COL_TYPE, $type, $comparison);
+    }
+
+    /**
      * Filter the query on the expires column
      *
      * Example usage:
@@ -434,6 +473,35 @@ abstract class TokenQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(TokenTableMap::COL_EXPIRES, $expires, $comparison);
+    }
+
+    /**
+     * Filter the query on the status column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByStatus('fooValue');   // WHERE status = 'fooValue'
+     * $query->filterByStatus('%fooValue%'); // WHERE status LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $status The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildTokenQuery The current query, for fluid interface
+     */
+    public function filterByStatus($status = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($status)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $status)) {
+                $status = str_replace('*', '%', $status);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(TokenTableMap::COL_STATUS, $status, $comparison);
     }
 
     /**

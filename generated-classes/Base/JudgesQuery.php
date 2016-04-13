@@ -20,20 +20,26 @@ use Propel\Runtime\Exception\PropelException;
  *
  *
  * @method     ChildJudgesQuery orderById($order = Criteria::ASC) Order by the id column
+ * @method     ChildJudgesQuery orderByJudgeid($order = Criteria::ASC) Order by the judgeid column
  * @method     ChildJudgesQuery orderByFullname($order = Criteria::ASC) Order by the fullname column
- * @method     ChildJudgesQuery orderByPhone($order = Criteria::ASC) Order by the phone column
- * @method     ChildJudgesQuery orderByPhonealt($order = Criteria::ASC) Order by the phonealt column
- * @method     ChildJudgesQuery orderByEmail($order = Criteria::ASC) Order by the email column
  * @method     ChildJudgesQuery orderByAddress($order = Criteria::ASC) Order by the address column
+ * @method     ChildJudgesQuery orderByEmail($order = Criteria::ASC) Order by the email column
+ * @method     ChildJudgesQuery orderByCourt($order = Criteria::ASC) Order by the court column
+ * @method     ChildJudgesQuery orderByPhone($order = Criteria::ASC) Order by the phone column
+ * @method     ChildJudgesQuery orderByCourtnumber($order = Criteria::ASC) Order by the courtnumber column
+ * @method     ChildJudgesQuery orderByStatus($order = Criteria::ASC) Order by the status column
  * @method     ChildJudgesQuery orderByCreated($order = Criteria::ASC) Order by the created column
  * @method     ChildJudgesQuery orderByModified($order = Criteria::ASC) Order by the modified column
  *
  * @method     ChildJudgesQuery groupById() Group by the id column
+ * @method     ChildJudgesQuery groupByJudgeid() Group by the judgeid column
  * @method     ChildJudgesQuery groupByFullname() Group by the fullname column
- * @method     ChildJudgesQuery groupByPhone() Group by the phone column
- * @method     ChildJudgesQuery groupByPhonealt() Group by the phonealt column
- * @method     ChildJudgesQuery groupByEmail() Group by the email column
  * @method     ChildJudgesQuery groupByAddress() Group by the address column
+ * @method     ChildJudgesQuery groupByEmail() Group by the email column
+ * @method     ChildJudgesQuery groupByCourt() Group by the court column
+ * @method     ChildJudgesQuery groupByPhone() Group by the phone column
+ * @method     ChildJudgesQuery groupByCourtnumber() Group by the courtnumber column
+ * @method     ChildJudgesQuery groupByStatus() Group by the status column
  * @method     ChildJudgesQuery groupByCreated() Group by the created column
  * @method     ChildJudgesQuery groupByModified() Group by the modified column
  *
@@ -49,11 +55,14 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildJudges findOneOrCreate(ConnectionInterface $con = null) Return the first ChildJudges matching the query, or a new ChildJudges object populated from the query conditions when no match is found
  *
  * @method     ChildJudges findOneById(int $id) Return the first ChildJudges filtered by the id column
+ * @method     ChildJudges findOneByJudgeid(string $judgeid) Return the first ChildJudges filtered by the judgeid column
  * @method     ChildJudges findOneByFullname(string $fullname) Return the first ChildJudges filtered by the fullname column
- * @method     ChildJudges findOneByPhone(int $phone) Return the first ChildJudges filtered by the phone column
- * @method     ChildJudges findOneByPhonealt(int $phonealt) Return the first ChildJudges filtered by the phonealt column
- * @method     ChildJudges findOneByEmail(string $email) Return the first ChildJudges filtered by the email column
  * @method     ChildJudges findOneByAddress(string $address) Return the first ChildJudges filtered by the address column
+ * @method     ChildJudges findOneByEmail(string $email) Return the first ChildJudges filtered by the email column
+ * @method     ChildJudges findOneByCourt(string $court) Return the first ChildJudges filtered by the court column
+ * @method     ChildJudges findOneByPhone(string $phone) Return the first ChildJudges filtered by the phone column
+ * @method     ChildJudges findOneByCourtnumber(string $courtnumber) Return the first ChildJudges filtered by the courtnumber column
+ * @method     ChildJudges findOneByStatus(string $status) Return the first ChildJudges filtered by the status column
  * @method     ChildJudges findOneByCreated(int $created) Return the first ChildJudges filtered by the created column
  * @method     ChildJudges findOneByModified(int $modified) Return the first ChildJudges filtered by the modified column *
 
@@ -61,21 +70,27 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildJudges requireOne(ConnectionInterface $con = null) Return the first ChildJudges matching the query and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  *
  * @method     ChildJudges requireOneById(int $id) Return the first ChildJudges filtered by the id column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildJudges requireOneByJudgeid(string $judgeid) Return the first ChildJudges filtered by the judgeid column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildJudges requireOneByFullname(string $fullname) Return the first ChildJudges filtered by the fullname column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildJudges requireOneByPhone(int $phone) Return the first ChildJudges filtered by the phone column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildJudges requireOneByPhonealt(int $phonealt) Return the first ChildJudges filtered by the phonealt column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildJudges requireOneByEmail(string $email) Return the first ChildJudges filtered by the email column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildJudges requireOneByAddress(string $address) Return the first ChildJudges filtered by the address column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildJudges requireOneByEmail(string $email) Return the first ChildJudges filtered by the email column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildJudges requireOneByCourt(string $court) Return the first ChildJudges filtered by the court column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildJudges requireOneByPhone(string $phone) Return the first ChildJudges filtered by the phone column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildJudges requireOneByCourtnumber(string $courtnumber) Return the first ChildJudges filtered by the courtnumber column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildJudges requireOneByStatus(string $status) Return the first ChildJudges filtered by the status column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildJudges requireOneByCreated(int $created) Return the first ChildJudges filtered by the created column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildJudges requireOneByModified(int $modified) Return the first ChildJudges filtered by the modified column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  *
  * @method     ChildJudges[]|ObjectCollection find(ConnectionInterface $con = null) Return ChildJudges objects based on current ModelCriteria
  * @method     ChildJudges[]|ObjectCollection findById(int $id) Return ChildJudges objects filtered by the id column
+ * @method     ChildJudges[]|ObjectCollection findByJudgeid(string $judgeid) Return ChildJudges objects filtered by the judgeid column
  * @method     ChildJudges[]|ObjectCollection findByFullname(string $fullname) Return ChildJudges objects filtered by the fullname column
- * @method     ChildJudges[]|ObjectCollection findByPhone(int $phone) Return ChildJudges objects filtered by the phone column
- * @method     ChildJudges[]|ObjectCollection findByPhonealt(int $phonealt) Return ChildJudges objects filtered by the phonealt column
- * @method     ChildJudges[]|ObjectCollection findByEmail(string $email) Return ChildJudges objects filtered by the email column
  * @method     ChildJudges[]|ObjectCollection findByAddress(string $address) Return ChildJudges objects filtered by the address column
+ * @method     ChildJudges[]|ObjectCollection findByEmail(string $email) Return ChildJudges objects filtered by the email column
+ * @method     ChildJudges[]|ObjectCollection findByCourt(string $court) Return ChildJudges objects filtered by the court column
+ * @method     ChildJudges[]|ObjectCollection findByPhone(string $phone) Return ChildJudges objects filtered by the phone column
+ * @method     ChildJudges[]|ObjectCollection findByCourtnumber(string $courtnumber) Return ChildJudges objects filtered by the courtnumber column
+ * @method     ChildJudges[]|ObjectCollection findByStatus(string $status) Return ChildJudges objects filtered by the status column
  * @method     ChildJudges[]|ObjectCollection findByCreated(int $created) Return ChildJudges objects filtered by the created column
  * @method     ChildJudges[]|ObjectCollection findByModified(int $modified) Return ChildJudges objects filtered by the modified column
  * @method     ChildJudges[]|\Propel\Runtime\Util\PropelModelPager paginate($page = 1, $maxPerPage = 10, ConnectionInterface $con = null) Issue a SELECT query based on the current ModelCriteria and uses a page and a maximum number of results per page to compute an offset and a limit
@@ -170,7 +185,7 @@ abstract class JudgesQuery extends ModelCriteria
      */
     protected function findPkSimple($key, ConnectionInterface $con)
     {
-        $sql = 'SELECT id, fullname, phone, phonealt, email, address, created, modified FROM judges WHERE id = :p0';
+        $sql = 'SELECT id, judgeid, fullname, address, email, court, phone, courtnumber, status, created, modified FROM judges WHERE id = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -302,6 +317,35 @@ abstract class JudgesQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query on the judgeid column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByJudgeid('fooValue');   // WHERE judgeid = 'fooValue'
+     * $query->filterByJudgeid('%fooValue%'); // WHERE judgeid LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $judgeid The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildJudgesQuery The current query, for fluid interface
+     */
+    public function filterByJudgeid($judgeid = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($judgeid)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $judgeid)) {
+                $judgeid = str_replace('*', '%', $judgeid);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(JudgesTableMap::COL_JUDGEID, $judgeid, $comparison);
+    }
+
+    /**
      * Filter the query on the fullname column
      *
      * Example usage:
@@ -331,85 +375,32 @@ abstract class JudgesQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the phone column
+     * Filter the query on the address column
      *
      * Example usage:
      * <code>
-     * $query->filterByPhone(1234); // WHERE phone = 1234
-     * $query->filterByPhone(array(12, 34)); // WHERE phone IN (12, 34)
-     * $query->filterByPhone(array('min' => 12)); // WHERE phone > 12
+     * $query->filterByAddress('fooValue');   // WHERE address = 'fooValue'
+     * $query->filterByAddress('%fooValue%'); // WHERE address LIKE '%fooValue%'
      * </code>
      *
-     * @param     mixed $phone The value to use as filter.
-     *              Use scalar values for equality.
-     *              Use array values for in_array() equivalent.
-     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $address The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return $this|ChildJudgesQuery The current query, for fluid interface
      */
-    public function filterByPhone($phone = null, $comparison = null)
+    public function filterByAddress($address = null, $comparison = null)
     {
-        if (is_array($phone)) {
-            $useMinMax = false;
-            if (isset($phone['min'])) {
-                $this->addUsingAlias(JudgesTableMap::COL_PHONE, $phone['min'], Criteria::GREATER_EQUAL);
-                $useMinMax = true;
-            }
-            if (isset($phone['max'])) {
-                $this->addUsingAlias(JudgesTableMap::COL_PHONE, $phone['max'], Criteria::LESS_EQUAL);
-                $useMinMax = true;
-            }
-            if ($useMinMax) {
-                return $this;
-            }
-            if (null === $comparison) {
+        if (null === $comparison) {
+            if (is_array($address)) {
                 $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $address)) {
+                $address = str_replace('*', '%', $address);
+                $comparison = Criteria::LIKE;
             }
         }
 
-        return $this->addUsingAlias(JudgesTableMap::COL_PHONE, $phone, $comparison);
-    }
-
-    /**
-     * Filter the query on the phonealt column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByPhonealt(1234); // WHERE phonealt = 1234
-     * $query->filterByPhonealt(array(12, 34)); // WHERE phonealt IN (12, 34)
-     * $query->filterByPhonealt(array('min' => 12)); // WHERE phonealt > 12
-     * </code>
-     *
-     * @param     mixed $phonealt The value to use as filter.
-     *              Use scalar values for equality.
-     *              Use array values for in_array() equivalent.
-     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return $this|ChildJudgesQuery The current query, for fluid interface
-     */
-    public function filterByPhonealt($phonealt = null, $comparison = null)
-    {
-        if (is_array($phonealt)) {
-            $useMinMax = false;
-            if (isset($phonealt['min'])) {
-                $this->addUsingAlias(JudgesTableMap::COL_PHONEALT, $phonealt['min'], Criteria::GREATER_EQUAL);
-                $useMinMax = true;
-            }
-            if (isset($phonealt['max'])) {
-                $this->addUsingAlias(JudgesTableMap::COL_PHONEALT, $phonealt['max'], Criteria::LESS_EQUAL);
-                $useMinMax = true;
-            }
-            if ($useMinMax) {
-                return $this;
-            }
-            if (null === $comparison) {
-                $comparison = Criteria::IN;
-            }
-        }
-
-        return $this->addUsingAlias(JudgesTableMap::COL_PHONEALT, $phonealt, $comparison);
+        return $this->addUsingAlias(JudgesTableMap::COL_ADDRESS, $address, $comparison);
     }
 
     /**
@@ -442,32 +433,119 @@ abstract class JudgesQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the address column
+     * Filter the query on the court column
      *
      * Example usage:
      * <code>
-     * $query->filterByAddress('fooValue');   // WHERE address = 'fooValue'
-     * $query->filterByAddress('%fooValue%'); // WHERE address LIKE '%fooValue%'
+     * $query->filterByCourt('fooValue');   // WHERE court = 'fooValue'
+     * $query->filterByCourt('%fooValue%'); // WHERE court LIKE '%fooValue%'
      * </code>
      *
-     * @param     string $address The value to use as filter.
+     * @param     string $court The value to use as filter.
      *              Accepts wildcards (* and % trigger a LIKE)
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return $this|ChildJudgesQuery The current query, for fluid interface
      */
-    public function filterByAddress($address = null, $comparison = null)
+    public function filterByCourt($court = null, $comparison = null)
     {
         if (null === $comparison) {
-            if (is_array($address)) {
+            if (is_array($court)) {
                 $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $address)) {
-                $address = str_replace('*', '%', $address);
+            } elseif (preg_match('/[\%\*]/', $court)) {
+                $court = str_replace('*', '%', $court);
                 $comparison = Criteria::LIKE;
             }
         }
 
-        return $this->addUsingAlias(JudgesTableMap::COL_ADDRESS, $address, $comparison);
+        return $this->addUsingAlias(JudgesTableMap::COL_COURT, $court, $comparison);
+    }
+
+    /**
+     * Filter the query on the phone column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByPhone('fooValue');   // WHERE phone = 'fooValue'
+     * $query->filterByPhone('%fooValue%'); // WHERE phone LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $phone The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildJudgesQuery The current query, for fluid interface
+     */
+    public function filterByPhone($phone = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($phone)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $phone)) {
+                $phone = str_replace('*', '%', $phone);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(JudgesTableMap::COL_PHONE, $phone, $comparison);
+    }
+
+    /**
+     * Filter the query on the courtnumber column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByCourtnumber('fooValue');   // WHERE courtnumber = 'fooValue'
+     * $query->filterByCourtnumber('%fooValue%'); // WHERE courtnumber LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $courtnumber The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildJudgesQuery The current query, for fluid interface
+     */
+    public function filterByCourtnumber($courtnumber = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($courtnumber)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $courtnumber)) {
+                $courtnumber = str_replace('*', '%', $courtnumber);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(JudgesTableMap::COL_COURTNUMBER, $courtnumber, $comparison);
+    }
+
+    /**
+     * Filter the query on the status column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByStatus('fooValue');   // WHERE status = 'fooValue'
+     * $query->filterByStatus('%fooValue%'); // WHERE status LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $status The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildJudgesQuery The current query, for fluid interface
+     */
+    public function filterByStatus($status = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($status)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $status)) {
+                $status = str_replace('*', '%', $status);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(JudgesTableMap::COL_STATUS, $status, $comparison);
     }
 
     /**

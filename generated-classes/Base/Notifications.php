@@ -66,6 +66,24 @@ abstract class Notifications implements ActiveRecordInterface
     protected $id;
 
     /**
+     * The value for the documentid field.
+     * @var        int
+     */
+    protected $documentid;
+
+    /**
+     * The value for the documentlink field.
+     * @var        string
+     */
+    protected $documentlink;
+
+    /**
+     * The value for the filer field.
+     * @var        string
+     */
+    protected $filer;
+
+    /**
      * The value for the type field.
      * @var        string
      */
@@ -343,6 +361,36 @@ abstract class Notifications implements ActiveRecordInterface
     }
 
     /**
+     * Get the [documentid] column value.
+     *
+     * @return int
+     */
+    public function getDocumentid()
+    {
+        return $this->documentid;
+    }
+
+    /**
+     * Get the [documentlink] column value.
+     *
+     * @return string
+     */
+    public function getDocumentlink()
+    {
+        return $this->documentlink;
+    }
+
+    /**
+     * Get the [filer] column value.
+     *
+     * @return string
+     */
+    public function getFiler()
+    {
+        return $this->filer;
+    }
+
+    /**
      * Get the [type] column value.
      *
      * @return string
@@ -431,6 +479,66 @@ abstract class Notifications implements ActiveRecordInterface
 
         return $this;
     } // setId()
+
+    /**
+     * Set the value of [documentid] column.
+     *
+     * @param int $v new value
+     * @return $this|\Notifications The current object (for fluent API support)
+     */
+    public function setDocumentid($v)
+    {
+        if ($v !== null) {
+            $v = (int) $v;
+        }
+
+        if ($this->documentid !== $v) {
+            $this->documentid = $v;
+            $this->modifiedColumns[NotificationsTableMap::COL_DOCUMENTID] = true;
+        }
+
+        return $this;
+    } // setDocumentid()
+
+    /**
+     * Set the value of [documentlink] column.
+     *
+     * @param string $v new value
+     * @return $this|\Notifications The current object (for fluent API support)
+     */
+    public function setDocumentlink($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->documentlink !== $v) {
+            $this->documentlink = $v;
+            $this->modifiedColumns[NotificationsTableMap::COL_DOCUMENTLINK] = true;
+        }
+
+        return $this;
+    } // setDocumentlink()
+
+    /**
+     * Set the value of [filer] column.
+     *
+     * @param string $v new value
+     * @return $this|\Notifications The current object (for fluent API support)
+     */
+    public function setFiler($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->filer !== $v) {
+            $this->filer = $v;
+            $this->modifiedColumns[NotificationsTableMap::COL_FILER] = true;
+        }
+
+        return $this;
+    } // setFiler()
 
     /**
      * Set the value of [type] column.
@@ -611,25 +719,34 @@ abstract class Notifications implements ActiveRecordInterface
             $col = $row[TableMap::TYPE_NUM == $indexType ? 0 + $startcol : NotificationsTableMap::translateFieldName('Id', TableMap::TYPE_PHPNAME, $indexType)];
             $this->id = (null !== $col) ? (int) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 1 + $startcol : NotificationsTableMap::translateFieldName('Type', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 1 + $startcol : NotificationsTableMap::translateFieldName('Documentid', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->documentid = (null !== $col) ? (int) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 2 + $startcol : NotificationsTableMap::translateFieldName('Documentlink', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->documentlink = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 3 + $startcol : NotificationsTableMap::translateFieldName('Filer', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->filer = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 4 + $startcol : NotificationsTableMap::translateFieldName('Type', TableMap::TYPE_PHPNAME, $indexType)];
             $this->type = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 2 + $startcol : NotificationsTableMap::translateFieldName('Suitnumber', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 5 + $startcol : NotificationsTableMap::translateFieldName('Suitnumber', TableMap::TYPE_PHPNAME, $indexType)];
             $this->suitnumber = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 3 + $startcol : NotificationsTableMap::translateFieldName('Datetimesent', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 6 + $startcol : NotificationsTableMap::translateFieldName('Datetimesent', TableMap::TYPE_PHPNAME, $indexType)];
             $this->datetimesent = (null !== $col) ? (int) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 4 + $startcol : NotificationsTableMap::translateFieldName('Recipients', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 7 + $startcol : NotificationsTableMap::translateFieldName('Recipients', TableMap::TYPE_PHPNAME, $indexType)];
             $this->recipients = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 5 + $startcol : NotificationsTableMap::translateFieldName('Status', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 8 + $startcol : NotificationsTableMap::translateFieldName('Status', TableMap::TYPE_PHPNAME, $indexType)];
             $this->status = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 6 + $startcol : NotificationsTableMap::translateFieldName('Created', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 9 + $startcol : NotificationsTableMap::translateFieldName('Created', TableMap::TYPE_PHPNAME, $indexType)];
             $this->created = (null !== $col) ? (int) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 7 + $startcol : NotificationsTableMap::translateFieldName('Modified', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 10 + $startcol : NotificationsTableMap::translateFieldName('Modified', TableMap::TYPE_PHPNAME, $indexType)];
             $this->modified = (null !== $col) ? (int) $col : null;
             $this->resetModified();
 
@@ -639,7 +756,7 @@ abstract class Notifications implements ActiveRecordInterface
                 $this->ensureConsistency();
             }
 
-            return $startcol + 8; // 8 = NotificationsTableMap::NUM_HYDRATE_COLUMNS.
+            return $startcol + 11; // 11 = NotificationsTableMap::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException(sprintf('Error populating %s object', '\\Notifications'), 0, $e);
@@ -839,6 +956,15 @@ abstract class Notifications implements ActiveRecordInterface
         if ($this->isColumnModified(NotificationsTableMap::COL_ID)) {
             $modifiedColumns[':p' . $index++]  = 'id';
         }
+        if ($this->isColumnModified(NotificationsTableMap::COL_DOCUMENTID)) {
+            $modifiedColumns[':p' . $index++]  = 'documentid';
+        }
+        if ($this->isColumnModified(NotificationsTableMap::COL_DOCUMENTLINK)) {
+            $modifiedColumns[':p' . $index++]  = 'documentlink';
+        }
+        if ($this->isColumnModified(NotificationsTableMap::COL_FILER)) {
+            $modifiedColumns[':p' . $index++]  = 'filer';
+        }
         if ($this->isColumnModified(NotificationsTableMap::COL_TYPE)) {
             $modifiedColumns[':p' . $index++]  = 'type';
         }
@@ -873,6 +999,15 @@ abstract class Notifications implements ActiveRecordInterface
                 switch ($columnName) {
                     case 'id':
                         $stmt->bindValue($identifier, $this->id, PDO::PARAM_INT);
+                        break;
+                    case 'documentid':
+                        $stmt->bindValue($identifier, $this->documentid, PDO::PARAM_INT);
+                        break;
+                    case 'documentlink':
+                        $stmt->bindValue($identifier, $this->documentlink, PDO::PARAM_STR);
+                        break;
+                    case 'filer':
+                        $stmt->bindValue($identifier, $this->filer, PDO::PARAM_STR);
                         break;
                     case 'type':
                         $stmt->bindValue($identifier, $this->type, PDO::PARAM_STR);
@@ -961,24 +1096,33 @@ abstract class Notifications implements ActiveRecordInterface
                 return $this->getId();
                 break;
             case 1:
-                return $this->getType();
+                return $this->getDocumentid();
                 break;
             case 2:
-                return $this->getSuitnumber();
+                return $this->getDocumentlink();
                 break;
             case 3:
-                return $this->getDatetimesent();
+                return $this->getFiler();
                 break;
             case 4:
-                return $this->getRecipients();
+                return $this->getType();
                 break;
             case 5:
-                return $this->getStatus();
+                return $this->getSuitnumber();
                 break;
             case 6:
-                return $this->getCreated();
+                return $this->getDatetimesent();
                 break;
             case 7:
+                return $this->getRecipients();
+                break;
+            case 8:
+                return $this->getStatus();
+                break;
+            case 9:
+                return $this->getCreated();
+                break;
+            case 10:
                 return $this->getModified();
                 break;
             default:
@@ -1011,13 +1155,16 @@ abstract class Notifications implements ActiveRecordInterface
         $keys = NotificationsTableMap::getFieldNames($keyType);
         $result = array(
             $keys[0] => $this->getId(),
-            $keys[1] => $this->getType(),
-            $keys[2] => $this->getSuitnumber(),
-            $keys[3] => $this->getDatetimesent(),
-            $keys[4] => $this->getRecipients(),
-            $keys[5] => $this->getStatus(),
-            $keys[6] => $this->getCreated(),
-            $keys[7] => $this->getModified(),
+            $keys[1] => $this->getDocumentid(),
+            $keys[2] => $this->getDocumentlink(),
+            $keys[3] => $this->getFiler(),
+            $keys[4] => $this->getType(),
+            $keys[5] => $this->getSuitnumber(),
+            $keys[6] => $this->getDatetimesent(),
+            $keys[7] => $this->getRecipients(),
+            $keys[8] => $this->getStatus(),
+            $keys[9] => $this->getCreated(),
+            $keys[10] => $this->getModified(),
         );
         $virtualColumns = $this->virtualColumns;
         foreach ($virtualColumns as $key => $virtualColumn) {
@@ -1061,24 +1208,33 @@ abstract class Notifications implements ActiveRecordInterface
                 $this->setId($value);
                 break;
             case 1:
-                $this->setType($value);
+                $this->setDocumentid($value);
                 break;
             case 2:
-                $this->setSuitnumber($value);
+                $this->setDocumentlink($value);
                 break;
             case 3:
-                $this->setDatetimesent($value);
+                $this->setFiler($value);
                 break;
             case 4:
-                $this->setRecipients($value);
+                $this->setType($value);
                 break;
             case 5:
-                $this->setStatus($value);
+                $this->setSuitnumber($value);
                 break;
             case 6:
-                $this->setCreated($value);
+                $this->setDatetimesent($value);
                 break;
             case 7:
+                $this->setRecipients($value);
+                break;
+            case 8:
+                $this->setStatus($value);
+                break;
+            case 9:
+                $this->setCreated($value);
+                break;
+            case 10:
                 $this->setModified($value);
                 break;
         } // switch()
@@ -1111,25 +1267,34 @@ abstract class Notifications implements ActiveRecordInterface
             $this->setId($arr[$keys[0]]);
         }
         if (array_key_exists($keys[1], $arr)) {
-            $this->setType($arr[$keys[1]]);
+            $this->setDocumentid($arr[$keys[1]]);
         }
         if (array_key_exists($keys[2], $arr)) {
-            $this->setSuitnumber($arr[$keys[2]]);
+            $this->setDocumentlink($arr[$keys[2]]);
         }
         if (array_key_exists($keys[3], $arr)) {
-            $this->setDatetimesent($arr[$keys[3]]);
+            $this->setFiler($arr[$keys[3]]);
         }
         if (array_key_exists($keys[4], $arr)) {
-            $this->setRecipients($arr[$keys[4]]);
+            $this->setType($arr[$keys[4]]);
         }
         if (array_key_exists($keys[5], $arr)) {
-            $this->setStatus($arr[$keys[5]]);
+            $this->setSuitnumber($arr[$keys[5]]);
         }
         if (array_key_exists($keys[6], $arr)) {
-            $this->setCreated($arr[$keys[6]]);
+            $this->setDatetimesent($arr[$keys[6]]);
         }
         if (array_key_exists($keys[7], $arr)) {
-            $this->setModified($arr[$keys[7]]);
+            $this->setRecipients($arr[$keys[7]]);
+        }
+        if (array_key_exists($keys[8], $arr)) {
+            $this->setStatus($arr[$keys[8]]);
+        }
+        if (array_key_exists($keys[9], $arr)) {
+            $this->setCreated($arr[$keys[9]]);
+        }
+        if (array_key_exists($keys[10], $arr)) {
+            $this->setModified($arr[$keys[10]]);
         }
     }
 
@@ -1174,6 +1339,15 @@ abstract class Notifications implements ActiveRecordInterface
 
         if ($this->isColumnModified(NotificationsTableMap::COL_ID)) {
             $criteria->add(NotificationsTableMap::COL_ID, $this->id);
+        }
+        if ($this->isColumnModified(NotificationsTableMap::COL_DOCUMENTID)) {
+            $criteria->add(NotificationsTableMap::COL_DOCUMENTID, $this->documentid);
+        }
+        if ($this->isColumnModified(NotificationsTableMap::COL_DOCUMENTLINK)) {
+            $criteria->add(NotificationsTableMap::COL_DOCUMENTLINK, $this->documentlink);
+        }
+        if ($this->isColumnModified(NotificationsTableMap::COL_FILER)) {
+            $criteria->add(NotificationsTableMap::COL_FILER, $this->filer);
         }
         if ($this->isColumnModified(NotificationsTableMap::COL_TYPE)) {
             $criteria->add(NotificationsTableMap::COL_TYPE, $this->type);
@@ -1282,6 +1456,9 @@ abstract class Notifications implements ActiveRecordInterface
      */
     public function copyInto($copyObj, $deepCopy = false, $makeNew = true)
     {
+        $copyObj->setDocumentid($this->getDocumentid());
+        $copyObj->setDocumentlink($this->getDocumentlink());
+        $copyObj->setFiler($this->getFiler());
         $copyObj->setType($this->getType());
         $copyObj->setSuitnumber($this->getSuitnumber());
         $copyObj->setDatetimesent($this->getDatetimesent());
@@ -1325,6 +1502,9 @@ abstract class Notifications implements ActiveRecordInterface
     public function clear()
     {
         $this->id = null;
+        $this->documentid = null;
+        $this->documentlink = null;
+        $this->filer = null;
         $this->type = null;
         $this->suitnumber = null;
         $this->datetimesent = null;

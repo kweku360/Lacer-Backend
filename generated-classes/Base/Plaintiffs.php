@@ -84,10 +84,28 @@ abstract class Plaintiffs implements ActiveRecordInterface
     protected $address;
 
     /**
-     * The value for the phone field.
-     * @var        int
+     * The value for the phone1 field.
+     * @var        string
      */
-    protected $phone;
+    protected $phone1;
+
+    /**
+     * The value for the phone2 field.
+     * @var        string
+     */
+    protected $phone2;
+
+    /**
+     * The value for the email field.
+     * @var        string
+     */
+    protected $email;
+
+    /**
+     * The value for the status field.
+     * @var        string
+     */
+    protected $status;
 
     /**
      * The value for the created field.
@@ -367,13 +385,43 @@ abstract class Plaintiffs implements ActiveRecordInterface
     }
 
     /**
-     * Get the [phone] column value.
+     * Get the [phone1] column value.
      *
-     * @return int
+     * @return string
      */
-    public function getPhone()
+    public function getPhone1()
     {
-        return $this->phone;
+        return $this->phone1;
+    }
+
+    /**
+     * Get the [phone2] column value.
+     *
+     * @return string
+     */
+    public function getPhone2()
+    {
+        return $this->phone2;
+    }
+
+    /**
+     * Get the [email] column value.
+     *
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * Get the [status] column value.
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
     }
 
     /**
@@ -477,24 +525,84 @@ abstract class Plaintiffs implements ActiveRecordInterface
     } // setAddress()
 
     /**
-     * Set the value of [phone] column.
+     * Set the value of [phone1] column.
      *
-     * @param int $v new value
+     * @param string $v new value
      * @return $this|\Plaintiffs The current object (for fluent API support)
      */
-    public function setPhone($v)
+    public function setPhone1($v)
     {
         if ($v !== null) {
-            $v = (int) $v;
+            $v = (string) $v;
         }
 
-        if ($this->phone !== $v) {
-            $this->phone = $v;
-            $this->modifiedColumns[PlaintiffsTableMap::COL_PHONE] = true;
+        if ($this->phone1 !== $v) {
+            $this->phone1 = $v;
+            $this->modifiedColumns[PlaintiffsTableMap::COL_PHONE1] = true;
         }
 
         return $this;
-    } // setPhone()
+    } // setPhone1()
+
+    /**
+     * Set the value of [phone2] column.
+     *
+     * @param string $v new value
+     * @return $this|\Plaintiffs The current object (for fluent API support)
+     */
+    public function setPhone2($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->phone2 !== $v) {
+            $this->phone2 = $v;
+            $this->modifiedColumns[PlaintiffsTableMap::COL_PHONE2] = true;
+        }
+
+        return $this;
+    } // setPhone2()
+
+    /**
+     * Set the value of [email] column.
+     *
+     * @param string $v new value
+     * @return $this|\Plaintiffs The current object (for fluent API support)
+     */
+    public function setEmail($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->email !== $v) {
+            $this->email = $v;
+            $this->modifiedColumns[PlaintiffsTableMap::COL_EMAIL] = true;
+        }
+
+        return $this;
+    } // setEmail()
+
+    /**
+     * Set the value of [status] column.
+     *
+     * @param string $v new value
+     * @return $this|\Plaintiffs The current object (for fluent API support)
+     */
+    public function setStatus($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->status !== $v) {
+            $this->status = $v;
+            $this->modifiedColumns[PlaintiffsTableMap::COL_STATUS] = true;
+        }
+
+        return $this;
+    } // setStatus()
 
     /**
      * Set the value of [created] column.
@@ -584,13 +692,22 @@ abstract class Plaintiffs implements ActiveRecordInterface
             $col = $row[TableMap::TYPE_NUM == $indexType ? 3 + $startcol : PlaintiffsTableMap::translateFieldName('Address', TableMap::TYPE_PHPNAME, $indexType)];
             $this->address = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 4 + $startcol : PlaintiffsTableMap::translateFieldName('Phone', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->phone = (null !== $col) ? (int) $col : null;
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 4 + $startcol : PlaintiffsTableMap::translateFieldName('Phone1', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->phone1 = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 5 + $startcol : PlaintiffsTableMap::translateFieldName('Created', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 5 + $startcol : PlaintiffsTableMap::translateFieldName('Phone2', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->phone2 = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 6 + $startcol : PlaintiffsTableMap::translateFieldName('Email', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->email = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 7 + $startcol : PlaintiffsTableMap::translateFieldName('Status', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->status = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 8 + $startcol : PlaintiffsTableMap::translateFieldName('Created', TableMap::TYPE_PHPNAME, $indexType)];
             $this->created = (null !== $col) ? (int) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 6 + $startcol : PlaintiffsTableMap::translateFieldName('Modified', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 9 + $startcol : PlaintiffsTableMap::translateFieldName('Modified', TableMap::TYPE_PHPNAME, $indexType)];
             $this->modified = (null !== $col) ? (int) $col : null;
             $this->resetModified();
 
@@ -600,7 +717,7 @@ abstract class Plaintiffs implements ActiveRecordInterface
                 $this->ensureConsistency();
             }
 
-            return $startcol + 7; // 7 = PlaintiffsTableMap::NUM_HYDRATE_COLUMNS.
+            return $startcol + 10; // 10 = PlaintiffsTableMap::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException(sprintf('Error populating %s object', '\\Plaintiffs'), 0, $e);
@@ -809,8 +926,17 @@ abstract class Plaintiffs implements ActiveRecordInterface
         if ($this->isColumnModified(PlaintiffsTableMap::COL_ADDRESS)) {
             $modifiedColumns[':p' . $index++]  = 'address';
         }
-        if ($this->isColumnModified(PlaintiffsTableMap::COL_PHONE)) {
-            $modifiedColumns[':p' . $index++]  = 'phone';
+        if ($this->isColumnModified(PlaintiffsTableMap::COL_PHONE1)) {
+            $modifiedColumns[':p' . $index++]  = 'phone1';
+        }
+        if ($this->isColumnModified(PlaintiffsTableMap::COL_PHONE2)) {
+            $modifiedColumns[':p' . $index++]  = 'phone2';
+        }
+        if ($this->isColumnModified(PlaintiffsTableMap::COL_EMAIL)) {
+            $modifiedColumns[':p' . $index++]  = 'email';
+        }
+        if ($this->isColumnModified(PlaintiffsTableMap::COL_STATUS)) {
+            $modifiedColumns[':p' . $index++]  = 'status';
         }
         if ($this->isColumnModified(PlaintiffsTableMap::COL_CREATED)) {
             $modifiedColumns[':p' . $index++]  = 'created';
@@ -841,8 +967,17 @@ abstract class Plaintiffs implements ActiveRecordInterface
                     case 'address':
                         $stmt->bindValue($identifier, $this->address, PDO::PARAM_STR);
                         break;
-                    case 'phone':
-                        $stmt->bindValue($identifier, $this->phone, PDO::PARAM_INT);
+                    case 'phone1':
+                        $stmt->bindValue($identifier, $this->phone1, PDO::PARAM_STR);
+                        break;
+                    case 'phone2':
+                        $stmt->bindValue($identifier, $this->phone2, PDO::PARAM_STR);
+                        break;
+                    case 'email':
+                        $stmt->bindValue($identifier, $this->email, PDO::PARAM_STR);
+                        break;
+                    case 'status':
+                        $stmt->bindValue($identifier, $this->status, PDO::PARAM_STR);
                         break;
                     case 'created':
                         $stmt->bindValue($identifier, $this->created, PDO::PARAM_INT);
@@ -925,12 +1060,21 @@ abstract class Plaintiffs implements ActiveRecordInterface
                 return $this->getAddress();
                 break;
             case 4:
-                return $this->getPhone();
+                return $this->getPhone1();
                 break;
             case 5:
-                return $this->getCreated();
+                return $this->getPhone2();
                 break;
             case 6:
+                return $this->getEmail();
+                break;
+            case 7:
+                return $this->getStatus();
+                break;
+            case 8:
+                return $this->getCreated();
+                break;
+            case 9:
                 return $this->getModified();
                 break;
             default:
@@ -966,9 +1110,12 @@ abstract class Plaintiffs implements ActiveRecordInterface
             $keys[1] => $this->getSuitnumber(),
             $keys[2] => $this->getFullname(),
             $keys[3] => $this->getAddress(),
-            $keys[4] => $this->getPhone(),
-            $keys[5] => $this->getCreated(),
-            $keys[6] => $this->getModified(),
+            $keys[4] => $this->getPhone1(),
+            $keys[5] => $this->getPhone2(),
+            $keys[6] => $this->getEmail(),
+            $keys[7] => $this->getStatus(),
+            $keys[8] => $this->getCreated(),
+            $keys[9] => $this->getModified(),
         );
         $virtualColumns = $this->virtualColumns;
         foreach ($virtualColumns as $key => $virtualColumn) {
@@ -1021,12 +1168,21 @@ abstract class Plaintiffs implements ActiveRecordInterface
                 $this->setAddress($value);
                 break;
             case 4:
-                $this->setPhone($value);
+                $this->setPhone1($value);
                 break;
             case 5:
-                $this->setCreated($value);
+                $this->setPhone2($value);
                 break;
             case 6:
+                $this->setEmail($value);
+                break;
+            case 7:
+                $this->setStatus($value);
+                break;
+            case 8:
+                $this->setCreated($value);
+                break;
+            case 9:
                 $this->setModified($value);
                 break;
         } // switch()
@@ -1068,13 +1224,22 @@ abstract class Plaintiffs implements ActiveRecordInterface
             $this->setAddress($arr[$keys[3]]);
         }
         if (array_key_exists($keys[4], $arr)) {
-            $this->setPhone($arr[$keys[4]]);
+            $this->setPhone1($arr[$keys[4]]);
         }
         if (array_key_exists($keys[5], $arr)) {
-            $this->setCreated($arr[$keys[5]]);
+            $this->setPhone2($arr[$keys[5]]);
         }
         if (array_key_exists($keys[6], $arr)) {
-            $this->setModified($arr[$keys[6]]);
+            $this->setEmail($arr[$keys[6]]);
+        }
+        if (array_key_exists($keys[7], $arr)) {
+            $this->setStatus($arr[$keys[7]]);
+        }
+        if (array_key_exists($keys[8], $arr)) {
+            $this->setCreated($arr[$keys[8]]);
+        }
+        if (array_key_exists($keys[9], $arr)) {
+            $this->setModified($arr[$keys[9]]);
         }
     }
 
@@ -1129,8 +1294,17 @@ abstract class Plaintiffs implements ActiveRecordInterface
         if ($this->isColumnModified(PlaintiffsTableMap::COL_ADDRESS)) {
             $criteria->add(PlaintiffsTableMap::COL_ADDRESS, $this->address);
         }
-        if ($this->isColumnModified(PlaintiffsTableMap::COL_PHONE)) {
-            $criteria->add(PlaintiffsTableMap::COL_PHONE, $this->phone);
+        if ($this->isColumnModified(PlaintiffsTableMap::COL_PHONE1)) {
+            $criteria->add(PlaintiffsTableMap::COL_PHONE1, $this->phone1);
+        }
+        if ($this->isColumnModified(PlaintiffsTableMap::COL_PHONE2)) {
+            $criteria->add(PlaintiffsTableMap::COL_PHONE2, $this->phone2);
+        }
+        if ($this->isColumnModified(PlaintiffsTableMap::COL_EMAIL)) {
+            $criteria->add(PlaintiffsTableMap::COL_EMAIL, $this->email);
+        }
+        if ($this->isColumnModified(PlaintiffsTableMap::COL_STATUS)) {
+            $criteria->add(PlaintiffsTableMap::COL_STATUS, $this->status);
         }
         if ($this->isColumnModified(PlaintiffsTableMap::COL_CREATED)) {
             $criteria->add(PlaintiffsTableMap::COL_CREATED, $this->created);
@@ -1227,7 +1401,10 @@ abstract class Plaintiffs implements ActiveRecordInterface
         $copyObj->setSuitnumber($this->getSuitnumber());
         $copyObj->setFullname($this->getFullname());
         $copyObj->setAddress($this->getAddress());
-        $copyObj->setPhone($this->getPhone());
+        $copyObj->setPhone1($this->getPhone1());
+        $copyObj->setPhone2($this->getPhone2());
+        $copyObj->setEmail($this->getEmail());
+        $copyObj->setStatus($this->getStatus());
         $copyObj->setCreated($this->getCreated());
         $copyObj->setModified($this->getModified());
         if ($makeNew) {
@@ -1269,7 +1446,10 @@ abstract class Plaintiffs implements ActiveRecordInterface
         $this->suitnumber = null;
         $this->fullname = null;
         $this->address = null;
-        $this->phone = null;
+        $this->phone1 = null;
+        $this->phone2 = null;
+        $this->email = null;
+        $this->status = null;
         $this->created = null;
         $this->modified = null;
         $this->alreadyInSave = false;

@@ -20,18 +20,22 @@ use Propel\Runtime\Exception\PropelException;
  *
  *
  * @method     ChildDefendantsQuery orderById($order = Criteria::ASC) Order by the id column
- * @method     ChildDefendantsQuery orderBySuitno($order = Criteria::ASC) Order by the suitno column
+ * @method     ChildDefendantsQuery orderBySuitnumber($order = Criteria::ASC) Order by the suitnumber column
  * @method     ChildDefendantsQuery orderByFullname($order = Criteria::ASC) Order by the fullname column
  * @method     ChildDefendantsQuery orderByAddress($order = Criteria::ASC) Order by the address column
- * @method     ChildDefendantsQuery orderByPhone($order = Criteria::ASC) Order by the phone column
+ * @method     ChildDefendantsQuery orderByPhone1($order = Criteria::ASC) Order by the phone1 column
+ * @method     ChildDefendantsQuery orderByPhone2($order = Criteria::ASC) Order by the phone2 column
+ * @method     ChildDefendantsQuery orderByEmail($order = Criteria::ASC) Order by the email column
  * @method     ChildDefendantsQuery orderByCreated($order = Criteria::ASC) Order by the created column
  * @method     ChildDefendantsQuery orderByModified($order = Criteria::ASC) Order by the modified column
  *
  * @method     ChildDefendantsQuery groupById() Group by the id column
- * @method     ChildDefendantsQuery groupBySuitno() Group by the suitno column
+ * @method     ChildDefendantsQuery groupBySuitnumber() Group by the suitnumber column
  * @method     ChildDefendantsQuery groupByFullname() Group by the fullname column
  * @method     ChildDefendantsQuery groupByAddress() Group by the address column
- * @method     ChildDefendantsQuery groupByPhone() Group by the phone column
+ * @method     ChildDefendantsQuery groupByPhone1() Group by the phone1 column
+ * @method     ChildDefendantsQuery groupByPhone2() Group by the phone2 column
+ * @method     ChildDefendantsQuery groupByEmail() Group by the email column
  * @method     ChildDefendantsQuery groupByCreated() Group by the created column
  * @method     ChildDefendantsQuery groupByModified() Group by the modified column
  *
@@ -47,10 +51,12 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildDefendants findOneOrCreate(ConnectionInterface $con = null) Return the first ChildDefendants matching the query, or a new ChildDefendants object populated from the query conditions when no match is found
  *
  * @method     ChildDefendants findOneById(int $id) Return the first ChildDefendants filtered by the id column
- * @method     ChildDefendants findOneBySuitno(string $suitno) Return the first ChildDefendants filtered by the suitno column
+ * @method     ChildDefendants findOneBySuitnumber(string $suitnumber) Return the first ChildDefendants filtered by the suitnumber column
  * @method     ChildDefendants findOneByFullname(string $fullname) Return the first ChildDefendants filtered by the fullname column
  * @method     ChildDefendants findOneByAddress(string $address) Return the first ChildDefendants filtered by the address column
- * @method     ChildDefendants findOneByPhone(int $phone) Return the first ChildDefendants filtered by the phone column
+ * @method     ChildDefendants findOneByPhone1(string $phone1) Return the first ChildDefendants filtered by the phone1 column
+ * @method     ChildDefendants findOneByPhone2(string $phone2) Return the first ChildDefendants filtered by the phone2 column
+ * @method     ChildDefendants findOneByEmail(string $email) Return the first ChildDefendants filtered by the email column
  * @method     ChildDefendants findOneByCreated(int $created) Return the first ChildDefendants filtered by the created column
  * @method     ChildDefendants findOneByModified(int $modified) Return the first ChildDefendants filtered by the modified column *
 
@@ -58,19 +64,23 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildDefendants requireOne(ConnectionInterface $con = null) Return the first ChildDefendants matching the query and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  *
  * @method     ChildDefendants requireOneById(int $id) Return the first ChildDefendants filtered by the id column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildDefendants requireOneBySuitno(string $suitno) Return the first ChildDefendants filtered by the suitno column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildDefendants requireOneBySuitnumber(string $suitnumber) Return the first ChildDefendants filtered by the suitnumber column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildDefendants requireOneByFullname(string $fullname) Return the first ChildDefendants filtered by the fullname column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildDefendants requireOneByAddress(string $address) Return the first ChildDefendants filtered by the address column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildDefendants requireOneByPhone(int $phone) Return the first ChildDefendants filtered by the phone column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildDefendants requireOneByPhone1(string $phone1) Return the first ChildDefendants filtered by the phone1 column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildDefendants requireOneByPhone2(string $phone2) Return the first ChildDefendants filtered by the phone2 column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildDefendants requireOneByEmail(string $email) Return the first ChildDefendants filtered by the email column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildDefendants requireOneByCreated(int $created) Return the first ChildDefendants filtered by the created column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildDefendants requireOneByModified(int $modified) Return the first ChildDefendants filtered by the modified column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  *
  * @method     ChildDefendants[]|ObjectCollection find(ConnectionInterface $con = null) Return ChildDefendants objects based on current ModelCriteria
  * @method     ChildDefendants[]|ObjectCollection findById(int $id) Return ChildDefendants objects filtered by the id column
- * @method     ChildDefendants[]|ObjectCollection findBySuitno(string $suitno) Return ChildDefendants objects filtered by the suitno column
+ * @method     ChildDefendants[]|ObjectCollection findBySuitnumber(string $suitnumber) Return ChildDefendants objects filtered by the suitnumber column
  * @method     ChildDefendants[]|ObjectCollection findByFullname(string $fullname) Return ChildDefendants objects filtered by the fullname column
  * @method     ChildDefendants[]|ObjectCollection findByAddress(string $address) Return ChildDefendants objects filtered by the address column
- * @method     ChildDefendants[]|ObjectCollection findByPhone(int $phone) Return ChildDefendants objects filtered by the phone column
+ * @method     ChildDefendants[]|ObjectCollection findByPhone1(string $phone1) Return ChildDefendants objects filtered by the phone1 column
+ * @method     ChildDefendants[]|ObjectCollection findByPhone2(string $phone2) Return ChildDefendants objects filtered by the phone2 column
+ * @method     ChildDefendants[]|ObjectCollection findByEmail(string $email) Return ChildDefendants objects filtered by the email column
  * @method     ChildDefendants[]|ObjectCollection findByCreated(int $created) Return ChildDefendants objects filtered by the created column
  * @method     ChildDefendants[]|ObjectCollection findByModified(int $modified) Return ChildDefendants objects filtered by the modified column
  * @method     ChildDefendants[]|\Propel\Runtime\Util\PropelModelPager paginate($page = 1, $maxPerPage = 10, ConnectionInterface $con = null) Issue a SELECT query based on the current ModelCriteria and uses a page and a maximum number of results per page to compute an offset and a limit
@@ -165,7 +175,7 @@ abstract class DefendantsQuery extends ModelCriteria
      */
     protected function findPkSimple($key, ConnectionInterface $con)
     {
-        $sql = 'SELECT id, suitno, fullname, address, phone, created, modified FROM defendants WHERE id = :p0';
+        $sql = 'SELECT id, suitnumber, fullname, address, phone1, phone2, email, created, modified FROM defendants WHERE id = :p0';
         try {
             $stmt = $con->prepare($sql);
             $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
@@ -297,32 +307,32 @@ abstract class DefendantsQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the suitno column
+     * Filter the query on the suitnumber column
      *
      * Example usage:
      * <code>
-     * $query->filterBySuitno('fooValue');   // WHERE suitno = 'fooValue'
-     * $query->filterBySuitno('%fooValue%'); // WHERE suitno LIKE '%fooValue%'
+     * $query->filterBySuitnumber('fooValue');   // WHERE suitnumber = 'fooValue'
+     * $query->filterBySuitnumber('%fooValue%'); // WHERE suitnumber LIKE '%fooValue%'
      * </code>
      *
-     * @param     string $suitno The value to use as filter.
+     * @param     string $suitnumber The value to use as filter.
      *              Accepts wildcards (* and % trigger a LIKE)
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return $this|ChildDefendantsQuery The current query, for fluid interface
      */
-    public function filterBySuitno($suitno = null, $comparison = null)
+    public function filterBySuitnumber($suitnumber = null, $comparison = null)
     {
         if (null === $comparison) {
-            if (is_array($suitno)) {
+            if (is_array($suitnumber)) {
                 $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $suitno)) {
-                $suitno = str_replace('*', '%', $suitno);
+            } elseif (preg_match('/[\%\*]/', $suitnumber)) {
+                $suitnumber = str_replace('*', '%', $suitnumber);
                 $comparison = Criteria::LIKE;
             }
         }
 
-        return $this->addUsingAlias(DefendantsTableMap::COL_SUITNO, $suitno, $comparison);
+        return $this->addUsingAlias(DefendantsTableMap::COL_SUITNUMBER, $suitnumber, $comparison);
     }
 
     /**
@@ -384,44 +394,90 @@ abstract class DefendantsQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the phone column
+     * Filter the query on the phone1 column
      *
      * Example usage:
      * <code>
-     * $query->filterByPhone(1234); // WHERE phone = 1234
-     * $query->filterByPhone(array(12, 34)); // WHERE phone IN (12, 34)
-     * $query->filterByPhone(array('min' => 12)); // WHERE phone > 12
+     * $query->filterByPhone1('fooValue');   // WHERE phone1 = 'fooValue'
+     * $query->filterByPhone1('%fooValue%'); // WHERE phone1 LIKE '%fooValue%'
      * </code>
      *
-     * @param     mixed $phone The value to use as filter.
-     *              Use scalar values for equality.
-     *              Use array values for in_array() equivalent.
-     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $phone1 The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return $this|ChildDefendantsQuery The current query, for fluid interface
      */
-    public function filterByPhone($phone = null, $comparison = null)
+    public function filterByPhone1($phone1 = null, $comparison = null)
     {
-        if (is_array($phone)) {
-            $useMinMax = false;
-            if (isset($phone['min'])) {
-                $this->addUsingAlias(DefendantsTableMap::COL_PHONE, $phone['min'], Criteria::GREATER_EQUAL);
-                $useMinMax = true;
-            }
-            if (isset($phone['max'])) {
-                $this->addUsingAlias(DefendantsTableMap::COL_PHONE, $phone['max'], Criteria::LESS_EQUAL);
-                $useMinMax = true;
-            }
-            if ($useMinMax) {
-                return $this;
-            }
-            if (null === $comparison) {
+        if (null === $comparison) {
+            if (is_array($phone1)) {
                 $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $phone1)) {
+                $phone1 = str_replace('*', '%', $phone1);
+                $comparison = Criteria::LIKE;
             }
         }
 
-        return $this->addUsingAlias(DefendantsTableMap::COL_PHONE, $phone, $comparison);
+        return $this->addUsingAlias(DefendantsTableMap::COL_PHONE1, $phone1, $comparison);
+    }
+
+    /**
+     * Filter the query on the phone2 column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByPhone2('fooValue');   // WHERE phone2 = 'fooValue'
+     * $query->filterByPhone2('%fooValue%'); // WHERE phone2 LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $phone2 The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildDefendantsQuery The current query, for fluid interface
+     */
+    public function filterByPhone2($phone2 = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($phone2)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $phone2)) {
+                $phone2 = str_replace('*', '%', $phone2);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(DefendantsTableMap::COL_PHONE2, $phone2, $comparison);
+    }
+
+    /**
+     * Filter the query on the email column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterByEmail('fooValue');   // WHERE email = 'fooValue'
+     * $query->filterByEmail('%fooValue%'); // WHERE email LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $email The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildDefendantsQuery The current query, for fluid interface
+     */
+    public function filterByEmail($email = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($email)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $email)) {
+                $email = str_replace('*', '%', $email);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(DefendantsTableMap::COL_EMAIL, $email, $comparison);
     }
 
     /**

@@ -59,7 +59,7 @@ class TokenTableMap extends TableMap
     /**
      * The total number of columns
      */
-    const NUM_COLUMNS = 7;
+    const NUM_COLUMNS = 9;
 
     /**
      * The number of lazy-loaded columns
@@ -69,7 +69,7 @@ class TokenTableMap extends TableMap
     /**
      * The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS)
      */
-    const NUM_HYDRATE_COLUMNS = 7;
+    const NUM_HYDRATE_COLUMNS = 9;
 
     /**
      * the column name for the id field
@@ -92,9 +92,19 @@ class TokenTableMap extends TableMap
     const COL_USERID = 'token.userid';
 
     /**
+     * the column name for the type field
+     */
+    const COL_TYPE = 'token.type';
+
+    /**
      * the column name for the expires field
      */
     const COL_EXPIRES = 'token.expires';
+
+    /**
+     * the column name for the status field
+     */
+    const COL_STATUS = 'token.status';
 
     /**
      * the column name for the created field
@@ -118,11 +128,11 @@ class TokenTableMap extends TableMap
      * e.g. self::$fieldNames[self::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        self::TYPE_PHPNAME       => array('Id', 'Selector', 'Token', 'Userid', 'Expires', 'Created', 'Modified', ),
-        self::TYPE_CAMELNAME     => array('id', 'selector', 'token', 'userid', 'expires', 'created', 'modified', ),
-        self::TYPE_COLNAME       => array(TokenTableMap::COL_ID, TokenTableMap::COL_SELECTOR, TokenTableMap::COL_TOKEN, TokenTableMap::COL_USERID, TokenTableMap::COL_EXPIRES, TokenTableMap::COL_CREATED, TokenTableMap::COL_MODIFIED, ),
-        self::TYPE_FIELDNAME     => array('id', 'selector', 'token', 'userid', 'expires', 'created', 'modified', ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, )
+        self::TYPE_PHPNAME       => array('Id', 'Selector', 'Token', 'Userid', 'Type', 'Expires', 'Status', 'Created', 'Modified', ),
+        self::TYPE_CAMELNAME     => array('id', 'selector', 'token', 'userid', 'type', 'expires', 'status', 'created', 'modified', ),
+        self::TYPE_COLNAME       => array(TokenTableMap::COL_ID, TokenTableMap::COL_SELECTOR, TokenTableMap::COL_TOKEN, TokenTableMap::COL_USERID, TokenTableMap::COL_TYPE, TokenTableMap::COL_EXPIRES, TokenTableMap::COL_STATUS, TokenTableMap::COL_CREATED, TokenTableMap::COL_MODIFIED, ),
+        self::TYPE_FIELDNAME     => array('id', 'selector', 'token', 'userid', 'type', 'expires', 'status', 'created', 'modified', ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, )
     );
 
     /**
@@ -132,11 +142,11 @@ class TokenTableMap extends TableMap
      * e.g. self::$fieldKeys[self::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        self::TYPE_PHPNAME       => array('Id' => 0, 'Selector' => 1, 'Token' => 2, 'Userid' => 3, 'Expires' => 4, 'Created' => 5, 'Modified' => 6, ),
-        self::TYPE_CAMELNAME     => array('id' => 0, 'selector' => 1, 'token' => 2, 'userid' => 3, 'expires' => 4, 'created' => 5, 'modified' => 6, ),
-        self::TYPE_COLNAME       => array(TokenTableMap::COL_ID => 0, TokenTableMap::COL_SELECTOR => 1, TokenTableMap::COL_TOKEN => 2, TokenTableMap::COL_USERID => 3, TokenTableMap::COL_EXPIRES => 4, TokenTableMap::COL_CREATED => 5, TokenTableMap::COL_MODIFIED => 6, ),
-        self::TYPE_FIELDNAME     => array('id' => 0, 'selector' => 1, 'token' => 2, 'userid' => 3, 'expires' => 4, 'created' => 5, 'modified' => 6, ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, )
+        self::TYPE_PHPNAME       => array('Id' => 0, 'Selector' => 1, 'Token' => 2, 'Userid' => 3, 'Type' => 4, 'Expires' => 5, 'Status' => 6, 'Created' => 7, 'Modified' => 8, ),
+        self::TYPE_CAMELNAME     => array('id' => 0, 'selector' => 1, 'token' => 2, 'userid' => 3, 'type' => 4, 'expires' => 5, 'status' => 6, 'created' => 7, 'modified' => 8, ),
+        self::TYPE_COLNAME       => array(TokenTableMap::COL_ID => 0, TokenTableMap::COL_SELECTOR => 1, TokenTableMap::COL_TOKEN => 2, TokenTableMap::COL_USERID => 3, TokenTableMap::COL_TYPE => 4, TokenTableMap::COL_EXPIRES => 5, TokenTableMap::COL_STATUS => 6, TokenTableMap::COL_CREATED => 7, TokenTableMap::COL_MODIFIED => 8, ),
+        self::TYPE_FIELDNAME     => array('id' => 0, 'selector' => 1, 'token' => 2, 'userid' => 3, 'type' => 4, 'expires' => 5, 'status' => 6, 'created' => 7, 'modified' => 8, ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, )
     );
 
     /**
@@ -160,7 +170,9 @@ class TokenTableMap extends TableMap
         $this->addColumn('selector', 'Selector', 'CHAR', true, 12, null);
         $this->addColumn('token', 'Token', 'CHAR', true, 64, null);
         $this->addColumn('userid', 'Userid', 'INTEGER', true, null, null);
+        $this->addColumn('type', 'Type', 'VARCHAR', true, 255, null);
         $this->addColumn('expires', 'Expires', 'INTEGER', true, null, null);
+        $this->addColumn('status', 'Status', 'VARCHAR', true, 255, null);
         $this->addColumn('created', 'Created', 'INTEGER', true, null, null);
         $this->addColumn('modified', 'Modified', 'INTEGER', true, null, null);
     } // initialize()
@@ -317,7 +329,9 @@ class TokenTableMap extends TableMap
             $criteria->addSelectColumn(TokenTableMap::COL_SELECTOR);
             $criteria->addSelectColumn(TokenTableMap::COL_TOKEN);
             $criteria->addSelectColumn(TokenTableMap::COL_USERID);
+            $criteria->addSelectColumn(TokenTableMap::COL_TYPE);
             $criteria->addSelectColumn(TokenTableMap::COL_EXPIRES);
+            $criteria->addSelectColumn(TokenTableMap::COL_STATUS);
             $criteria->addSelectColumn(TokenTableMap::COL_CREATED);
             $criteria->addSelectColumn(TokenTableMap::COL_MODIFIED);
         } else {
@@ -325,7 +339,9 @@ class TokenTableMap extends TableMap
             $criteria->addSelectColumn($alias . '.selector');
             $criteria->addSelectColumn($alias . '.token');
             $criteria->addSelectColumn($alias . '.userid');
+            $criteria->addSelectColumn($alias . '.type');
             $criteria->addSelectColumn($alias . '.expires');
+            $criteria->addSelectColumn($alias . '.status');
             $criteria->addSelectColumn($alias . '.created');
             $criteria->addSelectColumn($alias . '.modified');
         }

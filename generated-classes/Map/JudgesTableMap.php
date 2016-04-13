@@ -59,7 +59,7 @@ class JudgesTableMap extends TableMap
     /**
      * The total number of columns
      */
-    const NUM_COLUMNS = 8;
+    const NUM_COLUMNS = 11;
 
     /**
      * The number of lazy-loaded columns
@@ -69,7 +69,7 @@ class JudgesTableMap extends TableMap
     /**
      * The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS)
      */
-    const NUM_HYDRATE_COLUMNS = 8;
+    const NUM_HYDRATE_COLUMNS = 11;
 
     /**
      * the column name for the id field
@@ -77,19 +77,19 @@ class JudgesTableMap extends TableMap
     const COL_ID = 'judges.id';
 
     /**
+     * the column name for the judgeid field
+     */
+    const COL_JUDGEID = 'judges.judgeid';
+
+    /**
      * the column name for the fullname field
      */
     const COL_FULLNAME = 'judges.fullname';
 
     /**
-     * the column name for the phone field
+     * the column name for the address field
      */
-    const COL_PHONE = 'judges.phone';
-
-    /**
-     * the column name for the phonealt field
-     */
-    const COL_PHONEALT = 'judges.phonealt';
+    const COL_ADDRESS = 'judges.address';
 
     /**
      * the column name for the email field
@@ -97,9 +97,24 @@ class JudgesTableMap extends TableMap
     const COL_EMAIL = 'judges.email';
 
     /**
-     * the column name for the address field
+     * the column name for the court field
      */
-    const COL_ADDRESS = 'judges.address';
+    const COL_COURT = 'judges.court';
+
+    /**
+     * the column name for the phone field
+     */
+    const COL_PHONE = 'judges.phone';
+
+    /**
+     * the column name for the courtnumber field
+     */
+    const COL_COURTNUMBER = 'judges.courtnumber';
+
+    /**
+     * the column name for the status field
+     */
+    const COL_STATUS = 'judges.status';
 
     /**
      * the column name for the created field
@@ -123,11 +138,11 @@ class JudgesTableMap extends TableMap
      * e.g. self::$fieldNames[self::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        self::TYPE_PHPNAME       => array('Id', 'Fullname', 'Phone', 'Phonealt', 'Email', 'Address', 'Created', 'Modified', ),
-        self::TYPE_CAMELNAME     => array('id', 'fullname', 'phone', 'phonealt', 'email', 'address', 'created', 'modified', ),
-        self::TYPE_COLNAME       => array(JudgesTableMap::COL_ID, JudgesTableMap::COL_FULLNAME, JudgesTableMap::COL_PHONE, JudgesTableMap::COL_PHONEALT, JudgesTableMap::COL_EMAIL, JudgesTableMap::COL_ADDRESS, JudgesTableMap::COL_CREATED, JudgesTableMap::COL_MODIFIED, ),
-        self::TYPE_FIELDNAME     => array('id', 'fullname', 'phone', 'phonealt', 'email', 'address', 'created', 'modified', ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, )
+        self::TYPE_PHPNAME       => array('Id', 'Judgeid', 'Fullname', 'Address', 'Email', 'Court', 'Phone', 'Courtnumber', 'Status', 'Created', 'Modified', ),
+        self::TYPE_CAMELNAME     => array('id', 'judgeid', 'fullname', 'address', 'email', 'court', 'phone', 'courtnumber', 'status', 'created', 'modified', ),
+        self::TYPE_COLNAME       => array(JudgesTableMap::COL_ID, JudgesTableMap::COL_JUDGEID, JudgesTableMap::COL_FULLNAME, JudgesTableMap::COL_ADDRESS, JudgesTableMap::COL_EMAIL, JudgesTableMap::COL_COURT, JudgesTableMap::COL_PHONE, JudgesTableMap::COL_COURTNUMBER, JudgesTableMap::COL_STATUS, JudgesTableMap::COL_CREATED, JudgesTableMap::COL_MODIFIED, ),
+        self::TYPE_FIELDNAME     => array('id', 'judgeid', 'fullname', 'address', 'email', 'court', 'phone', 'courtnumber', 'status', 'created', 'modified', ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, )
     );
 
     /**
@@ -137,11 +152,11 @@ class JudgesTableMap extends TableMap
      * e.g. self::$fieldKeys[self::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        self::TYPE_PHPNAME       => array('Id' => 0, 'Fullname' => 1, 'Phone' => 2, 'Phonealt' => 3, 'Email' => 4, 'Address' => 5, 'Created' => 6, 'Modified' => 7, ),
-        self::TYPE_CAMELNAME     => array('id' => 0, 'fullname' => 1, 'phone' => 2, 'phonealt' => 3, 'email' => 4, 'address' => 5, 'created' => 6, 'modified' => 7, ),
-        self::TYPE_COLNAME       => array(JudgesTableMap::COL_ID => 0, JudgesTableMap::COL_FULLNAME => 1, JudgesTableMap::COL_PHONE => 2, JudgesTableMap::COL_PHONEALT => 3, JudgesTableMap::COL_EMAIL => 4, JudgesTableMap::COL_ADDRESS => 5, JudgesTableMap::COL_CREATED => 6, JudgesTableMap::COL_MODIFIED => 7, ),
-        self::TYPE_FIELDNAME     => array('id' => 0, 'fullname' => 1, 'phone' => 2, 'phonealt' => 3, 'email' => 4, 'address' => 5, 'created' => 6, 'modified' => 7, ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, )
+        self::TYPE_PHPNAME       => array('Id' => 0, 'Judgeid' => 1, 'Fullname' => 2, 'Address' => 3, 'Email' => 4, 'Court' => 5, 'Phone' => 6, 'Courtnumber' => 7, 'Status' => 8, 'Created' => 9, 'Modified' => 10, ),
+        self::TYPE_CAMELNAME     => array('id' => 0, 'judgeid' => 1, 'fullname' => 2, 'address' => 3, 'email' => 4, 'court' => 5, 'phone' => 6, 'courtnumber' => 7, 'status' => 8, 'created' => 9, 'modified' => 10, ),
+        self::TYPE_COLNAME       => array(JudgesTableMap::COL_ID => 0, JudgesTableMap::COL_JUDGEID => 1, JudgesTableMap::COL_FULLNAME => 2, JudgesTableMap::COL_ADDRESS => 3, JudgesTableMap::COL_EMAIL => 4, JudgesTableMap::COL_COURT => 5, JudgesTableMap::COL_PHONE => 6, JudgesTableMap::COL_COURTNUMBER => 7, JudgesTableMap::COL_STATUS => 8, JudgesTableMap::COL_CREATED => 9, JudgesTableMap::COL_MODIFIED => 10, ),
+        self::TYPE_FIELDNAME     => array('id' => 0, 'judgeid' => 1, 'fullname' => 2, 'address' => 3, 'email' => 4, 'court' => 5, 'phone' => 6, 'courtnumber' => 7, 'status' => 8, 'created' => 9, 'modified' => 10, ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, )
     );
 
     /**
@@ -162,11 +177,14 @@ class JudgesTableMap extends TableMap
         $this->setUseIdGenerator(true);
         // columns
         $this->addPrimaryKey('id', 'Id', 'INTEGER', true, 10, null);
+        $this->addColumn('judgeid', 'Judgeid', 'VARCHAR', true, 255, null);
         $this->addColumn('fullname', 'Fullname', 'VARCHAR', true, 255, null);
-        $this->addColumn('phone', 'Phone', 'INTEGER', true, 12, null);
-        $this->addColumn('phonealt', 'Phonealt', 'INTEGER', false, 12, null);
-        $this->addColumn('email', 'Email', 'VARCHAR', false, 255, null);
         $this->addColumn('address', 'Address', 'LONGVARCHAR', false, null, null);
+        $this->addColumn('email', 'Email', 'VARCHAR', false, 255, null);
+        $this->addColumn('court', 'Court', 'VARCHAR', true, 255, null);
+        $this->addColumn('phone', 'Phone', 'VARCHAR', true, 20, null);
+        $this->addColumn('courtnumber', 'Courtnumber', 'VARCHAR', true, 50, null);
+        $this->addColumn('status', 'Status', 'VARCHAR', true, 20, null);
         $this->addColumn('created', 'Created', 'INTEGER', true, null, null);
         $this->addColumn('modified', 'Modified', 'INTEGER', true, null, null);
     } // initialize()
@@ -320,20 +338,26 @@ class JudgesTableMap extends TableMap
     {
         if (null === $alias) {
             $criteria->addSelectColumn(JudgesTableMap::COL_ID);
+            $criteria->addSelectColumn(JudgesTableMap::COL_JUDGEID);
             $criteria->addSelectColumn(JudgesTableMap::COL_FULLNAME);
-            $criteria->addSelectColumn(JudgesTableMap::COL_PHONE);
-            $criteria->addSelectColumn(JudgesTableMap::COL_PHONEALT);
-            $criteria->addSelectColumn(JudgesTableMap::COL_EMAIL);
             $criteria->addSelectColumn(JudgesTableMap::COL_ADDRESS);
+            $criteria->addSelectColumn(JudgesTableMap::COL_EMAIL);
+            $criteria->addSelectColumn(JudgesTableMap::COL_COURT);
+            $criteria->addSelectColumn(JudgesTableMap::COL_PHONE);
+            $criteria->addSelectColumn(JudgesTableMap::COL_COURTNUMBER);
+            $criteria->addSelectColumn(JudgesTableMap::COL_STATUS);
             $criteria->addSelectColumn(JudgesTableMap::COL_CREATED);
             $criteria->addSelectColumn(JudgesTableMap::COL_MODIFIED);
         } else {
             $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.judgeid');
             $criteria->addSelectColumn($alias . '.fullname');
-            $criteria->addSelectColumn($alias . '.phone');
-            $criteria->addSelectColumn($alias . '.phonealt');
-            $criteria->addSelectColumn($alias . '.email');
             $criteria->addSelectColumn($alias . '.address');
+            $criteria->addSelectColumn($alias . '.email');
+            $criteria->addSelectColumn($alias . '.court');
+            $criteria->addSelectColumn($alias . '.phone');
+            $criteria->addSelectColumn($alias . '.courtnumber');
+            $criteria->addSelectColumn($alias . '.status');
             $criteria->addSelectColumn($alias . '.created');
             $criteria->addSelectColumn($alias . '.modified');
         }

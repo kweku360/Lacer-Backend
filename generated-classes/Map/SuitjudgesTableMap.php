@@ -92,14 +92,14 @@ class SuitjudgesTableMap extends TableMap
     const COL_JUDGEID = 'suitjudges.judgeid';
 
     /**
-     * the column name for the judgenumber field
-     */
-    const COL_JUDGENUMBER = 'suitjudges.judgenumber';
-
-    /**
      * the column name for the judgename field
      */
     const COL_JUDGENAME = 'suitjudges.judgename';
+
+    /**
+     * the column name for the status field
+     */
+    const COL_STATUS = 'suitjudges.status';
 
     /**
      * the column name for the created field
@@ -123,10 +123,10 @@ class SuitjudgesTableMap extends TableMap
      * e.g. self::$fieldNames[self::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        self::TYPE_PHPNAME       => array('Id', 'Suitid', 'Suitnumber', 'Judgeid', 'Judgenumber', 'Judgename', 'Created', 'Modified', ),
-        self::TYPE_CAMELNAME     => array('id', 'suitid', 'suitnumber', 'judgeid', 'judgenumber', 'judgename', 'created', 'modified', ),
-        self::TYPE_COLNAME       => array(SuitjudgesTableMap::COL_ID, SuitjudgesTableMap::COL_SUITID, SuitjudgesTableMap::COL_SUITNUMBER, SuitjudgesTableMap::COL_JUDGEID, SuitjudgesTableMap::COL_JUDGENUMBER, SuitjudgesTableMap::COL_JUDGENAME, SuitjudgesTableMap::COL_CREATED, SuitjudgesTableMap::COL_MODIFIED, ),
-        self::TYPE_FIELDNAME     => array('id', 'suitid', 'suitnumber', 'judgeid', 'judgenumber', 'judgename', 'created', 'modified', ),
+        self::TYPE_PHPNAME       => array('Id', 'Suitid', 'Suitnumber', 'Judgeid', 'Judgename', 'Status', 'Created', 'Modified', ),
+        self::TYPE_CAMELNAME     => array('id', 'suitid', 'suitnumber', 'judgeid', 'judgename', 'status', 'created', 'modified', ),
+        self::TYPE_COLNAME       => array(SuitjudgesTableMap::COL_ID, SuitjudgesTableMap::COL_SUITID, SuitjudgesTableMap::COL_SUITNUMBER, SuitjudgesTableMap::COL_JUDGEID, SuitjudgesTableMap::COL_JUDGENAME, SuitjudgesTableMap::COL_STATUS, SuitjudgesTableMap::COL_CREATED, SuitjudgesTableMap::COL_MODIFIED, ),
+        self::TYPE_FIELDNAME     => array('id', 'suitid', 'suitnumber', 'judgeid', 'judgename', 'status', 'created', 'modified', ),
         self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, )
     );
 
@@ -137,10 +137,10 @@ class SuitjudgesTableMap extends TableMap
      * e.g. self::$fieldKeys[self::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        self::TYPE_PHPNAME       => array('Id' => 0, 'Suitid' => 1, 'Suitnumber' => 2, 'Judgeid' => 3, 'Judgenumber' => 4, 'Judgename' => 5, 'Created' => 6, 'Modified' => 7, ),
-        self::TYPE_CAMELNAME     => array('id' => 0, 'suitid' => 1, 'suitnumber' => 2, 'judgeid' => 3, 'judgenumber' => 4, 'judgename' => 5, 'created' => 6, 'modified' => 7, ),
-        self::TYPE_COLNAME       => array(SuitjudgesTableMap::COL_ID => 0, SuitjudgesTableMap::COL_SUITID => 1, SuitjudgesTableMap::COL_SUITNUMBER => 2, SuitjudgesTableMap::COL_JUDGEID => 3, SuitjudgesTableMap::COL_JUDGENUMBER => 4, SuitjudgesTableMap::COL_JUDGENAME => 5, SuitjudgesTableMap::COL_CREATED => 6, SuitjudgesTableMap::COL_MODIFIED => 7, ),
-        self::TYPE_FIELDNAME     => array('id' => 0, 'suitid' => 1, 'suitnumber' => 2, 'judgeid' => 3, 'judgenumber' => 4, 'judgename' => 5, 'created' => 6, 'modified' => 7, ),
+        self::TYPE_PHPNAME       => array('Id' => 0, 'Suitid' => 1, 'Suitnumber' => 2, 'Judgeid' => 3, 'Judgename' => 4, 'Status' => 5, 'Created' => 6, 'Modified' => 7, ),
+        self::TYPE_CAMELNAME     => array('id' => 0, 'suitid' => 1, 'suitnumber' => 2, 'judgeid' => 3, 'judgename' => 4, 'status' => 5, 'created' => 6, 'modified' => 7, ),
+        self::TYPE_COLNAME       => array(SuitjudgesTableMap::COL_ID => 0, SuitjudgesTableMap::COL_SUITID => 1, SuitjudgesTableMap::COL_SUITNUMBER => 2, SuitjudgesTableMap::COL_JUDGEID => 3, SuitjudgesTableMap::COL_JUDGENAME => 4, SuitjudgesTableMap::COL_STATUS => 5, SuitjudgesTableMap::COL_CREATED => 6, SuitjudgesTableMap::COL_MODIFIED => 7, ),
+        self::TYPE_FIELDNAME     => array('id' => 0, 'suitid' => 1, 'suitnumber' => 2, 'judgeid' => 3, 'judgename' => 4, 'status' => 5, 'created' => 6, 'modified' => 7, ),
         self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, )
     );
 
@@ -165,8 +165,8 @@ class SuitjudgesTableMap extends TableMap
         $this->addColumn('suitid', 'Suitid', 'INTEGER', true, null, null);
         $this->addColumn('suitnumber', 'Suitnumber', 'VARCHAR', true, 255, null);
         $this->addColumn('judgeid', 'Judgeid', 'INTEGER', true, null, null);
-        $this->addColumn('judgenumber', 'Judgenumber', 'VARCHAR', true, 255, null);
         $this->addColumn('judgename', 'Judgename', 'VARCHAR', true, 255, null);
+        $this->addColumn('status', 'Status', 'VARCHAR', true, 255, null);
         $this->addColumn('created', 'Created', 'INTEGER', true, null, null);
         $this->addColumn('modified', 'Modified', 'INTEGER', true, null, null);
     } // initialize()
@@ -323,8 +323,8 @@ class SuitjudgesTableMap extends TableMap
             $criteria->addSelectColumn(SuitjudgesTableMap::COL_SUITID);
             $criteria->addSelectColumn(SuitjudgesTableMap::COL_SUITNUMBER);
             $criteria->addSelectColumn(SuitjudgesTableMap::COL_JUDGEID);
-            $criteria->addSelectColumn(SuitjudgesTableMap::COL_JUDGENUMBER);
             $criteria->addSelectColumn(SuitjudgesTableMap::COL_JUDGENAME);
+            $criteria->addSelectColumn(SuitjudgesTableMap::COL_STATUS);
             $criteria->addSelectColumn(SuitjudgesTableMap::COL_CREATED);
             $criteria->addSelectColumn(SuitjudgesTableMap::COL_MODIFIED);
         } else {
@@ -332,8 +332,8 @@ class SuitjudgesTableMap extends TableMap
             $criteria->addSelectColumn($alias . '.suitid');
             $criteria->addSelectColumn($alias . '.suitnumber');
             $criteria->addSelectColumn($alias . '.judgeid');
-            $criteria->addSelectColumn($alias . '.judgenumber');
             $criteria->addSelectColumn($alias . '.judgename');
+            $criteria->addSelectColumn($alias . '.status');
             $criteria->addSelectColumn($alias . '.created');
             $criteria->addSelectColumn($alias . '.modified');
         }

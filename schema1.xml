@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<database name="lacerdb" defaultIdMethod="native" defaultPhpNamingMethod="underscore">
+  <table name="courts" idMethod="native" phpName="Courts">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="name" phpName="Name" type="VARCHAR" size="255" required="true"/>
+    <column name="type" phpName="Type" type="VARCHAR" size="255" required="true"/>
+    <column name="description" phpName="Description" type="LONGVARCHAR" required="true"/>
+    <column name="status" phpName="Status" type="VARCHAR" size="255" required="true"/>
+    <column name="created" phpName="Created" type="INTEGER" required="true"/>
+    <column name="modified" phpName="Modified" type="INTEGER" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="defendants" idMethod="native" phpName="Defendants">
+    <column name="id" phpName="Id" type="INTEGER" size="12" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="suitnumber" phpName="Suitnumber" type="VARCHAR" size="255" required="true"/>
+    <column name="fullname" phpName="Fullname" type="VARCHAR" size="255" required="true"/>
+    <column name="address" phpName="Address" type="LONGVARCHAR"/>
+    <column name="phone1" phpName="Phone1" type="VARCHAR" size="20"/>
+    <column name="phone2" phpName="Phone2" type="VARCHAR" size="20" required="true"/>
+    <column name="email" phpName="Email" type="VARCHAR" size="233"/>
+    <column name="created" phpName="Created" type="INTEGER" required="true"/>
+    <column name="modified" phpName="Modified" type="INTEGER" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="documents" idMethod="native" phpName="Documents">
+    <column name="id" phpName="Id" type="INTEGER" size="12" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="suitnumber" phpName="Suitnumber" type="VARCHAR" size="255" required="true"/>
+    <column name="code" phpName="Code" type="VARCHAR" size="64" required="true"/>
+    <column name="type" phpName="Type" type="VARCHAR" size="255" required="true"/>
+    <column name="name" phpName="Name" type="VARCHAR" size="255" required="true"/>
+    <column name="datefiled" phpName="Datefiled" type="INTEGER" required="true"/>
+    <column name="link" phpName="Link" type="VARCHAR" size="255" required="true"/>
+    <column name="filer" phpName="Filer" type="VARCHAR" size="255" required="true"/>
+    <column name="dataentrypersonid" phpName="Dataentrypersonid" type="INTEGER" required="true"/>
+    <column name="accessstatus" phpName="Accessstatus" type="VARCHAR" size="255" required="true"/>
+    <column name="created" phpName="Created" type="INTEGER" required="true"/>
+    <column name="modified" phpName="Modified" type="INTEGER" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="documenttypes" idMethod="native" phpName="Documenttypes">
+    <column name="id" phpName="Id" type="INTEGER" size="12" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="name" phpName="Name" type="VARCHAR" size="255" required="true"/>
+    <column name="description" phpName="Description" type="LONGVARCHAR"/>
+    <column name="created" phpName="Created" type="INTEGER" required="true"/>
+    <column name="modified" phpName="Modified" type="INTEGER" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="judges" idMethod="native" phpName="Judges">
+    <column name="id" phpName="Id" type="INTEGER" size="10" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="judgeid" phpName="Judgeid" type="VARCHAR" size="255" required="true"/>
+    <column name="fullname" phpName="Fullname" type="VARCHAR" size="255" required="true"/>
+    <column name="address" phpName="Address" type="LONGVARCHAR"/>
+    <column name="email" phpName="Email" type="VARCHAR" size="255"/>
+    <column name="court" phpName="Court" type="VARCHAR" size="255" required="true"/>
+    <column name="phone" phpName="Phone" type="VARCHAR" size="20" required="true"/>
+    <column name="courtnumber" phpName="Courtnumber" type="VARCHAR" size="50" required="true"/>
+    <column name="status" phpName="Status" type="VARCHAR" size="20" required="true"/>
+    <column name="created" phpName="Created" type="INTEGER" required="true"/>
+    <column name="modified" phpName="Modified" type="INTEGER" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="lawyers" idMethod="native" phpName="Lawyers">
+    <column name="id" phpName="Id" type="INTEGER" size="10" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="lawyerid" phpName="Lawyerid" type="VARCHAR" size="255" required="true"/>
+    <column name="fullname" phpName="Fullname" type="VARCHAR" size="255" required="true"/>
+    <column name="email" phpName="Email" type="VARCHAR" size="255"/>
+    <column name="address" phpName="Address" type="LONGVARCHAR"/>
+    <column name="phone1" phpName="Phone1" type="VARCHAR" size="20" required="true"/>
+    <column name="phone2" phpName="Phone2" type="VARCHAR" size="20"/>
+    <column name="lawfirmid" phpName="Lawfirmid" type="INTEGER" size="10" required="true"/>
+    <column name="lawfirmname" phpName="Lawfirmname" type="VARCHAR" size="255" required="true"/>
+    <column name="speciality" phpName="Speciality" type="VARCHAR" size="255" required="true"/>
+    <column name="status" phpName="Status" type="VARCHAR" size="255" required="true"/>
+    <column name="created" phpName="Created" type="INTEGER" required="true"/>
+    <column name="modified" phpName="Modified" type="INTEGER" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="notificationdetail" idMethod="native" phpName="Notificationdetail">
+    <column name="id" phpName="Id" type="INTEGER" size="13" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="suitnumber" phpName="Suitnumber" type="INTEGER" size="13" required="true"/>
+    <column name="notificationId" phpName="Notificationid" type="INTEGER" size="13" required="true"/>
+    <column name="msgstatus" phpName="Msgstatus" type="VARCHAR" size="255" required="true"/>
+    <column name="phone" phpName="Phone" type="INTEGER" size="15" required="true"/>
+    <column name="msgtxt" phpName="Msgtxt" type="LONGVARCHAR" required="true"/>
+    <column name="datetimesent" phpName="Datetimesent" type="INTEGER" size="15" required="true"/>
+    <column name="msgid" phpName="Msgid" type="INTEGER" size="13" required="true"/>
+    <column name="created" phpName="Created" type="INTEGER" size="13" required="true"/>
+    <column name="modified" phpName="Modified" type="INTEGER" size="13" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="notifications" idMethod="native" phpName="Notifications">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="documentid" phpName="Documentid" type="INTEGER" size="13" required="true"/>
+    <column name="documentlink" phpName="Documentlink" type="VARCHAR" size="255" required="true"/>
+    <column name="filer" phpName="Filer" type="VARCHAR" size="255" required="true"/>
+    <column name="type" phpName="Type" type="VARCHAR" size="255" required="true"/>
+    <column name="suitnumber" phpName="Suitnumber" type="VARCHAR" size="255" required="true"/>
+    <column name="datetimesent" phpName="Datetimesent" type="INTEGER" required="true"/>
+    <column name="recipients" phpName="Recipients" type="LONGVARCHAR" required="true"/>
+    <column name="status" phpName="Status" type="VARCHAR" size="255" required="true"/>
+    <column name="created" phpName="Created" type="INTEGER" required="true"/>
+    <column name="modified" phpName="Modified" type="INTEGER" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="permission" idMethod="native" phpName="Permission">
+    <column name="id" phpName="Id" type="INTEGER" size="12" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="userid" phpName="Userid" type="INTEGER" size="12" required="true"/>
+    <column name="code" phpName="Code" type="INTEGER" size="12" required="true"/>
+    <column name="value" phpName="Value" type="INTEGER" size="2" required="true"/>
+    <column name="state" phpName="State" type="VARCHAR" size="255" required="true"/>
+    <column name="created" phpName="Created" type="INTEGER" size="12" required="true"/>
+    <column name="modified" phpName="Modified" type="INTEGER" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="plaintiffs" idMethod="native" phpName="Plaintiffs">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="suitnumber" phpName="Suitnumber" type="VARCHAR" size="255" required="true"/>
+    <column name="fullname" phpName="Fullname" type="VARCHAR" size="255" required="true"/>
+    <column name="address" phpName="Address" type="LONGVARCHAR"/>
+    <column name="phone1" phpName="Phone1" type="VARCHAR" size="20"/>
+    <column name="phone2" phpName="Phone2" type="VARCHAR" size="20" required="true"/>
+    <column name="email" phpName="Email" type="VARCHAR" size="255" required="true"/>
+    <column name="status" phpName="Status" type="VARCHAR" size="255" required="true"/>
+    <column name="created" phpName="Created" type="INTEGER" size="12" required="true"/>
+    <column name="modified" phpName="Modified" type="INTEGER" size="12" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="regcode" idMethod="native" phpName="Regcode">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="code" phpName="Code" type="INTEGER" size="20" required="true"/>
+    <column name="phone" phpName="Phone" type="INTEGER" size="20" required="true"/>
+    <column name="status" phpName="Status" type="VARCHAR" size="60" required="true"/>
+    <column name="msgstatus" phpName="Msgstatus" type="VARCHAR" size="255" required="true"/>
+    <column name="created" phpName="Created" type="INTEGER" size="20" required="true"/>
+    <column name="modified" phpName="Modified" type="INTEGER" size="20" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="suitcourts" idMethod="native" phpName="Suitcourts">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="suitid" phpName="Suitid" type="INTEGER" required="true"/>
+    <column name="suitnumber" phpName="Suitnumber" type="VARCHAR" size="255" required="true"/>
+    <column name="courtid" phpName="Courtid" type="INTEGER" required="true"/>
+    <column name="courtname" phpName="Courtname" type="VARCHAR" size="255" required="true"/>
+    <column name="status" phpName="Status" type="VARCHAR" size="255" required="true"/>
+    <column name="created" phpName="Created" type="INTEGER" required="true"/>
+    <column name="modified" phpName="Modified" type="INTEGER" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="suitjudges" idMethod="native" phpName="Suitjudges">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="suitid" phpName="Suitid" type="INTEGER" required="true"/>
+    <column name="suitnumber" phpName="Suitnumber" type="VARCHAR" size="255" required="true"/>
+    <column name="judgeid" phpName="Judgeid" type="INTEGER" required="true"/>
+    <column name="judgename" phpName="Judgename" type="VARCHAR" size="255" required="true"/>
+    <column name="status" phpName="Status" type="VARCHAR" size="255" required="true"/>
+    <column name="created" phpName="Created" type="INTEGER" required="true"/>
+    <column name="modified" phpName="Modified" type="INTEGER" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="suitlawyers" idMethod="native" phpName="Suitlawyers">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="suitid" phpName="Suitid" type="INTEGER" required="true"/>
+    <column name="suitnumber" phpName="Suitnumber" type="VARCHAR" size="255" required="true"/>
+    <column name="lawyerid" phpName="Lawyerid" type="INTEGER" required="true"/>
+    <column name="lawyertype" phpName="Lawyertype" type="VARCHAR" size="255" required="true"/>
+    <column name="lawyernumber" phpName="Lawyernumber" type="VARCHAR" size="255" required="true"/>
+    <column name="lawyername" phpName="Lawyername" type="VARCHAR" size="255" required="true"/>
+    <column name="registertype" phpName="Registertype" type="VARCHAR" size="255" required="true"/>
+    <column name="status" phpName="Status" type="VARCHAR" size="255" required="true"/>
+    <column name="created" phpName="Created" type="INTEGER" required="true"/>
+    <column name="modified" phpName="Modified" type="INTEGER" size="12" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="suits" idMethod="native" phpName="Suits">
+    <column name="id" phpName="Id" type="INTEGER" size="12" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="suitnumber" phpName="Suitnumber" type="VARCHAR" size="255" required="true"/>
+    <column name="title" phpName="Title" type="LONGVARCHAR" required="true"/>
+    <column name="type" phpName="Type" type="VARCHAR" size="255" required="true"/>
+    <column name="datefiled" phpName="Datefiled" type="INTEGER" required="true"/>
+    <column name="suitstatus" phpName="Suitstatus" type="VARCHAR" size="255" required="true"/>
+    <column name="suitaccess" phpName="Suitaccess" type="VARCHAR" size="255" required="true"/>
+    <column name="suitdateid" phpName="Suitdateid" type="INTEGER" size="20"/>
+    <column name="suitcourt" phpName="Suitcourt" type="VARCHAR" size="255" required="true"/>
+    <column name="userid" phpName="Userid" type="INTEGER" required="true"/>
+    <column name="dataentryname" phpName="Dataentryname" type="INTEGER" required="true"/>
+    <column name="created" phpName="Created" type="INTEGER" required="true"/>
+    <column name="modified" phpName="Modified" type="INTEGER" required="true"/>
+    <unique name="suitnumber">
+      <unique-column name="suitnumber"/>
+    </unique>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="token" idMethod="native" phpName="Token">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="selector" phpName="Selector" type="CHAR" size="12" required="true"/>
+    <column name="token" phpName="Token" type="CHAR" size="64" required="true"/>
+    <column name="userid" phpName="Userid" type="INTEGER" required="true"/>
+    <column name="type" phpName="Type" type="VARCHAR" size="255" required="true"/>
+    <column name="expires" phpName="Expires" type="INTEGER" required="true"/>
+    <column name="status" phpName="Status" type="VARCHAR" size="255" required="true"/>
+    <column name="created" phpName="Created" type="INTEGER" required="true"/>
+    <column name="modified" phpName="Modified" type="INTEGER" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="unregisteredlawyers" idMethod="native" phpName="Unregisteredlawyers">
+    <column name="id" phpName="Id" type="INTEGER" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="fullname" phpName="Fullname" type="VARCHAR" size="255" required="true"/>
+    <column name="address" phpName="Address" type="VARCHAR" size="255" required="true"/>
+    <column name="phone" phpName="Phone" type="VARCHAR" size="20" required="true"/>
+    <column name="email" phpName="Email" type="VARCHAR" size="255" required="true"/>
+    <column name="status" phpName="Status" type="VARCHAR" size="255" required="true"/>
+    <column name="lawfirmid" phpName="Lawfirmid" type="INTEGER" size="12" required="true"/>
+    <column name="lawfirmname" phpName="Lawfirmname" type="VARCHAR" size="255" required="true"/>
+    <column name="created" phpName="Created" type="INTEGER" size="20" required="true"/>
+    <column name="modified" phpName="Modified" type="INTEGER" size="20" required="true"/>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+  <table name="users" idMethod="native" phpName="Users">
+    <column name="id" phpName="Id" type="INTEGER" size="12" primaryKey="true" autoIncrement="true" required="true"/>
+    <column name="phone" phpName="Phone" type="VARCHAR" size="45" required="true"/>
+    <column name="password" phpName="Password" type="VARCHAR" size="45" required="true"/>
+    <column name="name" phpName="Name" type="VARCHAR" size="255" required="true"/>
+    <column name="email" phpName="Email" type="VARCHAR" size="255"/>
+    <column name="status" phpName="Status" type="VARCHAR" size="255" required="true"/>
+    <column name="picture" phpName="Picture" type="VARCHAR" size="255"/>
+    <column name="position" phpName="Position" type="VARCHAR" size="255" required="true"/>
+    <column name="emailcode" phpName="Emailcode" type="VARCHAR" size="255" required="true"/>
+    <column name="mobilecode" phpName="Mobilecode" type="VARCHAR" size="16" required="true"/>
+    <column name="created" phpName="Created" type="INTEGER" required="true"/>
+    <column name="modified" phpName="Modified" type="INTEGER" required="true"/>
+    <unique name="username">
+      <unique-column name="phone"/>
+    </unique>
+    <unique name="email">
+      <unique-column name="email"/>
+    </unique>
+    <vendor type="mysql">
+      <parameter name="Engine" value="InnoDB"/>
+    </vendor>
+  </table>
+</database>

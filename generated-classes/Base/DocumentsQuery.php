@@ -5,13 +5,13 @@ namespace Base;
 use \Documents as ChildDocuments;
 use \DocumentsQuery as ChildDocumentsQuery;
 use \Exception;
+use \PDO;
 use Map\DocumentsTableMap;
 use Propel\Runtime\Propel;
 use Propel\Runtime\ActiveQuery\Criteria;
 use Propel\Runtime\ActiveQuery\ModelCriteria;
 use Propel\Runtime\Collection\ObjectCollection;
 use Propel\Runtime\Connection\ConnectionInterface;
-use Propel\Runtime\Exception\LogicException;
 use Propel\Runtime\Exception\PropelException;
 
 /**
@@ -20,28 +20,26 @@ use Propel\Runtime\Exception\PropelException;
  *
  *
  * @method     ChildDocumentsQuery orderById($order = Criteria::ASC) Order by the id column
+ * @method     ChildDocumentsQuery orderBySuitnumber($order = Criteria::ASC) Order by the suitnumber column
  * @method     ChildDocumentsQuery orderByCode($order = Criteria::ASC) Order by the code column
- * @method     ChildDocumentsQuery orderByTypeid($order = Criteria::ASC) Order by the typeid column
  * @method     ChildDocumentsQuery orderByType($order = Criteria::ASC) Order by the type column
- * @method     ChildDocumentsQuery orderBySuitid($order = Criteria::ASC) Order by the suitid column
  * @method     ChildDocumentsQuery orderByName($order = Criteria::ASC) Order by the name column
  * @method     ChildDocumentsQuery orderByDatefiled($order = Criteria::ASC) Order by the datefiled column
- * @method     ChildDocumentsQuery orderByFormat($order = Criteria::ASC) Order by the format column
- * @method     ChildDocumentsQuery orderByPagecount($order = Criteria::ASC) Order by the pagecount column
+ * @method     ChildDocumentsQuery orderByLink($order = Criteria::ASC) Order by the link column
+ * @method     ChildDocumentsQuery orderByFiler($order = Criteria::ASC) Order by the filer column
  * @method     ChildDocumentsQuery orderByDataentrypersonid($order = Criteria::ASC) Order by the dataentrypersonid column
  * @method     ChildDocumentsQuery orderByAccessstatus($order = Criteria::ASC) Order by the accessstatus column
  * @method     ChildDocumentsQuery orderByCreated($order = Criteria::ASC) Order by the created column
  * @method     ChildDocumentsQuery orderByModified($order = Criteria::ASC) Order by the modified column
  *
  * @method     ChildDocumentsQuery groupById() Group by the id column
+ * @method     ChildDocumentsQuery groupBySuitnumber() Group by the suitnumber column
  * @method     ChildDocumentsQuery groupByCode() Group by the code column
- * @method     ChildDocumentsQuery groupByTypeid() Group by the typeid column
  * @method     ChildDocumentsQuery groupByType() Group by the type column
- * @method     ChildDocumentsQuery groupBySuitid() Group by the suitid column
  * @method     ChildDocumentsQuery groupByName() Group by the name column
  * @method     ChildDocumentsQuery groupByDatefiled() Group by the datefiled column
- * @method     ChildDocumentsQuery groupByFormat() Group by the format column
- * @method     ChildDocumentsQuery groupByPagecount() Group by the pagecount column
+ * @method     ChildDocumentsQuery groupByLink() Group by the link column
+ * @method     ChildDocumentsQuery groupByFiler() Group by the filer column
  * @method     ChildDocumentsQuery groupByDataentrypersonid() Group by the dataentrypersonid column
  * @method     ChildDocumentsQuery groupByAccessstatus() Group by the accessstatus column
  * @method     ChildDocumentsQuery groupByCreated() Group by the created column
@@ -59,14 +57,13 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildDocuments findOneOrCreate(ConnectionInterface $con = null) Return the first ChildDocuments matching the query, or a new ChildDocuments object populated from the query conditions when no match is found
  *
  * @method     ChildDocuments findOneById(int $id) Return the first ChildDocuments filtered by the id column
+ * @method     ChildDocuments findOneBySuitnumber(string $suitnumber) Return the first ChildDocuments filtered by the suitnumber column
  * @method     ChildDocuments findOneByCode(string $code) Return the first ChildDocuments filtered by the code column
- * @method     ChildDocuments findOneByTypeid(int $typeid) Return the first ChildDocuments filtered by the typeid column
  * @method     ChildDocuments findOneByType(string $type) Return the first ChildDocuments filtered by the type column
- * @method     ChildDocuments findOneBySuitid(string $suitid) Return the first ChildDocuments filtered by the suitid column
  * @method     ChildDocuments findOneByName(string $name) Return the first ChildDocuments filtered by the name column
  * @method     ChildDocuments findOneByDatefiled(int $datefiled) Return the first ChildDocuments filtered by the datefiled column
- * @method     ChildDocuments findOneByFormat(string $format) Return the first ChildDocuments filtered by the format column
- * @method     ChildDocuments findOneByPagecount(int $pagecount) Return the first ChildDocuments filtered by the pagecount column
+ * @method     ChildDocuments findOneByLink(string $link) Return the first ChildDocuments filtered by the link column
+ * @method     ChildDocuments findOneByFiler(string $filer) Return the first ChildDocuments filtered by the filer column
  * @method     ChildDocuments findOneByDataentrypersonid(int $dataentrypersonid) Return the first ChildDocuments filtered by the dataentrypersonid column
  * @method     ChildDocuments findOneByAccessstatus(string $accessstatus) Return the first ChildDocuments filtered by the accessstatus column
  * @method     ChildDocuments findOneByCreated(int $created) Return the first ChildDocuments filtered by the created column
@@ -76,14 +73,13 @@ use Propel\Runtime\Exception\PropelException;
  * @method     ChildDocuments requireOne(ConnectionInterface $con = null) Return the first ChildDocuments matching the query and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  *
  * @method     ChildDocuments requireOneById(int $id) Return the first ChildDocuments filtered by the id column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildDocuments requireOneBySuitnumber(string $suitnumber) Return the first ChildDocuments filtered by the suitnumber column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildDocuments requireOneByCode(string $code) Return the first ChildDocuments filtered by the code column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildDocuments requireOneByTypeid(int $typeid) Return the first ChildDocuments filtered by the typeid column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildDocuments requireOneByType(string $type) Return the first ChildDocuments filtered by the type column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildDocuments requireOneBySuitid(string $suitid) Return the first ChildDocuments filtered by the suitid column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildDocuments requireOneByName(string $name) Return the first ChildDocuments filtered by the name column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildDocuments requireOneByDatefiled(int $datefiled) Return the first ChildDocuments filtered by the datefiled column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildDocuments requireOneByFormat(string $format) Return the first ChildDocuments filtered by the format column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
- * @method     ChildDocuments requireOneByPagecount(int $pagecount) Return the first ChildDocuments filtered by the pagecount column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildDocuments requireOneByLink(string $link) Return the first ChildDocuments filtered by the link column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
+ * @method     ChildDocuments requireOneByFiler(string $filer) Return the first ChildDocuments filtered by the filer column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildDocuments requireOneByDataentrypersonid(int $dataentrypersonid) Return the first ChildDocuments filtered by the dataentrypersonid column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildDocuments requireOneByAccessstatus(string $accessstatus) Return the first ChildDocuments filtered by the accessstatus column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
  * @method     ChildDocuments requireOneByCreated(int $created) Return the first ChildDocuments filtered by the created column and throws \Propel\Runtime\Exception\EntityNotFoundException when not found
@@ -91,14 +87,13 @@ use Propel\Runtime\Exception\PropelException;
  *
  * @method     ChildDocuments[]|ObjectCollection find(ConnectionInterface $con = null) Return ChildDocuments objects based on current ModelCriteria
  * @method     ChildDocuments[]|ObjectCollection findById(int $id) Return ChildDocuments objects filtered by the id column
+ * @method     ChildDocuments[]|ObjectCollection findBySuitnumber(string $suitnumber) Return ChildDocuments objects filtered by the suitnumber column
  * @method     ChildDocuments[]|ObjectCollection findByCode(string $code) Return ChildDocuments objects filtered by the code column
- * @method     ChildDocuments[]|ObjectCollection findByTypeid(int $typeid) Return ChildDocuments objects filtered by the typeid column
  * @method     ChildDocuments[]|ObjectCollection findByType(string $type) Return ChildDocuments objects filtered by the type column
- * @method     ChildDocuments[]|ObjectCollection findBySuitid(string $suitid) Return ChildDocuments objects filtered by the suitid column
  * @method     ChildDocuments[]|ObjectCollection findByName(string $name) Return ChildDocuments objects filtered by the name column
  * @method     ChildDocuments[]|ObjectCollection findByDatefiled(int $datefiled) Return ChildDocuments objects filtered by the datefiled column
- * @method     ChildDocuments[]|ObjectCollection findByFormat(string $format) Return ChildDocuments objects filtered by the format column
- * @method     ChildDocuments[]|ObjectCollection findByPagecount(int $pagecount) Return ChildDocuments objects filtered by the pagecount column
+ * @method     ChildDocuments[]|ObjectCollection findByLink(string $link) Return ChildDocuments objects filtered by the link column
+ * @method     ChildDocuments[]|ObjectCollection findByFiler(string $filer) Return ChildDocuments objects filtered by the filer column
  * @method     ChildDocuments[]|ObjectCollection findByDataentrypersonid(int $dataentrypersonid) Return ChildDocuments objects filtered by the dataentrypersonid column
  * @method     ChildDocuments[]|ObjectCollection findByAccessstatus(string $accessstatus) Return ChildDocuments objects filtered by the accessstatus column
  * @method     ChildDocuments[]|ObjectCollection findByCreated(int $created) Return ChildDocuments objects filtered by the created column
@@ -162,13 +157,83 @@ abstract class DocumentsQuery extends ModelCriteria
      */
     public function findPk($key, ConnectionInterface $con = null)
     {
-        throw new LogicException('The Documents object has no primary key');
+        if ($key === null) {
+            return null;
+        }
+        if ((null !== ($obj = DocumentsTableMap::getInstanceFromPool((string) $key))) && !$this->formatter) {
+            // the object is already in the instance pool
+            return $obj;
+        }
+        if ($con === null) {
+            $con = Propel::getServiceContainer()->getReadConnection(DocumentsTableMap::DATABASE_NAME);
+        }
+        $this->basePreSelect($con);
+        if ($this->formatter || $this->modelAlias || $this->with || $this->select
+         || $this->selectColumns || $this->asColumns || $this->selectModifiers
+         || $this->map || $this->having || $this->joins) {
+            return $this->findPkComplex($key, $con);
+        } else {
+            return $this->findPkSimple($key, $con);
+        }
+    }
+
+    /**
+     * Find object by primary key using raw SQL to go fast.
+     * Bypass doSelect() and the object formatter by using generated code.
+     *
+     * @param     mixed $key Primary key to use for the query
+     * @param     ConnectionInterface $con A connection object
+     *
+     * @throws \Propel\Runtime\Exception\PropelException
+     *
+     * @return ChildDocuments A model object, or null if the key is not found
+     */
+    protected function findPkSimple($key, ConnectionInterface $con)
+    {
+        $sql = 'SELECT id, suitnumber, code, type, name, datefiled, link, filer, dataentrypersonid, accessstatus, created, modified FROM documents WHERE id = :p0';
+        try {
+            $stmt = $con->prepare($sql);
+            $stmt->bindValue(':p0', $key, PDO::PARAM_INT);
+            $stmt->execute();
+        } catch (Exception $e) {
+            Propel::log($e->getMessage(), Propel::LOG_ERR);
+            throw new PropelException(sprintf('Unable to execute SELECT statement [%s]', $sql), 0, $e);
+        }
+        $obj = null;
+        if ($row = $stmt->fetch(\PDO::FETCH_NUM)) {
+            /** @var ChildDocuments $obj */
+            $obj = new ChildDocuments();
+            $obj->hydrate($row);
+            DocumentsTableMap::addInstanceToPool($obj, (string) $key);
+        }
+        $stmt->closeCursor();
+
+        return $obj;
+    }
+
+    /**
+     * Find object by primary key.
+     *
+     * @param     mixed $key Primary key to use for the query
+     * @param     ConnectionInterface $con A connection object
+     *
+     * @return ChildDocuments|array|mixed the result, formatted by the current formatter
+     */
+    protected function findPkComplex($key, ConnectionInterface $con)
+    {
+        // As the query uses a PK condition, no limit(1) is necessary.
+        $criteria = $this->isKeepQuery() ? clone $this : $this;
+        $dataFetcher = $criteria
+            ->filterByPrimaryKey($key)
+            ->doSelect($con);
+
+        return $criteria->getFormatter()->init($criteria)->formatOne($dataFetcher);
     }
 
     /**
      * Find objects by primary key
      * <code>
-     * $objs = $c->findPks(array(array(12, 56), array(832, 123), array(123, 456)), $con);
+     * $objs = $c->findPks(array(12, 56, 832), $con);
      * </code>
      * @param     array $keys Primary keys to use for the query
      * @param     ConnectionInterface $con an optional connection object
@@ -177,7 +242,16 @@ abstract class DocumentsQuery extends ModelCriteria
      */
     public function findPks($keys, ConnectionInterface $con = null)
     {
-        throw new LogicException('The Documents object has no primary key');
+        if (null === $con) {
+            $con = Propel::getServiceContainer()->getReadConnection($this->getDbName());
+        }
+        $this->basePreSelect($con);
+        $criteria = $this->isKeepQuery() ? clone $this : $this;
+        $dataFetcher = $criteria
+            ->filterByPrimaryKeys($keys)
+            ->doSelect($con);
+
+        return $criteria->getFormatter()->init($criteria)->format($dataFetcher);
     }
 
     /**
@@ -189,7 +263,8 @@ abstract class DocumentsQuery extends ModelCriteria
      */
     public function filterByPrimaryKey($key)
     {
-        throw new LogicException('The Documents object has no primary key');
+
+        return $this->addUsingAlias(DocumentsTableMap::COL_ID, $key, Criteria::EQUAL);
     }
 
     /**
@@ -201,7 +276,8 @@ abstract class DocumentsQuery extends ModelCriteria
      */
     public function filterByPrimaryKeys($keys)
     {
-        throw new LogicException('The Documents object has no primary key');
+
+        return $this->addUsingAlias(DocumentsTableMap::COL_ID, $keys, Criteria::IN);
     }
 
     /**
@@ -246,6 +322,35 @@ abstract class DocumentsQuery extends ModelCriteria
     }
 
     /**
+     * Filter the query on the suitnumber column
+     *
+     * Example usage:
+     * <code>
+     * $query->filterBySuitnumber('fooValue');   // WHERE suitnumber = 'fooValue'
+     * $query->filterBySuitnumber('%fooValue%'); // WHERE suitnumber LIKE '%fooValue%'
+     * </code>
+     *
+     * @param     string $suitnumber The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
+     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
+     *
+     * @return $this|ChildDocumentsQuery The current query, for fluid interface
+     */
+    public function filterBySuitnumber($suitnumber = null, $comparison = null)
+    {
+        if (null === $comparison) {
+            if (is_array($suitnumber)) {
+                $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $suitnumber)) {
+                $suitnumber = str_replace('*', '%', $suitnumber);
+                $comparison = Criteria::LIKE;
+            }
+        }
+
+        return $this->addUsingAlias(DocumentsTableMap::COL_SUITNUMBER, $suitnumber, $comparison);
+    }
+
+    /**
      * Filter the query on the code column
      *
      * Example usage:
@@ -275,47 +380,6 @@ abstract class DocumentsQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the typeid column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterByTypeid(1234); // WHERE typeid = 1234
-     * $query->filterByTypeid(array(12, 34)); // WHERE typeid IN (12, 34)
-     * $query->filterByTypeid(array('min' => 12)); // WHERE typeid > 12
-     * </code>
-     *
-     * @param     mixed $typeid The value to use as filter.
-     *              Use scalar values for equality.
-     *              Use array values for in_array() equivalent.
-     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return $this|ChildDocumentsQuery The current query, for fluid interface
-     */
-    public function filterByTypeid($typeid = null, $comparison = null)
-    {
-        if (is_array($typeid)) {
-            $useMinMax = false;
-            if (isset($typeid['min'])) {
-                $this->addUsingAlias(DocumentsTableMap::COL_TYPEID, $typeid['min'], Criteria::GREATER_EQUAL);
-                $useMinMax = true;
-            }
-            if (isset($typeid['max'])) {
-                $this->addUsingAlias(DocumentsTableMap::COL_TYPEID, $typeid['max'], Criteria::LESS_EQUAL);
-                $useMinMax = true;
-            }
-            if ($useMinMax) {
-                return $this;
-            }
-            if (null === $comparison) {
-                $comparison = Criteria::IN;
-            }
-        }
-
-        return $this->addUsingAlias(DocumentsTableMap::COL_TYPEID, $typeid, $comparison);
-    }
-
-    /**
      * Filter the query on the type column
      *
      * Example usage:
@@ -342,35 +406,6 @@ abstract class DocumentsQuery extends ModelCriteria
         }
 
         return $this->addUsingAlias(DocumentsTableMap::COL_TYPE, $type, $comparison);
-    }
-
-    /**
-     * Filter the query on the suitid column
-     *
-     * Example usage:
-     * <code>
-     * $query->filterBySuitid('fooValue');   // WHERE suitid = 'fooValue'
-     * $query->filterBySuitid('%fooValue%'); // WHERE suitid LIKE '%fooValue%'
-     * </code>
-     *
-     * @param     string $suitid The value to use as filter.
-     *              Accepts wildcards (* and % trigger a LIKE)
-     * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
-     *
-     * @return $this|ChildDocumentsQuery The current query, for fluid interface
-     */
-    public function filterBySuitid($suitid = null, $comparison = null)
-    {
-        if (null === $comparison) {
-            if (is_array($suitid)) {
-                $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $suitid)) {
-                $suitid = str_replace('*', '%', $suitid);
-                $comparison = Criteria::LIKE;
-            }
-        }
-
-        return $this->addUsingAlias(DocumentsTableMap::COL_SUITID, $suitid, $comparison);
     }
 
     /**
@@ -444,73 +479,61 @@ abstract class DocumentsQuery extends ModelCriteria
     }
 
     /**
-     * Filter the query on the format column
+     * Filter the query on the link column
      *
      * Example usage:
      * <code>
-     * $query->filterByFormat('fooValue');   // WHERE format = 'fooValue'
-     * $query->filterByFormat('%fooValue%'); // WHERE format LIKE '%fooValue%'
+     * $query->filterByLink('fooValue');   // WHERE link = 'fooValue'
+     * $query->filterByLink('%fooValue%'); // WHERE link LIKE '%fooValue%'
      * </code>
      *
-     * @param     string $format The value to use as filter.
+     * @param     string $link The value to use as filter.
      *              Accepts wildcards (* and % trigger a LIKE)
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return $this|ChildDocumentsQuery The current query, for fluid interface
      */
-    public function filterByFormat($format = null, $comparison = null)
+    public function filterByLink($link = null, $comparison = null)
     {
         if (null === $comparison) {
-            if (is_array($format)) {
+            if (is_array($link)) {
                 $comparison = Criteria::IN;
-            } elseif (preg_match('/[\%\*]/', $format)) {
-                $format = str_replace('*', '%', $format);
+            } elseif (preg_match('/[\%\*]/', $link)) {
+                $link = str_replace('*', '%', $link);
                 $comparison = Criteria::LIKE;
             }
         }
 
-        return $this->addUsingAlias(DocumentsTableMap::COL_FORMAT, $format, $comparison);
+        return $this->addUsingAlias(DocumentsTableMap::COL_LINK, $link, $comparison);
     }
 
     /**
-     * Filter the query on the pagecount column
+     * Filter the query on the filer column
      *
      * Example usage:
      * <code>
-     * $query->filterByPagecount(1234); // WHERE pagecount = 1234
-     * $query->filterByPagecount(array(12, 34)); // WHERE pagecount IN (12, 34)
-     * $query->filterByPagecount(array('min' => 12)); // WHERE pagecount > 12
+     * $query->filterByFiler('fooValue');   // WHERE filer = 'fooValue'
+     * $query->filterByFiler('%fooValue%'); // WHERE filer LIKE '%fooValue%'
      * </code>
      *
-     * @param     mixed $pagecount The value to use as filter.
-     *              Use scalar values for equality.
-     *              Use array values for in_array() equivalent.
-     *              Use associative array('min' => $minValue, 'max' => $maxValue) for intervals.
+     * @param     string $filer The value to use as filter.
+     *              Accepts wildcards (* and % trigger a LIKE)
      * @param     string $comparison Operator to use for the column comparison, defaults to Criteria::EQUAL
      *
      * @return $this|ChildDocumentsQuery The current query, for fluid interface
      */
-    public function filterByPagecount($pagecount = null, $comparison = null)
+    public function filterByFiler($filer = null, $comparison = null)
     {
-        if (is_array($pagecount)) {
-            $useMinMax = false;
-            if (isset($pagecount['min'])) {
-                $this->addUsingAlias(DocumentsTableMap::COL_PAGECOUNT, $pagecount['min'], Criteria::GREATER_EQUAL);
-                $useMinMax = true;
-            }
-            if (isset($pagecount['max'])) {
-                $this->addUsingAlias(DocumentsTableMap::COL_PAGECOUNT, $pagecount['max'], Criteria::LESS_EQUAL);
-                $useMinMax = true;
-            }
-            if ($useMinMax) {
-                return $this;
-            }
-            if (null === $comparison) {
+        if (null === $comparison) {
+            if (is_array($filer)) {
                 $comparison = Criteria::IN;
+            } elseif (preg_match('/[\%\*]/', $filer)) {
+                $filer = str_replace('*', '%', $filer);
+                $comparison = Criteria::LIKE;
             }
         }
 
-        return $this->addUsingAlias(DocumentsTableMap::COL_PAGECOUNT, $pagecount, $comparison);
+        return $this->addUsingAlias(DocumentsTableMap::COL_FILER, $filer, $comparison);
     }
 
     /**
@@ -675,8 +698,7 @@ abstract class DocumentsQuery extends ModelCriteria
     public function prune($documents = null)
     {
         if ($documents) {
-            throw new LogicException('Documents object has no primary key');
-
+            $this->addUsingAlias(DocumentsTableMap::COL_ID, $documents->getId(), Criteria::NOT_EQUAL);
         }
 
         return $this;

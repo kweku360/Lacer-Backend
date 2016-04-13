@@ -84,16 +84,16 @@ abstract class Suitjudges implements ActiveRecordInterface
     protected $judgeid;
 
     /**
-     * The value for the judgenumber field.
-     * @var        string
-     */
-    protected $judgenumber;
-
-    /**
      * The value for the judgename field.
      * @var        string
      */
     protected $judgename;
+
+    /**
+     * The value for the status field.
+     * @var        string
+     */
+    protected $status;
 
     /**
      * The value for the created field.
@@ -373,16 +373,6 @@ abstract class Suitjudges implements ActiveRecordInterface
     }
 
     /**
-     * Get the [judgenumber] column value.
-     *
-     * @return string
-     */
-    public function getJudgenumber()
-    {
-        return $this->judgenumber;
-    }
-
-    /**
      * Get the [judgename] column value.
      *
      * @return string
@@ -390,6 +380,16 @@ abstract class Suitjudges implements ActiveRecordInterface
     public function getJudgename()
     {
         return $this->judgename;
+    }
+
+    /**
+     * Get the [status] column value.
+     *
+     * @return string
+     */
+    public function getStatus()
+    {
+        return $this->status;
     }
 
     /**
@@ -493,26 +493,6 @@ abstract class Suitjudges implements ActiveRecordInterface
     } // setJudgeid()
 
     /**
-     * Set the value of [judgenumber] column.
-     *
-     * @param string $v new value
-     * @return $this|\Suitjudges The current object (for fluent API support)
-     */
-    public function setJudgenumber($v)
-    {
-        if ($v !== null) {
-            $v = (string) $v;
-        }
-
-        if ($this->judgenumber !== $v) {
-            $this->judgenumber = $v;
-            $this->modifiedColumns[SuitjudgesTableMap::COL_JUDGENUMBER] = true;
-        }
-
-        return $this;
-    } // setJudgenumber()
-
-    /**
      * Set the value of [judgename] column.
      *
      * @param string $v new value
@@ -531,6 +511,26 @@ abstract class Suitjudges implements ActiveRecordInterface
 
         return $this;
     } // setJudgename()
+
+    /**
+     * Set the value of [status] column.
+     *
+     * @param string $v new value
+     * @return $this|\Suitjudges The current object (for fluent API support)
+     */
+    public function setStatus($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->status !== $v) {
+            $this->status = $v;
+            $this->modifiedColumns[SuitjudgesTableMap::COL_STATUS] = true;
+        }
+
+        return $this;
+    } // setStatus()
 
     /**
      * Set the value of [created] column.
@@ -620,11 +620,11 @@ abstract class Suitjudges implements ActiveRecordInterface
             $col = $row[TableMap::TYPE_NUM == $indexType ? 3 + $startcol : SuitjudgesTableMap::translateFieldName('Judgeid', TableMap::TYPE_PHPNAME, $indexType)];
             $this->judgeid = (null !== $col) ? (int) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 4 + $startcol : SuitjudgesTableMap::translateFieldName('Judgenumber', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->judgenumber = (null !== $col) ? (string) $col : null;
-
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 5 + $startcol : SuitjudgesTableMap::translateFieldName('Judgename', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 4 + $startcol : SuitjudgesTableMap::translateFieldName('Judgename', TableMap::TYPE_PHPNAME, $indexType)];
             $this->judgename = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 5 + $startcol : SuitjudgesTableMap::translateFieldName('Status', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->status = (null !== $col) ? (string) $col : null;
 
             $col = $row[TableMap::TYPE_NUM == $indexType ? 6 + $startcol : SuitjudgesTableMap::translateFieldName('Created', TableMap::TYPE_PHPNAME, $indexType)];
             $this->created = (null !== $col) ? (int) $col : null;
@@ -848,11 +848,11 @@ abstract class Suitjudges implements ActiveRecordInterface
         if ($this->isColumnModified(SuitjudgesTableMap::COL_JUDGEID)) {
             $modifiedColumns[':p' . $index++]  = 'judgeid';
         }
-        if ($this->isColumnModified(SuitjudgesTableMap::COL_JUDGENUMBER)) {
-            $modifiedColumns[':p' . $index++]  = 'judgenumber';
-        }
         if ($this->isColumnModified(SuitjudgesTableMap::COL_JUDGENAME)) {
             $modifiedColumns[':p' . $index++]  = 'judgename';
+        }
+        if ($this->isColumnModified(SuitjudgesTableMap::COL_STATUS)) {
+            $modifiedColumns[':p' . $index++]  = 'status';
         }
         if ($this->isColumnModified(SuitjudgesTableMap::COL_CREATED)) {
             $modifiedColumns[':p' . $index++]  = 'created';
@@ -883,11 +883,11 @@ abstract class Suitjudges implements ActiveRecordInterface
                     case 'judgeid':
                         $stmt->bindValue($identifier, $this->judgeid, PDO::PARAM_INT);
                         break;
-                    case 'judgenumber':
-                        $stmt->bindValue($identifier, $this->judgenumber, PDO::PARAM_STR);
-                        break;
                     case 'judgename':
                         $stmt->bindValue($identifier, $this->judgename, PDO::PARAM_STR);
+                        break;
+                    case 'status':
+                        $stmt->bindValue($identifier, $this->status, PDO::PARAM_STR);
                         break;
                     case 'created':
                         $stmt->bindValue($identifier, $this->created, PDO::PARAM_INT);
@@ -970,10 +970,10 @@ abstract class Suitjudges implements ActiveRecordInterface
                 return $this->getJudgeid();
                 break;
             case 4:
-                return $this->getJudgenumber();
+                return $this->getJudgename();
                 break;
             case 5:
-                return $this->getJudgename();
+                return $this->getStatus();
                 break;
             case 6:
                 return $this->getCreated();
@@ -1014,8 +1014,8 @@ abstract class Suitjudges implements ActiveRecordInterface
             $keys[1] => $this->getSuitid(),
             $keys[2] => $this->getSuitnumber(),
             $keys[3] => $this->getJudgeid(),
-            $keys[4] => $this->getJudgenumber(),
-            $keys[5] => $this->getJudgename(),
+            $keys[4] => $this->getJudgename(),
+            $keys[5] => $this->getStatus(),
             $keys[6] => $this->getCreated(),
             $keys[7] => $this->getModified(),
         );
@@ -1070,10 +1070,10 @@ abstract class Suitjudges implements ActiveRecordInterface
                 $this->setJudgeid($value);
                 break;
             case 4:
-                $this->setJudgenumber($value);
+                $this->setJudgename($value);
                 break;
             case 5:
-                $this->setJudgename($value);
+                $this->setStatus($value);
                 break;
             case 6:
                 $this->setCreated($value);
@@ -1120,10 +1120,10 @@ abstract class Suitjudges implements ActiveRecordInterface
             $this->setJudgeid($arr[$keys[3]]);
         }
         if (array_key_exists($keys[4], $arr)) {
-            $this->setJudgenumber($arr[$keys[4]]);
+            $this->setJudgename($arr[$keys[4]]);
         }
         if (array_key_exists($keys[5], $arr)) {
-            $this->setJudgename($arr[$keys[5]]);
+            $this->setStatus($arr[$keys[5]]);
         }
         if (array_key_exists($keys[6], $arr)) {
             $this->setCreated($arr[$keys[6]]);
@@ -1184,11 +1184,11 @@ abstract class Suitjudges implements ActiveRecordInterface
         if ($this->isColumnModified(SuitjudgesTableMap::COL_JUDGEID)) {
             $criteria->add(SuitjudgesTableMap::COL_JUDGEID, $this->judgeid);
         }
-        if ($this->isColumnModified(SuitjudgesTableMap::COL_JUDGENUMBER)) {
-            $criteria->add(SuitjudgesTableMap::COL_JUDGENUMBER, $this->judgenumber);
-        }
         if ($this->isColumnModified(SuitjudgesTableMap::COL_JUDGENAME)) {
             $criteria->add(SuitjudgesTableMap::COL_JUDGENAME, $this->judgename);
+        }
+        if ($this->isColumnModified(SuitjudgesTableMap::COL_STATUS)) {
+            $criteria->add(SuitjudgesTableMap::COL_STATUS, $this->status);
         }
         if ($this->isColumnModified(SuitjudgesTableMap::COL_CREATED)) {
             $criteria->add(SuitjudgesTableMap::COL_CREATED, $this->created);
@@ -1285,8 +1285,8 @@ abstract class Suitjudges implements ActiveRecordInterface
         $copyObj->setSuitid($this->getSuitid());
         $copyObj->setSuitnumber($this->getSuitnumber());
         $copyObj->setJudgeid($this->getJudgeid());
-        $copyObj->setJudgenumber($this->getJudgenumber());
         $copyObj->setJudgename($this->getJudgename());
+        $copyObj->setStatus($this->getStatus());
         $copyObj->setCreated($this->getCreated());
         $copyObj->setModified($this->getModified());
         if ($makeNew) {
@@ -1328,8 +1328,8 @@ abstract class Suitjudges implements ActiveRecordInterface
         $this->suitid = null;
         $this->suitnumber = null;
         $this->judgeid = null;
-        $this->judgenumber = null;
         $this->judgename = null;
+        $this->status = null;
         $this->created = null;
         $this->modified = null;
         $this->alreadyInSave = false;

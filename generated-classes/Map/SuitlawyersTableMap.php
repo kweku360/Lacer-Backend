@@ -59,7 +59,7 @@ class SuitlawyersTableMap extends TableMap
     /**
      * The total number of columns
      */
-    const NUM_COLUMNS = 8;
+    const NUM_COLUMNS = 11;
 
     /**
      * The number of lazy-loaded columns
@@ -69,7 +69,7 @@ class SuitlawyersTableMap extends TableMap
     /**
      * The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS)
      */
-    const NUM_HYDRATE_COLUMNS = 8;
+    const NUM_HYDRATE_COLUMNS = 11;
 
     /**
      * the column name for the id field
@@ -107,9 +107,24 @@ class SuitlawyersTableMap extends TableMap
     const COL_LAWYERNAME = 'suitlawyers.lawyername';
 
     /**
+     * the column name for the registertype field
+     */
+    const COL_REGISTERTYPE = 'suitlawyers.registertype';
+
+    /**
+     * the column name for the status field
+     */
+    const COL_STATUS = 'suitlawyers.status';
+
+    /**
      * the column name for the created field
      */
     const COL_CREATED = 'suitlawyers.created';
+
+    /**
+     * the column name for the modified field
+     */
+    const COL_MODIFIED = 'suitlawyers.modified';
 
     /**
      * The default string format for model objects of the related table
@@ -123,11 +138,11 @@ class SuitlawyersTableMap extends TableMap
      * e.g. self::$fieldNames[self::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        self::TYPE_PHPNAME       => array('Id', 'Suitid', 'Suitnumber', 'Lawyerid', 'Lawyertype', 'Lawyernumber', 'Lawyername', 'Created', ),
-        self::TYPE_CAMELNAME     => array('id', 'suitid', 'suitnumber', 'lawyerid', 'lawyertype', 'lawyernumber', 'lawyername', 'created', ),
-        self::TYPE_COLNAME       => array(SuitlawyersTableMap::COL_ID, SuitlawyersTableMap::COL_SUITID, SuitlawyersTableMap::COL_SUITNUMBER, SuitlawyersTableMap::COL_LAWYERID, SuitlawyersTableMap::COL_LAWYERTYPE, SuitlawyersTableMap::COL_LAWYERNUMBER, SuitlawyersTableMap::COL_LAWYERNAME, SuitlawyersTableMap::COL_CREATED, ),
-        self::TYPE_FIELDNAME     => array('id', 'suitid', 'suitnumber', 'lawyerid', 'lawyertype', 'lawyernumber', 'lawyername', 'created', ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, )
+        self::TYPE_PHPNAME       => array('Id', 'Suitid', 'Suitnumber', 'Lawyerid', 'Lawyertype', 'Lawyernumber', 'Lawyername', 'Registertype', 'Status', 'Created', 'Modified', ),
+        self::TYPE_CAMELNAME     => array('id', 'suitid', 'suitnumber', 'lawyerid', 'lawyertype', 'lawyernumber', 'lawyername', 'registertype', 'status', 'created', 'modified', ),
+        self::TYPE_COLNAME       => array(SuitlawyersTableMap::COL_ID, SuitlawyersTableMap::COL_SUITID, SuitlawyersTableMap::COL_SUITNUMBER, SuitlawyersTableMap::COL_LAWYERID, SuitlawyersTableMap::COL_LAWYERTYPE, SuitlawyersTableMap::COL_LAWYERNUMBER, SuitlawyersTableMap::COL_LAWYERNAME, SuitlawyersTableMap::COL_REGISTERTYPE, SuitlawyersTableMap::COL_STATUS, SuitlawyersTableMap::COL_CREATED, SuitlawyersTableMap::COL_MODIFIED, ),
+        self::TYPE_FIELDNAME     => array('id', 'suitid', 'suitnumber', 'lawyerid', 'lawyertype', 'lawyernumber', 'lawyername', 'registertype', 'status', 'created', 'modified', ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, )
     );
 
     /**
@@ -137,11 +152,11 @@ class SuitlawyersTableMap extends TableMap
      * e.g. self::$fieldKeys[self::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        self::TYPE_PHPNAME       => array('Id' => 0, 'Suitid' => 1, 'Suitnumber' => 2, 'Lawyerid' => 3, 'Lawyertype' => 4, 'Lawyernumber' => 5, 'Lawyername' => 6, 'Created' => 7, ),
-        self::TYPE_CAMELNAME     => array('id' => 0, 'suitid' => 1, 'suitnumber' => 2, 'lawyerid' => 3, 'lawyertype' => 4, 'lawyernumber' => 5, 'lawyername' => 6, 'created' => 7, ),
-        self::TYPE_COLNAME       => array(SuitlawyersTableMap::COL_ID => 0, SuitlawyersTableMap::COL_SUITID => 1, SuitlawyersTableMap::COL_SUITNUMBER => 2, SuitlawyersTableMap::COL_LAWYERID => 3, SuitlawyersTableMap::COL_LAWYERTYPE => 4, SuitlawyersTableMap::COL_LAWYERNUMBER => 5, SuitlawyersTableMap::COL_LAWYERNAME => 6, SuitlawyersTableMap::COL_CREATED => 7, ),
-        self::TYPE_FIELDNAME     => array('id' => 0, 'suitid' => 1, 'suitnumber' => 2, 'lawyerid' => 3, 'lawyertype' => 4, 'lawyernumber' => 5, 'lawyername' => 6, 'created' => 7, ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, )
+        self::TYPE_PHPNAME       => array('Id' => 0, 'Suitid' => 1, 'Suitnumber' => 2, 'Lawyerid' => 3, 'Lawyertype' => 4, 'Lawyernumber' => 5, 'Lawyername' => 6, 'Registertype' => 7, 'Status' => 8, 'Created' => 9, 'Modified' => 10, ),
+        self::TYPE_CAMELNAME     => array('id' => 0, 'suitid' => 1, 'suitnumber' => 2, 'lawyerid' => 3, 'lawyertype' => 4, 'lawyernumber' => 5, 'lawyername' => 6, 'registertype' => 7, 'status' => 8, 'created' => 9, 'modified' => 10, ),
+        self::TYPE_COLNAME       => array(SuitlawyersTableMap::COL_ID => 0, SuitlawyersTableMap::COL_SUITID => 1, SuitlawyersTableMap::COL_SUITNUMBER => 2, SuitlawyersTableMap::COL_LAWYERID => 3, SuitlawyersTableMap::COL_LAWYERTYPE => 4, SuitlawyersTableMap::COL_LAWYERNUMBER => 5, SuitlawyersTableMap::COL_LAWYERNAME => 6, SuitlawyersTableMap::COL_REGISTERTYPE => 7, SuitlawyersTableMap::COL_STATUS => 8, SuitlawyersTableMap::COL_CREATED => 9, SuitlawyersTableMap::COL_MODIFIED => 10, ),
+        self::TYPE_FIELDNAME     => array('id' => 0, 'suitid' => 1, 'suitnumber' => 2, 'lawyerid' => 3, 'lawyertype' => 4, 'lawyernumber' => 5, 'lawyername' => 6, 'registertype' => 7, 'status' => 8, 'created' => 9, 'modified' => 10, ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, )
     );
 
     /**
@@ -168,7 +183,10 @@ class SuitlawyersTableMap extends TableMap
         $this->addColumn('lawyertype', 'Lawyertype', 'VARCHAR', true, 255, null);
         $this->addColumn('lawyernumber', 'Lawyernumber', 'VARCHAR', true, 255, null);
         $this->addColumn('lawyername', 'Lawyername', 'VARCHAR', true, 255, null);
+        $this->addColumn('registertype', 'Registertype', 'VARCHAR', true, 255, null);
+        $this->addColumn('status', 'Status', 'VARCHAR', true, 255, null);
         $this->addColumn('created', 'Created', 'INTEGER', true, null, null);
+        $this->addColumn('modified', 'Modified', 'INTEGER', true, 12, null);
     } // initialize()
 
     /**
@@ -326,7 +344,10 @@ class SuitlawyersTableMap extends TableMap
             $criteria->addSelectColumn(SuitlawyersTableMap::COL_LAWYERTYPE);
             $criteria->addSelectColumn(SuitlawyersTableMap::COL_LAWYERNUMBER);
             $criteria->addSelectColumn(SuitlawyersTableMap::COL_LAWYERNAME);
+            $criteria->addSelectColumn(SuitlawyersTableMap::COL_REGISTERTYPE);
+            $criteria->addSelectColumn(SuitlawyersTableMap::COL_STATUS);
             $criteria->addSelectColumn(SuitlawyersTableMap::COL_CREATED);
+            $criteria->addSelectColumn(SuitlawyersTableMap::COL_MODIFIED);
         } else {
             $criteria->addSelectColumn($alias . '.id');
             $criteria->addSelectColumn($alias . '.suitid');
@@ -335,7 +356,10 @@ class SuitlawyersTableMap extends TableMap
             $criteria->addSelectColumn($alias . '.lawyertype');
             $criteria->addSelectColumn($alias . '.lawyernumber');
             $criteria->addSelectColumn($alias . '.lawyername');
+            $criteria->addSelectColumn($alias . '.registertype');
+            $criteria->addSelectColumn($alias . '.status');
             $criteria->addSelectColumn($alias . '.created');
+            $criteria->addSelectColumn($alias . '.modified');
         }
     }
 

@@ -102,10 +102,28 @@ abstract class Suits implements ActiveRecordInterface
     protected $suitaccess;
 
     /**
-     * The value for the dateofadjournment field.
+     * The value for the suitdateid field.
      * @var        int
      */
-    protected $dateofadjournment;
+    protected $suitdateid;
+
+    /**
+     * The value for the suitcourt field.
+     * @var        string
+     */
+    protected $suitcourt;
+
+    /**
+     * The value for the userid field.
+     * @var        int
+     */
+    protected $userid;
+
+    /**
+     * The value for the dataentryname field.
+     * @var        int
+     */
+    protected $dataentryname;
 
     /**
      * The value for the created field.
@@ -415,13 +433,43 @@ abstract class Suits implements ActiveRecordInterface
     }
 
     /**
-     * Get the [dateofadjournment] column value.
+     * Get the [suitdateid] column value.
      *
      * @return int
      */
-    public function getDateofadjournment()
+    public function getSuitdateid()
     {
-        return $this->dateofadjournment;
+        return $this->suitdateid;
+    }
+
+    /**
+     * Get the [suitcourt] column value.
+     *
+     * @return string
+     */
+    public function getSuitcourt()
+    {
+        return $this->suitcourt;
+    }
+
+    /**
+     * Get the [userid] column value.
+     *
+     * @return int
+     */
+    public function getUserid()
+    {
+        return $this->userid;
+    }
+
+    /**
+     * Get the [dataentryname] column value.
+     *
+     * @return int
+     */
+    public function getDataentryname()
+    {
+        return $this->dataentryname;
     }
 
     /**
@@ -585,24 +633,84 @@ abstract class Suits implements ActiveRecordInterface
     } // setSuitaccess()
 
     /**
-     * Set the value of [dateofadjournment] column.
+     * Set the value of [suitdateid] column.
      *
      * @param int $v new value
      * @return $this|\Suits The current object (for fluent API support)
      */
-    public function setDateofadjournment($v)
+    public function setSuitdateid($v)
     {
         if ($v !== null) {
             $v = (int) $v;
         }
 
-        if ($this->dateofadjournment !== $v) {
-            $this->dateofadjournment = $v;
-            $this->modifiedColumns[SuitsTableMap::COL_DATEOFADJOURNMENT] = true;
+        if ($this->suitdateid !== $v) {
+            $this->suitdateid = $v;
+            $this->modifiedColumns[SuitsTableMap::COL_SUITDATEID] = true;
         }
 
         return $this;
-    } // setDateofadjournment()
+    } // setSuitdateid()
+
+    /**
+     * Set the value of [suitcourt] column.
+     *
+     * @param string $v new value
+     * @return $this|\Suits The current object (for fluent API support)
+     */
+    public function setSuitcourt($v)
+    {
+        if ($v !== null) {
+            $v = (string) $v;
+        }
+
+        if ($this->suitcourt !== $v) {
+            $this->suitcourt = $v;
+            $this->modifiedColumns[SuitsTableMap::COL_SUITCOURT] = true;
+        }
+
+        return $this;
+    } // setSuitcourt()
+
+    /**
+     * Set the value of [userid] column.
+     *
+     * @param int $v new value
+     * @return $this|\Suits The current object (for fluent API support)
+     */
+    public function setUserid($v)
+    {
+        if ($v !== null) {
+            $v = (int) $v;
+        }
+
+        if ($this->userid !== $v) {
+            $this->userid = $v;
+            $this->modifiedColumns[SuitsTableMap::COL_USERID] = true;
+        }
+
+        return $this;
+    } // setUserid()
+
+    /**
+     * Set the value of [dataentryname] column.
+     *
+     * @param int $v new value
+     * @return $this|\Suits The current object (for fluent API support)
+     */
+    public function setDataentryname($v)
+    {
+        if ($v !== null) {
+            $v = (int) $v;
+        }
+
+        if ($this->dataentryname !== $v) {
+            $this->dataentryname = $v;
+            $this->modifiedColumns[SuitsTableMap::COL_DATAENTRYNAME] = true;
+        }
+
+        return $this;
+    } // setDataentryname()
 
     /**
      * Set the value of [created] column.
@@ -701,13 +809,22 @@ abstract class Suits implements ActiveRecordInterface
             $col = $row[TableMap::TYPE_NUM == $indexType ? 6 + $startcol : SuitsTableMap::translateFieldName('Suitaccess', TableMap::TYPE_PHPNAME, $indexType)];
             $this->suitaccess = (null !== $col) ? (string) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 7 + $startcol : SuitsTableMap::translateFieldName('Dateofadjournment', TableMap::TYPE_PHPNAME, $indexType)];
-            $this->dateofadjournment = (null !== $col) ? (int) $col : null;
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 7 + $startcol : SuitsTableMap::translateFieldName('Suitdateid', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->suitdateid = (null !== $col) ? (int) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 8 + $startcol : SuitsTableMap::translateFieldName('Created', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 8 + $startcol : SuitsTableMap::translateFieldName('Suitcourt', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->suitcourt = (null !== $col) ? (string) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 9 + $startcol : SuitsTableMap::translateFieldName('Userid', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->userid = (null !== $col) ? (int) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 10 + $startcol : SuitsTableMap::translateFieldName('Dataentryname', TableMap::TYPE_PHPNAME, $indexType)];
+            $this->dataentryname = (null !== $col) ? (int) $col : null;
+
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 11 + $startcol : SuitsTableMap::translateFieldName('Created', TableMap::TYPE_PHPNAME, $indexType)];
             $this->created = (null !== $col) ? (int) $col : null;
 
-            $col = $row[TableMap::TYPE_NUM == $indexType ? 9 + $startcol : SuitsTableMap::translateFieldName('Modified', TableMap::TYPE_PHPNAME, $indexType)];
+            $col = $row[TableMap::TYPE_NUM == $indexType ? 12 + $startcol : SuitsTableMap::translateFieldName('Modified', TableMap::TYPE_PHPNAME, $indexType)];
             $this->modified = (null !== $col) ? (int) $col : null;
             $this->resetModified();
 
@@ -717,7 +834,7 @@ abstract class Suits implements ActiveRecordInterface
                 $this->ensureConsistency();
             }
 
-            return $startcol + 10; // 10 = SuitsTableMap::NUM_HYDRATE_COLUMNS.
+            return $startcol + 13; // 13 = SuitsTableMap::NUM_HYDRATE_COLUMNS.
 
         } catch (Exception $e) {
             throw new PropelException(sprintf('Error populating %s object', '\\Suits'), 0, $e);
@@ -935,8 +1052,17 @@ abstract class Suits implements ActiveRecordInterface
         if ($this->isColumnModified(SuitsTableMap::COL_SUITACCESS)) {
             $modifiedColumns[':p' . $index++]  = 'suitaccess';
         }
-        if ($this->isColumnModified(SuitsTableMap::COL_DATEOFADJOURNMENT)) {
-            $modifiedColumns[':p' . $index++]  = 'dateofadjournment';
+        if ($this->isColumnModified(SuitsTableMap::COL_SUITDATEID)) {
+            $modifiedColumns[':p' . $index++]  = 'suitdateid';
+        }
+        if ($this->isColumnModified(SuitsTableMap::COL_SUITCOURT)) {
+            $modifiedColumns[':p' . $index++]  = 'suitcourt';
+        }
+        if ($this->isColumnModified(SuitsTableMap::COL_USERID)) {
+            $modifiedColumns[':p' . $index++]  = 'userid';
+        }
+        if ($this->isColumnModified(SuitsTableMap::COL_DATAENTRYNAME)) {
+            $modifiedColumns[':p' . $index++]  = 'dataentryname';
         }
         if ($this->isColumnModified(SuitsTableMap::COL_CREATED)) {
             $modifiedColumns[':p' . $index++]  = 'created';
@@ -976,8 +1102,17 @@ abstract class Suits implements ActiveRecordInterface
                     case 'suitaccess':
                         $stmt->bindValue($identifier, $this->suitaccess, PDO::PARAM_STR);
                         break;
-                    case 'dateofadjournment':
-                        $stmt->bindValue($identifier, $this->dateofadjournment, PDO::PARAM_INT);
+                    case 'suitdateid':
+                        $stmt->bindValue($identifier, $this->suitdateid, PDO::PARAM_INT);
+                        break;
+                    case 'suitcourt':
+                        $stmt->bindValue($identifier, $this->suitcourt, PDO::PARAM_STR);
+                        break;
+                    case 'userid':
+                        $stmt->bindValue($identifier, $this->userid, PDO::PARAM_INT);
+                        break;
+                    case 'dataentryname':
+                        $stmt->bindValue($identifier, $this->dataentryname, PDO::PARAM_INT);
                         break;
                     case 'created':
                         $stmt->bindValue($identifier, $this->created, PDO::PARAM_INT);
@@ -1069,12 +1204,21 @@ abstract class Suits implements ActiveRecordInterface
                 return $this->getSuitaccess();
                 break;
             case 7:
-                return $this->getDateofadjournment();
+                return $this->getSuitdateid();
                 break;
             case 8:
-                return $this->getCreated();
+                return $this->getSuitcourt();
                 break;
             case 9:
+                return $this->getUserid();
+                break;
+            case 10:
+                return $this->getDataentryname();
+                break;
+            case 11:
+                return $this->getCreated();
+                break;
+            case 12:
                 return $this->getModified();
                 break;
             default:
@@ -1113,9 +1257,12 @@ abstract class Suits implements ActiveRecordInterface
             $keys[4] => $this->getDatefiled(),
             $keys[5] => $this->getSuitstatus(),
             $keys[6] => $this->getSuitaccess(),
-            $keys[7] => $this->getDateofadjournment(),
-            $keys[8] => $this->getCreated(),
-            $keys[9] => $this->getModified(),
+            $keys[7] => $this->getSuitdateid(),
+            $keys[8] => $this->getSuitcourt(),
+            $keys[9] => $this->getUserid(),
+            $keys[10] => $this->getDataentryname(),
+            $keys[11] => $this->getCreated(),
+            $keys[12] => $this->getModified(),
         );
         $virtualColumns = $this->virtualColumns;
         foreach ($virtualColumns as $key => $virtualColumn) {
@@ -1177,12 +1324,21 @@ abstract class Suits implements ActiveRecordInterface
                 $this->setSuitaccess($value);
                 break;
             case 7:
-                $this->setDateofadjournment($value);
+                $this->setSuitdateid($value);
                 break;
             case 8:
-                $this->setCreated($value);
+                $this->setSuitcourt($value);
                 break;
             case 9:
+                $this->setUserid($value);
+                break;
+            case 10:
+                $this->setDataentryname($value);
+                break;
+            case 11:
+                $this->setCreated($value);
+                break;
+            case 12:
                 $this->setModified($value);
                 break;
         } // switch()
@@ -1233,13 +1389,22 @@ abstract class Suits implements ActiveRecordInterface
             $this->setSuitaccess($arr[$keys[6]]);
         }
         if (array_key_exists($keys[7], $arr)) {
-            $this->setDateofadjournment($arr[$keys[7]]);
+            $this->setSuitdateid($arr[$keys[7]]);
         }
         if (array_key_exists($keys[8], $arr)) {
-            $this->setCreated($arr[$keys[8]]);
+            $this->setSuitcourt($arr[$keys[8]]);
         }
         if (array_key_exists($keys[9], $arr)) {
-            $this->setModified($arr[$keys[9]]);
+            $this->setUserid($arr[$keys[9]]);
+        }
+        if (array_key_exists($keys[10], $arr)) {
+            $this->setDataentryname($arr[$keys[10]]);
+        }
+        if (array_key_exists($keys[11], $arr)) {
+            $this->setCreated($arr[$keys[11]]);
+        }
+        if (array_key_exists($keys[12], $arr)) {
+            $this->setModified($arr[$keys[12]]);
         }
     }
 
@@ -1303,8 +1468,17 @@ abstract class Suits implements ActiveRecordInterface
         if ($this->isColumnModified(SuitsTableMap::COL_SUITACCESS)) {
             $criteria->add(SuitsTableMap::COL_SUITACCESS, $this->suitaccess);
         }
-        if ($this->isColumnModified(SuitsTableMap::COL_DATEOFADJOURNMENT)) {
-            $criteria->add(SuitsTableMap::COL_DATEOFADJOURNMENT, $this->dateofadjournment);
+        if ($this->isColumnModified(SuitsTableMap::COL_SUITDATEID)) {
+            $criteria->add(SuitsTableMap::COL_SUITDATEID, $this->suitdateid);
+        }
+        if ($this->isColumnModified(SuitsTableMap::COL_SUITCOURT)) {
+            $criteria->add(SuitsTableMap::COL_SUITCOURT, $this->suitcourt);
+        }
+        if ($this->isColumnModified(SuitsTableMap::COL_USERID)) {
+            $criteria->add(SuitsTableMap::COL_USERID, $this->userid);
+        }
+        if ($this->isColumnModified(SuitsTableMap::COL_DATAENTRYNAME)) {
+            $criteria->add(SuitsTableMap::COL_DATAENTRYNAME, $this->dataentryname);
         }
         if ($this->isColumnModified(SuitsTableMap::COL_CREATED)) {
             $criteria->add(SuitsTableMap::COL_CREATED, $this->created);
@@ -1404,7 +1578,10 @@ abstract class Suits implements ActiveRecordInterface
         $copyObj->setDatefiled($this->getDatefiled());
         $copyObj->setSuitstatus($this->getSuitstatus());
         $copyObj->setSuitaccess($this->getSuitaccess());
-        $copyObj->setDateofadjournment($this->getDateofadjournment());
+        $copyObj->setSuitdateid($this->getSuitdateid());
+        $copyObj->setSuitcourt($this->getSuitcourt());
+        $copyObj->setUserid($this->getUserid());
+        $copyObj->setDataentryname($this->getDataentryname());
         $copyObj->setCreated($this->getCreated());
         $copyObj->setModified($this->getModified());
         if ($makeNew) {
@@ -1449,7 +1626,10 @@ abstract class Suits implements ActiveRecordInterface
         $this->datefiled = null;
         $this->suitstatus = null;
         $this->suitaccess = null;
-        $this->dateofadjournment = null;
+        $this->suitdateid = null;
+        $this->suitcourt = null;
+        $this->userid = null;
+        $this->dataentryname = null;
         $this->created = null;
         $this->modified = null;
         $this->alreadyInSave = false;

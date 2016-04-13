@@ -9,7 +9,6 @@ use Propel\Runtime\ActiveQuery\Criteria;
 use Propel\Runtime\ActiveQuery\InstancePoolTrait;
 use Propel\Runtime\Connection\ConnectionInterface;
 use Propel\Runtime\DataFetcher\DataFetcherInterface;
-use Propel\Runtime\Exception\LogicException;
 use Propel\Runtime\Exception\PropelException;
 use Propel\Runtime\Map\RelationMap;
 use Propel\Runtime\Map\TableMap;
@@ -60,7 +59,7 @@ class DocumentsTableMap extends TableMap
     /**
      * The total number of columns
      */
-    const NUM_COLUMNS = 13;
+    const NUM_COLUMNS = 12;
 
     /**
      * The number of lazy-loaded columns
@@ -70,7 +69,7 @@ class DocumentsTableMap extends TableMap
     /**
      * The number of columns to hydrate (NUM_COLUMNS - NUM_LAZY_LOAD_COLUMNS)
      */
-    const NUM_HYDRATE_COLUMNS = 13;
+    const NUM_HYDRATE_COLUMNS = 12;
 
     /**
      * the column name for the id field
@@ -78,24 +77,19 @@ class DocumentsTableMap extends TableMap
     const COL_ID = 'documents.id';
 
     /**
+     * the column name for the suitnumber field
+     */
+    const COL_SUITNUMBER = 'documents.suitnumber';
+
+    /**
      * the column name for the code field
      */
     const COL_CODE = 'documents.code';
 
     /**
-     * the column name for the typeid field
-     */
-    const COL_TYPEID = 'documents.typeid';
-
-    /**
      * the column name for the type field
      */
     const COL_TYPE = 'documents.type';
-
-    /**
-     * the column name for the suitid field
-     */
-    const COL_SUITID = 'documents.suitid';
 
     /**
      * the column name for the name field
@@ -108,14 +102,14 @@ class DocumentsTableMap extends TableMap
     const COL_DATEFILED = 'documents.datefiled';
 
     /**
-     * the column name for the format field
+     * the column name for the link field
      */
-    const COL_FORMAT = 'documents.format';
+    const COL_LINK = 'documents.link';
 
     /**
-     * the column name for the pagecount field
+     * the column name for the filer field
      */
-    const COL_PAGECOUNT = 'documents.pagecount';
+    const COL_FILER = 'documents.filer';
 
     /**
      * the column name for the dataentrypersonid field
@@ -149,11 +143,11 @@ class DocumentsTableMap extends TableMap
      * e.g. self::$fieldNames[self::TYPE_PHPNAME][0] = 'Id'
      */
     protected static $fieldNames = array (
-        self::TYPE_PHPNAME       => array('Id', 'Code', 'Typeid', 'Type', 'Suitid', 'Name', 'Datefiled', 'Format', 'Pagecount', 'Dataentrypersonid', 'Accessstatus', 'Created', 'Modified', ),
-        self::TYPE_CAMELNAME     => array('id', 'code', 'typeid', 'type', 'suitid', 'name', 'datefiled', 'format', 'pagecount', 'dataentrypersonid', 'accessstatus', 'created', 'modified', ),
-        self::TYPE_COLNAME       => array(DocumentsTableMap::COL_ID, DocumentsTableMap::COL_CODE, DocumentsTableMap::COL_TYPEID, DocumentsTableMap::COL_TYPE, DocumentsTableMap::COL_SUITID, DocumentsTableMap::COL_NAME, DocumentsTableMap::COL_DATEFILED, DocumentsTableMap::COL_FORMAT, DocumentsTableMap::COL_PAGECOUNT, DocumentsTableMap::COL_DATAENTRYPERSONID, DocumentsTableMap::COL_ACCESSSTATUS, DocumentsTableMap::COL_CREATED, DocumentsTableMap::COL_MODIFIED, ),
-        self::TYPE_FIELDNAME     => array('id', 'code', 'typeid', 'type', 'suitid', 'name', 'datefiled', 'format', 'pagecount', 'dataentrypersonid', 'accessstatus', 'created', 'modified', ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, )
+        self::TYPE_PHPNAME       => array('Id', 'Suitnumber', 'Code', 'Type', 'Name', 'Datefiled', 'Link', 'Filer', 'Dataentrypersonid', 'Accessstatus', 'Created', 'Modified', ),
+        self::TYPE_CAMELNAME     => array('id', 'suitnumber', 'code', 'type', 'name', 'datefiled', 'link', 'filer', 'dataentrypersonid', 'accessstatus', 'created', 'modified', ),
+        self::TYPE_COLNAME       => array(DocumentsTableMap::COL_ID, DocumentsTableMap::COL_SUITNUMBER, DocumentsTableMap::COL_CODE, DocumentsTableMap::COL_TYPE, DocumentsTableMap::COL_NAME, DocumentsTableMap::COL_DATEFILED, DocumentsTableMap::COL_LINK, DocumentsTableMap::COL_FILER, DocumentsTableMap::COL_DATAENTRYPERSONID, DocumentsTableMap::COL_ACCESSSTATUS, DocumentsTableMap::COL_CREATED, DocumentsTableMap::COL_MODIFIED, ),
+        self::TYPE_FIELDNAME     => array('id', 'suitnumber', 'code', 'type', 'name', 'datefiled', 'link', 'filer', 'dataentrypersonid', 'accessstatus', 'created', 'modified', ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, )
     );
 
     /**
@@ -163,11 +157,11 @@ class DocumentsTableMap extends TableMap
      * e.g. self::$fieldKeys[self::TYPE_PHPNAME]['Id'] = 0
      */
     protected static $fieldKeys = array (
-        self::TYPE_PHPNAME       => array('Id' => 0, 'Code' => 1, 'Typeid' => 2, 'Type' => 3, 'Suitid' => 4, 'Name' => 5, 'Datefiled' => 6, 'Format' => 7, 'Pagecount' => 8, 'Dataentrypersonid' => 9, 'Accessstatus' => 10, 'Created' => 11, 'Modified' => 12, ),
-        self::TYPE_CAMELNAME     => array('id' => 0, 'code' => 1, 'typeid' => 2, 'type' => 3, 'suitid' => 4, 'name' => 5, 'datefiled' => 6, 'format' => 7, 'pagecount' => 8, 'dataentrypersonid' => 9, 'accessstatus' => 10, 'created' => 11, 'modified' => 12, ),
-        self::TYPE_COLNAME       => array(DocumentsTableMap::COL_ID => 0, DocumentsTableMap::COL_CODE => 1, DocumentsTableMap::COL_TYPEID => 2, DocumentsTableMap::COL_TYPE => 3, DocumentsTableMap::COL_SUITID => 4, DocumentsTableMap::COL_NAME => 5, DocumentsTableMap::COL_DATEFILED => 6, DocumentsTableMap::COL_FORMAT => 7, DocumentsTableMap::COL_PAGECOUNT => 8, DocumentsTableMap::COL_DATAENTRYPERSONID => 9, DocumentsTableMap::COL_ACCESSSTATUS => 10, DocumentsTableMap::COL_CREATED => 11, DocumentsTableMap::COL_MODIFIED => 12, ),
-        self::TYPE_FIELDNAME     => array('id' => 0, 'code' => 1, 'typeid' => 2, 'type' => 3, 'suitid' => 4, 'name' => 5, 'datefiled' => 6, 'format' => 7, 'pagecount' => 8, 'dataentrypersonid' => 9, 'accessstatus' => 10, 'created' => 11, 'modified' => 12, ),
-        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, )
+        self::TYPE_PHPNAME       => array('Id' => 0, 'Suitnumber' => 1, 'Code' => 2, 'Type' => 3, 'Name' => 4, 'Datefiled' => 5, 'Link' => 6, 'Filer' => 7, 'Dataentrypersonid' => 8, 'Accessstatus' => 9, 'Created' => 10, 'Modified' => 11, ),
+        self::TYPE_CAMELNAME     => array('id' => 0, 'suitnumber' => 1, 'code' => 2, 'type' => 3, 'name' => 4, 'datefiled' => 5, 'link' => 6, 'filer' => 7, 'dataentrypersonid' => 8, 'accessstatus' => 9, 'created' => 10, 'modified' => 11, ),
+        self::TYPE_COLNAME       => array(DocumentsTableMap::COL_ID => 0, DocumentsTableMap::COL_SUITNUMBER => 1, DocumentsTableMap::COL_CODE => 2, DocumentsTableMap::COL_TYPE => 3, DocumentsTableMap::COL_NAME => 4, DocumentsTableMap::COL_DATEFILED => 5, DocumentsTableMap::COL_LINK => 6, DocumentsTableMap::COL_FILER => 7, DocumentsTableMap::COL_DATAENTRYPERSONID => 8, DocumentsTableMap::COL_ACCESSSTATUS => 9, DocumentsTableMap::COL_CREATED => 10, DocumentsTableMap::COL_MODIFIED => 11, ),
+        self::TYPE_FIELDNAME     => array('id' => 0, 'suitnumber' => 1, 'code' => 2, 'type' => 3, 'name' => 4, 'datefiled' => 5, 'link' => 6, 'filer' => 7, 'dataentrypersonid' => 8, 'accessstatus' => 9, 'created' => 10, 'modified' => 11, ),
+        self::TYPE_NUM           => array(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, )
     );
 
     /**
@@ -185,17 +179,16 @@ class DocumentsTableMap extends TableMap
         $this->setIdentifierQuoting(false);
         $this->setClassName('\\Documents');
         $this->setPackage('');
-        $this->setUseIdGenerator(false);
+        $this->setUseIdGenerator(true);
         // columns
-        $this->addColumn('id', 'Id', 'INTEGER', true, 12, null);
+        $this->addPrimaryKey('id', 'Id', 'INTEGER', true, 12, null);
+        $this->addColumn('suitnumber', 'Suitnumber', 'VARCHAR', true, 255, null);
         $this->addColumn('code', 'Code', 'VARCHAR', true, 64, null);
-        $this->addColumn('typeid', 'Typeid', 'INTEGER', true, 12, null);
         $this->addColumn('type', 'Type', 'VARCHAR', true, 255, null);
-        $this->addColumn('suitid', 'Suitid', 'VARCHAR', true, 255, null);
         $this->addColumn('name', 'Name', 'VARCHAR', true, 255, null);
         $this->addColumn('datefiled', 'Datefiled', 'INTEGER', true, null, null);
-        $this->addColumn('format', 'Format', 'VARCHAR', true, 255, null);
-        $this->addColumn('pagecount', 'Pagecount', 'INTEGER', true, null, null);
+        $this->addColumn('link', 'Link', 'VARCHAR', true, 255, null);
+        $this->addColumn('filer', 'Filer', 'VARCHAR', true, 255, null);
         $this->addColumn('dataentrypersonid', 'Dataentrypersonid', 'INTEGER', true, null, null);
         $this->addColumn('accessstatus', 'Accessstatus', 'VARCHAR', true, 255, null);
         $this->addColumn('created', 'Created', 'INTEGER', true, null, null);
@@ -224,7 +217,12 @@ class DocumentsTableMap extends TableMap
      */
     public static function getPrimaryKeyHashFromRow($row, $offset = 0, $indexType = TableMap::TYPE_NUM)
     {
-        return null;
+        // If the PK cannot be derived from the row, return NULL.
+        if ($row[TableMap::TYPE_NUM == $indexType ? 0 + $offset : static::translateFieldName('Id', TableMap::TYPE_PHPNAME, $indexType)] === null) {
+            return null;
+        }
+
+        return (string) $row[TableMap::TYPE_NUM == $indexType ? 0 + $offset : static::translateFieldName('Id', TableMap::TYPE_PHPNAME, $indexType)];
     }
 
     /**
@@ -241,7 +239,11 @@ class DocumentsTableMap extends TableMap
      */
     public static function getPrimaryKeyFromRow($row, $offset = 0, $indexType = TableMap::TYPE_NUM)
     {
-        return '';
+        return (int) $row[
+            $indexType == TableMap::TYPE_NUM
+                ? 0 + $offset
+                : self::translateFieldName('Id', TableMap::TYPE_PHPNAME, $indexType)
+        ];
     }
 
     /**
@@ -342,28 +344,26 @@ class DocumentsTableMap extends TableMap
     {
         if (null === $alias) {
             $criteria->addSelectColumn(DocumentsTableMap::COL_ID);
+            $criteria->addSelectColumn(DocumentsTableMap::COL_SUITNUMBER);
             $criteria->addSelectColumn(DocumentsTableMap::COL_CODE);
-            $criteria->addSelectColumn(DocumentsTableMap::COL_TYPEID);
             $criteria->addSelectColumn(DocumentsTableMap::COL_TYPE);
-            $criteria->addSelectColumn(DocumentsTableMap::COL_SUITID);
             $criteria->addSelectColumn(DocumentsTableMap::COL_NAME);
             $criteria->addSelectColumn(DocumentsTableMap::COL_DATEFILED);
-            $criteria->addSelectColumn(DocumentsTableMap::COL_FORMAT);
-            $criteria->addSelectColumn(DocumentsTableMap::COL_PAGECOUNT);
+            $criteria->addSelectColumn(DocumentsTableMap::COL_LINK);
+            $criteria->addSelectColumn(DocumentsTableMap::COL_FILER);
             $criteria->addSelectColumn(DocumentsTableMap::COL_DATAENTRYPERSONID);
             $criteria->addSelectColumn(DocumentsTableMap::COL_ACCESSSTATUS);
             $criteria->addSelectColumn(DocumentsTableMap::COL_CREATED);
             $criteria->addSelectColumn(DocumentsTableMap::COL_MODIFIED);
         } else {
             $criteria->addSelectColumn($alias . '.id');
+            $criteria->addSelectColumn($alias . '.suitnumber');
             $criteria->addSelectColumn($alias . '.code');
-            $criteria->addSelectColumn($alias . '.typeid');
             $criteria->addSelectColumn($alias . '.type');
-            $criteria->addSelectColumn($alias . '.suitid');
             $criteria->addSelectColumn($alias . '.name');
             $criteria->addSelectColumn($alias . '.datefiled');
-            $criteria->addSelectColumn($alias . '.format');
-            $criteria->addSelectColumn($alias . '.pagecount');
+            $criteria->addSelectColumn($alias . '.link');
+            $criteria->addSelectColumn($alias . '.filer');
             $criteria->addSelectColumn($alias . '.dataentrypersonid');
             $criteria->addSelectColumn($alias . '.accessstatus');
             $criteria->addSelectColumn($alias . '.created');
@@ -415,10 +415,11 @@ class DocumentsTableMap extends TableMap
             // rename for clarity
             $criteria = $values;
         } elseif ($values instanceof \Documents) { // it's a model object
-            // create criteria based on pk value
-            $criteria = $values->buildCriteria();
+            // create criteria based on pk values
+            $criteria = $values->buildPkeyCriteria();
         } else { // it's a primary key, or an array of pks
-            throw new LogicException('The Documents object has no primary key');
+            $criteria = new Criteria(DocumentsTableMap::DATABASE_NAME);
+            $criteria->add(DocumentsTableMap::COL_ID, (array) $values, Criteria::IN);
         }
 
         $query = DocumentsQuery::create()->mergeWith($criteria);
@@ -464,6 +465,10 @@ class DocumentsTableMap extends TableMap
             $criteria = clone $criteria; // rename for clarity
         } else {
             $criteria = $criteria->buildCriteria(); // build Criteria from Documents object
+        }
+
+        if ($criteria->containsKey(DocumentsTableMap::COL_ID) && $criteria->keyContainsValue(DocumentsTableMap::COL_ID) ) {
+            throw new PropelException('Cannot insert a value for auto-increment primary key ('.DocumentsTableMap::COL_ID.')');
         }
 
 
