@@ -4,8 +4,8 @@ This is a Setup guide for the Backend of lacer which uses PHP AND MYSQL SERVER w
 
 ## SETUP
 * Clone Repository
-* Import Lacerdb into your database to create DB
-* Edit Propel.JSON file to enter database Credentials
-* Run and test API.
+* Import lacerdb.sql file into your database to create DB
+* Edit propel.json file to enter database Credentials
+* Test API.
 
 
